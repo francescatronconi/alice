@@ -1,0 +1,5 @@
+<div class="panel-menu-list top-left-menu">
+    <div *ngFor="let button of menu.buttons" (click)="clickItem(button)">
+        <img [src]="button.icon" height="50px" width="50px" />
+    </div>
+</div>
