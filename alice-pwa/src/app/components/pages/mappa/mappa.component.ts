@@ -12,6 +12,7 @@ import Icon from 'ol/style/Icon';
 import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
+import { TickersService } from 'src/app/services/tickers.service';
 
 @Component({
   selector: 'app-mappa',
@@ -22,21 +23,40 @@ export class MappaComponent implements OnInit {
 
   position: any;
   map: Map;
+  layer: VectorLayer;
+  currentposition: number[];
 
-  constructor() { }
+  constructor(
+    private tickers: TickersService,
+  ) { }
 
   ngOnInit(): void {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.position = position;
-        this.startOlMap();
-      });
+      this.initMap();
     } else {
       this.position = null;
     }
   }
 
+  initMap() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.position = position;
+      this.startOlMap();
+      //this.refreshLoop();
+    });
+  }
+
+  refreshLoop() {
+    this.tickers.loop('refresh-position', 1000, () => {
+      //this.currentposition[0] = 43.715101
+      //this.currentposition[1] = 10.396559
+      console.log(this.layer);
+      //this.layer.redraw();
+    });
+  }
+
   startOlMap() {
+    this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
     this.map = new Map({
       target: 'olmap',
       layers: [
@@ -45,15 +65,15 @@ export class MappaComponent implements OnInit {
         })
       ],
       view: new View({
-        center: olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude]),
+        center: olProj.fromLonLat(this.currentposition),
         zoom: 13
       })
     });
-    let layer = new VectorLayer({
+    this.layer = new VectorLayer({
       source: new VectorSource({
         features: [
           new Feature({
-            geometry: new Point(olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude]))
+            geometry: new Point(olProj.fromLonLat(this.currentposition))
           })
         ]
       }),
@@ -64,7 +84,7 @@ export class MappaComponent implements OnInit {
         })
       }),
     });
-    this.map.addLayer(layer);
+    this.map.addLayer(this.layer);
   }
 
 }
