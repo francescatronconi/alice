@@ -8,3 +8,18 @@
     font-family: "Alice in Wonderland";
     font-weight:300;
 }
+
+.ol-attribution {
+    display: none;
+}
+.ol-control {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .ol-control {
+        display: unset;
+    }
+
+}
