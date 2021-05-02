@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonsMenuService } from './services/buttons-menu.service';
 import { SharedDataService } from './services/shared-data.service';
 
@@ -14,9 +15,13 @@ export class AppComponent {
   constructor (
     public menu: ButtonsMenuService,
     public shared: SharedDataService,
+    private router: Router,
   ) {
-    this.menu.add({id: 'diary', icon: './assets/svg/alice-plain.svg', action: (shared: SharedDataService) => {
-      console.log('Touched diary!');
+    this.menu.add({id: 'diario', icon: './assets/svg/diario.svg', action: (shared: SharedDataService) => {
+      this.router.navigate(['diario']);
+    }})
+    this.menu.add({id: 'mappa', icon: './assets/svg/mappa.svg', action: (shared: SharedDataService) => {
+      this.router.navigate(['mappa']);
     }})
   }
 
