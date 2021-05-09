@@ -7,3 +7,11 @@ export class SharedDataService {
 
   constructor() { }
 }
+
+export class StoryChapter {
+
+  title?: string;
+  audio?: string;
+  video?: string;
+
+}
