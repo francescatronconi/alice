@@ -13,6 +13,7 @@ import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-mappa',
@@ -28,6 +29,7 @@ export class MappaComponent implements OnInit {
 
   constructor(
     private tickers: TickersService,
+    private shared: SharedDataService,
   ) { }
 
   ngOnInit(): void {
@@ -85,6 +87,20 @@ export class MappaComponent implements OnInit {
       }),
     });
     this.map.addLayer(this.layer);
+    this.map.addLayer(new VectorLayer({
+      source: new VectorSource({
+        features: this.shared.locations.map(location => new Feature({
+          geometry: new Point(olProj.fromLonLat([location.lon, location.lat]))
+        })
+        )
+      }),
+      style: new Style({
+        image: new Icon({
+          anchor: [0.5, 0.5],
+          src: './assets/svg/cat.svg',
+        })
+      }),
+    }));
   }
 
 }
