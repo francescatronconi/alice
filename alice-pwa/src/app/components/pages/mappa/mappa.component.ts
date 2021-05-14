@@ -59,7 +59,6 @@ export class MappaComponent implements OnInit {
   }
 
   startOlMap() {
-    console.log("prima")
     this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
     this.map = new Map({
       target: 'olmap',
@@ -93,7 +92,6 @@ export class MappaComponent implements OnInit {
       this.listaTappe.push(location.id)
     })
     localStorage.setItem("tappe",JSON.stringify(this.listaTappe))
-    console.log("dopo")
     this.map.addLayer(new VectorLayer({
       source: new VectorSource({
         features: this.shared.locations.map(location => new Feature({
