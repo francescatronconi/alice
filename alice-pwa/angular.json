@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "alice-pwa": {
@@ -125,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "alice-pwa"
+    }
+  },
+  "defaultProject": "alice-pwa",
+  "cli": {
+    "analytics": "3464a91b-90e6-463d-a889-93ce4adcf012"
+  }
 }

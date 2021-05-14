@@ -26,6 +26,7 @@ export class MappaComponent implements OnInit {
   map: Map;
   layer: VectorLayer;
   currentposition: number[];
+  listaTappe: String[]=[];
 
   constructor(
     private tickers: TickersService,
@@ -58,6 +59,7 @@ export class MappaComponent implements OnInit {
   }
 
   startOlMap() {
+    console.log("prima")
     this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
     this.map = new Map({
       target: 'olmap',
@@ -75,7 +77,7 @@ export class MappaComponent implements OnInit {
       source: new VectorSource({
         features: [
           new Feature({
-            geometry: new Point(olProj.fromLonLat(this.currentposition))
+            geometry: new Point(olProj.fromLonLat(this.currentposition)),
           })
         ]
       }),
@@ -87,10 +89,15 @@ export class MappaComponent implements OnInit {
       }),
     });
     this.map.addLayer(this.layer);
+    this.shared.locations.map(location => {
+      this.listaTappe.push(location.id)
+    })
+    localStorage.setItem("tappe",JSON.stringify(this.listaTappe))
+    console.log("dopo")
     this.map.addLayer(new VectorLayer({
       source: new VectorSource({
         features: this.shared.locations.map(location => new Feature({
-          geometry: new Point(olProj.fromLonLat([location.lon, location.lat]))
+          geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
         })
         )
       }),
