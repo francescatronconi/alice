@@ -89,7 +89,7 @@ export class MappaComponent implements OnInit {
     });
     this.map.addLayer(this.layer);
     this.shared.locations.map(location => {
-      this.listaTappe.push(location.id)
+      this.listaTappe.push(location.id) 
     })
     localStorage.setItem("tappe",JSON.stringify(this.listaTappe))
     this.map.addLayer(new VectorLayer({
