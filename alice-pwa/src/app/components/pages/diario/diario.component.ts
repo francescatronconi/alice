@@ -15,11 +15,13 @@ export class DiarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.listaTappeId = JSON.parse(localStorage.getItem("tappe"))
-    this.shared.locations.map(location => {
-      if(this.listaTappeId.includes(location.id)) {
-        this.locationsVisitate.push(location.name)
-      }
-    })
+    if (this.listaTappeId !== undefined) {
+      this.shared.locations.map(location => {
+        if(this.listaTappeId.includes(location.id)) {
+          this.locationsVisitate.push(location.name)
+        }
+      })
+    }
   }
 
 }

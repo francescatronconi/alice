@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // openlayers
 import Map from 'ol/Map';
 import View from 'ol/View';
+import Overlay from 'ol/Overlay';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import VectorLayer from 'ol/layer/Vector' ;
@@ -26,7 +27,6 @@ export class MappaComponent implements OnInit {
   map: Map;
   layer: VectorLayer;
   currentposition: number[];
-  listaTappe: String[]=[];
 
   constructor(
     private tickers: TickersService,
@@ -59,9 +59,19 @@ export class MappaComponent implements OnInit {
   }
 
   startOlMap() {
-    console.log("prima")
     this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
+    var container = document.getElementById('popup');
+    var content = document.getElementById('popup-content');
+    var closer = document.getElementById('popup-closer');
+    var overlay = new Overlay({
+      element: container,
+      autoPan: true,
+      autoPanAnimation: {
+        duration: 250
+      }
+    });
     this.map = new Map({
+      overlays: [overlay],
       target: 'olmap',
       layers: [
         new TileLayer({
@@ -78,6 +88,7 @@ export class MappaComponent implements OnInit {
         features: [
           new Feature({
             geometry: new Point(olProj.fromLonLat(this.currentposition)),
+            name : "Tu"
           })
         ]
       }),
@@ -89,15 +100,12 @@ export class MappaComponent implements OnInit {
       }),
     });
     this.map.addLayer(this.layer);
-    this.shared.locations.map(location => {
-      this.listaTappe.push(location.id)
-    })
-    localStorage.setItem("tappe",JSON.stringify(this.listaTappe))
-    console.log("dopo")
     this.map.addLayer(new VectorLayer({
       source: new VectorSource({
         features: this.shared.locations.map(location => new Feature({
           geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
+          name : location.name,
+          id: location.id,
         })
         )
       }),
@@ -108,6 +116,38 @@ export class MappaComponent implements OnInit {
         })
       }),
     }));
+    var mappa = this.map
+    closer.onclick = function () {
+      overlay.setPosition(undefined);
+      closer.blur();
+      return false;
+    };
+    var displayFeatureInfo = function(pixel, coordinate) {
+      var features = [];
+      mappa.forEachFeatureAtPixel(pixel, function(feature) {
+        features.push(feature);
+      });
+      if(features.length >0) {
+        content.innerHTML = '<p>hai cliccato:</p><code>'+features[0].get('name')+'</code>';
+        overlay.setPosition(coordinate)
+        var tappe = JSON.parse(localStorage.getItem("tappe"))
+        console.log(tappe)
+        if(tappe === null) {
+          tappe = []
+          tappe.push(features[0].get('id'))
+        } else {
+          tappe.push(features[0].get('id'))
+        }
+      }
+      localStorage.setItem("tappe",JSON.stringify(tappe))
+      console.log(features)
+    };
+    mappa.on('click', function(evt) {
+      var pixel = evt.pixel;
+      var coordinate = evt.coordinate;
+      displayFeatureInfo(pixel, coordinate);
+
+    });
   }
 
 }
