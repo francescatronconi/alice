@@ -123,8 +123,8 @@ export class MappaComponent implements OnInit {
       return false;
     };
     var displayFeatureInfo = function(pixel, coordinate) {
-      var featureSelected;
-      mappa.forEachFeatureAtPixel(pixel, function(feature) {
+      var featureSelected = null;
+      mappa.forEachFeatureAtPixel(pixel, function(feature: any) {
         featureSelected = feature
       });
       if(featureSelected != null) {
@@ -147,7 +147,6 @@ export class MappaComponent implements OnInit {
 function updateTappeLocalStorage(featureSelected: any) {
   checkTappeLocalStorage();
   var id = featureSelected.get('id');
-  console.log('id: ' + id)
   if (id != null) {
     var tappe = JSON.parse(localStorage.getItem("tappe"));
     var trovato = tappe.find(element => element === id);
