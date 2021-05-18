@@ -11,6 +11,7 @@ import VectorSource from 'ol/source/Vector' ;
 import Style from 'ol/style/Style';
 import Icon from 'ol/style/Icon';
 import OSM from 'ol/source/OSM';
+import {defaults as defaultControls} from 'ol/control';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
@@ -98,12 +99,19 @@ export class MappaComponent implements OnInit {
           src: './assets/svg/cat.svg',
         })
       }),
+      controls: defaultControls({
+        attributionOptions: {
+          collapsible: false
+        }
+      })
     });
     this.map.addLayer(this.layer);
     this.map.addLayer(new VectorLayer({
       source: new VectorSource({
         features: this.shared.locations.map(location => new Feature({
           geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
+          longitude : location.lon,
+          latitude: location.lat,
           name : location.name,
           id: location.id,
         })
@@ -122,18 +130,30 @@ export class MappaComponent implements OnInit {
       closer.blur();
       return false;
     };
+    var url = 'https://www.google.com/maps/dir/'+
+              this.position.coords.latitude+","+this.position.coords.longitude+"/";
     var displayFeatureInfo = function(pixel, coordinate) {
       var featureSelected = null;
       mappa.forEachFeatureAtPixel(pixel, function(feature: any) {
         featureSelected = feature
       });
       if(featureSelected != null) {
-        var name = featureSelected.get('name')
-        content.innerHTML = '<p>hai cliccato:</p><code>'+ name +'</code>';
+        var name = featureSelected.get('name');
+        var lon = featureSelected.get('longitude');
+        var lat = featureSelected.get('latitude');
+        var urlCompleto = url + lat+","+lon
+        content.innerHTML = 
+            '<label>hai cliccato su:</label><p>'
+            + name +'</p>';
         overlay.setPosition(coordinate)
         updateTappeLocalStorage(featureSelected);
+        if(name != 'Tu') {
+          content.innerHTML = 
+            '<label>hai cliccato su:</label><p>'
+            + name +'</p><br><a href="' + urlCompleto + 
+            '" target="_blank"  style="border: 2px solid gray; border-radius: 10px;padding: 5px 10px;text-align: center;text-decoration: none;" >portami qui</a>';
+        }
       }
-      console.log(featureSelected)
     };
     mappa.on('click', function(evt) {
       var pixel = evt.pixel;
