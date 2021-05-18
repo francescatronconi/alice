@@ -123,24 +123,17 @@ export class MappaComponent implements OnInit {
       return false;
     };
     var displayFeatureInfo = function(pixel, coordinate) {
-      var features = [];
+      var featureSelected;
       mappa.forEachFeatureAtPixel(pixel, function(feature) {
-        features.push(feature);
+        featureSelected = feature
       });
-      if(features.length >0) {
-        content.innerHTML = '<p>hai cliccato:</p><code>'+features[0].get('name')+'</code>';
+      if(featureSelected != null) {
+        var name = featureSelected.get('name')
+        content.innerHTML = '<p>hai cliccato:</p><code>'+ name +'</code>';
         overlay.setPosition(coordinate)
-        var tappe = JSON.parse(localStorage.getItem("tappe"))
-        console.log(tappe)
-        if(tappe === null) {
-          tappe = []
-          tappe.push(features[0].get('id'))
-        } else {
-          tappe.push(features[0].get('id'))
-        }
+        updateTappeLocalStorage(featureSelected);
       }
-      localStorage.setItem("tappe",JSON.stringify(tappe))
-      console.log(features)
+      console.log(featureSelected)
     };
     mappa.on('click', function(evt) {
       var pixel = evt.pixel;
@@ -149,5 +142,26 @@ export class MappaComponent implements OnInit {
 
     });
   }
-
 }
+
+function updateTappeLocalStorage(featureSelected: any) {
+  checkTappeLocalStorage();
+  var id = featureSelected.get('id');
+  console.log('id: ' + id)
+  if (id != null) {
+    var tappe = JSON.parse(localStorage.getItem("tappe"));
+    var trovato = tappe.find(element => element === id);
+    if (trovato === undefined) {
+      tappe.push(id);
+      localStorage.setItem("tappe", JSON.stringify(tappe));
+    }
+  }
+}
+
+function checkTappeLocalStorage() {
+  var tappe = localStorage.getItem("tappe");
+  if (tappe === null || tappe === undefined) {
+    localStorage.setItem("tappe", JSON.stringify([]));
+  }
+}
+
