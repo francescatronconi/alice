@@ -15,7 +15,7 @@ export class DiarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.listaTappeId = JSON.parse(localStorage.getItem("tappe"))
-    if (this.listaTappeId !== undefined) {
+    if (this.listaTappeId !== null) {
       this.shared.locations.map(location => {
         if(this.listaTappeId.includes(location.id)) {
           this.locationsVisitate.push(location.name)

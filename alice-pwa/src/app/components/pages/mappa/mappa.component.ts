@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import Overlay from 'ol/Overlay';
-import Feature from 'ol/Feature';
+import Feature, { FeatureLike } from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import VectorLayer from 'ol/layer/Vector' ;
 import VectorSource from 'ol/source/Vector' ;
@@ -15,6 +15,7 @@ import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
+import Geometry from 'ol/geom/Geometry';
 
 @Component({
   selector: 'app-mappa',
@@ -27,8 +28,10 @@ export class MappaComponent implements OnInit {
   map: Map;
   layer: VectorLayer;
   currentposition: number[];
+  show: boolean=false;
+  link:string;
 
-  currentFeature: Feature;
+  currentFeature: FeatureLike;
   overlay: Overlay;
 
   constructor(
@@ -63,15 +66,7 @@ export class MappaComponent implements OnInit {
 
   startOlMap() {
     this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
-    this.overlay = new Overlay({
-      element: document.getElementById('popup'),
-      autoPan: true,
-      autoPanAnimation: {
-        duration: 250
-      }
-    });
     this.map = new Map({
-      overlays: [this.overlay],
       target: 'olmap',
       layers: [
         new TileLayer({
@@ -97,13 +92,15 @@ export class MappaComponent implements OnInit {
           anchor: [0.5, 0.5],
           src: './assets/svg/cat.svg',
         })
-      }),
+      })
     });
     this.map.addLayer(this.layer);
     this.map.addLayer(new VectorLayer({
       source: new VectorSource({
         features: this.shared.locations.map(location => new Feature({
           geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
+          longitude : location.lon,
+          latitude: location.lat,
           name : location.name,
           id: location.id,
         })
@@ -116,15 +113,30 @@ export class MappaComponent implements OnInit {
         })
       }),
     }));
-    this.map.on('click', (evt:any) => {
-      this.map.forEachFeatureAtPixel(evt.pixel, (feature: Feature) => {
-        this.currentFeature = feature;
-        this.overlay.setPosition(evt.coordinate);
-        updateTappeLocalStorage(this.currentFeature);
-        console.log(this.currentFeature);
-      });
+    this.overlay = new Overlay({
+      element: document.getElementById('popup'),
+      autoPan: true,
+      autoPanAnimation: {
+        duration: 250
+      }
     });
+    this.map.addOverlay(this.overlay)
   }
+
+  clickTappa(evt: any) {
+    var pixel = []
+    pixel = this.map.getEventPixel(evt);
+    var feature: FeatureLike[] = this.map.getFeaturesAtPixel(pixel);
+    var coordinate = this.map.getEventCoordinate(evt)
+    if(feature.length > 0) {
+      this.currentFeature = feature[0];
+      if (feature[0].get('id') != null) {
+        updateTappeLocalStorage(feature[0])
+      }
+      this.currentFeature = feature[0];
+      this.overlay.setPosition(coordinate);
+    }
+  };
 
   clickCloseLocation() {
     this.overlay.setPosition(undefined);
@@ -135,13 +147,11 @@ export class MappaComponent implements OnInit {
 function updateTappeLocalStorage(featureSelected: any) {
   checkTappeLocalStorage();
   var id = featureSelected.get('id');
-  if (id != null) {
-    var tappe = JSON.parse(localStorage.getItem("tappe"));
-    var trovato = tappe.find(element => element === id);
-    if (trovato === undefined) {
-      tappe.push(id);
-      localStorage.setItem("tappe", JSON.stringify(tappe));
-    }
+  var tappe = JSON.parse(localStorage.getItem("tappe"));
+  var trovato = tappe.find(element => element === id);
+  if (trovato === undefined) {
+    tappe.push(id);
+    localStorage.setItem("tappe", JSON.stringify(tappe));
   }
 }
 
