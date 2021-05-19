@@ -1,7 +1,13 @@
-<div class="fulldiv" id="olmap">
+<div class="fulldiv" id="olmap" (click)="clickTappa($event)">
     <div id="popup" class="ol-popup">
-        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-        <div id="popup-content"></div>
+        <a href="#" id="popup-closer" class="ol-popup-closer" (click)="popdown()"></a>
+        <div id="popup-content">
+            <label>hai cliccato su:</label>
+            <p>{{popuptext}}</p>
+        </div>
+        <div *ngIf="show">
+            <a href={{link}} target="_blank" class="btn">portami qui</a>
+        </div>
     </div>
 </div>
 

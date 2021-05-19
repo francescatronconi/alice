@@ -11,7 +11,6 @@ import VectorSource from 'ol/source/Vector' ;
 import Style from 'ol/style/Style';
 import Icon from 'ol/style/Icon';
 import OSM from 'ol/source/OSM';
-import {defaults as defaultControls} from 'ol/control';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
@@ -28,6 +27,9 @@ export class MappaComponent implements OnInit {
   map: Map;
   layer: VectorLayer;
   currentposition: number[];
+  popuptext:string;
+  show: boolean=false;
+  link:string;
 
   constructor(
     private tickers: TickersService,
@@ -61,18 +63,7 @@ export class MappaComponent implements OnInit {
 
   startOlMap() {
     this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
-    var container = document.getElementById('popup');
-    var content = document.getElementById('popup-content');
-    var closer = document.getElementById('popup-closer');
-    var overlay = new Overlay({
-      element: container,
-      autoPan: true,
-      autoPanAnimation: {
-        duration: 250
-      }
-    });
     this.map = new Map({
-      overlays: [overlay],
       target: 'olmap',
       layers: [
         new TileLayer({
@@ -98,11 +89,6 @@ export class MappaComponent implements OnInit {
           anchor: [0.5, 0.5],
           src: './assets/svg/cat.svg',
         })
-      }),
-      controls: defaultControls({
-        attributionOptions: {
-          collapsible: false
-        }
       })
     });
     this.map.addLayer(this.layer);
@@ -124,56 +110,51 @@ export class MappaComponent implements OnInit {
         })
       }),
     }));
-    var mappa = this.map
-    closer.onclick = function () {
-      overlay.setPosition(undefined);
-      closer.blur();
-      return false;
-    };
-    var url = 'https://www.google.com/maps/dir/'+
-              this.position.coords.latitude+","+this.position.coords.longitude+"/";
-    var displayFeatureInfo = function(pixel, coordinate) {
-      var featureSelected = null;
-      mappa.forEachFeatureAtPixel(pixel, function(feature: any) {
-        featureSelected = feature
-      });
-      if(featureSelected != null) {
-        var name = featureSelected.get('name');
-        var lon = featureSelected.get('longitude');
-        var lat = featureSelected.get('latitude');
-        var urlCompleto = url + lat+","+lon
-        content.innerHTML = 
-            '<label>hai cliccato su:</label><p>'
-            + name +'</p>';
-        overlay.setPosition(coordinate)
-        updateTappeLocalStorage(featureSelected);
-        if(name != 'Tu') {
-          content.innerHTML = 
-            '<label>hai cliccato su:</label><p>'
-            + name +'</p><br><a href="' + urlCompleto + 
-            '" target="_blank"  style="border: 2px solid gray; border-radius: 10px;padding: 5px 10px;text-align: center;text-decoration: none;" >portami qui</a>';
-        }
-      }
-    };
-    mappa.on('click', function(evt) {
-      var pixel = evt.pixel;
-      var coordinate = evt.coordinate;
-      displayFeatureInfo(pixel, coordinate);
+  }
 
+  clickTappa(evt: any) {
+    var container = document.getElementById('popup');
+    var overlay = new Overlay({
+      element: container,
+      autoPan: true,
+      autoPanAnimation: {
+        duration: 250
+      }
     });
+    this.map.addOverlay(overlay)
+    var pixel = []
+    pixel = this.map.getEventPixel(evt)
+    var feature = this.map.getFeaturesAtPixel(pixel)
+    var coordinate = this.map.getEventCoordinate(evt)
+    var percorsolink = 'https://www.google.com/maps/dir/'+
+              this.position.coords.latitude+","+this.position.coords.longitude+"/";
+    if(feature.length > 0) {
+        let name = feature[0].get('name');
+        if (feature[0].get('id') != null) {
+          this.show = true
+          var lon = feature[0].get('longitude');
+          var lat = feature[0].get('latitude');
+          this.link = percorsolink + lat+","+lon
+          updateTappeLocalStorage(feature[0])
+        }
+        this.popuptext = name
+        overlay.setPosition(coordinate)
+    }
+  };
+
+  popdown() {
+    return false;
   }
 }
 
 function updateTappeLocalStorage(featureSelected: any) {
   checkTappeLocalStorage();
   var id = featureSelected.get('id');
-  if (id != null) {
-    var tappe = JSON.parse(localStorage.getItem("tappe"));
-    var trovato = tappe.find(element => element === id);
-    if (trovato === undefined) {
-      tappe.push(id);
-      localStorage.setItem("tappe", JSON.stringify(tappe));
-    }
+  var tappe = JSON.parse(localStorage.getItem("tappe"));
+  var trovato = tappe.find(element => element === id);
+  if (trovato === undefined) {
+    tappe.push(id);
+    localStorage.setItem("tappe", JSON.stringify(tappe));
   }
 }
 
