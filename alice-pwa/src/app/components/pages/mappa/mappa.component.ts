@@ -28,6 +28,9 @@ export class MappaComponent implements OnInit {
   layer: VectorLayer;
   currentposition: number[];
 
+  currentFeature: Feature;
+  overlay: Overlay;
+
   constructor(
     private tickers: TickersService,
     private shared: SharedDataService,
@@ -60,18 +63,15 @@ export class MappaComponent implements OnInit {
 
   startOlMap() {
     this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
-    var container = document.getElementById('popup');
-    var content = document.getElementById('popup-content');
-    var closer = document.getElementById('popup-closer');
-    var overlay = new Overlay({
-      element: container,
+    this.overlay = new Overlay({
+      element: document.getElementById('popup'),
       autoPan: true,
       autoPanAnimation: {
         duration: 250
       }
     });
     this.map = new Map({
-      overlays: [overlay],
+      overlays: [this.overlay],
       target: 'olmap',
       layers: [
         new TileLayer({
@@ -116,32 +116,20 @@ export class MappaComponent implements OnInit {
         })
       }),
     }));
-    var mappa = this.map
-    closer.onclick = function () {
-      overlay.setPosition(undefined);
-      closer.blur();
-      return false;
-    };
-    var displayFeatureInfo = function(pixel, coordinate) {
-      var featureSelected = null;
-      mappa.forEachFeatureAtPixel(pixel, function(feature: any) {
-        featureSelected = feature
+    this.map.on('click', (evt:any) => {
+      this.map.forEachFeatureAtPixel(evt.pixel, (feature: Feature) => {
+        this.currentFeature = feature;
+        this.overlay.setPosition(evt.coordinate);
+        updateTappeLocalStorage(this.currentFeature);
+        console.log(this.currentFeature);
       });
-      if(featureSelected != null) {
-        var name = featureSelected.get('name')
-        content.innerHTML = '<p>hai cliccato:</p><code>'+ name +'</code>';
-        overlay.setPosition(coordinate)
-        updateTappeLocalStorage(featureSelected);
-      }
-      console.log(featureSelected)
-    };
-    mappa.on('click', function(evt) {
-      var pixel = evt.pixel;
-      var coordinate = evt.coordinate;
-      displayFeatureInfo(pixel, coordinate);
-
     });
   }
+
+  clickCloseLocation() {
+    this.overlay.setPosition(undefined);
+  }
+
 }
 
 function updateTappeLocalStorage(featureSelected: any) {
