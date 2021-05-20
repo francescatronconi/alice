@@ -28,6 +28,7 @@ export class MappaComponent implements OnInit {
   map: Map;
   layer: VectorLayer;
   currentposition: number[];
+  tappaName : String;
 
   currentFeature: FeatureLike;
   overlay: Overlay;
@@ -131,12 +132,16 @@ export class MappaComponent implements OnInit {
       if (feature[0].get('id') != null) {
         updateTappeLocalStorage(this.currentFeature);
       }
+      this.tappaName = this.layer.get('name');
       this.overlay.setPosition(coordinate);
     }
   };
 
-  clickCloseLocation() {
-    this.overlay.setPosition(undefined);
+
+  closeLocation(value: boolean): void {
+    if(value) {
+      this.overlay.setPosition(undefined);
+    };
   }
 
 }

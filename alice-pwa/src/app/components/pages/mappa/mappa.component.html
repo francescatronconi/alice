@@ -1,14 +1,5 @@
 <div class="fulldiv" id="olmap" (click)="clickTappa($event)">
-    <div id="popup" class="ol-popup">
-        <a id="popup-closer" class="ol-popup-closer" (click)="clickCloseLocation()"></a>
-        <div id="popup-content" *ngIf="currentFeature">
-            {{currentFeature.get('name')}}
-            <a *ngIf="currentFeature.get('id')" target="_blank" class="btn"
-                href="https://www.google.com/maps/dir/{{position.coords.latitude}},{{position.coords.longitude}}/{{currentFeature.get('latitude')}},{{currentFeature.get('longitude')}}">
-                portami qui
-            </a>
-        </div>
-    </div>
+    <app-popup [currentFeature]= "currentFeature" [position]="position" (close)="closeLocation($event)">></app-popup>
 </div>
 
 

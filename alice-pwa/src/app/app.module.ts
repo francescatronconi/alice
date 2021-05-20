@@ -12,6 +12,7 @@ import { ListenTrackComponent } from './components/widgets/listen-track/listen-t
 import { TellStoryComponent } from './components/pages/tell-story/tell-story.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WatchVideoComponent } from './components/widgets/watch-video/watch-video.component';
+import { PopupComponent } from './components/pages/popup/popup.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { WatchVideoComponent } from './components/widgets/watch-video/watch-vide
     MappaComponent,
     ListenTrackComponent,
     TellStoryComponent,
-    WatchVideoComponent
+    WatchVideoComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
