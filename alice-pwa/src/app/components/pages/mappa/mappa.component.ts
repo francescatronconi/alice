@@ -15,6 +15,7 @@ import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
+import Geolocation from 'ol/Geolocation';
 import Geometry from 'ol/geom/Geometry';
 
 @Component({
@@ -47,22 +48,24 @@ export class MappaComponent implements OnInit {
   initMap() {
     navigator.geolocation.getCurrentPosition((position) => {
       this.position = position;
+      this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
       this.startOlMap();
-      //this.refreshLoop();
+      this.refreshLoop();
     });
   }
 
   refreshLoop() {
-    this.tickers.loop('refresh-position', 1000, () => {
-      //this.currentposition[0] = 43.715101
-      //this.currentposition[1] = 10.396559
-      console.log(this.layer);
+    this.tickers.loop('refresh-position', 2000, () => {
+      console.log("position upd =>",this.currentposition[0], this.currentposition[1])
+      var coordinates = olProj.fromLonLat([this.currentposition[0], this.currentposition[1]])
+      this.layer.getSource().getFeatures()[0].setGeometry(coordinates ? new Point(coordinates) : null)
+      // console.log(this.layer);
       //this.layer.redraw();
     });
   }
 
   startOlMap() {
-    this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
+    console.log(this.currentposition)
     this.map = new Map({
       target: 'olmap',
       layers: [
