@@ -56,6 +56,10 @@ export class MappaComponent implements OnInit {
 
   refreshLoop() {
     this.tickers.loop('refresh-position', 2000, () => {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.position = position;
+        this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
+      });
       console.log("position upd =>",this.currentposition[0], this.currentposition[1])
       var coordinates = olProj.fromLonLat([this.currentposition[0], this.currentposition[1]])
       this.layer.getSource().getFeatures()[0].setGeometry(coordinates ? new Point(coordinates) : null)
