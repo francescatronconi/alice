@@ -13,6 +13,8 @@ import { TellStoryComponent } from './components/pages/tell-story/tell-story.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WatchVideoComponent } from './components/widgets/watch-video/watch-video.component';
 import { PopupComponent } from './components/pages/popup/popup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StoryPopupComponent } from './components/pages/story-popup/story-popup.component';
 
 
 @NgModule({
@@ -25,12 +27,14 @@ import { PopupComponent } from './components/pages/popup/popup.component';
     ListenTrackComponent,
     TellStoryComponent,
     WatchVideoComponent,
-    PopupComponent
+    PopupComponent,
+    StoryPopupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

@@ -1,0 +1,8 @@
+{
+    "rules": [
+        {"trigger": {"code": "start"}, "effect": {"code": "story", "story": [
+            {"code": "read", "read": "intro-1.html"},
+            {"code": "read", "read": "intro-1.html"}
+        ]}}
+    ]
+}

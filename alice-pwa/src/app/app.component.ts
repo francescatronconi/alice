@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonsMenuService } from './services/buttons-menu.service';
+import { GamePlayStory } from './services/ponte-virtuale.service';
 import { SharedDataService } from './services/shared-data.service';
 
 @Component({
@@ -23,6 +24,10 @@ export class AppComponent {
     this.menu.add({id: 'mappa', icon: './assets/svg/mappa.svg', action: (shared: SharedDataService) => {
       this.router.navigate(['mappa']);
     }})
+  }
+
+  storyToRead(): boolean {
+    return this.shared.play && this.shared.play.story.filter(item => !item.published).length > 0;
   }
 
 }

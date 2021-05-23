@@ -9,6 +9,19 @@
     font-weight:300;
 }
 
+.blackdim {
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    padding: 10px;
+    background-color: white;
+}
+
 .ol-attribution {
     display: none;
 }
