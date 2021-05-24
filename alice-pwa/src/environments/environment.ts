@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //gameUrl: 'https://www.dantar.it/resources/alice/game-data.json',
-  gameUrl: './assets/alice/game-data.json',
+  //gameUrl: 'https://www.dantar.it/resources/alice',
+  gameUrl: './assets/alice',
 };
 
 /*

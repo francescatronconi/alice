@@ -2,9 +2,7 @@
     <h1>Diario di Alice</h1>
     <div *ngIf="shared.play">
         <ng-container *ngFor="let story of shared.play.story">
-            <div *ngIf="story.published">
-                <h2>{{story.origin.read}}</h2>
-            </div>
+            <div *ngIf="story.published" app-read-story [story]="story"></div>
         </ng-container>
     </div>
     <h1>Luoghi visitati</h1>

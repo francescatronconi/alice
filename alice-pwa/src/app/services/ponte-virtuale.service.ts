@@ -71,9 +71,6 @@ export class GameEffectStory extends GameEffect {
 }
 export class GameEffectStoryItem {
   code: string;
-}
-export class GameEffectStoryItemRead extends GameEffectStoryItem {
-  code: 'read';
   read?: string;
 }
 
@@ -87,6 +84,6 @@ export class GamePlay {
   }
 }
 export class GamePlayStory {
-  origin: GameEffectStory;
+  origin: GameEffectStoryItem;
   published: boolean;
 }

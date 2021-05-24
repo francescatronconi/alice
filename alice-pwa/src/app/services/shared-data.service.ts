@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { GamePlay, GamePlayStory, GameScenario, PonteVirtualeService } from './ponte-virtuale.service';
 
@@ -6,13 +8,14 @@ import { GamePlay, GamePlayStory, GameScenario, PonteVirtualeService } from './p
   providedIn: 'root'
 })
 export class SharedDataService {
-  
+
   locations: MapLocation[];
   scenario: GameScenario;
   play: GamePlay;
 
   constructor(
     private pv: PonteVirtualeService,
+    private http: HttpClient,
   ) { 
     this.locations = [
       {id:"1", name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453, badge:'./assets/svg/cat.svg' },
@@ -22,7 +25,7 @@ export class SharedDataService {
       //{name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453 },
       //{name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453 },
     ];
-    this.pv.loadGameScenario(environment.gameUrl)
+    this.pv.loadGameScenario(`${environment.gameUrl}/game.json`)
     .then((scenario) => {
       this.scenario = scenario;
       console.log("scenario", scenario)
@@ -56,6 +59,13 @@ export class SharedDataService {
     this.pv.visit(this.scenario, this.play, location);
     this.savePlay();
   }
+
+  getHtmlResource(url: string): Promise<string> {
+    return this.http
+    .get<string>(`${environment.gameUrl}/${url}`, {responseType: 'text' as 'json'})
+    .toPromise();
+  }
+
 }
 
 export class StoryChapter {

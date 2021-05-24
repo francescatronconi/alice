@@ -1,7 +1,7 @@
 <div class="blackdim"></div>
 <div class="alice fullpage" >
     <div class="modal">
-        <div>{{story.origin.code}}</div>
-        <div (click)="clickOk()">Ok!</div>
+        <div app-read-story [story]="story"></div>
     </div>
+    <div class="button" (click)="clickOk()">Ok!</div>
 </div>
