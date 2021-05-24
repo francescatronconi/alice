@@ -4,12 +4,12 @@
             {"code": "read", "read": "intro-1.html"},
             {"code": "read", "read": "intro-2.html"}
         ]}},
-        {"trigger": {"code": "visit", "location": "cattedrale"}, "effect": {"code": "story", "story": [
+        {"trigger": {"code": "visit", "locationid": "1"}, "effect": {"code": "story", "story": [
             {"code": "read", "read": "intro-1.html"},
             {"code": "read", "read": "intro-2.html"}
         ]}},
-        {"trigger": {"code": "visit", "location": "fungo"}, "effect": {"code": "badge"}},
-        {"trigger": {"code": "visit", "location": "conservatorio"}, "effect": {"code": "options", "story": [
+        {"trigger": {"code": "visit", "locationid": "2"}, "effect": {"code": "badge"}},
+        {"trigger": {"code": "visit", "locationid": "3"}, "effect": {"code": "options", "story": [
             {"code": "read", "read": "intro-1.html"},
             {"code": "read", "read": "intro-2.html"}
         ],

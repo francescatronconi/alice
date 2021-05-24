@@ -52,6 +52,10 @@ export class SharedDataService {
     this.savePlay();
   }
 
+  visitTappa(location: string) {
+    this.pv.visit(this.scenario, this.play, location);
+    this.savePlay();
+  }
 }
 
 export class StoryChapter {

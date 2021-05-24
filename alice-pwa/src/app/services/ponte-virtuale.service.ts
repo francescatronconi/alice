@@ -15,9 +15,10 @@ export class PonteVirtualeService {
     ;
   }
 
-  visit(scenario: GameScenario, play: GamePlay, location: String) {
+  visit(scenario: GameScenario, play: GamePlay, location: string) {
+    localStorage.setItem("visit", location)
     scenario.rules
-    .filter((rule) => (rule.trigger.code === 'visit' && rule.trigger.location === location))
+    .filter((rule) => (rule.trigger.code === 'visit' && rule.trigger.locationid === location))
     .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
     ;
   }
@@ -54,7 +55,7 @@ export class GameRule {
 export class GameTrigger {
 
   code: string;
-  location: string;
+  locationid: string;
 
 }
 
