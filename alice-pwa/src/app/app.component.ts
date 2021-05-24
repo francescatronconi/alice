@@ -23,6 +23,9 @@ export class AppComponent {
     }})
     this.menu.add({id: 'mappa', icon: './assets/svg/mappa.svg', action: (shared: SharedDataService) => {
       this.router.navigate(['mappa']);
+    }});
+    this.menu.add({id: 'badge', icon: './assets/svg/badge.svg', action: (shared: SharedDataService) => {
+      this.router.navigate(['badge']);
     }})
   }
 

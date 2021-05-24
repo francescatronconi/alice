@@ -15,6 +15,7 @@ import { WatchVideoComponent } from './components/widgets/watch-video/watch-vide
 import { PopupComponent } from './components/pages/popup/popup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoryPopupComponent } from './components/pages/story-popup/story-popup.component';
+import { BadgeComponent } from './components/pages/badge/badge.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { StoryPopupComponent } from './components/pages/story-popup/story-popup.
     WatchVideoComponent,
     PopupComponent,
     StoryPopupComponent,
+    BadgeComponent,
   ],
   imports: [
     BrowserModule,
