@@ -15,6 +15,8 @@ import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
+import { environment } from 'src/environments/environment';
+import { GamePlay, GamePlayStory, GameScenario, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
 import Geolocation from 'ol/Geolocation';
 import Geometry from 'ol/geom/Geometry';
 
@@ -31,6 +33,9 @@ export class MappaComponent implements OnInit {
   currentposition: number[];
   currentFeature: FeatureLike;
   overlay: Overlay;
+  ponteVirtualeService : PonteVirtualeService;
+  scenario: GameScenario;
+  play: GamePlay;
 
   constructor(
     private tickers: TickersService,
@@ -144,6 +149,11 @@ export class MappaComponent implements OnInit {
 
   closeLocation(value: boolean): void {
       this.overlay.setPosition(undefined);
+  }
+
+
+  gioca(value: String): void {
+    this.ponteVirtualeService.visit(this.shared.scenario, this.shared.play, value);
   }
 
 }
