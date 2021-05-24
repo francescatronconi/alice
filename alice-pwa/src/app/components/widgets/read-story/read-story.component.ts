@@ -16,11 +16,9 @@ export class ReadStoryComponent implements OnInit {
   constructor(private shared: SharedDataService) { }
 
   ngOnInit(): void {
-    if (this.story.origin.read) {
-      this.shared.getHtmlResource(this.story.origin.read).then(html => {
-        this.html = html;
-      });
-    }
+    this.shared.getHtmlResource(this.story.origin.read).then(html => {
+      this.html = html;
+    });
   }
 
 }

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { GamePlay, GamePlayStory, GameScenario, PonteVirtualeService } from './ponte-virtuale.service';
 
@@ -12,6 +11,7 @@ export class SharedDataService {
   locations: MapLocation[];
   scenario: GameScenario;
   play: GamePlay;
+  currentStory: GamePlayStory;
 
   constructor(
     private pv: PonteVirtualeService,
@@ -36,6 +36,7 @@ export class SharedDataService {
   startGame() {
     this.play = new GamePlay();
     this.pv.start(this.scenario, this.play);
+    this.findNextStory();
     this.savePlay();
   }
 
@@ -47,11 +48,19 @@ export class SharedDataService {
     let saved = localStorage.getItem("ponte-virtuale-play");
     if (saved) {
       this.play = JSON.parse(saved);
+      this.findNextStory();
     }
   }
 
-  readNewStory(story: GamePlayStory) {
-    story.published = true;
+  findNextStory() {
+    let unpublished = this.play.story.filter(item => !item.published);
+    this.currentStory = unpublished.length > 0 ? unpublished[0] : null ;
+    console.log(this.currentStory);
+  }
+
+  readCurrentStory() {
+    this.currentStory.published = true;
+    this.findNextStory();
     this.savePlay();
   }
 

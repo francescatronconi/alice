@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { GamePlayStory } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
@@ -9,19 +9,27 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 })
 export class StoryPopupComponent implements OnInit {
 
-  constructor(private shared: SharedDataService) { }
+  storyA: GamePlayStory;
+  storyB: GamePlayStory;
 
-  story: GamePlayStory;
+  constructor(
+    private shared: SharedDataService,
+    ) { }
 
   ngOnInit(): void {
-    let unpublished = this.shared.play.story
-    .filter(story => !story.published);
-    this.story = unpublished.length > 0 ? unpublished[0] : null;
+    this.storyA = this.shared.currentStory;
+    this.storyB = null;
   }
 
   clickOk() {
-    this.shared.readNewStory(this.story);
-    this.ngOnInit();
+    this.shared.readCurrentStory();
+    if (this.storyA) {
+      this.storyB = this.shared.currentStory;
+      this.storyA = null
+    } else {
+      this.storyA = this.shared.currentStory;
+      this.storyB = null
+    }
   }
 
 }

@@ -1,7 +1,8 @@
 <div class="blackdim"></div>
 <div class="alice fullpage" >
     <div class="modal">
-        <div app-read-story [story]="story"></div>
+        <div *ngIf="storyA" app-read-story [story]="storyA"></div>
+        <div *ngIf="storyB" app-read-story [story]="storyB"></div>
     </div>
     <div class="button" (click)="clickOk()">Ok!</div>
 </div>

@@ -29,8 +29,4 @@ export class AppComponent {
     }})
   }
 
-  storyToRead(): boolean {
-    return this.shared.play && this.shared.play.story.filter(item => !item.published).length > 0;
-  }
-
 }

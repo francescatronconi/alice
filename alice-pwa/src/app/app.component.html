@@ -6,4 +6,4 @@
         <div class="modal" (click)="shared.startGame()">Inizia la partita!</div>
     </div>
 </ng-container>
-<div app-story-popup *ngIf="storyToRead()"></div>
+<div app-story-popup *ngIf="shared.currentStory"></div>
