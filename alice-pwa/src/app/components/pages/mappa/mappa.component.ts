@@ -19,6 +19,7 @@ import { environment } from 'src/environments/environment';
 import { GamePlay, GamePlayStory, GameScenario, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
 import Geolocation from 'ol/Geolocation';
 import Geometry from 'ol/geom/Geometry';
+import { NgLocalization } from '@angular/common';
 
 @Component({
   selector: 'app-mappa',
@@ -65,7 +66,7 @@ export class MappaComponent implements OnInit {
         this.position = position;
         this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
       });
-      console.log("position upd =>",this.currentposition[0], this.currentposition[1])
+      // console.log("position upd =>",this.currentposition[0], this.currentposition[1])
       var coordinates = olProj.fromLonLat([this.currentposition[0], this.currentposition[1]])
       this.layer.getSource().getFeatures()[0].setGeometry(coordinates ? new Point(coordinates) : null)
       // console.log(this.layer);
@@ -112,6 +113,7 @@ export class MappaComponent implements OnInit {
           latitude: location.lat,
           name : location.name,
           id: location.id,
+          badge: location.badge
         })
         )
       }),
@@ -159,20 +161,22 @@ export class MappaComponent implements OnInit {
 }
 
 function updateTappeLocalStorage(featureSelected: any) {
-  checkTappeLocalStorage();
   var id = featureSelected.get('id');
+  var badgeicon = featureSelected.get('badge');
+  console.log(badgeicon)
   var tappe = JSON.parse(localStorage.getItem("tappe"));
-  var trovato = tappe.find(element => element === id);
-  if (trovato === undefined) {
+  tappe = tappe ? tappe : [];
+  var badges = JSON.parse(localStorage.getItem("badges"));
+  badges = badges ? badges : [];
+  var tappasuperato = tappe.find(element => element === id);
+  var badgevinto = badges.find(element => element === badgeicon);
+  if (tappasuperato === undefined) {
     tappe.push(id);
     localStorage.setItem("tappe", JSON.stringify(tappe));
   }
-}
-
-function checkTappeLocalStorage() {
-  var tappe = localStorage.getItem("tappe");
-  if (tappe === null || tappe === undefined) {
-    localStorage.setItem("tappe", JSON.stringify([]));
+  if (badgevinto === undefined && badgeicon !== '') {
+    badges.push(badgeicon);
+    localStorage.setItem("badges", JSON.stringify(badges));
   }
 }
 
