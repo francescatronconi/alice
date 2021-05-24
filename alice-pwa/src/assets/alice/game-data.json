@@ -3,6 +3,16 @@
         {"trigger": {"code": "start"}, "effect": {"code": "story", "story": [
             {"code": "read", "read": "intro-1.html"},
             {"code": "read", "read": "intro-2.html"}
-        ]}}
+        ]}},
+        {"trigger": {"code": "visit", "location": "cattedrale"}, "effect": {"code": "story", "story": [
+            {"code": "read", "read": "intro-1.html"},
+            {"code": "read", "read": "intro-2.html"}
+        ]}},
+        {"trigger": {"code": "visit", "location": "fungo"}, "effect": {"code": "badge"}},
+        {"trigger": {"code": "visit", "location": "conservatorio"}, "effect": {"code": "options", "story": [
+            {"code": "read", "read": "intro-1.html"},
+            {"code": "read", "read": "intro-2.html"}
+        ],
+        "options": []}}
     ]
 }
