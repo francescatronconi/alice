@@ -11,21 +11,23 @@ export class PonteVirtualeService {
   start(scenario: GameScenario, play: GamePlay) {
     scenario.rules
     .filter((rule) => rule.trigger.code === 'start')
-    .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
+    .forEach((rule) => this.applyEffect(rule.effect, scenario, play, ""))
     ;
   }
 
   visit(scenario: GameScenario, play: GamePlay, location: string) {
-    localStorage.setItem("visit", location)
     scenario.rules
     .filter((rule) => (rule.trigger.code === 'visit' && rule.trigger.locationid === location))
-    .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
+    .forEach((rule) => this.applyEffect(rule.effect, scenario, play, location))
     ;
   }
 
-  applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
+  applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay, location: string): void {
     if (effect.code === 'story') {
       GameEffectStory.run(effect as GameEffectStory, scenario, play);
+    }
+    if (effect.code === 'badge') {
+      GameEffectBadge.run(play, location);
     }
   }
 
@@ -62,6 +64,7 @@ export class GameTrigger {
 export class GameEffect {
   code: string;
 }
+
 export class GameEffectStory extends GameEffect {
   code: 'story';
   story: GameEffectStoryItem[];
@@ -69,21 +72,39 @@ export class GameEffectStory extends GameEffect {
     [].push.apply(play.story, effect.story.map(story => ({origin: story, published: false} as GamePlayStory) ));
   }
 }
+
 export class GameEffectStoryItem {
   code: string;
   read?: string;
 }
 
+export class GameEffectBadge extends GameEffect {
+  static run(play: GamePlay, location: string) {
+    play.badge.push(location);
+  }
+
+}
+
 export class GamePlay {
   situation: string[];
   story: GamePlayStory[];
+  badge: string[];
 
   constructor() {
     this.situation = [];
     this.story = [];
+    this.badge = [];
   }
 }
+
 export class GamePlayStory {
   origin: GameEffectStoryItem;
   published: boolean;
 }
+
+
+export class GamePlayBadge {
+  locationId: string
+}
+
+
