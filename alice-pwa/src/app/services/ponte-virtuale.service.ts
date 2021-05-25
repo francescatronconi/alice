@@ -80,7 +80,9 @@ export class GameEffectStoryItem {
 
 export class GameEffectBadge extends GameEffect {
   static run(play: GamePlay, location: string) {
-    play.badge.push(location);
+    if(!play.badge.includes(location)) {
+      play.badge.push(location);
+    }
   }
 
 }

@@ -18,9 +18,9 @@ export class SharedDataService {
     private http: HttpClient,
   ) { 
     this.locations = [
-      {id:"1", name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453, badge:'./assets/svg/cat.svg' },
-      {id:"2", name: 'Biblioteca Civica Agorà', icon: 'live', lon: 10.505977822127294, lat: 43.84181374706096, badge:''},
-      {id:"3", name: 'Conservatorio', icon: 'live', lon: 10.50644001063504, lat: 43.84288571680807, badge:''},
+      {id:"1", name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453},
+      {id:"2", name: 'Biblioteca Civica Agorà', icon: 'live', lon: 10.505977822127294, lat: 43.84181374706096},
+      {id:"3", name: 'Conservatorio', icon: 'live', lon: 10.50644001063504, lat: 43.84288571680807},
       //{name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453 },
       //{name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453 },
       //{name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453 },
@@ -28,7 +28,6 @@ export class SharedDataService {
     this.pv.loadGameScenario(`${environment.gameUrl}/game.json`)
     .then((scenario) => {
       this.scenario = scenario;
-      console.log("scenario", scenario)
       this.loadPlay();
     });
   }
@@ -55,7 +54,6 @@ export class SharedDataService {
   findNextStory() {
     let unpublished = this.play.story.filter(item => !item.published);
     this.currentStory = unpublished.length > 0 ? unpublished[0] : null ;
-    console.log(this.currentStory);
   }
 
   readCurrentStory() {
@@ -65,6 +63,7 @@ export class SharedDataService {
   }
 
   visitTappa(location: string) {
+    console.log("visitTappa", location)
     this.pv.visit(this.scenario, this.play, location);
     this.savePlay();
   }
@@ -92,6 +91,5 @@ export class MapLocation {
   icon: string;
   lat: number;
   lon: number;
-  badge:string;
 
 }

@@ -7,16 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BadgeComponent implements OnInit {
 
-  badgespath: any;
   badges: string[] =[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.badgespath = JSON.parse(localStorage.getItem("badges"))
-    if (this.badgespath !== null) {
-      this.badges.push(this.badgespath)
-    }
+    let localStoragePlay = JSON.parse(localStorage.getItem("ponte-virtuale-play"))
+    this.badges = localStoragePlay.badge
   }
 
 }
