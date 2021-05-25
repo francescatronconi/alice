@@ -69,7 +69,6 @@ export class MappaComponent implements OnInit {
   }
 
   startOlMap() {
-    console.log(this.currentposition)
     this.map = new Map({
       target: 'olmap',
       layers: [
@@ -107,7 +106,6 @@ export class MappaComponent implements OnInit {
           latitude: location.lat,
           name : location.name,
           id: location.id,
-          badge: location.badge
         })
         )
       }),
@@ -155,21 +153,12 @@ export class MappaComponent implements OnInit {
 
 function updateTappeLocalStorage(featureSelected: any) {
   var id = featureSelected.get('id');
-  var badgeicon = featureSelected.get('badge');
-  console.log(badgeicon)
   var tappe = JSON.parse(localStorage.getItem("tappe"));
   tappe = tappe ? tappe : [];
-  var badges = JSON.parse(localStorage.getItem("badges"));
-  badges = badges ? badges : [];
   var tappasuperato = tappe.find(element => element === id);
-  var badgevinto = badges.find(element => element === badgeicon);
   if (tappasuperato === undefined) {
     tappe.push(id);
     localStorage.setItem("tappe", JSON.stringify(tappe));
-  }
-  if (badgevinto === undefined && badgeicon !== '') {
-    badges.push(badgeicon);
-    localStorage.setItem("badges", JSON.stringify(badges));
   }
 }
 
