@@ -40,13 +40,14 @@
     content: "✖";
   }
 
-  a:link, a:visited{
+  a:link, a:visited, .btn {
     border: 2px solid gray;
     color: gray; 
     border-radius: 10px;
     padding:5px 10px;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
   }
 
   .button-portamiqui {
