@@ -11,7 +11,7 @@ export class PopupComponent implements OnInit {
   @Input() currentFeature: FeatureLike;
   @Input() position: any;
   @Output() close = new EventEmitter<boolean>();
-  @Output() gioca = new EventEmitter<String>();
+  @Output() gioca = new EventEmitter<FeatureLike>();
 
   constructor() { }
 
@@ -23,7 +23,7 @@ export class PopupComponent implements OnInit {
   }
 
   clickGioca() {
-    this.gioca.emit(this.currentFeature.get('id'));
+    this.gioca.emit(this.currentFeature);
   }
 
 }

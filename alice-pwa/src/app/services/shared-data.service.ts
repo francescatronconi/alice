@@ -28,7 +28,6 @@ export class SharedDataService {
     this.pv.loadGameScenario(`${environment.gameUrl}/game.json`)
     .then((scenario) => {
       this.scenario = scenario;
-      console.log("scenario", scenario)
       this.loadPlay();
     });
   }

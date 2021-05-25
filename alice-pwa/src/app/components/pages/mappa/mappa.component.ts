@@ -147,8 +147,8 @@ export class MappaComponent implements OnInit {
       this.overlay.setPosition(undefined);
   }
 
-  gioca(value: string): void {
-    this.shared.visitTappa(value);
+  gioca(location: FeatureLike): void {
+    this.shared.visitTappa(location.get('id'));
   }
 
 }

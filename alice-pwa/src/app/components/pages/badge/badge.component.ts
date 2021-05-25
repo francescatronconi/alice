@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { GameBadge } from 'src/app/services/ponte-virtuale.service';
+import { SharedDataService } from 'src/app/services/shared-data.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-badge',
@@ -7,16 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BadgeComponent implements OnInit {
 
-  badgespath: any;
-  badges: string[] =[];
-
-  constructor() { }
-
+  environment = environment;
+  
+  constructor(public shared: SharedDataService) { }
+  
   ngOnInit(): void {
-    this.badgespath = JSON.parse(localStorage.getItem("badges"))
-    if (this.badgespath !== null) {
-      this.badges.push(this.badgespath)
-    }
+  }
+  
+  badges(): GameBadge[] {
+    let m: {[id:string]: GameBadge} = {};
+    this.shared.scenario.badges.forEach(b => m[b.badge] = b);
+    return this.shared.play.badges.map(b => m[b]);
   }
 
 }

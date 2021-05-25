@@ -11,23 +11,23 @@ export class PonteVirtualeService {
   start(scenario: GameScenario, play: GamePlay) {
     scenario.rules
     .filter((rule) => rule.trigger.code === 'start')
-    .forEach((rule) => this.applyEffect(rule.effect, scenario, play, ""))
+    .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
     ;
   }
 
   visit(scenario: GameScenario, play: GamePlay, location: string) {
     scenario.rules
-    .filter((rule) => (rule.trigger.code === 'visit' && rule.trigger.locationid === location))
-    .forEach((rule) => this.applyEffect(rule.effect, scenario, play, location))
+    .filter((rule) => (rule.trigger.code === 'visit' && rule.trigger.location === location))
+    .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
     ;
   }
 
-  applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay, location: string): void {
+  applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
     if (effect.code === 'story') {
       GameEffectStory.run(effect as GameEffectStory, scenario, play);
     }
     if (effect.code === 'badge') {
-      GameEffectBadge.run(play, location);
+      GameEffectBadge.run(effect as GameEffectBadge, scenario, play);
     }
   }
 
@@ -44,6 +44,7 @@ export class PonteVirtualeService {
 export class GameScenario {
 
   rules: GameRule[];
+  badges: GameBadge[];
 
 }
 
@@ -57,7 +58,7 @@ export class GameRule {
 export class GameTrigger {
 
   code: string;
-  locationid: string;
+  location?: string;
 
 }
 
@@ -72,28 +73,27 @@ export class GameEffectStory extends GameEffect {
     [].push.apply(play.story, effect.story.map(story => ({origin: story, published: false} as GamePlayStory) ));
   }
 }
-
 export class GameEffectStoryItem {
   code: string;
   read?: string;
 }
 
 export class GameEffectBadge extends GameEffect {
-  static run(play: GamePlay, location: string) {
-    play.badge.push(location);
+  badge: string;
+  static run(effect: GameEffectBadge, scenario: GameScenario, play: GamePlay) {
+    if (!play.badges.includes(effect.badge)) play.badges.push(effect.badge);
   }
-
 }
 
 export class GamePlay {
   situation: string[];
   story: GamePlayStory[];
-  badge: string[];
+  badges: string[];
 
   constructor() {
     this.situation = [];
     this.story = [];
-    this.badge = [];
+    this.badges = [];
   }
 }
 
@@ -103,8 +103,9 @@ export class GamePlayStory {
 }
 
 
-export class GamePlayBadge {
-  locationId: string
+export class GameBadge {
+  badge: string;
+  src: string;
 }
 
 
