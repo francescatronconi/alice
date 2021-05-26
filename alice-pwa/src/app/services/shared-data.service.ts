@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { GamePlay, GamePlayStory, GameScenario, PonteVirtualeService } from './ponte-virtuale.service';
+import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService } from './ponte-virtuale.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class SharedDataService {
   scenario: GameScenario;
   play: GamePlay;
   currentStory: GamePlayStory;
+  options: Option[];
 
   constructor(
     private pv: PonteVirtualeService,
@@ -36,6 +37,7 @@ export class SharedDataService {
     this.play = new GamePlay();
     this.pv.start(this.scenario, this.play);
     this.findNextStory();
+    this.options = this.getOptions();
     this.savePlay();
   }
 
@@ -48,6 +50,7 @@ export class SharedDataService {
     if (saved) {
       this.play = JSON.parse(saved);
       this.findNextStory();
+      this.options = this.getOptions();
     }
   }
 
@@ -63,9 +66,12 @@ export class SharedDataService {
   }
 
   visitTappa(location: string) {
-    console.log("visitTappa", location)
     this.pv.visit(this.scenario, this.play, location);
     this.savePlay();
+  }
+
+  getOptions() {
+    return this.pv.getOptions(this.scenario, this.play);
   }
 
   getHtmlResource(url: string): Promise<string> {

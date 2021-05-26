@@ -27,8 +27,21 @@ export class PonteVirtualeService {
     if (effect.code === 'badge') {
       GameEffectBadge.run(effect as GameEffectBadge, scenario, play);
     }
+    if (effect.code === 'options') {
+      GameEffectOptions.run(effect as GameEffectOptions, scenario, play);
+    }
   }
 
+  getOptions(scenario: GameScenario, play: GamePlay) {
+    let options: Option[];
+    if(play.options.length > 0) {
+      scenario.options
+      .filter((gameOption) => gameOption.code === play.options[0]) 
+      .forEach((gameOption) => (options = gameOption.options))
+      }
+    return options;
+  }
+  
   constructor(
     private http: HttpClient,
   ) { }
@@ -43,6 +56,7 @@ export class GameScenario {
 
   rules: GameRule[];
   badges: GameBadge[];
+  options: GameOption[];
 
 }
 
@@ -83,15 +97,27 @@ export class GameEffectBadge extends GameEffect {
   }
 }
 
+export class GameEffectOptions extends GameEffect {
+  options: string;
+  story: GameEffectStoryItem[];
+  static run(effect: GameEffectOptions, scenario: GameScenario, play: GamePlay) {
+    if (!play.options.includes(effect.options)) play.options.push(effect.options);
+    if (effect.story) 
+    [].push.apply(play.story, effect.story.map(story => ({origin: story, published: false} as GamePlayStory) ));
+  }
+}
+
 export class GamePlay {
   situation: string[];
   story: GamePlayStory[];
   badges: string[];
+  options: string[];
 
   constructor() {
     this.situation = [];
     this.story = [];
     this.badges = [];
+    this.options = [];
   }
 }
 
@@ -104,6 +130,18 @@ export class GamePlayStory {
 export class GameBadge {
   badge: string;
   src: string;
+}
+
+export class GameOption {
+
+  code: string;
+  options: Option[];
+
+}
+
+export class Option {
+  text: string;
+  effect: GameEffect;
 }
 
 

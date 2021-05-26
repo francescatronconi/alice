@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoryPopupComponent } from './components/pages/story-popup/story-popup.component';
 import { BadgeComponent } from './components/pages/badge/badge.component';
 import { ReadStoryComponent } from './components/widgets/read-story/read-story.component';
+import { OptionPopupComponent } from './components/pages/option-popup/option-popup.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ReadStoryComponent } from './components/widgets/read-story/read-story.c
     StoryPopupComponent,
     BadgeComponent,
     ReadStoryComponent,
+    OptionPopupComponent,
   ],
   imports: [
     BrowserModule,

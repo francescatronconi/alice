@@ -10,12 +10,33 @@
         ]}},
         {"trigger": {"code": "visit", "location": "2"}, "effect": {"code": "badge", "badge": "badge-01"}},
         {"trigger": {"code": "visit", "location": "3"}, "effect": {"code": "options", "story": [
-            {"code": "read", "read": "intro-1.html"},
-            {"code": "read", "read": "intro-2.html"}
-        ],
-        "options": []}}
+            {"code": "read", "read": "intro-1.html"}
+        ], 
+        "options": "options-A"}
+        }
+    ],  
+    "options": [
+        {"code": "options-A", "options": [
+            {"text": "Busta numero 1", "effect": {"code": "badge", "badge": "badge-02"}},
+            {"text": "Busta numero 2", "effect": {"code": "story", "story": [
+                {"code": "read", "read": "intro-1.html"},
+                {"code": "read", "read": "intro-2.html"}
+            ]}},
+            {"text": "Busta numero 3", "effect": {"code": "options", "story": [
+                {"code": "read", "read": "intro-1.html"}
+            ], 
+            "options": "options-B"}}
+        ]},
+        {"code": "options-B", "options": [
+            {"text": "Busta numero 4", "effect": {"code": "badge", "badge": "badge-02"}},
+            {"text": "Busta numero 5", "effect": {"code": "story", "story": [
+                {"code": "read", "read": "intro-1.html"},
+                {"code": "read", "read": "intro-2.html"}
+            ]}}
+        ]}
     ],
     "badges": [
-        {"badge": "badge-01", "src": "cat.svg"}
+        {"badge": "badge-01", "src": "cat.svg"},
+        {"badge": "badge-02", "src": "cat.svg"}
     ]
 }
