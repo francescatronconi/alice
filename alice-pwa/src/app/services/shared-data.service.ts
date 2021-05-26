@@ -74,6 +74,17 @@ export class SharedDataService {
     return this.pv.getOptions(this.scenario, this.play);
   }
 
+  setOption(option : Option) {
+    this.pv.setOption(this.play, this.scenario, option)
+    this.findNextStory();
+    this.options = this.getOptions();
+    this.savePlay();
+  }
+
+  removeOptions() {
+    this.options = null
+  }
+
   getHtmlResource(url: string): Promise<string> {
     return this.http
     .get<string>(`${environment.gameUrl}/${url}`, {responseType: 'text' as 'json'})

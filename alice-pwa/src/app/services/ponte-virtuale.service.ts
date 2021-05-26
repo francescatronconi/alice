@@ -41,6 +41,13 @@ export class PonteVirtualeService {
       }
     return options;
   }
+
+  setOption(play: GamePlay, scenario: GameScenario, option: Option) {
+    this.applyEffect(option.effect, scenario, play)
+    play.options.shift();
+    console.log("play", play)
+    console.log("option", option)
+  }
   
   constructor(
     private http: HttpClient,

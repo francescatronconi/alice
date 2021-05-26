@@ -24,7 +24,6 @@ export class DiarioComponent implements OnInit {
   }
 
   initStorySoFar() {
-    console.log("play",this.shared.play)
     this.storySoFar = this.shared.play.story.filter(item => item.published);
     this.storyToRead = this.shared.play.story.filter(item => !item.published);
   }
