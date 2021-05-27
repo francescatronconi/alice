@@ -1,0 +1,6 @@
+<div class="fullpage alice" *ngIf="shared.play">
+    <h1>Collezione Badge</h1>
+    <div *ngFor="let badge of badges()" >
+        <img src="{{environment.gameUrl}}/{{badge.src}}" height="50px" width="50px" />
+    </div>
+</div>

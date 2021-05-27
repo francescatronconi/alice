@@ -1,0 +1,8 @@
+<div class="blackdim"></div>
+<div class="alice fullpage" >
+    <div class="modal">
+        <div *ngFor="let option of options">
+            <div (click)="clickOption(option)">{{option.text}}</div>
+        </div>
+    </div>
+</div>

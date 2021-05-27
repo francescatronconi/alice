@@ -14,5 +14,6 @@ GAMESDIR=$HACKGIT/alice/games
 
 REMOTE="ssh dantar "
 
+rsync --delete -varzh $GAMESDIR/$GAME $HACKGIT/alice/alice-pwa/src/assets
 rsync --delete -varzh $GAMESDIR/$GAME dantar:/home/daniele/html/resources
 

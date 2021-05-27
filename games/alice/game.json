@@ -1,0 +1,21 @@
+{
+    "rules": [
+        {"trigger": {"code": "start"}, "effect": {"code": "story", "story": [
+            {"code": "read", "read": "intro-1.html"},
+            {"code": "read", "read": "intro-2.html"}
+        ]}},
+        {"trigger": {"code": "visit", "location": "1"}, "effect": {"code": "story", "story": [
+            {"code": "read", "read": "intro-1.html"},
+            {"code": "read", "read": "intro-2.html"}
+        ]}},
+        {"trigger": {"code": "visit", "location": "2"}, "effect": {"code": "badge", "badge": "badge-01"}},
+        {"trigger": {"code": "visit", "location": "3"}, "effect": {"code": "options", "story": [
+            {"code": "read", "read": "intro-1.html"},
+            {"code": "read", "read": "intro-2.html"}
+        ],
+        "options": []}}
+    ],
+    "badges": [
+        {"badge": "badge-01", "src": "cat.svg"}
+    ]
+}
