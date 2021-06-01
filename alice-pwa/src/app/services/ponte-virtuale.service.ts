@@ -9,14 +9,14 @@ export class PonteVirtualeService {
 
   start(scenario: GameScenario, play: GamePlay) {
     scenario.rules
-    .filter((rule) => rule.trigger.code === 'start')
+    .filter((rule) => rule.trigger === 'start')
     .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
     ;
   }
 
   visit(scenario: GameScenario, play: GamePlay, location: string) {
     scenario.rules
-    .filter((rule) => (rule.trigger.code === 'visit' && rule.trigger.location === location))
+    .filter((rule) => (rule.trigger.match(/visit:(.*)/) && rule.trigger.match(/visit:(.*)/)[1] === location))
     .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
     ;
   }
@@ -74,15 +74,8 @@ export class GameScenario {
 
 export class GameRule {
 
-  trigger: GameTrigger;
+  trigger: string;
   effect: GameEffect;
-
-}
-
-export class GameTrigger {
-
-  code: string;
-  location?: string;
 
 }
 
