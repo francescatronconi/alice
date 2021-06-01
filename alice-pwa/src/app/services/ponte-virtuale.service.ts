@@ -49,8 +49,6 @@ export class PonteVirtualeService {
   setOption(play: GamePlay, scenario: GameScenario, option: Option) {
     this.applyEffect(option.effect, scenario, play)
     play.options.shift();
-    console.log("play", play)
-    console.log("option", option)
   }
   
   constructor(
@@ -130,6 +128,7 @@ export class GamePlay {
   story: GamePlayStory[];
   badges: string[];
   options: string[];
+  locationScore: [];
   score: number;
 
   constructor() {
@@ -137,6 +136,7 @@ export class GamePlay {
     this.story = [];
     this.badges = [];
     this.options = [];
+    this.locationScore = [];
     this.score = 0;
   }
 }
