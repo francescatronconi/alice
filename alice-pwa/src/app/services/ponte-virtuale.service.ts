@@ -30,6 +30,9 @@ export class PonteVirtualeService {
     if (effect.code === 'options') {
       GameEffectOptions.run(effect as GameEffectOptions, scenario, play);
     }
+    if (effect.code === 'score') {
+      GameEffectScore.run(effect as GameEffectScore, scenario, play);
+    }
   }
 
   getOptions(scenario: GameScenario, play: GamePlay) {
@@ -104,6 +107,13 @@ export class GameEffectBadge extends GameEffect {
   }
 }
 
+export class GameEffectScore extends GameEffect {
+ score: number;
+  static run(effect: GameEffectScore, scenario: GameScenario, play: GamePlay) {
+    play.score += effect.score;
+  }
+}
+
 export class GameEffectOptions extends GameEffect {
   options: string;
   story: GameEffectStoryItem[];
@@ -119,12 +129,14 @@ export class GamePlay {
   story: GamePlayStory[];
   badges: string[];
   options: string[];
+  score: number;
 
   constructor() {
     this.situation = [];
     this.story = [];
     this.badges = [];
     this.options = [];
+    this.score = 0;
   }
 }
 
