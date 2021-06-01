@@ -31,7 +31,7 @@ export class DiarioComponent implements OnInit {
   initListaTappeId() {
     this.listaTappeId = JSON.parse(localStorage.getItem("tappe"))
     if (this.listaTappeId !== null) {
-      this.shared.locations.map(location => {
+      this.shared.scenario.locations.map(location => {
         if(this.listaTappeId.includes(location.id)) {
           this.locationsVisitate.push(location.name)
         }
