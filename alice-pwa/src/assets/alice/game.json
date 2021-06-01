@@ -1,38 +1,31 @@
 {
     "rules": [
-        {"trigger": "start", "effect": {"code": "story", "story": [
-            {"code": "read", "read": "intro-1.html"},
-            {"code": "read", "read": "intro-2.html"}
+        {"trigger": "start", "effect": {"story": [
+            {"read": "intro-1.html"},
+            {"read": "intro-2.html"}
         ]}},
-        {"trigger": "visit:cattedrale", "effect": {"code": "story", "story": [
-            {"code": "read", "read": "intro-1.html"},
-            {"code": "read", "read": "intro-2.html"}
+        {"trigger": "visit:cattedrale", "effect": {"story": [
+            {"read": "intro-1.html"},
+            {"read": "intro-2.html"}
         ]}},
-        {"trigger": "visit:conservatorio", "effect": {"code": "badge", "badge": "badge-01"}},
-        {"trigger": "visit:conservatorio", "effect": {"code": "score", "score": 3}},
-        {"trigger": "visit:biblioteca", "effect": {"code": "options", "story": [
-            {"code": "read", "read": "intro-3.html"}
-        ], 
-        "options": "options-A"}
-        }
+        {"trigger": "visit:conservatorio", "effect": {"badge": "badge-01"}},
+        {"trigger": "visit:conservatorio", "effect": {"score": 3}},
+        {"trigger": "visit:biblioteca", "effect": {"options": "options-A"}}
     ],  
     "options": [
-        {"code": "options-A", "options": [
-            {"text": "Busta numero 1", "effect": {"code": "badge", "badge": "badge-02"}},
-            {"text": "Busta numero 2", "effect": {"code": "story", "story": [
-                {"code": "read", "read": "intro-4.html"},
-                {"code": "read", "read": "intro-5.html"}
+        {"id": "options-A", "options": [
+            {"text": "Busta numero 1", "effect": {"badge": "badge-02"}},
+            {"text": "Busta numero 2", "effect": {"story": [
+                {"read": "intro-4.html"},
+                {"read": "intro-5.html"}
             ]}},
-            {"text": "Busta numero 3", "effect": {"code": "options", "story": [
-                {"code": "read", "read": "intro-5.html"}
-            ], 
-            "options": "options-B"}}
+            {"text": "Busta numero 3", "effect": {"options": "options-B"}}
         ]},
-        {"code": "options-B", "options": [
-            {"text": "Busta numero 4", "effect": {"code": "badge", "badge": "badge-02"}},
-            {"text": "Busta numero 5", "effect": {"code": "story", "story": [
-                {"code": "read", "read": "intro-1.html"},
-                {"code": "read", "read": "intro-2.html"}
+        {"id": "options-B", "options": [
+            {"text": "Busta numero 4", "effect": {"badge": "badge-02"}},
+            {"text": "Busta numero 5", "effect": {"story": [
+                {"read": "intro-1.html"},
+                {"read": "intro-2.html"}
             ]}}
         ]}
     ],

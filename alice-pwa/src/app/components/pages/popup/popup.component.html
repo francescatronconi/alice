@@ -1,7 +1,7 @@
 <div id="popup" class="ol-popup">
     <a id="popup-closer" class="ol-popup-closer" (click)="clickCloseLocation()"></a>
     <div id="popup-content" *ngIf="currentFeature">
-        {{currentFeature.get('name')}}
+        <div>{{currentFeature.get('name')}}</div>
         <div class="button-portamiqui">
             <a *ngIf="currentFeature.get('id')" target="_blank" class="btn"
                 href="https://www.google.com/maps/dir/{{position.coords.latitude}},{{position.coords.longitude}}/{{currentFeature.get('latitude')}},{{currentFeature.get('longitude')}}">
@@ -9,10 +9,8 @@
             </a>
         </div>
 
-        <div class="button-gioca">
-            <a *ngIf="currentFeature.get('id')"  href="" class="btn" (click)="clickGioca()">
-                gioca
-            </a>
+        <div class="button-gioca btn" *ngIf="currentFeature.get('id')" (click)="clickGioca()">
+            gioca
         </div>
     </div>
 </div>
