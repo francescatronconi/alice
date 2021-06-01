@@ -19,9 +19,9 @@ export class SharedDataService {
     private http: HttpClient,
   ) { 
     this.locations = [
-      {id:"1", name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453},
-      {id:"2", name: 'Biblioteca Civica Agorà', icon: 'live', lon: 10.505977822127294, lat: 43.84181374706096},
-      {id:"3", name: 'Conservatorio', icon: 'live', lon: 10.50644001063504, lat: 43.84288571680807},
+      {id:"1", name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453, near: true},
+      {id:"2", name: 'Biblioteca Civica Agorà', icon: 'live', lon: 10.505977822127294, lat: 43.84181374706096, near: true},
+      {id:"3", name: 'Conservatorio', icon: 'live', lon: 10.50644001063504, lat: 43.84288571680807, near:true},
       //{name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453 },
       //{name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453 },
       //{name: 'Giardino della cattedrale', icon: 'live', lon: 10.506664809575186, lat: 43.84051516173453 },
@@ -108,5 +108,6 @@ export class MapLocation {
   icon: string;
   lat: number;
   lon: number;
+  near: boolean;
 
 }

@@ -16,6 +16,7 @@ import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 import { PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-mappa',
@@ -106,6 +107,7 @@ export class MappaComponent implements OnInit {
           latitude: location.lat,
           name : location.name,
           id: location.id,
+          near: location.near,
         })
         )
       }),
@@ -133,13 +135,22 @@ export class MappaComponent implements OnInit {
     var coordinate = this.map.getEventCoordinate(evt)
     if(feature.length > 0) {
       this.currentFeature = feature[0];
-      if (feature[0].get('id') != null) {
-        updateTappeLocalStorage(this.currentFeature);
-      }
+      this.checkDistance(feature);
+      // if (feature[0].get('id') != null) {
+      //   updateTappeLocalStorage(this.currentFeature);
+      // }
       this.overlay.setPosition(coordinate);
     }
   };
 
+
+  private checkDistance(feature: FeatureLike[]) {
+    if(feature[0].get('near')) {
+      let difQuadLat = Math.pow(feature[0].get('latitude') - this.position.coords.latitude,2)
+      let difQuadLon = Math.pow(feature[0].get('longitude') - this.position.coords.longitude, 2)
+      let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000
+    }
+  }
 
   closeLocation(value: boolean): void {
       this.overlay.setPosition(undefined);
