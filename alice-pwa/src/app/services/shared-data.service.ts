@@ -99,5 +99,6 @@ export class MapLocation {
   icon: string;
   lat: number;
   lon: number;
+  near: boolean;
 
 }
