@@ -10,6 +10,7 @@ export class PopupComponent implements OnInit {
 
   @Input() currentFeature: FeatureLike;
   @Input() position: any;
+  @Input() nearToPlay:boolean;
   @Output() close = new EventEmitter<boolean>();
   @Output() gioca = new EventEmitter<FeatureLike>();
 

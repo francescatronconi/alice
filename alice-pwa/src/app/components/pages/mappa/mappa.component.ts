@@ -15,6 +15,7 @@ import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class MappaComponent implements OnInit {
   currentposition: number[];
   currentFeature: FeatureLike;
   overlay: Overlay;
+  nearToPlay:boolean;
 
   constructor(
     private tickers: TickersService,
@@ -133,6 +135,7 @@ export class MappaComponent implements OnInit {
     var coordinate = this.map.getEventCoordinate(evt)
     if(feature.length > 0) {
       this.currentFeature = feature[0];
+      this.nearToPlay= true;
       this.checkDistance(feature);
       // if (feature[0].get('id') != null) {
       //   updateTappeLocalStorage(this.currentFeature);
@@ -147,6 +150,9 @@ export class MappaComponent implements OnInit {
       let difQuadLat = Math.pow(feature[0].get('latitude') - this.position.coords.latitude,2)
       let difQuadLon = Math.pow(feature[0].get('longitude') - this.position.coords.longitude, 2)
       let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000
+      if (distance > environment.nearby) {
+        this.nearToPlay=false;
+      }
     }
   }
 
