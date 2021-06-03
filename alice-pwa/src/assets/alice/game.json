@@ -8,7 +8,8 @@
             {"code": "read", "read": "intro-1.html"},
             {"code": "read", "read": "intro-2.html"}
         ]}},
-        {"trigger": {"code": "visit", "location": "2"}, "effect": {"code": "score", "score": 3}},
+        {"trigger": {"code": "visit", "location": "2"}, "effect": {"code": "score", "score": 3},
+            "condition": {"badge": "badge-02"}},
         {"trigger": {"code": "visit", "location": "3"}, "effect": {"code": "options", "story": [
             {"code": "read", "read": "intro-3.html"}
         ], 
