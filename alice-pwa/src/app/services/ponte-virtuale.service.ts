@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { enableDebugTools } from '@angular/platform-browser';
 import { MapLocation } from './shared-data.service';
 
 @Injectable({
@@ -17,8 +18,34 @@ export class PonteVirtualeService {
   visit(scenario: GameScenario, play: GamePlay, location: string) {
     scenario.rules
     .filter((rule) => (rule.trigger.code === 'visit' && rule.trigger.location === location))
-    .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
+    .forEach((rule) => this.apply(rule, scenario, play))
     ;
+  }
+
+  apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
+   var enabled = this.checkCondition(rule, play);
+    if(enabled) {this.applyEffect(rule.effect, scenario, play)}
+    else {
+
+    }
+  }
+
+  checkCondition(rule: GameRule, play:GamePlay): boolean {
+    let enabled: boolean = true;
+    if(rule.condition != null){
+      enabled = this.isEnabledCondition(rule.condition, play);
+    }
+    return enabled;
+  }
+
+  isEnabledCondition(condition: GameCondition, play: GamePlay): boolean {
+    var enabled: boolean;
+    if(condition.badge != undefined) {
+      enabled = play.badges.includes(condition.badge);
+    } else if  (condition.nobadge != undefined) {
+      enabled = !play.badges.includes(condition.badge);
+    }
+    return enabled;
   }
 
   applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
@@ -74,7 +101,8 @@ export class GameRule {
 
   trigger: GameTrigger;
   effect: GameEffect;
-
+  condition: GameCondition;
+  
 }
 
 export class GameTrigger {
@@ -85,7 +113,15 @@ export class GameTrigger {
 }
 
 export class GameEffect {
+
   code: string;
+}
+
+export class GameCondition {
+  
+  badge: string;
+  nobadge: string;
+  enabled: boolean;
 }
 
 export class GameEffectStory extends GameEffect {
@@ -95,6 +131,7 @@ export class GameEffectStory extends GameEffect {
     [].push.apply(play.story, effect.story.map(story => ({origin: story, published: false} as GamePlayStory) ));
   }
 }
+
 export class GameEffectStoryItem {
   code: string;
   read?: string;
