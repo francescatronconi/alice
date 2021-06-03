@@ -10,7 +10,6 @@
         ]},
         "condition": {"nobadge": "badge-02"}
         },
-        {"trigger": {"code": "visit", "location": "3"}, "effect": {"code": "badge", "badge": "badge-02"}},
         {"trigger": {"code": "visit", "location": "2"}, "effect": {"code": "score", "score": 3},
         "condition": {"badge": "badge-02"}},
         {"trigger": {"code": "visit", "location": "3"}, "effect": {"code": "options", "story": [
