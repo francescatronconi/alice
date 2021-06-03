@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   //gameUrl: 'https://www.dantar.it/resources/alice',
   gameUrl: './assets/alice',
-  nearby: 10000,
+  nearby: 10000
 };
 
 /*
