@@ -11,8 +11,7 @@ import { environment } from 'src/environments/environment';
 export class BadgeComponent implements OnInit {
 
   environment = environment;
-  saved = JSON.parse(localStorage.getItem("ponte-virtuale-play"));
-  punteggio = 'Il punteggio è ' + this.saved.score;
+  punteggio = 'Il punteggio è ' + this.shared.play.score;
   
   constructor(public shared: SharedDataService) { }
   
