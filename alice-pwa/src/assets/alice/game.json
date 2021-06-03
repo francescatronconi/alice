@@ -7,7 +7,9 @@
         {"trigger": {"code": "visit", "location": "1"}, "effect": {"code": "story", "story": [
             {"code": "read", "read": "intro-1.html"},
             {"code": "read", "read": "intro-2.html"}
-        ]}},
+        ]},
+        "condition": {"nobadge": "badge-02"}
+        },
         {"trigger": {"code": "visit", "location": "2"}, "effect": {"code": "score", "score": 3},
             "condition": {"badge": "badge-02"}},
         {"trigger": {"code": "visit", "location": "3"}, "effect": {"code": "options", "story": [
