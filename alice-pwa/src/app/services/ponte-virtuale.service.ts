@@ -35,6 +35,7 @@ export class PonteVirtualeService {
     if(rule.condition != null){
       enabled = this.isEnabledCondition(rule.condition, play);
     }
+    console.log("enable: " + enabled);
     return enabled;
   }
 

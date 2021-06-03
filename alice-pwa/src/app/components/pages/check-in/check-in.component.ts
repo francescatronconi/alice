@@ -8,7 +8,9 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 })
 export class CheckInComponent implements OnInit {
 
-   punteggio = 'Il punteggio è ' + this.shared.play.score;
+  saved = JSON.parse(localStorage.getItem("ponte-virtuale-play"));
+  punteggio = 'Il punteggio è ' + this.saved.score;
+  // punteggio = 'Il punteggio è ' + this.shared.play.score;
 
   constructor(
     public shared: SharedDataService
