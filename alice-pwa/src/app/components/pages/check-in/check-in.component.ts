@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckInComponent implements OnInit {
 
+  saved = JSON.parse(localStorage.getItem("ponte-virtuale-play"));
+  punteggio = 'Il punteggio è ' + this.saved.score;
+
   constructor() { }
 
   ngOnInit(): void {
