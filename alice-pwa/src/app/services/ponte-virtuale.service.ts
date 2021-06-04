@@ -10,14 +10,14 @@ export class PonteVirtualeService {
 
   start(scenario: GameScenario, play: GamePlay) {
     scenario.rules
-    .filter((rule) => rule.trigger.code === 'start')
+    .filter((rule) => rule.trigger === 'start')
     .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
     ;
   }
 
   visit(scenario: GameScenario, play: GamePlay, location: string) {
     scenario.rules
-    .filter((rule) => (rule.trigger.code === 'visit' && rule.trigger.location === location))
+    .filter((rule) => (rule.trigger.match(/visit:(.*)/) && rule.trigger.match(/visit:(.*)/)[1] === location))
     .forEach((rule) => this.apply(rule, scenario, play))
     ;
   }
@@ -49,16 +49,16 @@ export class PonteVirtualeService {
   }
 
   applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
-    if (effect.code === 'story') {
+    if (GameEffectStory.valid(effect as GameEffectStory)) {
       GameEffectStory.run(effect as GameEffectStory, scenario, play);
     }
-    if (effect.code === 'badge') {
+    if (GameEffectBadge.valid(effect as GameEffectBadge)) {
       GameEffectBadge.run(effect as GameEffectBadge, scenario, play);
     }
-    if (effect.code === 'options') {
+    if (GameEffectOptions.valid(effect as GameEffectOptions)) {
       GameEffectOptions.run(effect as GameEffectOptions, scenario, play);
     }
-    if (effect.code === 'score') {
+    if (GameEffectScore.valid(effect as GameEffectScore)) {
       GameEffectScore.run(effect as GameEffectScore, scenario, play);
     }
   }
@@ -67,7 +67,7 @@ export class PonteVirtualeService {
     let options: Option[];
     if(play.options.length > 0) {
       scenario.options
-      .filter((gameOption) => gameOption.code === play.options[0]) 
+      .filter((gameOption) => gameOption.id === play.options[0]) 
       .forEach((gameOption) => (options = gameOption.options))
       }
     return options;
@@ -99,22 +99,13 @@ export class GameScenario {
 
 export class GameRule {
 
-  trigger: GameTrigger;
+  trigger: string;
   effect: GameEffect;
   condition: GameCondition;
   
 }
 
-export class GameTrigger {
-
-  code: string;
-  location?: string;
-
-}
-
 export class GameEffect {
-
-  code: string;
 }
 
 export class GameCondition {
@@ -125,15 +116,16 @@ export class GameCondition {
 }
 
 export class GameEffectStory extends GameEffect {
-  code: 'story';
   story: GameEffectStoryItem[];
   static run(effect: GameEffectStory, scenario: GameScenario, play: GamePlay) {
     [].push.apply(play.story, effect.story.map(story => ({origin: story, published: false} as GamePlayStory) ));
   }
+  static valid(effect: GameEffectStory) {
+    return effect.story ? true : false;
+  }
 }
 
 export class GameEffectStoryItem {
-  code: string;
   read?: string;
 }
 
@@ -142,6 +134,9 @@ export class GameEffectBadge extends GameEffect {
   static run(effect: GameEffectBadge, scenario: GameScenario, play: GamePlay) {
     if (!play.badges.includes(effect.badge)) play.badges.push(effect.badge);
   }
+  static valid(effect: GameEffectBadge) {
+    return effect.badge ? true : false;
+  }
 }
 
 export class GameEffectScore extends GameEffect {
@@ -149,15 +144,18 @@ export class GameEffectScore extends GameEffect {
   static run(effect: GameEffectScore, scenario: GameScenario, play: GamePlay) {
     play.score += effect.score;
   }
+  static valid(effect: GameEffectScore) {
+    return effect.score ? true : false;
+  }
 }
 
 export class GameEffectOptions extends GameEffect {
   options: string;
-  story: GameEffectStoryItem[];
   static run(effect: GameEffectOptions, scenario: GameScenario, play: GamePlay) {
     if (!play.options.includes(effect.options)) play.options.push(effect.options);
-    if (effect.story) 
-    [].push.apply(play.story, effect.story.map(story => ({origin: story, published: false} as GamePlayStory) ));
+  }
+  static valid(effect: GameEffectOptions) {
+    return effect.options ? true : false;
   }
 }
 
@@ -191,10 +189,8 @@ export class GameBadge {
 }
 
 export class GameOption {
-
-  code: string;
+  id: string;
   options: Option[];
-
 }
 
 export class Option {
