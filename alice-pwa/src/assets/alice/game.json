@@ -10,8 +10,11 @@
             ]}, 
             "condition": {"nobadge": "badge-02"}
         },
-        {"trigger": "visit:conservatorio", "effect": {"badge": "badge-03"}, "condition": {"badge": "badge-02"}},
-        {"trigger": "visit:conservatorio", "effect": {"score": 3}, "condition": {"badge": "badge-02"}},
+        {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
+            "rules": [
+                {"condition": {"badge": "badge-01"},"effect": {"badge": "badge-03"}},
+                {"effect": {"score": 3}}
+            ]},
         {"trigger": "visit:biblioteca", "effect": {"options": "options-A"}}
     ],  
     "options": [
@@ -36,8 +39,8 @@
         {"badge": "badge-02", "src": "cat.svg"}
     ],
     "locations": [
-        {"id":"cattedrale", "name": "Giardino della cattedrale", "icon": "./assets/svg/cat.svg", "lon": 10.506664809575186, "lat": 43.84051516173453},
-        {"id":"biblioteca", "name": "Biblioteca Civica Agorà", "icon": "./assets/svg/horse.svg", "lon": 10.505977822127294, "lat": 43.84181374706096},
-        {"id":"conservatorio", "name": "Conservatorio", "icon": "./assets/svg/cat.svg", "lon": 10.50644001063504, "lat": 43.84288571680807}    
+        {"id":"cattedrale", "name": "Giardino della cattedrale", "icon": "./assets/svg/cat.svg", "lon": 10.506664809575186, "lat": 43.84051516173453, "near": true},
+        {"id":"biblioteca", "name": "Biblioteca Civica Agorà", "icon": "./assets/svg/horse.svg", "lon": 10.505977822127294, "lat": 43.84181374706096, "near": true},
+        {"id":"conservatorio", "name": "Conservatorio", "icon": "./assets/svg/cat.svg", "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
     ]
 }
