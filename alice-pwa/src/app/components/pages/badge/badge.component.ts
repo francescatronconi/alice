@@ -12,13 +12,11 @@ export class BadgeComponent implements OnInit {
 
   environment = environment;
   punteggio:number;
-    // punteggio = 'Il punteggio è ' + this.shared.play.score;
   
   constructor(public shared: SharedDataService) { }
   
   ngOnInit(): void {
     this.punteggio = this.shared.play.score
-    console.log("puteggio", this.punteggio)
   }
   
   badges(): GameBadge[] {

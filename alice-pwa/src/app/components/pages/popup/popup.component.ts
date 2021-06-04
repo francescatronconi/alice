@@ -25,6 +25,7 @@ export class PopupComponent implements OnInit {
 
   clickGioca() {
     this.gioca.emit(this.currentFeature);
+    this.close.emit(true)
   }
 
 }

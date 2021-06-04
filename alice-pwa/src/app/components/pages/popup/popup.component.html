@@ -9,11 +9,14 @@
             </a>
         </div>
 
-        <div class="button-gioca">
-            <a *ngIf="currentFeature.get('id') && nearToPlay; else message"  href="" class="btn" (click)="clickGioca()">
+        <div class="button-gioca btn" *ngIf="currentFeature.get('id') && nearToPlay; else message" (click)="clickGioca()">
+            gioca
+        </div>
+         <!-- <div class="button-gioca">
+            <a *ngIf="currentFeature.get('id')"  href="" class="btn" (click)="clickGioca()">
                 gioca
             </a>
-        </div>
+        </div> -->
         <ng-template #message>non sei abbastanza vicino per giocare la tappa.</ng-template>
     </div>
 </div>
