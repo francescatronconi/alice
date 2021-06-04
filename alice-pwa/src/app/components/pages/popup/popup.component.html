@@ -8,14 +8,11 @@
                 portami qui
             </a>
         </div>
-
         <div class="button-gioca">
-            <a *ngIf="currentFeature.get('id')"  href="" class="btn" (click)="clickGioca()">
+            <a *ngIf="currentFeature.get('id') && nearToPlay; else message"  href="" class="btn" (click)="clickGioca()">
                 gioca
             </a>
+            <ng-template #message>non sei abbastanza vicino per giocare la tappa.</ng-template>
         </div>
-    </div>
-    <div id="popup-content" *ngIf="currentFeature === null">
-        ciao
     </div>
 </div>
