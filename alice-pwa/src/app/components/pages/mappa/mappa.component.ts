@@ -16,6 +16,8 @@ import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 import { environment } from 'src/environments/environment';
+import { features } from 'process';
+import { style } from '@angular/animations';
 
 
 @Component({
@@ -99,9 +101,9 @@ export class MappaComponent implements OnInit {
       })
     });
     this.map.addLayer(this.layer);
-    this.map.addLayer(new VectorLayer({
-      source: new VectorSource({
-        features: this.shared.scenario.locations.map(location => new Feature({
+    let listFeature = []
+    this.shared.scenario.locations.map(location => {
+        let feature = new Feature({
           geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
           longitude : location.lon,
           latitude: location.lat,
@@ -109,15 +111,18 @@ export class MappaComponent implements OnInit {
           id: location.id,
           near: location.near,
         })
-        )
-      }),
-      style: new Style({
-        image: new Icon({
-          anchor: [0.5, 0.5],
-          src: './assets/svg/cat.svg',
-        })
-      }),
-    }));
+        let style = new Style({
+          image: new Icon({
+            anchor: [0.5, 0.5],
+            src: location.icon,
+          })
+        }) 
+        feature.setStyle(style)
+        listFeature.push(feature)
+    })
+    this.map.addLayer(new VectorLayer({
+      source: new VectorSource({features: listFeature})
+    }))
     this.overlay = new Overlay({
       element: document.getElementById('popup'),
       autoPan: true,
@@ -126,6 +131,7 @@ export class MappaComponent implements OnInit {
       }
     });
     this.map.addOverlay(this.overlay)
+
   }
 
   clickTappa(evt: any) {
