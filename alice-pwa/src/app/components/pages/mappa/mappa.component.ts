@@ -14,7 +14,7 @@ import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
-import { SharedDataService } from 'src/app/services/shared-data.service';
+import { MapLocation, SharedDataService } from 'src/app/services/shared-data.service';
 import { environment } from 'src/environments/environment';
 import { features } from 'process';
 import { style } from '@angular/animations';
@@ -118,7 +118,9 @@ export class MappaComponent implements OnInit {
           })
         }) 
         feature.setStyle(style)
-        listFeature.push(feature)
+        if(!location.condition || this.shared.play.badges.includes(location.condition)) {
+            listFeature.push(feature)
+        }
     })
     this.map.addLayer(new VectorLayer({
       source: new VectorSource({features: listFeature})
@@ -149,7 +151,6 @@ export class MappaComponent implements OnInit {
       this.overlay.setPosition(coordinate);
     }
   };
-
 
   private checkDistance(feature: FeatureLike[]) {
     if(feature[0].get('near')) {

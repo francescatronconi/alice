@@ -19,10 +19,10 @@
     ],  
     "options": [
         {"id": "options-A", "options": [
-            {"text": "Busta numero 1", "effect": {"badge": "badge-02"}},
+            {"text": "Busta numero 1", "effect": {"badge": "badge-03"}},
             {"text": "Busta numero 2", "effect": {"story": [
-                {"read": "intro-4.html"},
-                {"read": "intro-5.html"}
+                {"read": "intro-2.html"},
+                {"read": "intro-1.html"}
             ]}},
             {"text": "Busta numero 3", "effect": {"options": "options-B"}}
         ]},
@@ -36,11 +36,15 @@
     ],
     "badges": [
         {"badge": "badge-01", "src": "cat.svg"},
-        {"badge": "badge-02", "src": "cat.svg"}
+        {"badge": "badge-02", "src": "cat.svg"},
+        {"badge": "badge-03", "src": "horse.svg"}
     ],
     "locations": [
-        {"id":"cattedrale", "name": "Giardino della cattedrale", "icon": "./assets/svg/cat.svg", "lon": 10.506664809575186, "lat": 43.84051516173453, "near": true},
-        {"id":"biblioteca", "name": "Biblioteca Civica Agorà", "icon": "./assets/svg/horse.svg", "lon": 10.505977822127294, "lat": 43.84181374706096, "near": true},
-        {"id":"conservatorio", "name": "Conservatorio", "icon": "./assets/svg/cat.svg", "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
+        {"id":"cattedrale", "name": "Giardino della cattedrale", "icon": "./assets/svg/cat.svg", 
+            "lon": 10.506664809575186, "lat": 43.84051516173453, "near": true,  "condition": "badge-03"},
+        {"id":"biblioteca", "name": "Biblioteca Civica Agorà", "icon": "./assets/svg/horse.svg", 
+            "lon": 10.505977822127294, "lat": 43.84181374706096, "near": true},
+        {"id":"conservatorio", "name": "Conservatorio", "icon": "./assets/svg/cat.svg", 
+            "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
     ]
 }
