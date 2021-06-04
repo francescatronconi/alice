@@ -45,6 +45,7 @@ export class PonteVirtualeService {
     } else if  (condition.nobadge != undefined) {
       enabled = !play.badges.includes(condition.nobadge);
     }
+    console.log("enabled: " + enabled)
     return enabled;
   }
 
