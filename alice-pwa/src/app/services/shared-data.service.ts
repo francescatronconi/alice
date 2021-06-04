@@ -58,6 +58,7 @@ export class SharedDataService {
 
   visitTappa(location: string) {
     this.pv.visit(this.scenario, this.play, location);
+    this.findNextStory();
     this.savePlay();
   }
 
