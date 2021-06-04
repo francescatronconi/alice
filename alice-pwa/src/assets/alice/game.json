@@ -7,9 +7,11 @@
         {"trigger": "visit:cattedrale", "effect": {"story": [
             {"read": "intro-1.html"},
             {"read": "intro-2.html"}
-        ]}},
-        {"trigger": "visit:conservatorio", "effect": {"badge": "badge-01"}},
-        {"trigger": "visit:conservatorio", "effect": {"score": 3}},
+            ]}, 
+            "condition": {"nobadge": "badge-02"}
+        },
+        {"trigger": "visit:conservatorio", "effect": {"badge": "badge-03"}, "condition": {"badge": "badge-02"}},
+        {"trigger": "visit:conservatorio", "effect": {"score": 3}, "condition": {"badge": "badge-02"}},
         {"trigger": "visit:biblioteca", "effect": {"options": "options-A"}}
     ],  
     "options": [

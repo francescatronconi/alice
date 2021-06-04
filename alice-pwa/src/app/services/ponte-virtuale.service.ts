@@ -23,29 +23,23 @@ export class PonteVirtualeService {
   }
 
   apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
-   var enabled = this.checkCondition(rule, play);
-    if(enabled) {this.applyEffect(rule.effect, scenario, play)}
+    if(this.checkCondition(rule, play)) {this.applyEffect(rule.effect, scenario, play)}
     else {
 
     }
   }
 
   checkCondition(rule: GameRule, play:GamePlay): boolean {
-    let enabled: boolean = true;
-    if(rule.condition != null){
-      enabled = this.isEnabledCondition(rule.condition, play);
+    let check: boolean = true;
+    if(GameRule.validCondition(rule.condition)) {
+      if (GameConditionBadge.valid(rule.condition as GameConditionBadge)) {
+        check = GameConditionBadge.check(rule.condition as GameConditionBadge, play);
+      }
+      if (GameConditionNoBadge.valid(rule.condition as GameConditionNoBadge)) {
+        check = GameConditionNoBadge.check(rule.condition as GameConditionNoBadge, play);
+      }
     }
-    return enabled;
-  }
-
-  isEnabledCondition(condition: GameCondition, play: GamePlay): boolean {
-    var enabled: boolean;
-    if(condition.badge != undefined) {
-      enabled = play.badges.includes(condition.badge);
-    } else if  (condition.nobadge != undefined) {
-      enabled = !play.badges.includes(condition.nobadge);
-    }
-    return enabled;
+    return check;
   }
 
   applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
@@ -102,7 +96,10 @@ export class GameRule {
   trigger: string;
   effect: GameEffect;
   condition: GameCondition;
-  
+
+  static validCondition(condition: GameCondition) {
+    return condition ? true : false;
+  }
 }
 
 export class GameEffect {
@@ -110,9 +107,34 @@ export class GameEffect {
 
 export class GameCondition {
   
-  badge: string;
   nobadge: string;
   enabled: boolean;
+}
+
+export class GameConditionBadge extends GameCondition {
+  badge: string;
+
+  static valid(condition: GameConditionBadge) {
+    return condition.badge ? true : false;
+  }
+
+  static check(condition: GameConditionBadge, play: GamePlay) : boolean {
+    return play.badges.includes(condition.badge);
+  }
+
+}
+
+export class GameConditionNoBadge extends GameCondition {
+  nobadge: string;
+
+  static valid(condition: GameConditionNoBadge) {
+    return condition.nobadge ? true : false;
+  }
+
+  static check(condition: GameConditionNoBadge, play: GamePlay) : boolean {
+    return !play.badges.includes(condition.nobadge);;
+  }
+  
 }
 
 export class GameEffectStory extends GameEffect {
@@ -197,5 +219,4 @@ export class Option {
   text: string;
   effect: GameEffect;
 }
-
 
