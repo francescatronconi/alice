@@ -20,13 +20,16 @@ export class AppComponent {
   ) {
     this.menu.add({id: 'diario', icon: './assets/svg/diario.svg', action: (shared: SharedDataService) => {
       this.router.navigate(['diario']);
-    }})
+    }});
     this.menu.add({id: 'mappa', icon: './assets/svg/mappa.svg', action: (shared: SharedDataService) => {
       this.router.navigate(['mappa']);
     }});
     this.menu.add({id: 'badge', icon: './assets/svg/badge.svg', action: (shared: SharedDataService) => {
       this.router.navigate(['badge']);
-    }})
+    }});
+    this.menu.add({id: 'biblioteca', icon: './assets/svg/biblioteca.svg', action: (shared: SharedDataService) => {
+      this.router.navigate(['biblioteca']);
+    }});
   }
 
 }

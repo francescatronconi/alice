@@ -124,12 +124,14 @@ export class GameEffectOptions extends GameEffect {
 }
 
 export class GamePlay {
+  
   situation: string[];
   story: GamePlayStory[];
   badges: string[];
   options: string[];
   locationScore: [];
   score: number;
+  zoomTo: string;
 
   constructor() {
     this.situation = [];
