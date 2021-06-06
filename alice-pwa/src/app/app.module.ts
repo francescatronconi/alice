@@ -18,6 +18,7 @@ import { StoryPopupComponent } from './components/pages/story-popup/story-popup.
 import { BadgeComponent } from './components/pages/badge/badge.component';
 import { ReadStoryComponent } from './components/widgets/read-story/read-story.component';
 import { OptionPopupComponent } from './components/pages/option-popup/option-popup.component';
+import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { OptionPopupComponent } from './components/pages/option-popup/option-pop
     BadgeComponent,
     ReadStoryComponent,
     OptionPopupComponent,
+    SvgMapComponent,
   ],
   imports: [
     BrowserModule,

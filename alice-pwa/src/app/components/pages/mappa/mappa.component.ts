@@ -51,7 +51,16 @@ export class MappaComponent implements OnInit {
   initMap() {
     navigator.geolocation.getCurrentPosition((position) => {
       this.position = position;
-      this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
+      if (this.shared.play && this.shared.play.zoomTo) {
+        this.shared.scenario.locations
+        .filter(l => l.id === this.shared.play.zoomTo)
+        .forEach(l => {
+          this.currentposition = [l.lon, l.lat];
+        });
+        this.shared.clearZoomTo();
+      } else {
+        this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
+      }
       this.startOlMap();
       this.refreshLoop();
     });

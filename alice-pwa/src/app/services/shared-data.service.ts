@@ -36,6 +36,18 @@ export class SharedDataService {
     localStorage.setItem("ponte-virtuale-play", JSON.stringify(this.play));
   }
 
+  clearZoomTo() {
+    this.play.zoomTo = null;
+  }
+
+  setZoomTo(id: string) {
+    this.scenario.locations
+    .filter(l => l.id === id)
+    .forEach(l => {
+      this.play.zoomTo = id;
+    })
+  }
+
   loadPlay() {
     let saved = localStorage.getItem("ponte-virtuale-play");
     if (saved) {
