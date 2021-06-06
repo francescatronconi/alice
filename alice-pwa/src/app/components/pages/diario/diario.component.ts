@@ -8,8 +8,6 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
   styleUrls: ['./diario.component.scss']
 })
 export class DiarioComponent implements OnInit {
-  listaTappeId: String[]=[]
-  locationsVisitate: String[]=[]
   storySoFar: GamePlayStory[];
   storyToRead: GamePlayStory[];
   constructor(
@@ -17,26 +15,11 @@ export class DiarioComponent implements OnInit {
   {}
 
   ngOnInit(): void {
-    this.initListaTappeId();
-    if (this.shared.play) {
-      this.initStorySoFar();
-    }
   }
 
   initStorySoFar() {
     this.storySoFar = this.shared.play.story.filter(item => item.published);
     this.storyToRead = this.shared.play.story.filter(item => !item.published);
-  }
-
-  initListaTappeId() {
-    this.listaTappeId = JSON.parse(localStorage.getItem("tappe"))
-    if (this.listaTappeId !== null) {
-      this.shared.scenario.locations.map(location => {
-        if(this.listaTappeId.includes(location.id)) {
-          this.locationsVisitate.push(location.name)
-        }
-      })
-    }
   }
 
 }

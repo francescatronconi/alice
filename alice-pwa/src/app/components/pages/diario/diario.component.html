@@ -1,12 +1,8 @@
 <div class="fullpage alice">
     <h1>Diario di Alice</h1>
-    <div *ngIf="shared.play">
+    <div *ngIf="shared.play" style="padding-bottom: 50px;">
         <ng-container *ngFor="let story of shared.play.story">
             <div *ngIf="story.published" app-read-story [story]="story"></div>
         </ng-container>
-    </div>
-    <h1>Luoghi visitati</h1>
-    <div *ngFor="let location of locationsVisitate" >
-        <h2>{{location}}</h2>
     </div>
 </div>

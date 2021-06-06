@@ -154,9 +154,6 @@ export class MappaComponent implements OnInit {
       this.currentFeature = feature[0];
       this.nearToPlay= true;
       this.checkDistance(feature);
-      // if (feature[0].get('id') != null) {
-      //   updateTappeLocalStorage(this.currentFeature);
-      // }
       this.overlay.setPosition(coordinate);
     }
   };
@@ -180,16 +177,5 @@ export class MappaComponent implements OnInit {
     this.shared.visitTappa(location.get('id'));
   }
 
-}
-
-function updateTappeLocalStorage(featureSelected: any) {
-  var id = featureSelected.get('id');
-  var tappe = JSON.parse(localStorage.getItem("tappe"));
-  tappe = tappe ? tappe : [];
-  var tappasuperato = tappe.find(element => element === id);
-  if (tappasuperato === undefined) {
-    tappe.push(id);
-    localStorage.setItem("tappe", JSON.stringify(tappe));
-  }
 }
 

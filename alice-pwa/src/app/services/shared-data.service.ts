@@ -52,10 +52,13 @@ export class SharedDataService {
     let saved = localStorage.getItem("ponte-virtuale-play");
     if (saved) {
       this.play = JSON.parse(saved);
-      this.findNextStory();
-      this.options = this.getOptions();
     }
   }
+
+  updateGui() {
+    this.findNextStory();
+    this.options = this.getOptions();
+}
 
   findNextStory() {
     let unpublished = this.play.story.filter(item => !item.published);
@@ -70,7 +73,7 @@ export class SharedDataService {
 
   visitTappa(location: string) {
     this.pv.visit(this.scenario, this.play, location);
-    this.findNextStory();
+    this.updateGui();
     this.savePlay();
   }
 
@@ -80,8 +83,7 @@ export class SharedDataService {
 
   setOption(option : Option) {
     this.pv.setOption(this.play, this.scenario, option)
-    this.findNextStory();
-    this.options = this.getOptions();
+    this.updateGui();
     this.savePlay();
   }
 

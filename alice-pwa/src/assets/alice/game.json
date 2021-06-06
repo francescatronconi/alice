@@ -10,6 +10,7 @@
             ]}, 
             "condition": {"nobadge": "badge-02"}
         },
+        {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
         {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
             "rules": [
                 {"condition": {"badge": "badge-01"},"effect": {"badge": "badge-03"}},
