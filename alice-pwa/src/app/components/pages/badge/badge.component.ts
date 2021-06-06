@@ -11,10 +11,12 @@ import { environment } from 'src/environments/environment';
 export class BadgeComponent implements OnInit {
 
   environment = environment;
+  punteggio:number;
   
   constructor(public shared: SharedDataService) { }
   
   ngOnInit(): void {
+    this.punteggio = this.shared.play.score
   }
   
   badges(): GameBadge[] {

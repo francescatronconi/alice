@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { enableDebugTools } from '@angular/platform-browser';
 import { MapLocation } from './shared-data.service';
 
 @Injectable({
@@ -17,8 +18,30 @@ export class PonteVirtualeService {
   visit(scenario: GameScenario, play: GamePlay, location: string) {
     scenario.rules
     .filter((rule) => (rule.trigger.match(/visit:(.*)/) && rule.trigger.match(/visit:(.*)/)[1] === location))
-    .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
+    .forEach((rule) => this.apply(rule, scenario, play))
     ;
+  }
+
+  apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
+    if(this.checkCondition(rule, play)) {
+      this.applyEffect(rule.effect, scenario, play)}
+    else {
+
+    }
+  }
+
+  checkCondition(rule: GameRule, play:GamePlay): boolean {
+    let check: boolean = true;
+    if(GameRule.validCondition(rule.condition)) {
+      if (GameConditionBadge.valid(rule.condition as GameConditionBadge)) {
+        check = GameConditionBadge.check(rule.condition as GameConditionBadge, play);
+      }
+      if (GameConditionNoBadge.valid(rule.condition as GameConditionNoBadge)) {
+        check = GameConditionNoBadge.check(rule.condition as GameConditionNoBadge, play);
+      }
+    }
+    console.log(check)
+    return check;
   }
 
   applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
@@ -74,10 +97,48 @@ export class GameRule {
 
   trigger: string;
   effect: GameEffect;
+  condition: GameCondition;
 
+  static validCondition(condition: GameCondition) {
+    console.log(condition)
+    return condition ? true : false;
+  }
 }
 
 export class GameEffect {
+}
+
+export class GameCondition {
+  
+  nobadge: string;
+  enabled: boolean;
+}
+
+export class GameConditionBadge extends GameCondition {
+  badge: string;
+
+  static valid(condition: GameConditionBadge) {
+    console.log(condition)
+    return condition.badge ? true : false;
+  }
+
+  static check(condition: GameConditionBadge, play: GamePlay) : boolean {
+    return play.badges.includes(condition.badge);
+  }
+
+}
+
+export class GameConditionNoBadge extends GameCondition {
+  nobadge: string;
+
+  static valid(condition: GameConditionNoBadge) {
+    return condition.nobadge ? true : false;
+  }
+
+  static check(condition: GameConditionNoBadge, play: GamePlay) : boolean {
+    return !play.badges.includes(condition.nobadge);;
+  }
+  
 }
 
 export class GameEffectStory extends GameEffect {
@@ -89,6 +150,7 @@ export class GameEffectStory extends GameEffect {
     return effect.story ? true : false;
   }
 }
+
 export class GameEffectStoryItem {
   read?: string;
 }
@@ -163,5 +225,4 @@ export class Option {
   text: string;
   effect: GameEffect;
 }
-
 

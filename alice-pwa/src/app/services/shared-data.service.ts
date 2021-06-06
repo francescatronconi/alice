@@ -113,5 +113,5 @@ export class MapLocation {
   lat: number;
   lon: number;
   near: boolean;
-
+  condition:string;
 }

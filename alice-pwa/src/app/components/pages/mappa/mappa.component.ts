@@ -14,7 +14,10 @@ import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
-import { SharedDataService } from 'src/app/services/shared-data.service';
+import { MapLocation, SharedDataService } from 'src/app/services/shared-data.service';
+import { environment } from 'src/environments/environment';
+import { features } from 'process';
+import { style } from '@angular/animations';
 
 
 @Component({
@@ -30,6 +33,7 @@ export class MappaComponent implements OnInit {
   currentposition: number[];
   currentFeature: FeatureLike;
   overlay: Overlay;
+  nearToPlay:boolean;
 
   constructor(
     private tickers: TickersService,
@@ -106,9 +110,9 @@ export class MappaComponent implements OnInit {
       })
     });
     this.map.addLayer(this.layer);
-    this.map.addLayer(new VectorLayer({
-      source: new VectorSource({
-        features: this.shared.scenario.locations.map(location => new Feature({
+    let listFeature = []
+    this.shared.scenario.locations.map(location => {
+        let feature = new Feature({
           geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
           longitude : location.lon,
           latitude: location.lat,
@@ -116,15 +120,20 @@ export class MappaComponent implements OnInit {
           id: location.id,
           near: location.near,
         })
-        )
-      }),
-      style: new Style({
-        image: new Icon({
-          anchor: [0.5, 0.5],
-          src: './assets/svg/cat.svg',
-        })
-      }),
-    }));
+        let style = new Style({
+          image: new Icon({
+            anchor: [0.5, 0.5],
+            src: location.icon,
+          })
+        }) 
+        feature.setStyle(style)
+        if(!location.condition || this.shared.play.badges.includes(location.condition)) {
+            listFeature.push(feature)
+        }
+    })
+    this.map.addLayer(new VectorLayer({
+      source: new VectorSource({features: listFeature})
+    }))
     this.overlay = new Overlay({
       element: document.getElementById('popup'),
       autoPan: true,
@@ -133,6 +142,7 @@ export class MappaComponent implements OnInit {
       }
     });
     this.map.addOverlay(this.overlay)
+
   }
 
   clickTappa(evt: any) {
@@ -142,6 +152,7 @@ export class MappaComponent implements OnInit {
     var coordinate = this.map.getEventCoordinate(evt)
     if(feature.length > 0) {
       this.currentFeature = feature[0];
+      this.nearToPlay= true;
       this.checkDistance(feature);
       // if (feature[0].get('id') != null) {
       //   updateTappeLocalStorage(this.currentFeature);
@@ -150,12 +161,14 @@ export class MappaComponent implements OnInit {
     }
   };
 
-
   private checkDistance(feature: FeatureLike[]) {
     if(feature[0].get('near')) {
       let difQuadLat = Math.pow(feature[0].get('latitude') - this.position.coords.latitude,2)
       let difQuadLon = Math.pow(feature[0].get('longitude') - this.position.coords.longitude, 2)
       let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000
+      if (distance > environment.nearby) {
+        this.nearToPlay=false;
+      }
     }
   }
 
