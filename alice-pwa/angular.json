@@ -61,6 +61,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "daniele": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.daniele.ts"
+                }
+              ]
             }
           }
         },
@@ -72,6 +80,9 @@
           "configurations": {
             "production": {
               "browserTarget": "alice-pwa:build:production"
+            },
+            "daniele": {
+              "browserTarget": "alice-pwa:build:daniele"
             }
           }
         },
