@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService } from './ponte-virtuale.service';
+import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition} from './ponte-virtuale.service';
 
 @Injectable({
   providedIn: 'root'
@@ -115,5 +115,5 @@ export class MapLocation {
   lat: number;
   lon: number;
   near: boolean;
-  condition:string;
+  condition:GameCondition;
 }

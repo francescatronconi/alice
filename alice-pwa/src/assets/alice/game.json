@@ -42,7 +42,7 @@
     ],
     "locations": [
         {"id":"cattedrale", "name": "Giardino della cattedrale", "icon": "./assets/svg/cat.svg", 
-            "lon": 10.506664809575186, "lat": 43.84051516173453, "near": true,  "condition": "badge-03"},
+            "lon": 10.506664809575186, "lat": 43.84051516173453, "near": true,  "condition": {"badge":"badge-03"}},
         {"id":"biblioteca", "name": "Biblioteca Civica Agorà", "icon": "./assets/svg/horse.svg", 
             "lon": 10.505977822127294, "lat": 43.84181374706096, "near": true},
         {"id":"conservatorio", "name": "Conservatorio", "icon": "./assets/svg/cat.svg", 

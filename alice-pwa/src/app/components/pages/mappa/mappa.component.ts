@@ -15,6 +15,7 @@ import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 import { TickersService } from 'src/app/services/tickers.service';
 import { MapLocation, SharedDataService } from 'src/app/services/shared-data.service';
+import { GamePlay, GameScenario, PonteVirtualeService} from 'src/app/services/ponte-virtuale.service';
 import { environment } from 'src/environments/environment';
 import { features } from 'process';
 import { style } from '@angular/animations';
@@ -34,10 +35,14 @@ export class MappaComponent implements OnInit {
   currentFeature: FeatureLike;
   overlay: Overlay;
   nearToPlay:boolean;
+  play:GamePlay;
+  scenario:GameScenario;
+  location:MapLocation;
 
   constructor(
     private tickers: TickersService,
     public shared: SharedDataService,
+    private pv: PonteVirtualeService,
   ) { }
 
   ngOnInit(): void {
@@ -111,6 +116,7 @@ export class MappaComponent implements OnInit {
     });
     this.map.addLayer(this.layer);
     let listFeature = []
+    this.play= JSON.parse(localStorage.getItem("ponte-virtuale-play"));
     this.shared.scenario.locations.map(location => {
         let feature = new Feature({
           geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
@@ -127,7 +133,7 @@ export class MappaComponent implements OnInit {
           })
         }) 
         feature.setStyle(style)
-        if(!location.condition || this.shared.play.badges.includes(location.condition)) {
+        if(!location.condition || this.pv.checkCondition(location.condition, this.play, this.scenario)) {
             listFeature.push(feature)
         }
     })

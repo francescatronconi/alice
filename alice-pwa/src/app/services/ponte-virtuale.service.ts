@@ -23,24 +23,24 @@ export class PonteVirtualeService {
   }
 
   apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
-    if(this.checkCondition(rule, play)) {
+    console.log(rule)
+    if(this.checkCondition(rule.condition, play, scenario)) {
       this.applyEffect(rule.effect, scenario, play)}
     else {
 
     }
   }
 
-  checkCondition(rule: GameRule, play:GamePlay): boolean {
+  checkCondition(condition: GameCondition, play:GamePlay, scenario:GameScenario): boolean {
     let check: boolean = true;
-    if(GameRule.validCondition(rule.condition)) {
-      if (GameConditionBadge.valid(rule.condition as GameConditionBadge)) {
-        check = GameConditionBadge.check(rule.condition as GameConditionBadge, play);
+    if(GameRule.validCondition(condition)) {
+      if (GameConditionBadge.valid(condition as GameConditionBadge)) {
+        check = GameConditionBadge.check(condition as GameConditionBadge, play);
       }
-      if (GameConditionNoBadge.valid(rule.condition as GameConditionNoBadge)) {
-        check = GameConditionNoBadge.check(rule.condition as GameConditionNoBadge, play);
+      if (GameConditionNoBadge.valid(condition as GameConditionNoBadge)) {
+        check = GameConditionNoBadge.check(condition as GameConditionNoBadge, play);
       }
     }
-    console.log(check)
     return check;
   }
 
@@ -100,7 +100,6 @@ export class GameRule {
   condition: GameCondition;
 
   static validCondition(condition: GameCondition) {
-    console.log(condition)
     return condition ? true : false;
   }
 }
