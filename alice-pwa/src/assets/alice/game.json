@@ -8,7 +8,7 @@
             {"read": "intro-1.html"},
             {"read": "intro-2.html"}
             ]}, 
-            "condition": {"nobadge": "badge-02"}
+            "condition": {"nobadge": "badge-02", "noTag":"tramutato-in-rospo"}
         },
         {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
         {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
@@ -21,10 +21,7 @@
     "options": [
         {"id": "options-A", "options": [
             {"text": "Busta numero 1", "effect": {"badge": "badge-03"}},
-            {"text": "Busta numero 2", "effect": {"story": [
-                {"read": "intro-2.html"},
-                {"read": "intro-1.html"}
-            ]}},
+            {"text": "Busta numero 2", "effect": {"tag":"tramutato-in-rospo"}},
             {"text": "Busta numero 3", "effect": {"options": "options-B"}}
         ]},
         {"id": "options-B", "options": [
