@@ -1,0 +1,103 @@
+{
+    "rules": [
+        {
+            "trigger": "start",
+            "effect": {
+                "story": [
+                    {"read": "intro.html"},
+                    {"read": "antefatto.html"}
+                ],
+                "options": "scegli-chi-sei"
+            }
+        },
+        {
+            "trigger": "visit:pera",
+            "effect": {
+                "story": [
+                    {"read": "pera-both.html"}
+                ]
+            }
+        },
+        {
+            "trigger": "visit:pera",
+            "condition": {
+                "badge": "badge-nana"
+            },
+            "effect": {
+                "story": [
+                    {"read": "pera-nana.html"}
+                ]
+            }
+        },
+        {
+            "trigger": "visit:pera",
+            "condition": {
+                "badge": "badge-pappa"
+            },
+            "effect": {
+                "story": [
+                    {"read": "pera-pappa.html"}
+                ]
+            }
+        },
+        {
+            "trigger": "visit:pera",
+            "effect": {
+                "story": [
+                    {
+                        "read": "pera-gelsomina.html"
+                    }
+                ]
+            },
+            "condition": {
+                "badge": "badge-gelsomina"
+            }
+        }
+
+    ],
+    "options": [
+        {
+            "id": "scegli-chi-sei",
+            "options": [
+                {
+                    "text": "Nana, sorellina di Fufi",
+                    "effect": {
+                        "story": [
+                            {"read": "intro-nana.html"},
+                            {"read": "intro-both.html"}
+                        ],
+                        "badge": "badge-nana"
+                    }
+                },
+                {
+                    "text": "Gelsomina, padroncina di Fufi",
+                    "effect": {
+                        "story": [
+                            {"read": "intro-gelsomina.html"},
+                            {"read": "intro-both.html"}
+                        ],
+                        "badge": "badge-gelsomina"
+                    }
+                }
+            ]
+        }
+    ],
+    "badges": [
+        {
+            "badge": "badge-nana",
+            "src": "nana.png"
+        },
+        {
+            "badge": "badge-gelsomina",
+            "src": "gelsomina.png"
+        }
+    ],
+    "locations": [
+        {"id":"pera", "name": "Piazza della Pera", "icon": "./assets/svg/cat.svg", 
+            "lon": 10.401480595742003, "lat": 43.71425836677179},
+        {"id":"spina", "name": "Chiesa della Spina", "icon": "./assets/svg/cat.svg", 
+            "lon": 10.396527610113797, "lat": 43.71516029559875},
+        {"id":"miracoli", "name": "Piazza dei Miracoli", "icon": "./assets/svg/cat.svg", 
+            "lon": 10.39463575948577, "lat": 43.72291597453732, "condition": {"badge": "badge-fufi"}}    
+    ]
+}
