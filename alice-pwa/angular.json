@@ -69,6 +69,14 @@
                   "with": "src/environments/environment.daniele.ts"
                 }
               ]
+            },
+            "dezhi": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dezhi.ts"
+                }
+              ]
             }
           }
         },
@@ -83,6 +91,9 @@
             },
             "daniele": {
               "browserTarget": "alice-pwa:build:daniele"
+            },
+            "dezhi": {
+              "browserTarget": "alice-pwa:build:dezhi"
             }
           }
         },

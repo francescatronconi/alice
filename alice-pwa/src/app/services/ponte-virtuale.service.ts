@@ -23,24 +23,34 @@ export class PonteVirtualeService {
   }
 
   apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
-    if(this.checkCondition(rule, play)) {
+    console.log(rule)
+    if(this.checkCondition(rule.condition, play, scenario)) {
       this.applyEffect(rule.effect, scenario, play)}
     else {
 
     }
   }
 
-  checkCondition(rule: GameRule, play:GamePlay): boolean {
+  checkCondition(condition: GameCondition, play:GamePlay, scenario:GameScenario): boolean {
     let check: boolean = true;
-    if(GameRule.validCondition(rule.condition)) {
-      if (GameConditionBadge.valid(rule.condition as GameConditionBadge)) {
-        check = GameConditionBadge.check(rule.condition as GameConditionBadge, play);
+    if(GameRule.validCondition(condition)) {
+      if (GameConditionBadge.valid(condition as GameConditionBadge)) {
+        check = GameConditionBadge.check(condition as GameConditionBadge, play);
       }
-      if (GameConditionNoBadge.valid(rule.condition as GameConditionNoBadge)) {
-        check = GameConditionNoBadge.check(rule.condition as GameConditionNoBadge, play);
+      if (GameConditionNoBadge.valid(condition as GameConditionNoBadge)) {
+        check = GameConditionNoBadge.check(condition as GameConditionNoBadge, play);
+      }
+      if (GameConditionTag.valid(condition as GameConditionTag)) {
+        if(check !==false) {
+          check = GameConditionTag.check(condition as GameConditionTag, play);
+        }
+      }
+      if (GameConditionNoTag.valid(condition as GameConditionNoTag)) {
+        if (check !==false) {
+          check = GameConditionNoTag.check(condition as GameConditionNoTag, play);
+        }
       }
     }
-    console.log(check)
     return check;
   }
 
@@ -56,6 +66,9 @@ export class PonteVirtualeService {
     }
     if (GameEffectScore.valid(effect as GameEffectScore)) {
       GameEffectScore.run(effect as GameEffectScore, scenario, play);
+    }
+    if (GameEffectTag.valid(effect as GameEffectTag)) {
+      GameEffectTag.run(effect as GameEffectTag, scenario, play);
     }
   }
 
@@ -100,7 +113,6 @@ export class GameRule {
   condition: GameCondition;
 
   static validCondition(condition: GameCondition) {
-    console.log(condition)
     return condition ? true : false;
   }
 }
@@ -118,7 +130,6 @@ export class GameConditionBadge extends GameCondition {
   badge: string;
 
   static valid(condition: GameConditionBadge) {
-    console.log(condition)
     return condition.badge ? true : false;
   }
 
@@ -137,6 +148,32 @@ export class GameConditionNoBadge extends GameCondition {
 
   static check(condition: GameConditionNoBadge, play: GamePlay) : boolean {
     return !play.badges.includes(condition.nobadge);;
+  }
+  
+}
+
+export class GameConditionTag extends GameCondition {
+  tag: string;
+
+  static valid(condition: GameConditionTag) {
+    return condition.tag ? true : false;
+  }
+
+  static check(condition: GameConditionTag, play: GamePlay) : boolean {
+    return play.tags.includes(condition.tag);
+  }
+
+}
+
+export class GameConditionNoTag extends GameCondition {
+  noTag: string;
+
+  static valid(condition: GameConditionNoTag) {
+    return condition.noTag ? true : false;
+  }
+
+  static check(condition: GameConditionNoTag, play: GamePlay) : boolean {
+    return !play.tags.includes(condition.noTag);
   }
   
 }
@@ -162,6 +199,16 @@ export class GameEffectBadge extends GameEffect {
   }
   static valid(effect: GameEffectBadge) {
     return effect.badge ? true : false;
+  }
+}
+
+export class GameEffectTag extends GameEffect {
+  tag: string;
+  static run(effect: GameEffectTag, scenario: GameScenario, play: GamePlay) {
+    if (!play.tags.includes(effect.tag)) play.tags.push(effect.tag);
+  }
+  static valid(effect: GameEffectTag) {
+    return effect.tag ? true : false;
   }
 }
 
@@ -194,6 +241,7 @@ export class GamePlay {
   locationScore: [];
   score: number;
   zoomTo: string;
+  tags:string[];
 
   constructor() {
     this.situation = [];
@@ -202,6 +250,7 @@ export class GamePlay {
     this.options = [];
     this.locationScore = [];
     this.score = 0;
+    this.tags= [];
   }
 }
 
