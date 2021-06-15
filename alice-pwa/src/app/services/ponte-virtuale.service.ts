@@ -25,9 +25,7 @@ export class PonteVirtualeService {
   apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
     console.log(rule)
     if(this.checkCondition(rule.condition, play, scenario)) {
-      this.applyEffect(rule.effect, scenario, play)}
-    else {
-
+      this.applyEffect(rule.effect, scenario, play)
     }
   }
 
@@ -35,20 +33,16 @@ export class PonteVirtualeService {
     let check: boolean = true;
     if(GameRule.validCondition(condition)) {
       if (GameConditionBadge.valid(condition as GameConditionBadge)) {
-        check = GameConditionBadge.check(condition as GameConditionBadge, play);
+        check = check && GameConditionBadge.check(condition as GameConditionBadge, play);
       }
       if (GameConditionNoBadge.valid(condition as GameConditionNoBadge)) {
-        check = GameConditionNoBadge.check(condition as GameConditionNoBadge, play);
+        check = check && GameConditionNoBadge.check(condition as GameConditionNoBadge, play);
       }
       if (GameConditionTag.valid(condition as GameConditionTag)) {
-        if(check !==false) {
-          check = GameConditionTag.check(condition as GameConditionTag, play);
-        }
+        check = check && GameConditionTag.check(condition as GameConditionTag, play);
       }
       if (GameConditionNoTag.valid(condition as GameConditionNoTag)) {
-        if (check !==false) {
-          check = GameConditionNoTag.check(condition as GameConditionNoTag, play);
-        }
+        check = check && GameConditionNoTag.check(condition as GameConditionNoTag, play);
       }
     }
     return check;
@@ -241,7 +235,7 @@ export class GamePlay {
   locationScore: [];
   score: number;
   zoomTo: string;
-  tags:string[];
+  tags: string[];
 
   constructor() {
     this.situation = [];
