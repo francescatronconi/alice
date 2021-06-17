@@ -9,17 +9,28 @@ import { MapLocation } from './shared-data.service';
 export class PonteVirtualeService {
 
   start(scenario: GameScenario, play: GamePlay) {
-    scenario.rules
-    .filter((rule) => rule.trigger === 'start')
-    .forEach((rule) => this.applyEffect(rule.effect, scenario, play))
-    ;
+    play.event = new GameEventStart();
+    this.runScenarioRules(scenario, play);
+  }
+
+  runScenarioRules(scenario: GameScenario, play: GamePlay) {
+    scenario.rules.forEach(rule => this.checkAndRunRule(rule, scenario, play));
+  }
+
+  checkAndRunRule(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
+    if (
+      GameEventStart.validEvent(rule, scenario, play) ||
+      GameEventVisit.validEvent(rule, scenario, play)
+      ) {
+        if (rule.effect) {
+          this.applyEffect(rule.effect, scenario, play);
+        }
+    }
   }
 
   visit(scenario: GameScenario, play: GamePlay, location: string) {
-    scenario.rules
-    .filter((rule) => (rule.trigger.match(/visit:(.*)/) && rule.trigger.match(/visit:(.*)/)[1] === location))
-    .forEach((rule) => this.apply(rule, scenario, play))
-    ;
+    play.event = new GameEventVisit(location);
+    this.runScenarioRules(scenario, play);
   }
 
   apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
@@ -97,6 +108,35 @@ export class GameScenario {
   badges: GameBadge[];
   options: GameOption[];
   locations: MapLocation[];
+
+}
+
+export class GameEvent {
+}
+
+export class GameEventStart extends GameEvent {
+
+  start = true;
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    return (play.event as GameEventStart).start && rule.trigger === 'start';
+  }
+
+}
+
+export class GameEventVisit {
+
+  location: string;
+
+  constructor(location: string) {
+    this.location = location;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventVisit);
+    let r = /visit:(.*)/;
+    return event.location && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
+  }
 
 }
 
@@ -236,6 +276,7 @@ export class GamePlay {
   score: number;
   zoomTo: string;
   tags: string[];
+  event: GameEvent;
 
   constructor() {
     this.situation = [];
