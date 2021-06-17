@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { enableDebugTools } from '@angular/platform-browser';
 import { MapLocation } from './shared-data.service';
 
 @Injectable({
@@ -24,6 +23,9 @@ export class PonteVirtualeService {
       ) {
         if (rule.effect) {
           this.applyEffect(rule.effect, scenario, play);
+        }
+        if (rule.rules) {
+          rule.rules.forEach(sub => this.checkAndRunRule(sub, scenario, play));
         }
     }
   }
@@ -145,6 +147,7 @@ export class GameRule {
   trigger: string;
   effect: GameEffect;
   condition: GameCondition;
+  rules: GameRule[];
 
   static validCondition(condition: GameCondition) {
     return condition ? true : false;
