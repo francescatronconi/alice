@@ -13,6 +13,7 @@ import Icon from 'ol/style/Icon';
 import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
+
 import { TickersService } from 'src/app/services/tickers.service';
 import { MapLocation, SharedDataService } from 'src/app/services/shared-data.service';
 import { GamePlay, GameScenario, PonteVirtualeService} from 'src/app/services/ponte-virtuale.service';
@@ -32,12 +33,12 @@ export class MappaComponent implements OnInit {
   map: Map;
   layer: VectorLayer;
   currentposition: number[];
-  currentFeature: FeatureLike;
+  currentLocation: MapLocation;
   overlay: Overlay;
-  nearToPlay:boolean;
   play:GamePlay;
   scenario:GameScenario;
   location:MapLocation;
+  listFeature: Feature[];
 
   constructor(
     private tickers: TickersService,
@@ -115,30 +116,25 @@ export class MappaComponent implements OnInit {
       })
     });
     this.map.addLayer(this.layer);
-    let listFeature = []
+    this.listFeature = [];
     this.play= JSON.parse(localStorage.getItem("ponte-virtuale-play"));
     this.shared.scenario.locations.map(location => {
         let feature = new Feature({
           geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
-          longitude : location.lon,
-          latitude: location.lat,
-          name : location.name,
-          id: location.id,
-          near: location.near,
+          location: location,
         })
-        let style = new Style({
+        feature.setStyle(new Style({
           image: new Icon({
             anchor: [0.5, 0.5],
             src: location.icon,
           })
-        }) 
-        feature.setStyle(style)
+        }));
         if(!location.condition || this.pv.checkCondition(location.condition, this.play, this.scenario)) {
-            listFeature.push(feature)
+          this.listFeature.push(feature)
         }
     })
     this.map.addLayer(new VectorLayer({
-      source: new VectorSource({features: listFeature})
+      source: new VectorSource({features: this.listFeature})
     }))
     this.overlay = new Overlay({
       element: document.getElementById('popup'),
@@ -147,40 +143,44 @@ export class MappaComponent implements OnInit {
         duration: 250
       }
     });
-    this.map.addOverlay(this.overlay)
+    this.map.addOverlay(this.overlay);
+  }
 
+  clickEmpty(evt: any) {
+    let coordinate = this.map.getEventCoordinate(evt);
+    let feature = new Feature({
+      geometry: new Point(olProj.fromLonLat([10.506664809575186, 43.84051516173453])),
+      location: location,
+    })
+    feature.setStyle(new Style({
+      image: new Icon({
+        anchor: [0.5, 0.5],
+        src: './assets/svg/cat.svg',
+      })
+    }));
+    this.layer.getSource().addFeature(feature);
   }
 
   clickTappa(evt: any) {
     var pixel = []
     pixel = this.map.getEventPixel(evt);
-    var feature: FeatureLike[] = this.map.getFeaturesAtPixel(pixel);
-    var coordinate = this.map.getEventCoordinate(evt)
-    if(feature.length > 0) {
-      this.currentFeature = feature[0];
-      this.nearToPlay= true;
-      this.checkDistance(feature);
+    var features: FeatureLike[] = this.map.getFeaturesAtPixel(pixel);
+    var coordinate = this.map.getEventCoordinate(evt);
+    console.log(coordinate);
+    if(features.length > 0) {
+      this.currentLocation = features[0].get('location');
       this.overlay.setPosition(coordinate);
+    } else {
+      this.clickEmpty(evt);
     }
   };
-
-  private checkDistance(feature: FeatureLike[]) {
-    if(feature[0].get('near')) {
-      let difQuadLat = Math.pow(feature[0].get('latitude') - this.position.coords.latitude,2)
-      let difQuadLon = Math.pow(feature[0].get('longitude') - this.position.coords.longitude, 2)
-      let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000
-      if (distance > environment.nearby) {
-        this.nearToPlay=false;
-      }
-    }
-  }
 
   closeLocation(value: boolean): void {
       this.overlay.setPosition(undefined);
   }
 
-  gioca(location: FeatureLike): void {
-    this.shared.visitTappa(location.get('id'));
+  gioca(location: MapLocation): void {
+    this.shared.visitTappa(location.id);
   }
 
 }

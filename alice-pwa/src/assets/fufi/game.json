@@ -35,6 +35,7 @@
                 "badge": "badge-pappa"
             },
             "effect": {
+                "badge": "badge-fufi",
                 "story": [
                     {"read": "pera-pappa.html"}
                 ]

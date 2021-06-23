@@ -115,5 +115,5 @@ export class MapLocation {
   lat: number;
   lon: number;
   near: boolean;
-  condition:GameCondition;
+  condition: GameCondition;
 }

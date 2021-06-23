@@ -1,5 +1,5 @@
 <div class="fulldiv" id="olmap" (click)="clickTappa($event)">
-    <app-popup [currentFeature]= "currentFeature" [position]="position"  [nearToPlay]="nearToPlay"
+    <app-popup [location]= "currentLocation" [position]="position"
     (close)="closeLocation($event)" (gioca)="gioca($event)"></app-popup>
 </div>
 
