@@ -14,8 +14,15 @@
     left: 0; right:0; top:0;
     height:100%;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                linear-gradient(white, white);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.whitedim {
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255);
 }
 
 .modal {
