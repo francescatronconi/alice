@@ -17,12 +17,12 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.whitedim {
+.startdim {
     position:fixed;
     left: 0; right:0; top:0;
     height:100%;
     overflow: hidden;
-    background: rgba(255, 255, 255);
+    background: rgba(0, 0, 0);
 }
 
 .modal {
@@ -37,6 +37,37 @@
     background-color: white;
     text-align: center;
 }
+
+.buttonStartGame {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 14px 40px;
+    font-family: "Alice in Wonderland";
+    box-shadow: 0 4px #999;
+  }
+
+  .buttonStartGame:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+.centralized {
+    text-align: center;
+    padding-top: 20%;
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: auto;
+  }
 
 .ol-attribution {
     display: none;

@@ -42,7 +42,6 @@ export class SharedDataService {
 
   restartGame() {
     this.deletePlay();
-    this.startGame();
   }
 
   closeWindow() {
