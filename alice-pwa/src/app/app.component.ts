@@ -30,8 +30,8 @@ export class AppComponent {
     this.menu.add({id: 'biblioteca', icon: './assets/svg/biblioteca.svg', action: (shared: SharedDataService) => {
       this.router.navigate(['biblioteca']);
     }});
-    this.menu.add({id: 'porta', icon: './assets/svg/porta.svg', action: (shared: SharedDataService) => {
-      this.router.navigate(['porta']);
+    this.menu.add({id: 'partita', icon: './assets/svg/porta.svg', action: (shared: SharedDataService) => {
+      this.router.navigate(['partita']);
     }});
   }
 

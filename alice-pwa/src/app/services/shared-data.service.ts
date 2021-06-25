@@ -36,6 +36,19 @@ export class SharedDataService {
     localStorage.setItem("ponte-virtuale-play", JSON.stringify(this.play));
   }
 
+  deletePlay() {
+    localStorage.removeItem("ponte-virtuale-play");
+  }
+
+  restartGame() {
+    this.deletePlay();
+    this.startGame();
+  }
+
+  closeWindow() {
+    window.close();
+  }
+
   clearZoomTo() {
     this.play.zoomTo = null;
   }
