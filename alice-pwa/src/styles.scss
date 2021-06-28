@@ -18,7 +18,8 @@
 }
 
 .gameOptions {
-    background-color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                linear-gradient(white, white);
     z-index:100;
     text-align: center;
     padding-top: 15%;
