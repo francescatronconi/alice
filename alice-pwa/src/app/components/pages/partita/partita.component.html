@@ -1,6 +1,7 @@
-<div class="fullpage alice">
-    <h1>Opzioni partita</h1>
-    <div> <button class="alice" (click)="closeWindow()" type="button">Esci</button> </div>
-    <br>
-    <div> <button class="alice" (click)="clickItem()" type="button">Riinizia partita</button> </div>
+<div class="gameOptions alice">
+    <div class="frame">
+        <h1>Opzioni partita</h1>
+        <div> <button class="restartGame" (click)="clickItem()" type="button">Ricomincia partita</button> </div>
+        <div> <button class="returnGame" (click)="clickItemToContinue()" type="button">Riprendi partita</button> </div>
+    </div>
 </div>

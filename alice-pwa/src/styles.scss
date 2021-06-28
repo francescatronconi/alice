@@ -17,6 +17,25 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.gameOptions {
+    background-color: white;
+    z-index:100;
+    text-align: center;
+    padding-top: 15%;
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: auto;
+}
+
+.frame {
+    width: 300px;
+    height: 250px;
+    border: 3px solid #ccc;
+    background: white;
+    margin: auto;
+  }
+
 .startdim {
     position:fixed;
     left: 0; right:0; top:0;
@@ -57,6 +76,69 @@
   .buttonStartGame:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .buttonLink {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 125%;
+  }
+
+  .restartGame {
+    background-color: #eb0808;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 135%;
+    cursor: pointer;
+    font-family: "Alice in Wonderland";
+    margin: 10px;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 5px 5px 5px #cfcece;
+    width: 250px;
+  }
+
+  .restartGame:hover {
+    background-color: rgb(197, 5, 5);
+    box-shadow: 5px 5px 5px #a7a6a6;
+  }
+
+  .restartGame:active {
+    background-color: #910303;
+    box-shadow: 5px 5px 5px #666;
+    transform: translateY(4px);
+  }
+
+  .returnGame {
+    background-color: #038514;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 135%;
+    cursor: pointer;
+    font-family: "Alice in Wonderland";
+    padding: 5px 10px 5px 10px;
+    box-shadow: 5px 5px 5px #cfcece;
+    width: 250px;
+  }
+
+  .returnGame:hover {
+    background-color: rgb(2, 87, 14);
+    box-shadow: 5px 5px 5px #a7a6a6;
+  }
+
+  .returnGame:active {
+    background-color: #03501c;
+    box-shadow: 5px 5px 5px #666;
     transform: translateY(4px);
   }
 

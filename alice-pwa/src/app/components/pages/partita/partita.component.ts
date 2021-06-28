@@ -26,6 +26,10 @@ export class PartitaComponent implements OnInit {
     });
   }
 
+  clickItemToContinue() {
+    this.router.navigate(['/']);
+  }
+
   closeWindow() {
     window.parent.close()
   }
