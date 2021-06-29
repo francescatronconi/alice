@@ -137,7 +137,7 @@ export class GameEventVisit {
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventVisit);
     let r = /visit:(.*)/;
-    return event.location && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
+    return event.location && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
   }
 
 }
