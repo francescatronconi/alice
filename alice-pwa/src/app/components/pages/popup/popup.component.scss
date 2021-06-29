@@ -7,7 +7,7 @@
     border: 1px solid #cccccc;
     bottom: 12px;
     left: -50px;
-    min-width: 280px;
+    min-width: 60px;
   }
   .ol-popup:after, .ol-popup:before {
     top: 100%;
@@ -40,16 +40,16 @@
     content: "✖";
   }
 
-  a:link, a:visited, .btn {
-    border: 2px solid gray;
-    color: gray; 
-    border-radius: 10px;
-    margin:10px;
-    padding:5px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  // a:link, a:visited, .btn {
+  //   border: 2px solid gray;
+  //   color: gray; 
+  //   border-radius: 10px;
+  //   margin:10px;
+  //   padding:5px;
+  //   text-align: center;
+  //   text-decoration: none;
+  //   cursor: pointer;
+  // }
 
   .button-portamiqui {
     padding-top:15px
@@ -62,4 +62,8 @@
 
   .nearByMessage {
     margin-top: 20px;
+  }
+
+  .clickable{
+    cursor: pointer;
   }
