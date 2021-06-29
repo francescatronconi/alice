@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { ButtonsMenuService } from './buttons-menu.service';
+import { Router } from '@angular/router';
 import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition} from './ponte-virtuale.service';
 
 @Injectable({
@@ -16,12 +18,23 @@ export class SharedDataService {
   constructor(
     private pv: PonteVirtualeService,
     private http: HttpClient,
+    public menu: ButtonsMenuService,
+    private router: Router,
   ) { 
     this.pv.loadGameScenario(`${environment.gameUrl}/game.json`)
     .then((scenario) => {
       this.scenario = scenario;
+      this.loadButtons();
       this.loadPlay();
     });
+  }
+
+  private loadButtons() {
+    this.scenario.buttons.forEach(b => this.menu.add({
+      id: b.id, icon: b.icon, action: () => {
+        this.router.navigate([b.action]);
+      }
+    }));
   }
 
   startGame() {

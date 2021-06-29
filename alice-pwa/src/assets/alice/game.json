@@ -44,5 +44,12 @@
             "lon": 10.505977822127294, "lat": 43.84181374706096, "near": true},
         {"id":"conservatorio", "name": "./assets/svg/clarinetto.svg", "icon": "./assets/svg/cat.svg", 
             "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
+    ],
+    "buttons": [
+        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": "diario"},
+        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": "mappa"},
+        {"id": "badge", "icon": "./assets/svg/badge.svg", "action": "badge"},
+        {"id": "biblioteca", "icon": "./assets/svg/biblioteca.svg", "action": "biblioteca"},
+        {"id": "partita", "icon": "./assets/svg/partita.svg", "action": "partita"}
     ]
 }
