@@ -32,13 +32,14 @@ export class MappaComponent implements OnInit {
   position: any;
   map: Map;
   layer: VectorLayer;
+  featuresLayer: VectorLayer;
   currentposition: number[];
   currentLocation: MapLocation;
   overlay: Overlay;
   play:GamePlay;
   scenario:GameScenario;
   location:MapLocation;
-  listFeature: Feature[];
+  featureById: {[id: string]: Feature};
 
   constructor(
     private tickers: TickersService,
@@ -55,6 +56,7 @@ export class MappaComponent implements OnInit {
   }
 
   initMap() {
+    this.featureById = {};
     navigator.geolocation.getCurrentPosition((position) => {
       this.position = position;
       if (this.shared.play && this.shared.play.zoomTo) {
@@ -116,26 +118,16 @@ export class MappaComponent implements OnInit {
       })
     });
     this.map.addLayer(this.layer);
-    this.listFeature = [];
     this.play= JSON.parse(localStorage.getItem("ponte-virtuale-play"));
-    this.shared.scenario.locations.map(location => {
-        let feature = new Feature({
-          geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
-          location: location,
-        })
-        feature.setStyle(new Style({
-          image: new Icon({
-            anchor: [0.5, 0.5],
-            src: location.icon,
-          })
-        }));
-        if(!location.condition || this.pv.checkCondition(location.condition, this.play, this.scenario)) {
-          this.listFeature.push(feature)
-        }
-    })
-    this.map.addLayer(new VectorLayer({
-      source: new VectorSource({features: this.listFeature})
-    }))
+    this.featuresLayer = new VectorLayer({
+      source: new VectorSource({features: []})
+    });
+    this.shared.scenario.locations
+    .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.play, this.scenario))
+    .forEach(location => {
+      this.addFeatureLocation(location);
+    });
+    this.map.addLayer(this.featuresLayer);
     this.overlay = new Overlay({
       element: document.getElementById('popup'),
       autoPan: true,
@@ -146,19 +138,24 @@ export class MappaComponent implements OnInit {
     this.map.addOverlay(this.overlay);
   }
 
-  clickEmpty(evt: any) {
-    let coordinate = this.map.getEventCoordinate(evt);
+  addFeatureLocation(location: MapLocation) {
     let feature = new Feature({
-      geometry: new Point(olProj.fromLonLat([10.506664809575186, 43.84051516173453])),
+      geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
       location: location,
-    })
+    });
     feature.setStyle(new Style({
       image: new Icon({
         anchor: [0.5, 0.5],
-        src: './assets/svg/cat.svg',
+        src: location.icon,
       })
     }));
-    this.layer.getSource().addFeature(feature);
+    this.featuresLayer.getSource().addFeature(feature);
+    this.featureById[location.id] = feature;
+  }
+
+  removeFeatureLocation(location: MapLocation) {
+    this.featuresLayer.getSource().removeFeature(this.featureById[location.id]);
+    delete this.featureById[location.id];
   }
 
   clickTappa(evt: any) {
@@ -170,8 +167,6 @@ export class MappaComponent implements OnInit {
     if(features.length > 0) {
       this.currentLocation = features[0].get('location');
       this.overlay.setPosition(coordinate);
-    } else {
-      this.clickEmpty(evt);
     }
   };
 
@@ -181,6 +176,19 @@ export class MappaComponent implements OnInit {
 
   gioca(location: MapLocation): void {
     this.shared.visitTappa(location.id);
+    this.shared.scenario.locations
+    .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.play, this.scenario))
+    .filter(location => !this.featureById.hasOwnProperty(location.id))
+    .forEach(location => {
+      this.addFeatureLocation(location);
+    });
+    this.featuresLayer.getSource().changed();
+    this.shared.scenario.locations
+    .filter(location => location.condition && !this.pv.checkCondition(location.condition, this.play, this.scenario))
+    .filter(location => this.featureById.hasOwnProperty(location.id))
+    .forEach(location => {
+      this.removeFeatureLocation(location);
+    });
   }
 
 }
