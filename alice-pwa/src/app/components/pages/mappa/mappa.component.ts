@@ -15,7 +15,7 @@ import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 
 import { TickersService } from 'src/app/services/tickers.service';
-import { MapLocation, SharedDataService } from 'src/app/services/shared-data.service';
+import { MapLocation, PlayChange, SharedDataService } from 'src/app/services/shared-data.service';
 import { GamePlay, GameScenario, PonteVirtualeService} from 'src/app/services/ponte-virtuale.service';
 import { environment } from 'src/environments/environment';
 import { features } from 'process';
@@ -36,8 +36,6 @@ export class MappaComponent implements OnInit {
   currentposition: number[];
   currentLocation: MapLocation;
   overlay: Overlay;
-  play:GamePlay;
-  scenario:GameScenario;
   location:MapLocation;
   featureById: {[id: string]: Feature};
 
@@ -53,6 +51,25 @@ export class MappaComponent implements OnInit {
     } else {
       this.position = null;
     }
+    // https://angular.io/guide/component-interaction
+    this.shared.playChangedObs.subscribe(change => this.refreshFeatures(change));
+  }
+
+  refreshFeatures(change: PlayChange): void {
+    // add features that are now visible
+    this.shared.scenario.locations
+    .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
+    .filter(location => !this.featureById.hasOwnProperty(location.id))
+    .forEach(location => {
+      this.addFeatureLocation(location);
+    });
+    // remove features that are not visible anymore
+    this.shared.scenario.locations
+    .filter(location => location.condition && !this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
+    .filter(location => this.featureById.hasOwnProperty(location.id))
+    .forEach(location => {
+      this.removeFeatureLocation(location);
+    });
   }
 
   initMap() {
@@ -118,12 +135,11 @@ export class MappaComponent implements OnInit {
       })
     });
     this.map.addLayer(this.layer);
-    this.play= JSON.parse(localStorage.getItem("ponte-virtuale-play"));
     this.featuresLayer = new VectorLayer({
       source: new VectorSource({features: []})
     });
     this.shared.scenario.locations
-    .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.play, this.scenario))
+    .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
     .forEach(location => {
       this.addFeatureLocation(location);
     });
@@ -176,19 +192,6 @@ export class MappaComponent implements OnInit {
 
   gioca(location: MapLocation): void {
     this.shared.visitTappa(location.id);
-    this.shared.scenario.locations
-    .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.play, this.scenario))
-    .filter(location => !this.featureById.hasOwnProperty(location.id))
-    .forEach(location => {
-      this.addFeatureLocation(location);
-    });
-    this.featuresLayer.getSource().changed();
-    this.shared.scenario.locations
-    .filter(location => location.condition && !this.pv.checkCondition(location.condition, this.play, this.scenario))
-    .filter(location => this.featureById.hasOwnProperty(location.id))
-    .forEach(location => {
-      this.removeFeatureLocation(location);
-    });
   }
 
 }

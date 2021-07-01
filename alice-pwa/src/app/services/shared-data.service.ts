@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition} from './ponte-virtuale.service';
 
@@ -12,6 +13,13 @@ export class SharedDataService {
   play: GamePlay;
   currentStory: GamePlayStory;
   options: Option[];
+
+  private playChangedSource = new Subject<PlayChange>();
+  playChangedObs = this.playChangedSource.asObservable();
+
+  markChanged(change: PlayChange) {
+    this.playChangedSource.next(change);
+  }
 
   constructor(
     private pv: PonteVirtualeService,
@@ -34,6 +42,7 @@ export class SharedDataService {
 
   savePlay() {
     localStorage.setItem("ponte-virtuale-play", JSON.stringify(this.play));
+    this.markChanged({change: 'play-saved'});
   }
 
   clearZoomTo() {
@@ -116,4 +125,8 @@ export class MapLocation {
   lon: number;
   near: boolean;
   condition: GameCondition;
+}
+
+export class PlayChange {
+  change: string;
 }
