@@ -24,7 +24,7 @@ export class LocationService {
           this.getLocationOb.next(this.position);
         },
         (err) => {
-          console.log(err);
+          //console.log(err);
         }
       );
     }
@@ -41,7 +41,7 @@ export class LocationService {
           this.watchLocationOb.next(this.position);
         },
         (err) => {
-          console.log(err);
+          //console.log(err);
           this.locationTrackingActive = false;
         },
         opts

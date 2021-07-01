@@ -60,7 +60,7 @@ export class MappaComponent implements OnInit {
   refreshFeatures(change: PlayChange): void {
     this.addNewFeatures();
     this.removeStaleFeatures();
-    //this.centerOnZoomedLocation();
+    // feature zoom to
   }
 
   mapCenterCoordinates(): Coordinate {
@@ -74,19 +74,6 @@ export class MappaComponent implements OnInit {
     }
     return olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude]);
   }
-
-  // centerOnZoomedLocation() {
-  //   if (this.shared.play && this.shared.play.zoomTo) {
-  //     this.shared.scenario.locations
-  //     .filter(l => l.id === this.shared.play.zoomTo)
-  //     .forEach(l => {
-  //       this.currentposition = [l.lon, l.lat];
-  //     });
-  //     this.shared.clearZoomTo();
-  //   } else {
-  //     this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
-  //   }
-  // }
 
   removeStaleFeatures() {
     this.shared.scenario.locations
