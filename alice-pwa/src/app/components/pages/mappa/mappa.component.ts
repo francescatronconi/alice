@@ -4,22 +4,20 @@ import { Component, OnInit } from '@angular/core';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import Overlay from 'ol/Overlay';
-import Feature, { FeatureLike } from 'ol/Feature'; 
+import Feature, { FeatureLike } from 'ol/Feature';
 import Point from 'ol/geom/Point';
-import VectorLayer from 'ol/layer/Vector' ;
-import VectorSource from 'ol/source/Vector' ;
+import VectorLayer from 'ol/layer/Vector';
+import VectorSource from 'ol/source/Vector';
 import Style from 'ol/style/Style';
 import Icon from 'ol/style/Icon';
 import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 
-import { TickersService } from 'src/app/services/tickers.service';
 import { MapLocation, PlayChange, SharedDataService } from 'src/app/services/shared-data.service';
-import { GamePlay, GameScenario, PonteVirtualeService} from 'src/app/services/ponte-virtuale.service';
-import { environment } from 'src/environments/environment';
-import { features } from 'process';
-import { style } from '@angular/animations';
+import { GamePlay, GameScenario, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
+import { LocationService } from 'src/app/services/location.service';
+import { Coordinate } from 'ol/coordinate';
 
 
 @Component({
@@ -31,81 +29,101 @@ export class MappaComponent implements OnInit {
 
   position: any;
   map: Map;
-  layer: VectorLayer;
+  youLayer: VectorLayer;
   featuresLayer: VectorLayer;
-  currentposition: number[];
   currentLocation: MapLocation;
   overlay: Overlay;
-  location:MapLocation;
-  featureById: {[id: string]: Feature};
+  location: MapLocation;
+  featureById: { [id: string]: Feature };
+  youFeature: Feature;
 
   constructor(
-    private tickers: TickersService,
     public shared: SharedDataService,
     private pv: PonteVirtualeService,
+    private loc: LocationService,
   ) { }
 
   ngOnInit(): void {
-    if (navigator.geolocation) {
-      this.initMap();
-    } else {
-      this.position = null;
-    }
-    // https://angular.io/guide/component-interaction
-    this.shared.playChangedObs.subscribe(change => this.refreshFeatures(change));
+    this.position = null;
+    this.featureById = {};
+    this.loc.getPosition().subscribe(
+      (position) => {
+        if (position) {
+          this.position = position;
+          this.startOlMap();
+          this.refreshLoop();
+        }
+      }
+    );
   }
 
   refreshFeatures(change: PlayChange): void {
-    // add features that are now visible
-    this.shared.scenario.locations
-    .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
-    .filter(location => !this.featureById.hasOwnProperty(location.id))
-    .forEach(location => {
-      this.addFeatureLocation(location);
-    });
-    // remove features that are not visible anymore
-    this.shared.scenario.locations
-    .filter(location => location.condition && !this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
-    .filter(location => this.featureById.hasOwnProperty(location.id))
-    .forEach(location => {
-      this.removeFeatureLocation(location);
-    });
+    this.addNewFeatures();
+    this.removeStaleFeatures();
+    //this.centerOnZoomedLocation();
   }
 
-  initMap() {
-    this.featureById = {};
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.position = position;
-      if (this.shared.play && this.shared.play.zoomTo) {
-        this.shared.scenario.locations
-        .filter(l => l.id === this.shared.play.zoomTo)
-        .forEach(l => {
-          this.currentposition = [l.lon, l.lat];
-        });
+  mapCenterCoordinates(): Coordinate {
+    if (this.shared.play && this.shared.play.zoomTo) {
+      let zoomed = this.shared.scenario.locations
+        .filter(l => l.id === this.shared.play.zoomTo);
+      if (zoomed.length > 0) {
         this.shared.clearZoomTo();
-      } else {
-        this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
+        return olProj.fromLonLat([zoomed[0].lon, zoomed[0].lat]);
       }
-      this.startOlMap();
-      this.refreshLoop();
-    });
+    }
+    return olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude]);
+  }
+
+  // centerOnZoomedLocation() {
+  //   if (this.shared.play && this.shared.play.zoomTo) {
+  //     this.shared.scenario.locations
+  //     .filter(l => l.id === this.shared.play.zoomTo)
+  //     .forEach(l => {
+  //       this.currentposition = [l.lon, l.lat];
+  //     });
+  //     this.shared.clearZoomTo();
+  //   } else {
+  //     this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
+  //   }
+  // }
+
+  removeStaleFeatures() {
+    this.shared.scenario.locations
+      .filter(location => location.condition && !this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
+      .filter(location => this.featureById.hasOwnProperty(location.id))
+      .forEach(location => {
+        this.removeFeatureLocation(location);
+      });
+  }
+
+  addNewFeatures() {
+    this.shared.scenario.locations
+      .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
+      .filter(location => !this.featureById.hasOwnProperty(location.id))
+      .forEach(location => {
+        this.addFeatureLocation(location);
+      });
   }
 
   refreshLoop() {
-    this.tickers.loop('refresh-position', 2000, () => {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.position = position;
-        this.currentposition = [this.position.coords.longitude, this.position.coords.latitude];
+    // position updates
+    this.loc.watchPosition()
+      .subscribe((position) => {
+        if (position) {
+          this.position = position;
+          this.youFeature.setGeometry(new Point(
+            olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])
+          ))
+        }
       });
-      // console.log("position upd =>",this.currentposition[0], this.currentposition[1])
-      var coordinates = olProj.fromLonLat([this.currentposition[0], this.currentposition[1]])
-      this.layer.getSource().getFeatures()[0].setGeometry(coordinates ? new Point(coordinates) : null)
-      // console.log(this.layer);
-      //this.layer.redraw();
-    });
+    // play updates
+    this.shared.playChangedObs
+      .subscribe(change => this.refreshFeatures(change));
   }
 
   startOlMap() {
+    // Map
     this.map = new Map({
       target: 'olmap',
       layers: [
@@ -114,35 +132,39 @@ export class MappaComponent implements OnInit {
         })
       ],
       view: new View({
-        center: olProj.fromLonLat(this.currentposition),
+        center: this.mapCenterCoordinates(),
         zoom: 13
       })
     });
-    this.layer = new VectorLayer({
-      source: new VectorSource({
-        features: [
-          new Feature({
-            geometry: new Point(olProj.fromLonLat(this.currentposition)),
-            name : "Tu"
-          })
-        ]
-      }),
-      style: new Style({
+    // You: navigation position
+    this.youFeature = new Feature({
+      geometry: new Point(olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])),
+      name: "Tu"
+    });
+    this.youFeature.setStyle(
+      new Style({
         image: new Icon({
           anchor: [0.5, 0.5],
           src: './assets/svg/cat.svg',
         })
       })
+    );
+    this.youLayer = new VectorLayer({
+      source: new VectorSource({
+        features: [this.youFeature]
+      }),
     });
-    this.map.addLayer(this.layer);
+    this.map.addLayer(this.youLayer);
+    // features
     this.featuresLayer = new VectorLayer({
-      source: new VectorSource({features: []})
+      source: new VectorSource({ features: [] })
     });
     this.shared.scenario.locations
-    .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
-    .forEach(location => {
-      this.addFeatureLocation(location);
-    });
+      .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
+      .forEach(location => {
+        this.addFeatureLocation(location);
+      });
+    // popup overlay
     this.map.addLayer(this.featuresLayer);
     this.overlay = new Overlay({
       element: document.getElementById('popup'),
@@ -180,14 +202,14 @@ export class MappaComponent implements OnInit {
     var features: FeatureLike[] = this.map.getFeaturesAtPixel(pixel);
     var coordinate = this.map.getEventCoordinate(evt);
     console.log(coordinate);
-    if(features.length > 0) {
+    if (features.length > 0) {
       this.currentLocation = features[0].get('location');
       this.overlay.setPosition(coordinate);
     }
   };
 
   closeLocation(value: boolean): void {
-      this.overlay.setPosition(undefined);
+    this.overlay.setPosition(undefined);
   }
 
   gioca(location: MapLocation): void {
