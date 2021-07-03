@@ -59,8 +59,7 @@ export class MappaComponent implements OnInit {
 
   refreshFeatures(change: PlayChange): void {
     this.addNewFeatures();
-    this.removeStaleFeatures();
-    if (this.shared.play.zoomTo) {
+    this.removeStaleFeatures();    if (this.shared.play.zoomTo) {
       this.map.setView(this.mapView());
     }
   }

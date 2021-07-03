@@ -20,6 +20,7 @@ import { ReadStoryComponent } from './components/widgets/read-story/read-story.c
 import { OptionPopupComponent } from './components/pages/option-popup/option-popup.component';
 import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { ShineComponent } from './components/animations/shine/shine.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { SafePipe } from './pipes/safe.pipe';
     OptionPopupComponent,
     SvgMapComponent,
     SafePipe,
+    ShineComponent,
   ],
   imports: [
     BrowserModule,
