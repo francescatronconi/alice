@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition} from './ponte-virtuale.service';
@@ -27,6 +28,7 @@ export class SharedDataService {
   constructor(
     private pv: PonteVirtualeService,
     private http: HttpClient,
+    private router: Router, 
   ) { 
     this.pv.loadGameScenario(`${environment.gameUrl}/game.json`)
     .then((scenario) => {
@@ -70,8 +72,15 @@ export class SharedDataService {
 
   updateGui() {
     this.findNextStory();
+    this.findZoomTo();
     this.options = this.getOptions();
-}
+  }
+
+  findZoomTo() {
+    if (this.play.zoomTo) {
+      this.router.navigate(['mappa']);
+    }
+  }
 
   findNextStory() {
     let unpublished = this.play.story.filter(item => !item.published);

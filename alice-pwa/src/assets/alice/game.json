@@ -11,14 +11,14 @@
             "condition": {"nobadge": "badge-02", "noTag":"tramutato-in-rospo"}
         },
         {"trigger": "visit:star", "effect": {"story": [{"read": "intro-star.html"}]}},
-        {"trigger": "visit:circle", "effect": {"goToLocation": "biblioteca"}},
+        {"trigger": "visit:circle", "effect": {"location": "biblioteca"}},
         {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
         {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
             "rules": [
                 {"condition": {"badge": "badge-01"},"effect": {"badge": "badge-03"}},
                 {"effect": {"score": 3}}
             ]},
-        {"trigger": "visit:biblioteca", "effect": {"options": "options-A"}}
+        {"trigger": "visit:biblioteca", "effect": {"options": "options-A", "location": "biblioteca"}}
     ],  
     "options": [
         {"id": "options-A", "options": [

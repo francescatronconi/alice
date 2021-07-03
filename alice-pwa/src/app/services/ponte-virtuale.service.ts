@@ -78,6 +78,9 @@ export class PonteVirtualeService {
     if (GameEffectTag.valid(effect as GameEffectTag)) {
       GameEffectTag.run(effect as GameEffectTag, scenario, play);
     }
+    if (GameEffectGoToLocation.valid(effect as GameEffectGoToLocation)) {
+      GameEffectGoToLocation.run(effect as GameEffectGoToLocation, scenario, play);
+    }
   }
 
   getOptions(scenario: GameScenario, play: GamePlay) {
@@ -247,6 +250,20 @@ export class GameEffectTag extends GameEffect {
   }
   static valid(effect: GameEffectTag) {
     return effect.tag ? true : false;
+  }
+}
+
+export class GameEffectGoToLocation extends GameEffect {
+  location: string;
+  static run(effect: GameEffectGoToLocation, scenario: GameScenario, play: GamePlay) {
+    scenario.locations
+    .filter(l => l.id === effect.location)
+    .forEach(l => {
+      play.zoomTo = effect.location;
+    });
+  }
+  static valid(effect: GameEffectGoToLocation) {
+    return effect.location ? true : false;
   }
 }
 
