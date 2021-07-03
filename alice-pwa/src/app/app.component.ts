@@ -27,8 +27,8 @@ export class AppComponent {
     this.menu.add({id: 'badge', icon: './assets/svg/badge.svg', action: (shared: SharedDataService) => {
       this.router.navigate(['badge']);
     }});
-    this.menu.add({id: 'biblioteca', icon: './assets/svg/biblioteca.svg', action: (shared: SharedDataService) => {
-      this.router.navigate(['biblioteca']);
+    this.menu.add({id: 'agora', icon: './assets/svg/biblioteca.svg', action: (shared: SharedDataService) => {
+      this.router.navigate(['map', 'agora']);
     }});
   }
 

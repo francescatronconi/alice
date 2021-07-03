@@ -19,6 +19,7 @@ import { BadgeComponent } from './components/pages/badge/badge.component';
 import { ReadStoryComponent } from './components/widgets/read-story/read-story.component';
 import { OptionPopupComponent } from './components/pages/option-popup/option-popup.component';
 import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
     ReadStoryComponent,
     OptionPopupComponent,
     SvgMapComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MapLocation } from './shared-data.service';
+import { SvgMap } from './shared-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -110,7 +111,7 @@ export class GameScenario {
   badges: GameBadge[];
   options: GameOption[];
   locations: MapLocation[];
-
+  svgmaps: SvgMap[];
 }
 
 export class GameEvent {

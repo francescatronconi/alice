@@ -12,7 +12,8 @@ const routes: Routes = [
   {path: '', component: CheckInComponent},
   {path: 'diario', component: DiarioComponent},
   {path: 'mappa', component: MappaComponent},
-  {path: 'biblioteca', component: SvgMapComponent},
+  {path: 'map/:id', component: SvgMapComponent},
+  //{path: 'biblioteca', component: SvgMapComponent},
   {path: 'badge', component: BadgeComponent},
   {path: ':key/story', component: TellStoryComponent}
 ];

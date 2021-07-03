@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
+import { stringify } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition} from './ponte-virtuale.service';
 
@@ -16,6 +17,8 @@ export class SharedDataService {
 
   private playChangedSource = new Subject<PlayChange>();
   playChangedObs = this.playChangedSource.asObservable();
+  private scenarioReadySource = new Subject<GameScenario>();
+  scenarioReadyObs = this.scenarioReadySource.asObservable();
 
   markChanged(change: PlayChange) {
     this.playChangedSource.next(change);
@@ -29,6 +32,7 @@ export class SharedDataService {
     .then((scenario) => {
       this.scenario = scenario;
       this.loadPlay();
+      this.scenarioReadySource.next(scenario);
     });
   }
 
@@ -125,6 +129,14 @@ export class MapLocation {
   lon: number;
   near: boolean;
   condition: GameCondition;
+}
+
+export class SvgMap {
+  //{"id": "agora", "svg": "./assets/svg/agora.svg", "background": "bg", "ids": ["hall", "desk", "comics"]}
+  id: string;
+  svg: string;
+  background: string;
+  ids: string[];
 }
 
 export class PlayChange {
