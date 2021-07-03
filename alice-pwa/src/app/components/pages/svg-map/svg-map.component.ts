@@ -48,8 +48,8 @@ export class SvgMapComponent implements OnInit {
     this.shared.getHtmlResource(this.svgmap.svg).then(svg => {
       let parser = new DOMParser();
       this.svg = parser.parseFromString(svg, 'text/xml');
-      if (this.svg.getElementById('background')) {
-        this.background = new SvgMapArea(this.svgmap.id, this.svg.getElementById('background'));
+      if (this.svgmap.background) {
+        this.background = new SvgMapArea(this.svgmap.id, this.svg.getElementById(this.svgmap.background));
       }
       this.areas = this.svgmap.ids
       .map(id => new SvgMapArea(id, this.svg.getElementById(id)))

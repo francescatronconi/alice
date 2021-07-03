@@ -11,6 +11,7 @@
             "condition": {"nobadge": "badge-02", "noTag":"tramutato-in-rospo"}
         },
         {"trigger": "visit:star", "effect": {"story": [{"read": "intro-star.html"}]}},
+        {"trigger": "visit:circle", "effect": {"goToLocation": "biblioteca"}},
         {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
         {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
             "rules": [
@@ -39,7 +40,7 @@
         {"badge": "badge-03", "src": "horse.svg"}
     ],
     "svgmaps": [
-        {"id": "agora", "svg": "agora.svg", "background": "bg", "ids": ["star", "circle"]}
+        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle"]}
     ],
     "locations": [
         {"id":"cattedrale", "name": "Giardino della cattedrale", "icon": "./assets/svg/cat.svg", 
