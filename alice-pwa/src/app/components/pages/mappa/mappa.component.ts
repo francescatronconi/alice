@@ -37,6 +37,7 @@ export class MappaComponent implements OnInit, OnDestroy {
   featureById: { [id: string]: Feature };
   youFeature: Feature;
   playChangeSub: Subscription;
+  subscriptions: Subscription[];
 
   constructor(
     public shared: SharedDataService,
@@ -45,7 +46,7 @@ export class MappaComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnDestroy(): void {
-    this.playChangeSub.unsubscribe();
+    this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 
   ngOnInit(): void {
@@ -54,19 +55,21 @@ export class MappaComponent implements OnInit, OnDestroy {
     navigator.geolocation.getCurrentPosition((position) => {
       this.position = position;
     });
-    this.loc.watchPosition()
-    .subscribe((position) => {
-      if (position) {
-        this.position = position;
-        if (!this.map) {
-          this.startOlMap();
-        }
-        this.youFeature.setGeometry(new Point(
-          olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])
-        ))
+    this.subscriptions = [];
+    this.subscriptions.push(this.loc.watchPosition().subscribe(position => {this.updatePosition(position)}));
+    this.subscriptions.push(this.shared.playChangedOb.subscribe(change => this.refreshFeatures(change)));
+  }
+
+  updatePosition(position: any) {
+    if (position) {
+      this.position = position;
+      if (!this.map) {
+        this.startOlMap();
       }
-    });
-    this.playChangeSub = this.shared.playChangedOb.subscribe(change => this.refreshFeatures(change));
+      this.youFeature.setGeometry(new Point(
+        olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])
+      ))
+    }
   }
 
   refreshFeatures(change: PlayChange): void {
