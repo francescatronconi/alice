@@ -109,6 +109,7 @@ export class PonteVirtualeService {
 
 export class GameScenario {
 
+  id: string;
   rules: GameRule[];
   badges: GameBadge[];
   options: GameOption[];
@@ -288,6 +289,7 @@ export class GameEffectOptions extends GameEffect {
 
 export class GamePlay {
   
+  id: string;
   situation: string[];
   story: GamePlayStory[];
   badges: string[];

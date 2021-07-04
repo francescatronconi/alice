@@ -40,6 +40,7 @@ export class SharedDataService {
 
   startGame() {
     this.play = new GamePlay();
+    this.play.id = this.scenario.id;
     this.pv.start(this.scenario, this.play);
     this.findNextStory();
     this.options = this.getOptions();
@@ -66,7 +67,12 @@ export class SharedDataService {
   loadPlay() {
     let saved = localStorage.getItem("ponte-virtuale-play");
     if (saved) {
-      this.play = JSON.parse(saved);
+      let play = JSON.parse(saved);
+      if (play.id && play.id === this.scenario.id) {
+        this.play = play;
+      } else {
+        localStorage.removeItem("ponte-virtuale-play");
+      }
     }
   }
 

@@ -1,4 +1,5 @@
 {
+    "id": "devel",
     "rules": [
         {"trigger": "start", "effect": {"story": [
             {"read": "intro-1.html"},
