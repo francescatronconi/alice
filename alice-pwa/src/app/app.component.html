@@ -1,10 +1,17 @@
-<router-outlet></router-outlet>
-<div app-buttons-overlay></div>
-<ng-container *ngIf="!(shared.play)">
-    <div class="blackdim"></div>
-    <div class="fullpage alice" >
-        <div class="modal" (click)="shared.startGame()">Inizia la partita!</div>
-    </div>
+<ng-container *ngIf="!(shared.scenario)">
+    Caricamento...
 </ng-container>
-<div app-story-popup *ngIf="shared.currentStory"></div>
-<div app-option-popup *ngIf="!shared.currentStory && shared.options"></div>
+<ng-container *ngIf="shared.scenario">
+    <ng-container *ngIf="!(shared.play)">
+        <div class="blackdim"></div>
+        <div class="fullpage alice" >
+            <div class="modal" (click)="shared.startGame()">Inizia la partita!</div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="shared.play">
+        <router-outlet></router-outlet>
+        <div app-buttons-overlay></div>
+        <div app-story-popup *ngIf="shared.currentStory"></div>
+        <div app-option-popup *ngIf="!shared.currentStory && shared.options"></div>
+    </ng-container>
+</ng-container>
