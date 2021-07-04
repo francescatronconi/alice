@@ -44,17 +44,21 @@ export class MappaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.position = null;
     this.featureById = {};
-    this.loc.getPosition().subscribe(
-      (position) => {
-        if (position) {
-          this.position = position;
-          this.startOlMap();
-          this.refreshLoop();
-        }
-      }
-    );
+    this.position = null;
+    this.refreshLoop();
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.position = position;
+    });
+    // this.loc.getPosition().subscribe(
+    //   (position) => {
+    //     if (position) {
+    //       this.position = position;
+    //       this.startOlMap();
+    //       this.refreshLoop();
+    //     }
+    //   }
+    // );
   }
 
   refreshFeatures(change: PlayChange): void {
@@ -111,17 +115,20 @@ export class MappaComponent implements OnInit {
   refreshLoop() {
     // position updates
     this.loc.watchPosition()
-      .subscribe((position) => {
-        if (position) {
-          this.position = position;
-          this.youFeature.setGeometry(new Point(
-            olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])
-          ))
+    .subscribe((position) => {
+      if (position) {
+        this.position = position;
+        if (!this.map) {
+          this.startOlMap();
         }
-      });
-    // play updates
-    this.shared.playChangedObs
+        this.youFeature.setGeometry(new Point(
+          olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])
+        ))
+      }
+      this.shared.playChangedObs
       .subscribe(change => this.refreshFeatures(change));
+    });
+    // play updates
   }
 
   startOlMap() {

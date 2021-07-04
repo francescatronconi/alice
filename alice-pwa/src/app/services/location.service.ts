@@ -9,27 +9,33 @@ export class LocationService {
   public locationTrackingActive = false;
   public position: any;
   private watchLocationOb: Subject<any>;
-  private getLocationOb: Subject<any>;
+  //private getLocationOb: Subject<any>;
 
   constructor() {
-    this.watchLocationOb = new BehaviorSubject<any>(this.position);
-    this.getLocationOb = new BehaviorSubject<any>(this.position);
-  }
-
-  getPosition(): Observable<any> {
     if (navigator.geolocation) {
+      this.watchLocationOb = new BehaviorSubject<any>(this.position);
       navigator.geolocation.getCurrentPosition(
         (position) => {
           this.position = position;
-          this.getLocationOb.next(this.position);
-        },
-        (err) => {
-          //console.log(err);
         }
       );
     }
-    return this.getLocationOb;
   }
+
+  // getPosition(): Observable<any> {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         this.position = position;
+  //         //this.getLocationOb.next(this.position);
+  //       },
+  //       (err) => {
+  //         //console.log(err);
+  //       }
+  //     );
+  //   }
+  //   return this.getLocationOb;
+  // }
 
   watchPosition(): Observable<any> {
     const opts = { enableHighAccuracy: true, maximumAge: 60000, timeout: 30000 };

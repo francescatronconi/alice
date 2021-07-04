@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { on } from 'events';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { GameScenario } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 
@@ -33,6 +35,12 @@ export class SvgMapComponent implements OnInit {
         this.readScenario(this.shared.scenario);
       });
     }
+    let prova = new BehaviorSubject<number>(0);
+    prova.next(15);
+    let ob = prova.asObservable();
+    ob.subscribe((x) => console.log(x));
+    prova.next(16);
+    prova.next(17);
   }
 
   readScenario(scenario: GameScenario) {
