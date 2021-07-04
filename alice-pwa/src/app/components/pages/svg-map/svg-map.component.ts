@@ -35,12 +35,6 @@ export class SvgMapComponent implements OnInit {
         this.readScenario(this.shared.scenario);
       });
     }
-    let prova = new BehaviorSubject<number>(0);
-    prova.next(15);
-    let ob = prova.asObservable();
-    ob.subscribe((x) => console.log(x));
-    prova.next(16);
-    prova.next(17);
   }
 
   readScenario(scenario: GameScenario) {

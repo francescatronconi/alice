@@ -37,7 +37,6 @@ export class PonteVirtualeService {
   }
 
   apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
-    console.log(rule)
     if(this.checkCondition(rule.condition, play, scenario)) {
       this.applyEffect(rule.effect, scenario, play)
     }

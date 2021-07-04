@@ -10,14 +10,14 @@ import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, Ga
   providedIn: 'root'
 })
 export class SharedDataService {
-
+  
   scenario: GameScenario;
   play: GamePlay;
   currentStory: GamePlayStory;
   options: Option[];
 
   private playChangedSource = new Subject<PlayChange>();
-  playChangedObs = this.playChangedSource.asObservable();
+  playChangedOb = this.playChangedSource.asObservable();
   private scenarioReadySource = new Subject<GameScenario>();
   scenarioReadyObs = this.scenarioReadySource.asObservable();
 

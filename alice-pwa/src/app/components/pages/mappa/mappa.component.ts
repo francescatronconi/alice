@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 // openlayers
 import Map from 'ol/Map';
@@ -18,14 +18,14 @@ import { MapLocation, PlayChange, SharedDataService } from 'src/app/services/sha
 import { GamePlay, GameScenario, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
 import { LocationService } from 'src/app/services/location.service';
 import { Coordinate } from 'ol/coordinate';
-
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mappa',
   templateUrl: './mappa.component.html',
   styleUrls: ['./mappa.component.scss']
 })
-export class MappaComponent implements OnInit {
+export class MappaComponent implements OnInit, OnDestroy {
 
   position: any;
   map: Map;
@@ -36,6 +36,7 @@ export class MappaComponent implements OnInit {
   location: MapLocation;
   featureById: { [id: string]: Feature };
   youFeature: Feature;
+  playChangeSub: Subscription;
 
   constructor(
     public shared: SharedDataService,
@@ -43,40 +44,40 @@ export class MappaComponent implements OnInit {
     private loc: LocationService,
   ) { }
 
+  ngOnDestroy(): void {
+    this.playChangeSub.unsubscribe();
+  }
+
   ngOnInit(): void {
     this.featureById = {};
     this.position = null;
-    this.refreshLoop();
     navigator.geolocation.getCurrentPosition((position) => {
       this.position = position;
     });
-    // this.loc.getPosition().subscribe(
-    //   (position) => {
-    //     if (position) {
-    //       this.position = position;
-    //       this.startOlMap();
-    //       this.refreshLoop();
-    //     }
-    //   }
-    // );
+    this.loc.watchPosition()
+    .subscribe((position) => {
+      if (position) {
+        this.position = position;
+        if (!this.map) {
+          this.startOlMap();
+        }
+        this.youFeature.setGeometry(new Point(
+          olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])
+        ))
+      }
+    });
+    this.playChangeSub = this.shared.playChangedOb.subscribe(change => this.refreshFeatures(change));
   }
 
   refreshFeatures(change: PlayChange): void {
     this.addNewFeatures();
     this.removeStaleFeatures();
     if (this.shared.play.zoomTo) {
-      console.log('refresh features', this.map, this.shared.play.zoomTo);
       this.map.setView(this.mapView());
     }
   }
 
-  trickMe(): boolean {
-    this.shared.clearZoomTo();
-    return true;
-  }
-
   mapView(): View {
-    console.log('mapView', this.shared.play.zoomTo);
     let zoom: number;
     let center: Coordinate;
     if (this.shared.play.zoomTo) {
@@ -84,6 +85,7 @@ export class MappaComponent implements OnInit {
       .filter(l => l.id === this.shared.play.zoomTo)
       .forEach(l => center = olProj.fromLonLat([l.lon, l.lat]));
       zoom = 16;
+      this.shared.clearZoomTo();
     } else {
       center = olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude]);
       zoom = 13;
@@ -112,25 +114,6 @@ export class MappaComponent implements OnInit {
       });
   }
 
-  refreshLoop() {
-    // position updates
-    this.loc.watchPosition()
-    .subscribe((position) => {
-      if (position) {
-        this.position = position;
-        if (!this.map) {
-          this.startOlMap();
-        }
-        this.youFeature.setGeometry(new Point(
-          olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])
-        ))
-      }
-      this.shared.playChangedObs
-      .subscribe(change => this.refreshFeatures(change));
-    });
-    // play updates
-  }
-
   startOlMap() {
     // Map
     this.map = new Map({
@@ -142,7 +125,6 @@ export class MappaComponent implements OnInit {
       ]
     });
     // Main view and center
-    console.log('startOlMap', this.shared.play.zoomTo);
     this.map.setView(this.mapView());
     // You: navigation position
     this.youFeature = new Feature({
@@ -209,7 +191,6 @@ export class MappaComponent implements OnInit {
     pixel = this.map.getEventPixel(evt);
     var features: FeatureLike[] = this.map.getFeaturesAtPixel(pixel);
     var coordinate = this.map.getEventCoordinate(evt);
-    console.log(coordinate);
     if (features.length > 0) {
       this.currentLocation = features[0].get('location');
       this.overlay.setPosition(coordinate);
