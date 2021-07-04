@@ -59,12 +59,20 @@ export class MappaComponent implements OnInit {
 
   refreshFeatures(change: PlayChange): void {
     this.addNewFeatures();
-    this.removeStaleFeatures();    if (this.shared.play.zoomTo) {
+    this.removeStaleFeatures();
+    if (this.shared.play.zoomTo) {
+      console.log('refresh features', this.map, this.shared.play.zoomTo);
       this.map.setView(this.mapView());
     }
   }
 
+  trickMe(): boolean {
+    this.shared.clearZoomTo();
+    return true;
+  }
+
   mapView(): View {
+    console.log('mapView', this.shared.play.zoomTo);
     let zoom: number;
     let center: Coordinate;
     if (this.shared.play.zoomTo) {
@@ -72,7 +80,6 @@ export class MappaComponent implements OnInit {
       .filter(l => l.id === this.shared.play.zoomTo)
       .forEach(l => center = olProj.fromLonLat([l.lon, l.lat]));
       zoom = 16;
-      this.shared.clearZoomTo();
     } else {
       center = olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude]);
       zoom = 13;
@@ -128,6 +135,7 @@ export class MappaComponent implements OnInit {
       ]
     });
     // Main view and center
+    console.log('startOlMap', this.shared.play.zoomTo);
     this.map.setView(this.mapView());
     // You: navigation position
     this.youFeature = new Feature({
