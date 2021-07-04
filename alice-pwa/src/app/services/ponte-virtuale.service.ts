@@ -20,13 +20,16 @@ export class PonteVirtualeService {
   checkAndRunRule(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
     if (
       GameEventStart.validEvent(rule, scenario, play) ||
-      GameEventVisit.validEvent(rule, scenario, play)
+      GameEventVisit.validEvent(rule, scenario, play) ||
+      !rule.trigger
       ) {
-        if (rule.effect) {
-          this.applyEffect(rule.effect, scenario, play);
-        }
-        if (rule.rules) {
-          rule.rules.forEach(sub => this.checkAndRunRule(sub, scenario, play));
+        if(!rule.condition || this.checkCondition(rule.condition, play, scenario)) {
+          if (rule.effect) {
+            this.applyEffect(rule.effect, scenario, play);
+          }
+          if (rule.rules) {
+            rule.rules.forEach(sub => this.checkAndRunRule(sub, scenario, play));
+          }
         }
     }
   }
@@ -44,7 +47,9 @@ export class PonteVirtualeService {
 
   checkCondition(condition: GameCondition, play:GamePlay, scenario:GameScenario): boolean {
     let check: boolean = true;
+    console.log(condition);
     if(GameRule.validCondition(condition)) {
+      console.log("valid", condition);
       if (GameConditionBadge.valid(condition as GameConditionBadge)) {
         check = check && GameConditionBadge.check(condition as GameConditionBadge, play);
       }
@@ -175,6 +180,7 @@ export class GameConditionBadge extends GameCondition {
   }
 
   static check(condition: GameConditionBadge, play: GamePlay) : boolean {
+    console.log("condition badge", play.badges, condition.badge);
     return play.badges.includes(condition.badge);
   }
 
