@@ -125,6 +125,7 @@ export class MappaComponent implements OnInit {
           name : location.name,
           id: location.id,
           near: location.near,
+          description: location.description,
         })
         let style = new Style({
           image: new Icon({

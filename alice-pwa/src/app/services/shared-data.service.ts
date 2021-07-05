@@ -141,4 +141,5 @@ export class MapLocation {
   lon: number;
   near: boolean;
   condition:GameCondition;
+  description: string;
 }

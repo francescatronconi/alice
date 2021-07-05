@@ -1,16 +1,18 @@
 <div id="popup" class="ol-popup">
     <a id="popup-closer" class="ol-popup-closer" (click)="clickCloseLocation()"></a>
     <div id="popup-content" *ngIf="currentFeature">
-        <img width=80 src="{{currentFeature.get('name')}}">
-        <div>
-            <a *ngIf="currentFeature.get('id')" target="_blank"
-                href="https://www.google.com/maps/dir/{{position.coords.latitude}},{{position.coords.longitude}}/{{currentFeature.get('latitude')}},{{currentFeature.get('longitude')}}">
-                <img width=80 src="./assets/svg/bussola.svg">
-            </a>
-        </div>
+        <img class="border" width=60 src="{{currentFeature.get('name')}}" title="{{currentFeature.get('description')}}">
+        <div class="inlineElements">
+            <div>
+                <a *ngIf="currentFeature.get('id')" target="_blank"
+                    href="https://www.google.com/maps/dir/{{position.coords.latitude}},{{position.coords.longitude}}/{{currentFeature.get('latitude')}},{{currentFeature.get('longitude')}}">
+                    <img width=40 src="./assets/svg/bussola.svg" title="Portami qui" >
+                </a>
+            </div>
 
-        <div class="clickable" *ngIf="currentFeature.get('id') && nearToPlay; else message" (click)="clickGioca()">
-            <img width=80 src="./assets/svg/gamepad.svg">
+            <div class="clickable margin" *ngIf="currentFeature.get('id') && nearToPlay; else message" (click)="clickGioca()">
+                <img width=40 src="./assets/svg/gamepad.svg" title="Gioca">
+            </div>
         </div>
          <!-- <div class="button-gioca">
             <a *ngIf="currentFeature.get('id')"  href="" class="btn" (click)="clickGioca()">

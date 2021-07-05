@@ -354,7 +354,7 @@
     border: 1px solid #cccccc;
     bottom: 12px;
     left: -50px;
-    display: flex;
+    text-align: center;
   }
   .ol-popup:after, .ol-popup:before {
     top: 100%;
@@ -402,4 +402,20 @@
 
   .clickable{
     cursor: pointer;
+  }
+
+  .border{
+    border: 1px solid #131212;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .inlineElements{
+    display: flex;
+    align-items: center;
+  }
+
+  .margin {
+    margin-left: 20px;
   }
