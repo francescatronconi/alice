@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ButtonsMenuService } from './buttons-menu.service';
 import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition} from './ponte-virtuale.service';
 
 @Injectable({
@@ -28,14 +29,24 @@ export class SharedDataService {
   constructor(
     private pv: PonteVirtualeService,
     private http: HttpClient,
-    private router: Router, 
+    public menu: ButtonsMenuService,
+    private router: Router,
   ) { 
     this.pv.loadGameScenario(`${environment.gameUrl}/game.json`)
     .then((scenario) => {
       this.scenario = scenario;
+      this.loadButtons();
       this.loadPlay();
       this.scenarioReadySource.next(scenario);
     });
+  }
+
+  private loadButtons() {
+    this.scenario.buttons.forEach(b => this.menu.add({
+      id: b.id, icon: b.icon, action: () => {
+        this.router.navigate(b.action);
+      }
+    }));
   }
 
   startGame() {
@@ -50,6 +61,18 @@ export class SharedDataService {
   savePlay() {
     localStorage.setItem("ponte-virtuale-play", JSON.stringify(this.play));
     this.markChanged({change: 'play-saved'});
+  }
+
+  deletePlay() {
+    localStorage.removeItem("ponte-virtuale-play");
+  }
+
+  restartGame() {
+    this.deletePlay();
+  }
+
+  closeWindow() {
+    window.close();
   }
 
   clearZoomTo() {
@@ -144,6 +167,7 @@ export class MapLocation {
   lon: number;
   near: boolean;
   condition: GameCondition;
+  description: string;
 }
 
 export class SvgMap {

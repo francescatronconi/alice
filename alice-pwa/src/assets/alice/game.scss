@@ -1,0 +1,421 @@
+/* smartapp.scss */
+@font-face {
+    font-family: 'Garamond-Regular';
+    src: url('../fonts/Garamond-Regular.ttf') format("truetype");
+    font-weight:300;
+}
+
+.bg {
+    background-color: lightblue;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* The image used */
+    /* background-image: url("assets/bg.jpg"); */
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fullpage {
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: auto;
+}
+
+.splitview {
+    display: flex;
+    background: rgb(0,0,0,0.5);
+    flex-direction: row;
+    .splithalf {
+        width: 50%;
+        overflow: auto;
+        @media screen and (orientation:portrait) {
+            margin-bottom: 70px;
+            padding-bottom: 70px;
+        }
+        @media screen and (orientation:landscape) {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.fullsvg {
+    position:fixed; 
+    top:0; 
+    left:0; 
+    height:100%; 
+    width:100%;
+}
+
+.fulldiv {
+    position:fixed;
+    top:0;
+    left: 0; 
+    height:100%;
+    width:100%;
+    overflow: hidden;
+}
+
+.spotlight {
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    div {
+        text-align: center;
+    }
+}
+
+.panel-menu-list {
+    position: fixed;
+    display: flex;
+}
+
+.top-left-menu {
+    top: 10px;
+    left: 15px;
+}
+
+.top-right-menu {
+    top: 10px;
+    right: 15px;
+}
+
+.bottom-left-menu {
+    bottom: 10px;
+    left: 15px;
+}
+
+.bottom-right-menu {
+    bottom: 10px;
+    right: 15px;
+}
+
+.panel-menu-list {
+    svg {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    .panel-menu-list.top-right-menu, .panel-menu-list.bottom-right-menu {
+        flex-direction: row-reverse;
+        .panel-menu-item {
+            padding-left: 10px;
+        }
+    }
+    .panel-menu-list.top-left-menu, .panel-menu-list.bottom-left-menu {
+        flex-direction: row;
+        .panel-menu-item {
+            padding-right: 10px;
+        }
+    }
+    .panel-menu-list {
+        height: 40px;
+    }
+    .fullpage {
+        padding-top: 70px;
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 70px;
+    }
+    .splash-title {
+        div {
+            padding-top: 70px;
+        }
+    }
+    .footer {
+        height: 100px;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    .panel-menu-list.top-right-menu, .panel-menu-list.top-left-menu {
+        flex-direction: column;
+        .panel-menu-item {
+            padding-bottom: 10px;
+        }
+    }
+    .panel-menu-list.bottom-right-menu, .panel-menu-list.bottom-left-menu {
+        flex-direction: column-reverse;
+        .panel-menu-item {
+            padding-top: 10px;
+        }
+    }
+    .panel-menu-list {
+        width: 40px;
+    }
+    .fullpage {
+        padding-top: 10px;
+        padding-right: 70px;
+        padding-left: 70px;
+        padding-bottom: 10px;
+    }
+    .splash-title {
+        div {
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+    }
+}
+
+/* styles.scss */
+
+@font-face {
+    font-family: 'Alice in Wonderland';
+    src: url('../fonts/alice/Alice_in_Wonderland_3.ttf') format("truetype");
+}
+
+.alice {
+    font-family: "Alice in Wonderland";
+    font-weight:300;
+}
+
+.blackdim {
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.gameOptions {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                linear-gradient(white, white);
+    z-index:100;
+    text-align: center;
+    padding-top: 15%;
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: auto;
+}
+
+.frame {
+    width: 300px;
+    height: 250px;
+    border: 3px solid #ccc;
+    background: white;
+    margin: auto;
+  }
+
+.startdim {
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: hidden;
+    background: rgba(0, 0, 0);
+}
+
+.modal {
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+}
+
+.button {
+    padding: 5px;
+    margin: 5px;
+    background-color: white;
+    text-align: center;
+}
+
+.buttonStartGame {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 14px 40px;
+    font-family: "Alice in Wonderland";
+    box-shadow: 0 4px #999;
+  }
+
+  .buttonStartGame:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+  .buttonLink {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 125%;
+  }
+
+  .restartGame {
+    background-color: #eb0808;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 135%;
+    cursor: pointer;
+    font-family: "Alice in Wonderland";
+    margin: 10px;
+    padding: 5px 10px 5px 10px;
+    box-shadow: 5px 5px 5px #cfcece;
+    width: 250px;
+  }
+
+  .restartGame:hover {
+    background-color: rgb(197, 5, 5);
+    box-shadow: 5px 5px 5px #a7a6a6;
+  }
+
+  .restartGame:active {
+    background-color: #910303;
+    box-shadow: 5px 5px 5px #666;
+    transform: translateY(4px);
+  }
+
+  .returnGame {
+    background-color: #038514;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 135%;
+    cursor: pointer;
+    font-family: "Alice in Wonderland";
+    padding: 5px 10px 5px 10px;
+    box-shadow: 5px 5px 5px #cfcece;
+    width: 250px;
+  }
+
+  .returnGame:hover {
+    background-color: rgb(2, 87, 14);
+    box-shadow: 5px 5px 5px #a7a6a6;
+  }
+
+  .returnGame:active {
+    background-color: #03501c;
+    box-shadow: 5px 5px 5px #666;
+    transform: translateY(4px);
+  }
+
+.centralized {
+    text-align: center;
+    padding-top: 20%;
+    position:fixed;
+    left: 0; right:0; top:0;
+    height:100%;
+    overflow: auto;
+  }
+
+.ol-attribution {
+    display: none;
+}
+.ol-control {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .ol-control {
+        display: unset;
+    }
+
+}
+
+
+/* popup.component.scss */
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    text-align: center;
+  }
+  .ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+  }
+  .ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+  }
+  .ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+  }
+  .ol-popup-closer:after {
+    content: "✖";
+  }
+
+  .button-portamiqui {
+    padding-top:15px
+  }
+  
+  .button-gioca {
+    padding-top:5px;
+    margin-top: 15px;
+  }
+
+  .nearByMessage {
+    margin-top: 20px;
+  }
+
+  .clickable{
+    cursor: pointer;
+  }
+
+  .border{
+    border: 1px solid #131212;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
+  .inlineElements{
+    display: flex;
+    align-items: center;
+  }
+
+  .margin {
+    margin-left: 20px;
+  }

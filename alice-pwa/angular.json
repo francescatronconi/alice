@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/smartapp.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
