@@ -1,15 +1,18 @@
 <div id="popup" class="ol-popup">
     <a id="popup-closer" class="ol-popup-closer" (click)="clickCloseLocation()"></a>
     <div id="popup-content" *ngIf="location">
-        <div>{{location.name}}</div>
-        <div class="button-portamiqui">
-            <a *ngIf="location" target="_blank" class="btn"
-                href="https://www.google.com/maps/dir/{{position.coords.latitude}},{{position.coords.longitude}}/{{location.lat}},{{location.lon}}">
-                portami qui
-            </a>
-        </div>
-        <div class="button-gioca btn" *ngIf="location && nearToPlay(); else message" (click)="clickGioca()">
-            gioca
+        <img class="border" width=60 src="{{location.name}}" title="{{location.description}}">
+        <div class="inlineElements">
+            <div>
+                <a *ngIf="location.id" target="_blank"
+                    href="https://www.google.com/maps/dir/{{position.coords.latitude}},{{position.coords.longitude}}/{{location.lat}},{{location.lon}}">
+                    <img width=40 src="./assets/svg/bussola.svg" title="Portami qui" >
+                </a>
+            </div>
+
+            <div class="clickable margin" *ngIf="location.id && nearToPlay(); else message" (click)="clickGioca()">
+                <img width=40 src="./assets/svg/gamepad.svg" title="Gioca">
+            </div>
         </div>
         <ng-template #message><div class="nearByMessage">non sei abbastanza vicino per giocare la tappa.</div></ng-template>
     </div>

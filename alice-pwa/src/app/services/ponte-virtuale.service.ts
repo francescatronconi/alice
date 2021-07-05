@@ -120,6 +120,8 @@ export class GameScenario {
   options: GameOption[];
   locations: MapLocation[];
   svgmaps: SvgMap[];
+  buttons: MapButton[];
+
 }
 
 export class GameEvent {
@@ -337,4 +339,14 @@ export class Option {
   text: string;
   effect: GameEffect;
 }
+
+export class MapButton {
+
+  id: string;
+  icon: string;
+  action: string[];
+
+}
+
+
 

@@ -6,6 +6,7 @@ import { MappaComponent } from './components/pages/mappa/mappa.component';
 import { BadgeComponent } from './components/pages/badge/badge.component';
 import { TellStoryComponent } from './components/pages/tell-story/tell-story.component';
 import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
+import { PartitaComponent } from './components/pages/partita/partita.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'map/:id', component: SvgMapComponent},
   //{path: 'biblioteca', component: SvgMapComponent},
   {path: 'badge', component: BadgeComponent},
+  {path: 'partita', component: PartitaComponent},
   {path: ':key/story', component: TellStoryComponent}
 ];
 
