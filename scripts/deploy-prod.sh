@@ -11,7 +11,7 @@ HACKGIT=~/hack/git
 NGDIR=$HACKGIT/alice/alice-pwa
 
 cd $NGDIR
-ng build --base-href=./ --prod
+ng build --configuration=daniele --base-href=./ --prod
 
 REMOTE="ssh dantar "
 
