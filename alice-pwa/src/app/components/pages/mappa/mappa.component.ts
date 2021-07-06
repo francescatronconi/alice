@@ -103,7 +103,8 @@ export class MappaComponent implements OnInit {
         features: [
           new Feature({
             geometry: new Point(olProj.fromLonLat(this.currentposition)),
-            name : "Tu"
+            name : "./assets/svg/user.svg",
+            description: "Tu"
           })
         ]
       }),
