@@ -138,7 +138,7 @@ export class MappaComponent implements OnInit, OnDestroy {
       new Style({
         image: new Icon({
           anchor: [0.5, 0.5],
-          src: './assets/svg/cat.svg',
+          src: './assets/svg/user.svg',
         })
       })
     );

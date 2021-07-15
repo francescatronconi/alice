@@ -14,7 +14,8 @@
                 <img width=40 src="./assets/svg/gamepad.svg" title="Gioca">
             </div>
         </div>
-        <ng-template #message><div class="nearByMessage">non sei abbastanza vicino per giocare la tappa.</div></ng-template>
+        <ng-template #message><ng-container *ngIf="currentFeature.get('id'); else blank"><div class="margin"><img width=40 src="./assets/svg/gamepad.svg" title="non sei abbastanza vicino per giocare la tappa"></div></ng-container></ng-template>
+        <ng-template #blank></ng-template>
     </div>
 </div>
 
