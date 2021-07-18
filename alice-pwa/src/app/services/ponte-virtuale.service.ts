@@ -21,6 +21,7 @@ export class PonteVirtualeService {
     if (
       GameEventStart.validEvent(rule, scenario, play) ||
       GameEventVisit.validEvent(rule, scenario, play) ||
+      GameEventQrCode.validEvent(rule, scenario, play) ||
       !rule.trigger
       ) {
         if(!rule.condition || this.checkCondition(rule.condition, play, scenario)) {
@@ -36,6 +37,11 @@ export class PonteVirtualeService {
 
   visit(scenario: GameScenario, play: GamePlay, location: string) {
     play.event = new GameEventVisit(location);
+    this.runScenarioRules(scenario, play);
+  }
+
+  qr(scenario: GameScenario, play: GamePlay, code: string) {
+    play.event = new GameEventQrCode(code);
     this.runScenarioRules(scenario, play);
   }
 
@@ -149,6 +155,22 @@ export class GameEventVisit {
     let event = (play.event as GameEventVisit);
     let r = /visit:(.*)/;
     return event.location && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
+  }
+
+}
+
+export class GameEventQrCode {
+
+  qrcode: string;
+
+  constructor(qrcode: string) {
+    this.qrcode = qrcode;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventQrCode);
+    let r = /qrcode:(.*)/;
+    return event.qrcode && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.qrcode;
   }
 
 }

@@ -21,6 +21,7 @@ import { OptionPopupComponent } from './components/pages/option-popup/option-pop
 import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { ShineComponent } from './components/animations/shine/shine.component';
+import { QrCodePopupComponent } from './components/pages/qr-code-popup/qr-code-popup.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { ShineComponent } from './components/animations/shine/shine.component';
     SvgMapComponent,
     SafePipe,
     ShineComponent,
+    QrCodePopupComponent,
   ],
   imports: [
     BrowserModule,

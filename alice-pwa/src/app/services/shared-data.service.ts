@@ -128,6 +128,13 @@ export class SharedDataService {
     this.savePlay();
   }
 
+  qrCode(code: string): boolean  {
+    this.pv.qr(this.scenario, this.play, code);
+    this.updateGui();
+    this.savePlay();
+    return true;
+  }
+
   getOptions() {
     return this.pv.getOptions(this.scenario, this.play);
   }
