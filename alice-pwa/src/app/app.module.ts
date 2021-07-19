@@ -22,6 +22,7 @@ import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
 import { SafePipe } from './pipes/safe.pipe';
 import { ShineComponent } from './components/animations/shine/shine.component';
 import { QrCodePopupComponent } from './components/pages/qr-code-popup/qr-code-popup.component';
+import { BadgeMapComponent } from './components/pages/badge-map/badge-map.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { QrCodePopupComponent } from './components/pages/qr-code-popup/qr-code-p
     SafePipe,
     ShineComponent,
     QrCodePopupComponent,
+    BadgeMapComponent,
   ],
   imports: [
     BrowserModule,

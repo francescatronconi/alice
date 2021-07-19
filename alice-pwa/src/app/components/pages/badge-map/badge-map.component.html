@@ -1,0 +1,14 @@
+<svg class="fullsvg" viewBox="0 0 100 100" style="background-color:white">
+
+    <defs>
+        <g id="transparent-layer">
+            <rect x="-200" y="-100" width="500" height="300" style="fill:black; opacity: 0;"></rect>
+        </g>
+    </defs>
+
+    <g *ngFor="let area of areas" (click)="clickArea(area)">
+        <g [@badge]="badgeStatePin(area)" [innerHTML]="xml(area) | safe: 'html'">
+        </g>
+    </g>
+
+</svg>

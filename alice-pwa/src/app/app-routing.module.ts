@@ -8,6 +8,7 @@ import { TellStoryComponent } from './components/pages/tell-story/tell-story.com
 import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
 import { PartitaComponent } from './components/pages/partita/partita.component';
 import { QrCodePopupComponent } from './components/pages/qr-code-popup/qr-code-popup.component';
+import { BadgeMapComponent } from './components/pages/badge-map/badge-map.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'map/:id', component: SvgMapComponent},
   //{path: 'biblioteca', component: SvgMapComponent},
   {path: 'badge', component: BadgeComponent},
+  {path: 'badgemap', component: BadgeMapComponent},
   {path: 'qrcode', component: QrCodePopupComponent},
   {path: 'partita', component: PartitaComponent},
   {path: ':key/story', component: TellStoryComponent}
