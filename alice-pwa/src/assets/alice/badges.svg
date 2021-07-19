@@ -13,11 +13,9 @@
       <path d="M 3.0597062,3.6400632 C 3.0016605,3.6981088 -0.04034997,3.3591634 -0.12142828,3.372005 -0.20250658,3.3848465 -2.9908905,4.6472357 -3.0640323,4.6099681 -3.1371741,4.5727005 -3.7548508,1.5748367 -3.7921184,1.5016949 -3.829386,1.4285531 -5.8916475,-0.83325795 -5.878806,-0.91433625 c 0.012842,-0.0810783 2.6731069,-1.59491465 2.7311525,-1.65296025 0.058046,-0.058046 1.5718819,-2.718311 1.6529602,-2.7311525 0.081078,-0.012842 2.34288943,2.04942 2.41603122,2.0866876 0.0731418,0.037268 3.07100558,0.6549442 3.10827318,0.728086 0.037268,0.073142 -1.2251216,2.86152585 -1.2379631,2.94260415 -0.012842,0.0810783 0.3261039,3.12308875 0.2680582,3.18113445 z" id="path1281" style="display:inline;opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
    </g>
    <g transform="matrix(0.15,0,0,0.15,49.03779,73.16737)" id="cappellaio-matto">
-      <circle r="50" cy="0" cx="0" id="circle1701" style="display:inline;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1.77215195;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
-      <image y="-50" x="-50" id="image1703" xlink:href="./assets/alice/cappellaio-matto.jpg" preserveAspectRatio="none" height="100" width="100" />
+      <image y="-50" x="-50" id="image1703" xlink:href="./cappellaio-matto.jpg" preserveAspectRatio="none" height="100" width="100" />
    </g>
    <g transform="matrix(0.15,0,0,0.15,73.75,41.25)" id="regina-cuori">
-      <circle r="50" cy="0" cx="0" id="circle1689" style="display:inline;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1.77215195;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
       <image y="-50" x="-50" id="image1691" xlink:href="./regina-cuori.jpg" preserveAspectRatio="none" height="100" width="100" />
    </g>
 

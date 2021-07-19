@@ -11,11 +11,11 @@ import { environment } from 'src/environments/environment';
     trigger('badge', [
       // states
       state('mini', style({
-        transform: 'scale({{s}})',
+        transform: 'scale(1)',
       }), { params: { x: 0, y: 0, s: 1 } }),
       state('full', style({
-        transform: 'translate(50px,50px) scale(10) translate({{x}}px,{{y}}px) ',
-      }), { params: { x: 0, y: 0, s: 1 } }),
+        transform: 'translate(50px,50px) scale({{s}}) translate({{x}}px,{{y}}px) ',
+      }), { params: { x: 0, y: 0, s: 10 } }),
       // transitions
       transition('mini => full', animate('1000ms ease-in-out')),
       transition('full => mini', animate('1000ms ease-in-out')),
@@ -100,12 +100,12 @@ export class BadgeMapComponent implements OnInit {
 
   ngOnInit(): void {
     this.serializer = new XMLSerializer();
-    this.svgmap = {"id": "agora", "svg": "badges.svg", "background": null, "ids": ["badge-01", "badge-02", "cappellaio-matto"]};
+    this.svgmap = {"id": "agora", "svg": "badges.svg", "background": null, "ids": ["badge-01", "badge-02", "cappellaio-matto", "regina-cuori"]};
     this.initSvgMap();
   }
 
   badgeStatePin(badge: BadgeMapItem) {
-    return { value: badge.state, params: { x: -badge.dx, y: -badge.dy, t: badge.transform } };
+    return { value: badge.state, params: { x: -badge.dx, y: -badge.dy, t: badge.transform, s: 1.0 / badge.ds} };
   }
 
   initSvgMap() {
@@ -123,8 +123,7 @@ export class BadgeMapComponent implements OnInit {
 
   xml(area: BadgeMapItem): string {
     let x = this.serializer.serializeToString(area.element);
-    x.replace('href="./', `href="${environment.gameUrl}/`);
-    return x;
+    return x.replace('href="./', `href="${environment.gameUrl}/`);
   }
 
   clickArea(area: BadgeMapItem) {
@@ -143,6 +142,7 @@ export class BadgeMapItem {
   transform: string;
   dx: number;
   dy: number;
+  ds: number;
 
   constructor(id: string, element: HTMLElement) {
     this.id = id;
@@ -160,17 +160,19 @@ export class BadgeMapItem {
     let r = /translate\(([0-9\.]+),([0-9\.]+)\)/;
     let m = this.transform.match(r);
     if (m) {
+      this.ds = 0.15;
       this.dx = Number(m[1]);
       this.dy = Number(m[2]);
     }
   }
 
   captureMatrix() {
-    let r = /matrix\([0-9\.]+,[0-9\.]+,[0-9\.]+,[0-9\.]+,([0-9\.]+),([0-9\.]+)\)/;
+    let r = /matrix\([0-9\.]+,[0-9\.]+,[0-9\.]+,([0-9\.]+),([0-9\.]+),([0-9\.]+)\)/;
     let m = this.transform.match(r);
     if (m) {
-      this.dx = Number(m[1]);
-      this.dy = Number(m[2]);
+      this.ds = Number(m[1]); 
+      this.dx = Number(m[2]);
+      this.dy = Number(m[3]);
     }
   }
 
