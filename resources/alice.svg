@@ -53,6 +53,15 @@
          id="path496"
          inkscape:connector-curvature="0" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath457">
+      <path
+         style="fill:#ffffff;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 77.529208,50.313121 0.536644,0.126269 0.726047,0.06313 1.262691,0.34724 0.34724,0.157836 0.473509,0.126269 0.06313,0.142053 0.07892,0.142053 0.03157,0.06313 0.647129,0.142053 0.394591,0.189404 0.647128,0.441941 0.34724,0.457726 0.236755,0.473509 c 0,0 0.284105,0.536643 0.315673,0.615561 0.03157,0.07892 0.284105,0.741831 0.284105,0.741831 l 0.599778,1.010153 c 0,0 0.331456,0.662912 0.378807,0.74183 0.04735,0.07892 0.599778,1.373177 0.599778,1.373177 l 0.615562,1.846685 1.341609,4.687739 0.441942,1.073287 0.647129,1.515229 0.489292,0.915451 0.0947,0.04735 0.06314,0.110486 -0.01578,0.118377 0.157836,0.244646 1.089071,1.144314 0.03946,0.02367 h 0.118377 l 0.536644,0.355132 0.797074,0.560319 0.236754,0.228863 0.773398,0.741831 0.512968,0.497184 0.142053,0.110485 0.06313,0.05524 0.181512,0.0079 0.228863,0.244646 0.670804,0.04735 0.284106,0.08681 0.26043,0.213079 0.189403,0.126269 0.03157,0.149945 0.149944,0.134161 0.17362,0.149944 0.102594,0.04735 0.0947,0.01578 0.04735,0.07892 0.418267,0.06314 0.426158,0.13416 0.126269,0.165729 -0.01578,0.07892 0.0079,0.149944 0.220971,0.197296 0.142053,0.370915 -0.149945,0.17362 -0.17362,0.02368 -0.252538,0.118378 c 0,0 -0.733939,0.02367 -0.765506,0.03157 -0.03157,0.0079 -0.8681,-0.0079 -0.923343,-0.0079 -0.05524,0 -1.191664,-0.181512 -1.191664,-0.181512 l -2.904189,-0.60767 -2.470138,-0.733938 -3.054134,-0.852317 -0.536643,-0.205187 -0.205187,-0.197295 -0.0947,-0.410375 0.04735,-0.797073 0.06313,-0.03157 0.331457,-0.03946 0.268321,-0.02367 0.01578,-0.402483 0.489293,-1.246907 -0.299889,-1.073287 -0.134161,-0.339348 -0.355132,-0.284105 -0.220971,-0.418267 -1.602039,-2.233384 -0.26043,-0.339348 -1.152205,1.680957 -0.875992,1.096962 -0.662912,1.049612 -0.923343,1.617823 -0.236754,0.797073 -0.149945,0.363024 -0.03946,0.291997 -0.03946,0.544535 0.08681,0.410375 0.05524,0.05524 0.213079,-0.03946 0.08681,0.03946 0.04735,0.142053 0.536643,0.418266 1.12853,0.8681 0.670804,0.441942 0.244647,0.01578 0.07103,0.149944 0.623454,0.244646 0.205187,-0.07103 0.276213,0.118377 0.315673,-0.126269 0.291997,0.165728 0.03157,0.26043 c 0,0 -0.142053,0.228863 -0.181512,0.26043 -0.03946,0.03157 0.142053,0.17362 0.142053,0.17362 l 0.165728,0.0947 0.355131,0.03946 0.220971,0.0079 0.276214,0.17362 0.0079,0.0947 0.0947,0.17362 0.07892,0.307781 -0.268322,0.505076 -0.363024,0.386699 c 0,0 -0.702371,0.252538 -0.789181,0.284105 -0.08681,0.03157 -1.554688,0.149945 -1.602039,0.149945 -0.04735,0 -1.089071,-0.189404 -1.152205,-0.205187 -0.06313,-0.01578 -2.225493,-0.639238 -2.225493,-0.639238 0,0 -2.170249,-0.91545 -2.209708,-0.923342 -0.03946,-0.0079 -0.828641,-0.149945 -0.8681,-0.17362 -0.03946,-0.02368 -0.931235,-0.789182 -0.931235,-0.789182 l -0.34724,-0.505076 c 0,0 -0.102593,-0.323565 -0.110485,-0.355132 -0.0079,-0.03157 0.134161,-0.481401 0.134161,-0.481401 l 0.189403,-0.13416 0.17362,-0.134161 0.299889,-0.568211 0.213079,-0.315673 0.615562,-1.207448 0.34724,-1.21534 0.844425,-3.803855 0.441941,-1.657282 0.252538,-0.497184 0.355132,-0.741831 0.844425,-1.420527 0.457725,-0.678696 0.07892,-0.110486 -0.142053,-0.03946 -2.04398,0.331456 -0.142053,1.90982 -0.126269,0.07892 -7.954951,0.252538 z"
+         id="path459"
+         inkscape:connector-curvature="0" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -62,10 +71,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.9195959"
-     inkscape:cx="72.876557"
-     inkscape:cy="45.559118"
+     inkscape:cx="69.542581"
+     inkscape:cy="55.182594"
      inkscape:document-units="px"
-     inkscape:current-layer="layer10"
+     inkscape:current-layer="layer11"
      showgrid="false"
      units="px"
      inkscape:window-width="1853"
@@ -81,7 +90,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -341,7 +350,7 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="agora"
-     style="display:inline"
+     style="display:none"
      sodipodi:insensitive="true">
     <path
        inkscape:connector-curvature="0"
@@ -1807,7 +1816,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer10"
-     inkscape:label="badges">
+     inkscape:label="badges"
+     style="display:none">
     <g
        id="badge-master"
        inkscape:label="#g1271">
@@ -1923,5 +1933,57 @@
          y="-50"
          sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/alice/cappellaio-matto.jpg" />
     </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer11"
+     inkscape:label="Foto">
+    <image
+       sodipodi:absref="/home/daniele/Downloads/f5beb4fd-0c54-49d9-9cfb-b30938ee3532.jpeg"
+       y="12.5"
+       x="0"
+       id="image384"
+       xlink:href="file:///home/daniele/Downloads/f5beb4fd-0c54-49d9-9cfb-b30938ee3532.jpeg"
+       preserveAspectRatio="none"
+       height="75"
+       width="100" />
+    <image
+       sodipodi:absref="/home/daniele/Pictures/Alice/alice.png"
+       y="59.992428"
+       x="-28.579"
+       id="image428"
+       xlink:href="file:///home/daniele/Pictures/Alice/alice.png"
+       preserveAspectRatio="none"
+       height="29.650429"
+       width="29.650429"
+       transform="scale(-1,1)" />
+    <image
+       sodipodi:absref="/home/daniele/Pictures/Alice/bianconiglio.png"
+       y="14.680467"
+       x="37.224247"
+       id="image439"
+       xlink:href="file:///home/daniele/Pictures/Alice/bianconiglio.png"
+       preserveAspectRatio="none"
+       height="19.841692"
+       width="19.841692" />
+    <image
+       sodipodi:absref="/home/daniele/Pictures/Alice/carte-sml.png"
+       y="41.161167"
+       x="71.233704"
+       id="image450"
+       xlink:href="file:///home/daniele/Pictures/Alice/carte-sml.png"
+       preserveAspectRatio="none"
+       height="28.471113"
+       width="40.258152" />
+    <image
+       width="100"
+       height="75"
+       preserveAspectRatio="none"
+       xlink:href="file:///home/daniele/Downloads/f5beb4fd-0c54-49d9-9cfb-b30938ee3532.jpeg"
+       id="image453"
+       x="0"
+       y="12.5"
+       sodipodi:absref="/home/daniele/Downloads/f5beb4fd-0c54-49d9-9cfb-b30938ee3532.jpeg"
+       clip-path="url(#clipPath457)" />
   </g>
 </svg>

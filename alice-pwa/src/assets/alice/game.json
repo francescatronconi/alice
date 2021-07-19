@@ -55,8 +55,7 @@
     "buttons": [
         {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
         {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
-        {"id": "badge", "icon": "./assets/svg/badge.svg", "action": ["badge"]},
-        {"id": "biblioteca", "icon": "./assets/svg/biblioteca.svg", "action": ["map", "agora"]},
+        {"id": "badge", "icon": "./assets/svg/badge.svg", "action": ["badgemap"]},
         {"id": "biblioteca", "icon": "./assets/svg/cat.svg", "action": ["qrcode"]},
         {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}
     ]
