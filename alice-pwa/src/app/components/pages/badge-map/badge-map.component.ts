@@ -117,6 +117,7 @@ export class BadgeMapComponent implements OnInit {
       }
       this.areas = this.svgmap.ids
       .map(id => new BadgeMapItem(id, this.svg.getElementById(id)))
+      .map(item => item.checkBadge(this.shared))
       .filter(area => area.element);
     });
   }
@@ -140,6 +141,7 @@ export class BadgeMapItem {
   id: string;
   element: HTMLElement;
   transform: string;
+  style: string;
   dx: number;
   dy: number;
   ds: number;
@@ -154,6 +156,11 @@ export class BadgeMapItem {
       this.captureMatrix();
     }
     console.log(this);
+  }
+
+  checkBadge(shared: SharedDataService): BadgeMapItem {
+    this.style = shared.play.badges.includes(this.id) ? 'present': 'missing';
+    return this;
   }
 
   captureTranslate() {

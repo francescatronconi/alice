@@ -5,12 +5,7 @@
             {"read": "intro-1.html"},
             {"read": "intro-2.html"}
         ]}},
-        {"trigger": "visit:cattedrale", "effect": {"story": [
-            {"read": "intro-1.html"},
-            {"read": "intro-2.html"}
-            ]}, 
-            "condition": {"nobadge": "badge-02", "noTag":"tramutato-in-rospo"}
-        },
+        {"trigger": "visit:cattedrale", "effect": {"story": [{"read": "intro-1.html"}], "challenge": "playme"}},
         {"trigger": "visit:star", "effect": {"story": [{"read": "intro-star.html"}]}},
         {"trigger": "visit:circle", "effect": {"location": "biblioteca"}},
         {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
@@ -25,7 +20,7 @@
     "options": [
         {"id": "options-A", "options": [
             {"text": "Busta numero 1", "effect": {"badge": "badge-03"}},
-            {"text": "Busta numero 2", "effect": {"tag":"tramutato-in-rospo"}},
+            {"text": "Busta numero 2", "effect": {"badge": "cappellaio-matto", "tag":"tramutato-in-rospo", "goto": ["badgemap", "cappellaio-matto"]}},
             {"text": "Busta numero 3", "effect": {"options": "options-B"}}
         ]},
         {"id": "options-B", "options": [
@@ -52,10 +47,14 @@
         {"id":"conservatorio", "name": "./assets/svg/clarinetto.svg", "icon": "./assets/svg/cat.svg", "description": "conservatorio",
             "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
     ],
+    "challenges": [
+        {"id": "c-01", "code": "features", "features": []}
+    ],
     "buttons": [
         {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
         {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
-        {"id": "badge", "icon": "./assets/svg/badge.svg", "action": ["badgemap"]},
+        {"id": "badge", "icon": "./assets/svg/badge.svg", "action": ["map", "agora"]},
+        {"id": "badgemap", "icon": "./assets/svg/badge.svg", "action": ["badgemap"]},
         {"id": "biblioteca", "icon": "./assets/svg/cat.svg", "action": ["qrcode"]},
         {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}
     ]

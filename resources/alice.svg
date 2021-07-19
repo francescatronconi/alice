@@ -70,11 +70,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9195959"
-     inkscape:cx="69.542581"
-     inkscape:cy="55.182594"
+     inkscape:zoom="22.4"
+     inkscape:cx="86.609425"
+     inkscape:cy="57.005267"
      inkscape:document-units="px"
-     inkscape:current-layer="layer11"
+     inkscape:current-layer="regina-cuori"
      showgrid="false"
      units="px"
      inkscape:window-width="1853"
@@ -90,7 +90,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1817,16 +1817,10 @@
      inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="badges"
-     style="display:none">
+     style="display:inline">
     <g
        id="badge-master"
        inkscape:label="#g1271">
-      <circle
-         r="50"
-         cy="0"
-         cx="0"
-         id="circle1161-1"
-         style="display:inline;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1.77215195;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
       <image
          sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/alice/cappellaio-matto.jpg"
          y="-50"
@@ -1912,17 +1906,17 @@
          x="-50"
          y="-50"
          sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/alice/regina-cuori.jpg" />
+      <path
+         style="fill:#000000;stroke:none;stroke-width:6.66666651px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -44.253268,49.898388 0.841794,-11.785113 4.629866,-5.682107 -1.47314,-2.104486 -3.99852,4.208966 -0.631333,-7.365693 1.052247,-8.207487 5.682106,-3.156727 3.99852,1.47314 -3.367173,-8.4179396 V 1.2847947 l -0.631333,-11.5746597 9.47018,-7.3657 3.57762,-2.735827 5.050766,1.05224 3.99852,-0.420867 8.4179404,-13.679153 -2.3149333,-9.04928 5.47166,-3.156727 7.99704,1.05224 3.1567267,7.155247 4.8403132,2.314933 8.838834,14.52094 4.629866,0.210467 2.735834,2.946273 13.889593,2.735834 2.94628,9.259733 -0.631333,9.4701801 -1.683587,1.47314 2.314933,6.1029999 v 3.156727 l -6.313453,5.47166 1.47314,2.314933 -4.629867,4.208974 5.05076,5.682106 3.36718,6.734347 0.06166,10.696765 z"
+         id="path1166"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccc" />
     </g>
     <g
        inkscape:label="#g1271"
        id="cappellaio-matto"
        transform="matrix(0.15,0,0,0.15,49.03779,73.16737)">
-      <circle
-         style="display:inline;opacity:1;vector-effect:none;fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:1.77215195;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         id="circle1701"
-         cx="0"
-         cy="0"
-         r="50" />
       <image
          width="100"
          height="100"
@@ -1932,12 +1926,19 @@
          x="-50"
          y="-50"
          sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/alice/cappellaio-matto.jpg" />
+      <path
+         style="fill:#000000;stroke:none;stroke-width:6.66666651px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -25.95069,49.944225 3.761445,-7.430619 3.788073,-5.682107 1.47314,-0.841793 -1.262693,-11.995567 -7.155247,1.052247 -4.41942,-5.261213 1.47314,-8.838834 -2.314933,-9.0492866 1.47314,-6.1030066 -1.47314,-7.3656938 8.41794,-3.156726 5.47166,1.47314 v 8.2074864 l 3.367173,-2.52538 -1.894033,-7.9970404 3.788073,-5.261213 -2.94628,-8.417933 3.788074,-3.156727 0.420866,-6.103007 8.8388336,-11.574666 7.7865934,0.420933 -0.8417933,7.786593 2.7358333,13.4687 -0.4208667,8.207487 v 9.89108 l 0.8417934,5.0507601 3.7880733,2.1044867 0.420867,8.41794 9.47018,3.1567267 10.52242,20.6239465 3.577626,12.837354 v 7.155246 l -5.47166,0.841794 -7.576146,-2.94628 -1.05224,3.156726 z"
+         id="path772"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccc" />
     </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer11"
-     inkscape:label="Foto">
+     inkscape:label="Foto"
+     style="display:none">
     <image
        sodipodi:absref="/home/daniele/Downloads/f5beb4fd-0c54-49d9-9cfb-b30938ee3532.jpeg"
        y="12.5"

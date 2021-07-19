@@ -24,6 +24,7 @@ import { ShineComponent } from './components/animations/shine/shine.component';
 import { QrCodePopupComponent } from './components/pages/qr-code-popup/qr-code-popup.component';
 import { BadgeMapComponent } from './components/pages/badge-map/badge-map.component';
 import { FullscreenToggleComponent } from './components/widgets/fullscreen-toggle/fullscreen-toggle.component';
+import { FaceChallengeComponent } from './components/pages/face-challenge/face-challenge.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { FullscreenToggleComponent } from './components/widgets/fullscreen-toggl
     QrCodePopupComponent,
     BadgeMapComponent,
     FullscreenToggleComponent,
+    FaceChallengeComponent,
   ],
   imports: [
     BrowserModule,

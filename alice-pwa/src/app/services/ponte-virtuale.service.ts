@@ -91,6 +91,9 @@ export class PonteVirtualeService {
     if (GameEffectGoToLocation.valid(effect as GameEffectGoToLocation)) {
       GameEffectGoToLocation.run(effect as GameEffectGoToLocation, scenario, play);
     }
+    if (GameEffectChallenge.valid(effect as GameEffectChallenge)) {
+      GameEffectChallenge.run(effect as GameEffectChallenge, scenario, play);
+    }
   }
 
   getOptions(scenario: GameScenario, play: GamePlay) {
@@ -127,6 +130,7 @@ export class GameScenario {
   locations: MapLocation[];
   svgmaps: SvgMap[];
   buttons: MapButton[];
+  challenges: GameChallenge[]
 
 }
 
@@ -283,6 +287,20 @@ export class GameEffectTag extends GameEffect {
   }
 }
 
+export class GameEffectChallenge extends GameEffect {
+  challenge: string;
+  static run(effect: GameEffectChallenge, scenario: GameScenario, play: GamePlay) {
+    scenario.challenges
+    .filter(challenge => challenge.id = effect.challenge)
+    .forEach(challenge => {
+      GameChallenge.initPlay(challenge, scenario, play);
+    })
+  }
+  static valid(effect: GameEffectChallenge) {
+    return effect.challenge ? true : false;
+  }
+}
+
 export class GameEffectGoToLocation extends GameEffect {
   location: string;
   static run(effect: GameEffectGoToLocation, scenario: GameScenario, play: GamePlay) {
@@ -329,6 +347,7 @@ export class GamePlay {
   zoomTo: string;
   tags: string[];
   event: GameEvent;
+  challenge: GameChallengeData;
 
   constructor() {
     this.situation = [];
@@ -338,6 +357,7 @@ export class GamePlay {
     this.locationScore = [];
     this.score = 0;
     this.tags= [];
+    this.challenge = null;
   }
 }
 
@@ -360,6 +380,39 @@ export class GameOption {
 export class Option {
   text: string;
   effect: GameEffect;
+}
+
+export class GameChallenge {
+  static initPlay(challenge: GameChallenge, scenario: GameScenario, play: GamePlay) {
+    if ( GameChallengePlaceFeatures.check(challenge as GameChallengePlaceFeatures) ) {
+      GameChallengePlaceFeatures.init(challenge, scenario, play);
+    }
+  }
+  id: string;
+  code: string;
+}
+
+export class GameChallengePlaceFeatures extends GameChallenge {
+  features: PlaceFeature[];
+  code: 'features';
+  static check(challenge: GameChallengePlaceFeatures): boolean {
+    return challenge.features? true: false;
+  }
+  static init(challenge: GameChallenge, scenario: GameScenario, play: GamePlay) {
+    play.challenge = {challenge: challenge.id, guess: {}} as GameChallengeData;
+  }
+}
+export class PlaceFeature {
+  id: string;
+  present: boolean;
+  image?: string;
+}
+
+export class GameChallengeData {
+  challenge: string;
+}
+export class GameChallengePlaceFeaturesGuess extends GameChallengeData {
+  guess: {[id: string]: boolean};
 }
 
 export class MapButton {

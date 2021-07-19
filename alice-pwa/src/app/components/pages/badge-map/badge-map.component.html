@@ -1,14 +1,28 @@
 <svg class="fullsvg" viewBox="0 0 100 100" style="background-color:white">
 
     <defs>
+
+        <style type="text/css">
+            .present .shadow {
+                display: none;
+            }
+            .missing .shadow {
+                display: inline;
+            }
+        </style>
+        
         <g id="transparent-layer">
             <rect x="-200" y="-100" width="500" height="300" style="fill:black; opacity: 0;"></rect>
         </g>
-    </defs>
 
-    <g *ngFor="let area of areas" (click)="clickArea(area)">
-        <g [@badge]="badgeStatePin(area)" [innerHTML]="xml(area) | safe: 'html'">
+        <g id="shadow-box" class="box">
+            <rect x="0" y="0" width="100" height="100" style="fill:black; opacity: 0.75;"></rect>
         </g>
+
+    </defs>
+    
+    <g *ngFor="let area of areas" (click)="clickArea(area)" [class]="area.style">
+        <g [@badge]="badgeStatePin(area)" [innerHTML]="xml(area) | safe: 'html'"></g>
     </g>
 
 </svg>
