@@ -20,7 +20,7 @@
     "options": [
         {"id": "options-A", "options": [
             {"text": "Busta numero 1", "effect": {"badge": "badge-03"}},
-            {"text": "Busta numero 2", "effect": {"badge": "cappellaio-matto", "tag":"tramutato-in-rospo", "goto": ["badgemap", "cappellaio-matto"]}},
+            {"text": "Busta numero 2", "effect": {"badge": "cappellaio-matto", "tag":"tramutato-in-rospo", "route": ["badgemap", "cappellaio-matto"]}},
             {"text": "Busta numero 3", "effect": {"options": "options-B"}}
         ]},
         {"id": "options-B", "options": [
