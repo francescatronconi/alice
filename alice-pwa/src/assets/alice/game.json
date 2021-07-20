@@ -8,6 +8,7 @@
         {"trigger": "visit:cattedrale", "effect": {"story": [{"read": "intro-1.html"}], "challenge": "playme"}},
         {"trigger": "visit:star", "effect": {"route": ["badgemap", "cappellaio-matto"], "story": [{"read": "intro-star.html"}]}},
         {"trigger": "visit:circle", "effect": {"route": ["diario"]}},
+        {"trigger": "visit:challenge-01", "effect": {"challenge": "c-01"}},
         {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
         {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
             "rules": [
@@ -37,7 +38,7 @@
         {"badge": "badge-03", "src": "horse.svg"}
     ],
     "svgmaps": [
-        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle"]}
+        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle", "challenge-01"]}
     ],
     "locations": [
         {"id":"cattedrale", "name": "./assets/svg/cattedrale.svg", "icon": "./assets/svg/cat.svg", "description": "cattedrale", 
@@ -48,7 +49,7 @@
             "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
     ],
     "challenges": [
-        {"id": "c-01", "code": "features", "features": []}
+        {"id": "c-01", "code": "features", "features": ["a"]}
     ],
     "buttons": [
         {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},

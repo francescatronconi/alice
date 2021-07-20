@@ -1,6 +1,6 @@
 - scansione QR code: non cambia la fotocamera
 - scansione QR code: inquadratura "sballata"
-- desiderata: app manda alla pagina dei badge quando se ne ottiene uno
+x desiderata: app manda alla pagina dei badge quando se ne ottiene uno
 - fix pulsanti app sulla destra in modalità portrait
 - riportare css in smartapp.scss
 - popup delle location in mappa: aggiustare immagine di sfondo e icone
@@ -9,3 +9,4 @@
 - effetto nuovo: play music
 - mappa openstreet: andare alla posizione corrente
 - effetto nuovo: route to (porta ad una pagina della app)
+- challenge: trova le feature
