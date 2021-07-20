@@ -31,6 +31,11 @@ export class ChallengeFindFeaturesComponent implements OnInit {
 
   clickArea(area: SvgMapArea) {
     console.log(area);
+    if (area.id === 'feature-01') {
+      this.shared.play.challenge = null;
+      this.shared.updateGui();
+      this.shared.savePlay();
+    }
   }
 
 }
