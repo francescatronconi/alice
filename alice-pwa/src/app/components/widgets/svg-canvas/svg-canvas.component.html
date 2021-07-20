@@ -1,0 +1,4 @@
+<svg class="fullsvg" viewBox="0 0 100 100">
+    <g *ngIf="background" [innerHTML]="xml(background) | safe: 'html'"></g>
+    <g *ngFor="let area of areas" (click)="clickArea(area)" [innerHTML]="xml(area) | safe: 'html'"></g>
+</svg>

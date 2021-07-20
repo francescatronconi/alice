@@ -27,6 +27,7 @@ import { FullscreenToggleComponent } from './components/widgets/fullscreen-toggl
 import { FaceChallengeComponent } from './components/pages/face-challenge/face-challenge.component';
 import { ChallengeViewDirective } from './directives/challenge-view.directive';
 import { ChallengeFindFeaturesComponent } from './components/pages/challenge-find-features/challenge-find-features.component';
+import { SvgCanvasComponent } from './components/widgets/svg-canvas/svg-canvas.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { ChallengeFindFeaturesComponent } from './components/pages/challenge-fin
     FaceChallengeComponent,
     ChallengeViewDirective,
     ChallengeFindFeaturesComponent,
+    SvgCanvasComponent,
   ],
   imports: [
     BrowserModule,

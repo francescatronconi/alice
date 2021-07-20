@@ -3,3 +3,4 @@
     <div>{{features.id}}</div>
     <div>{{data.guess}}</div>
 </div>
+<div *ngIf="svgmap" app-svg-canvas [svgmap]="svgmap" (onClickArea)="clickArea($event)" ></div>

@@ -38,7 +38,8 @@
         {"badge": "badge-03", "src": "horse.svg"}
     ],
     "svgmaps": [
-        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle", "challenge-01"]}
+        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle", "challenge-01"]},
+        {"id": "challenge-01", "svg": "challenge-01.svg", "background": null, "ids": ["feature-01", "feature-02", "feature-03", "feature-04"]}
     ],
     "locations": [
         {"id":"cattedrale", "name": "./assets/svg/cattedrale.svg", "icon": "./assets/svg/cat.svg", "description": "cattedrale", 
@@ -49,7 +50,7 @@
             "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
     ],
     "challenges": [
-        {"id": "c-01", "code": "features", "features": ["a"]}
+        {"id": "c-01", "code": "features", "svgmap": "challenge-01"}
     ],
     "buttons": [
         {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},

@@ -11,7 +11,7 @@ import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, Ga
   providedIn: 'root'
 })
 export class SharedDataService {
-  
+
   scenario: GameScenario;
   play: GamePlay;
   currentStory: GamePlayStory;
@@ -153,11 +153,21 @@ export class SharedDataService {
     this.options = null
   }
 
-  getHtmlResource(url: string): Promise<string> {
+  public getHtmlResource(url: string): Promise<string> {
     return this.http
     .get<string>(`${environment.gameUrl}/${url}`, {responseType: 'text' as 'json'})
     .toPromise();
   }
+
+  public getSvgMap(id: string): SvgMap {
+    let result: SvgMap = null;
+    this.scenario.svgmaps
+    .filter(svgmap => svgmap.id === id)
+    .forEach(svgmap => {
+      result = svgmap;
+    });
+    return result;
+  }  
 
 }
 

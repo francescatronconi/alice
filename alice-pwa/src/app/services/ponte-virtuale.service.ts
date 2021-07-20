@@ -409,10 +409,10 @@ export class GameChallenge {
 }
 
 export class GameChallengePlaceFeatures extends GameChallenge {
-  features: PlaceFeature[];
+  svgmap: string;
   code: 'features';
   static check(challenge: GameChallengePlaceFeatures): boolean {
-    return challenge.features? true: false;
+    return challenge.code === 'features';
   }
   static init(challenge: GameChallenge, scenario: GameScenario, play: GamePlay) {
     play.challenge = {challenge: challenge.id, guess: {}} as GameChallengeData;
