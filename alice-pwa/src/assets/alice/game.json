@@ -6,8 +6,8 @@
             {"read": "intro-2.html"}
         ]}},
         {"trigger": "visit:cattedrale", "effect": {"story": [{"read": "intro-1.html"}], "challenge": "playme"}},
-        {"trigger": "visit:star", "effect": {"story": [{"read": "intro-star.html"}]}},
-        {"trigger": "visit:circle", "effect": {"location": "biblioteca"}},
+        {"trigger": "visit:star", "effect": {"route": ["badgemap", "cappellaio-matto"], "story": [{"read": "intro-star.html"}]}},
+        {"trigger": "visit:circle", "effect": {"route": ["diario"]}},
         {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
         {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
             "rules": [
@@ -53,7 +53,7 @@
     "buttons": [
         {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
         {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
-        {"id": "badge", "icon": "./assets/svg/badge.svg", "action": ["map", "agora"]},
+        {"id": "badge", "icon": "./assets/svg/biblioteca.svg", "action": ["svgmap", "agora"]},
         {"id": "badgemap", "icon": "./assets/svg/badge.svg", "action": ["badgemap"]},
         {"id": "biblioteca", "icon": "./assets/svg/cat.svg", "action": ["qrcode"]},
         {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}

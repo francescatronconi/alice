@@ -103,6 +103,10 @@ export class SharedDataService {
     this.findNextStory();
     this.findZoomTo();
     this.options = this.getOptions();
+    if (this.play.route) {
+      this.router.navigate(this.play.route);
+      this.play.route = null;
+    }
   }
 
   findZoomTo() {

@@ -70,11 +70,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.4"
-     inkscape:cx="86.609425"
-     inkscape:cy="57.005267"
+     inkscape:zoom="7.919596"
+     inkscape:cx="97.763073"
+     inkscape:cy="49.442394"
      inkscape:document-units="px"
-     inkscape:current-layer="regina-cuori"
+     inkscape:current-layer="layer11"
      showgrid="false"
      units="px"
      inkscape:window-width="1853"
@@ -90,7 +90,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1817,7 +1817,7 @@
      inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="badges"
-     style="display:inline">
+     style="display:none">
     <g
        id="badge-master"
        inkscape:label="#g1271">
@@ -1938,7 +1938,7 @@
      inkscape:groupmode="layer"
      id="layer11"
      inkscape:label="Foto"
-     style="display:none">
+     style="display:inline">
     <image
        sodipodi:absref="/home/daniele/Downloads/f5beb4fd-0c54-49d9-9cfb-b30938ee3532.jpeg"
        y="12.5"
@@ -1947,7 +1947,10 @@
        xlink:href="file:///home/daniele/Downloads/f5beb4fd-0c54-49d9-9cfb-b30938ee3532.jpeg"
        preserveAspectRatio="none"
        height="75"
-       width="100" />
+       width="100"
+       inkscape:export-filename="/home/daniele/foto-alice.png"
+       inkscape:export-xdpi="768"
+       inkscape:export-ydpi="768" />
     <image
        sodipodi:absref="/home/daniele/Pictures/Alice/alice.png"
        y="59.992428"

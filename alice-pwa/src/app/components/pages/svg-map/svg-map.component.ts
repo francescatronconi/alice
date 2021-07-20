@@ -27,7 +27,6 @@ export class SvgMapComponent implements OnInit {
 
   ngOnInit(): void {
     this.serializer = new XMLSerializer();
-    this.route.snapshot.paramMap.get('id');
     if (this.shared.scenario) {
       this.readScenario(this.shared.scenario);
     } else {

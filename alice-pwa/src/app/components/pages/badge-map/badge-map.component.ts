@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-badge-map',
@@ -96,6 +97,8 @@ export class BadgeMapComponent implements OnInit {
 
   constructor(
     private shared: SharedDataService,
+    private route: ActivatedRoute,
+
   ) { }
 
   ngOnInit(): void {
@@ -119,6 +122,19 @@ export class BadgeMapComponent implements OnInit {
       .map(id => new BadgeMapItem(id, this.svg.getElementById(id)))
       .map(item => item.checkBadge(this.shared))
       .filter(area => area.element);
+      if (this.route.snapshot.paramMap.get('id')) {
+        let move: BadgeMapItem[] = [];
+        this.areas
+        .filter(a => a.id === this.route.snapshot.paramMap.get('id'))
+        .forEach(a => {
+          a.state = 'full';
+          move.push(a);
+        });
+        move.forEach(area => {
+          this.moveForward(area);
+        });
+      };
+  
     });
   }
 
@@ -127,10 +143,14 @@ export class BadgeMapComponent implements OnInit {
     return x.replace('href="./', `href="${environment.gameUrl}/`);
   }
 
-  clickArea(area: BadgeMapItem) {
+  private moveForward(area: BadgeMapItem) {
     this.areas.splice(this.areas.indexOf(area), 1);
     this.areas.push(area);
+  }
+
+  clickArea(area: BadgeMapItem) {
     area.state = area.state === 'mini' ? 'full' : 'mini';
+    this.moveForward(area);
   }
 
 }

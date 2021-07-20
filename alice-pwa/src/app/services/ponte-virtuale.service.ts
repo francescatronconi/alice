@@ -73,27 +73,7 @@ export class PonteVirtualeService {
   }
 
   applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
-    if (GameEffectStory.valid(effect as GameEffectStory)) {
-      GameEffectStory.run(effect as GameEffectStory, scenario, play);
-    }
-    if (GameEffectBadge.valid(effect as GameEffectBadge)) {
-      GameEffectBadge.run(effect as GameEffectBadge, scenario, play);
-    }
-    if (GameEffectOptions.valid(effect as GameEffectOptions)) {
-      GameEffectOptions.run(effect as GameEffectOptions, scenario, play);
-    }
-    if (GameEffectScore.valid(effect as GameEffectScore)) {
-      GameEffectScore.run(effect as GameEffectScore, scenario, play);
-    }
-    if (GameEffectTag.valid(effect as GameEffectTag)) {
-      GameEffectTag.run(effect as GameEffectTag, scenario, play);
-    }
-    if (GameEffectGoToLocation.valid(effect as GameEffectGoToLocation)) {
-      GameEffectGoToLocation.run(effect as GameEffectGoToLocation, scenario, play);
-    }
-    if (GameEffectChallenge.valid(effect as GameEffectChallenge)) {
-      GameEffectChallenge.run(effect as GameEffectChallenge, scenario, play);
-    }
+    GameEffect.validateAndRun(effect, scenario, play);
   }
 
   getOptions(scenario: GameScenario, play: GamePlay) {
@@ -191,9 +171,6 @@ export class GameRule {
   }
 }
 
-export class GameEffect {
-}
-
 export class GameCondition {
   
   nobadge: string;
@@ -253,6 +230,26 @@ export class GameConditionNoTag extends GameCondition {
   
 }
 
+// GameEffect
+
+export class GameEffect {
+  static _effects: typeof GameEffect[] = [];
+  static register(effectClass: typeof GameEffect) {
+    this._effects.push(effectClass);
+  }
+  static run(effect: GameEffect, scenario: GameScenario, play: GamePlay) {}
+  static valid(effect: GameEffect): boolean {
+    return false;
+  }
+  static validateAndRun(effect: GameEffect, scenario: GameScenario, play: GamePlay) {
+    this._effects.forEach(ec => {
+      if (ec.valid(effect)) {
+        ec.run(effect, scenario, play);
+      }
+    });
+  }
+}
+
 export class GameEffectStory extends GameEffect {
   story: GameEffectStoryItem[];
   static run(effect: GameEffectStory, scenario: GameScenario, play: GamePlay) {
@@ -262,20 +259,21 @@ export class GameEffectStory extends GameEffect {
     return effect.story ? true : false;
   }
 }
-
 export class GameEffectStoryItem {
   read?: string;
 }
+GameEffect.register(GameEffectStory);
 
 export class GameEffectBadge extends GameEffect {
   badge: string;
   static run(effect: GameEffectBadge, scenario: GameScenario, play: GamePlay) {
     if (!play.badges.includes(effect.badge)) play.badges.push(effect.badge);
   }
-  static valid(effect: GameEffectBadge) {
+  static valid(effect: GameEffectBadge): boolean {
     return effect.badge ? true : false;
   }
 }
+GameEffect.register(GameEffectBadge);
 
 export class GameEffectTag extends GameEffect {
   tag: string;
@@ -286,6 +284,7 @@ export class GameEffectTag extends GameEffect {
     return effect.tag ? true : false;
   }
 }
+GameEffect.register(GameEffectTag);
 
 export class GameEffectChallenge extends GameEffect {
   challenge: string;
@@ -300,6 +299,7 @@ export class GameEffectChallenge extends GameEffect {
     return effect.challenge ? true : false;
   }
 }
+GameEffect.register(GameEffectChallenge);
 
 export class GameEffectGoToLocation extends GameEffect {
   location: string;
@@ -314,6 +314,18 @@ export class GameEffectGoToLocation extends GameEffect {
     return effect.location ? true : false;
   }
 }
+GameEffect.register(GameEffectGoToLocation);
+
+export class GameEffectRoute extends GameEffect {
+  route: string[];
+  static run(effect: GameEffectRoute, scenario: GameScenario, play: GamePlay) {
+    play.route = effect.route.map(s => s);
+  }
+  static valid(effect: GameEffectRoute) {
+    return effect.route ? true : false;
+  }
+}
+GameEffect.register(GameEffectRoute);
 
 export class GameEffectScore extends GameEffect {
  score: number;
@@ -324,6 +336,7 @@ export class GameEffectScore extends GameEffect {
     return effect.score ? true : false;
   }
 }
+GameEffect.register(GameEffectScore);
 
 export class GameEffectOptions extends GameEffect {
   options: string;
@@ -334,6 +347,7 @@ export class GameEffectOptions extends GameEffect {
     return effect.options ? true : false;
   }
 }
+GameEffect.register(GameEffectOptions);
 
 export class GamePlay {
   
@@ -348,6 +362,7 @@ export class GamePlay {
   tags: string[];
   event: GameEvent;
   challenge: GameChallengeData;
+  route: string[];
 
   constructor() {
     this.situation = [];
@@ -358,6 +373,7 @@ export class GamePlay {
     this.score = 0;
     this.tags= [];
     this.challenge = null;
+    this.route = null;
   }
 }
 
