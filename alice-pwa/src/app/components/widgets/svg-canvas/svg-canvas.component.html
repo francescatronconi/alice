@@ -1,4 +1,7 @@
 <svg class="fullsvg" viewBox="0 0 100 100">
-    <g *ngIf="background" [innerHTML]="xml(background) | safe: 'html'"></g>
-    <g *ngFor="let area of areas" (click)="clickArea(area)" [innerHTML]="xml(area) | safe: 'html'"></g>
+    <g *ngIf="background" app-svg-area [area]="background"></g>
+    <g #usercontent><ng-content></ng-content></g>
+    <g *ngIf="!usercontent.hasChildNodes()">
+        <svg:g app-svg-area *ngFor="let area of areas" [area]="area" (onClickArea)="clickArea($event)" ></svg:g>
+    </g>
 </svg>

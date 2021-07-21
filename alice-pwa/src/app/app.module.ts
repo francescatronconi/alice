@@ -28,6 +28,7 @@ import { FaceChallengeComponent } from './components/pages/face-challenge/face-c
 import { ChallengeViewDirective } from './directives/challenge-view.directive';
 import { ChallengeFindFeaturesComponent } from './components/pages/challenge-find-features/challenge-find-features.component';
 import { SvgCanvasComponent } from './components/widgets/svg-canvas/svg-canvas.component';
+import { SvgAreaComponent } from './components/widgets/svg-area/svg-area.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { SvgCanvasComponent } from './components/widgets/svg-canvas/svg-canvas.c
     ChallengeViewDirective,
     ChallengeFindFeaturesComponent,
     SvgCanvasComponent,
+    SvgAreaComponent,
   ],
   imports: [
     BrowserModule,

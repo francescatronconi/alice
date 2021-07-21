@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { GameScenario } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 
 @Component({
@@ -16,14 +14,12 @@ export class SvgCanvasComponent implements OnInit {
   svg: Document;
   background: SvgMapArea;
   areas: SvgMapArea[];
-  serializer: XMLSerializer;
 
   constructor(
     private shared: SharedDataService,
     ) { }
 
   ngOnInit(): void {
-    this.serializer = new XMLSerializer();
     this.initSvgMap();
   }
 
@@ -38,10 +34,6 @@ export class SvgCanvasComponent implements OnInit {
       .map(id => new SvgMapArea(id, this.svg.getElementById(id)))
       .filter(area => area.element);
     });
-  }
-
-  xml(area: SvgMapArea): string {
-    return this.serializer.serializeToString(area.element);
   }
 
   clickArea(area: SvgMapArea) {

@@ -3,4 +3,8 @@
     <div>{{features.id}}</div>
     <div>{{data.guess}}</div>
 </div>
-<div *ngIf="svgmap" app-svg-canvas [svgmap]="svgmap" (onClickArea)="clickArea($event)" ></div>
+<div #canvas *ngIf="svgmap" app-svg-canvas [svgmap]="svgmap">
+    <svg:g class="mouse" *ngFor="let area of canvas.areas">
+        <svg:g app-svg-area [area]="area" (onClickArea)="clickArea($event)"></svg:g>
+    </svg:g>
+</div>
