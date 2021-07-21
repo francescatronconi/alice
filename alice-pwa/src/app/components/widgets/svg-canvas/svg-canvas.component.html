@@ -1,7 +1,7 @@
 <svg class="fullsvg" viewBox="0 0 100 100">
     <g *ngIf="background" app-svg-area [area]="background"></g>
     <g #usercontent><ng-content></ng-content></g>
-    <g *ngIf="!usercontent.hasChildNodes()">
+    <ng-container *ngIf="!usercontent.children.length">
         <svg:g app-svg-area *ngFor="let area of areas" [area]="area" (onClickArea)="clickArea($event)" ></svg:g>
-    </g>
+    </ng-container>
 </svg>

@@ -1,10 +1,17 @@
 <div class="fullpage alice">
     <h1>Challenge!</h1>
-    <div>{{features.id}}</div>
+    <div>{{challenge.id}}</div>
     <div>{{data.guess}}</div>
 </div>
 <div #canvas *ngIf="svgmap" app-svg-canvas [svgmap]="svgmap">
-    <svg:g class="mouse" *ngFor="let area of canvas.areas">
+    <svg:defs>
+        <style>
+            .removed {
+                opacity: 0.25;
+            }
+        </style>
+    </svg:defs>
+    <svg:g *ngFor="let area of canvas.areas" [class]="areaClass(area)">
         <svg:g app-svg-area [area]="area" (onClickArea)="clickArea($event)"></svg:g>
     </svg:g>
 </div>

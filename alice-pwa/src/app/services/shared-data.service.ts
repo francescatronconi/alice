@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ButtonsMenuService } from './buttons-menu.service';
-import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition} from './ponte-virtuale.service';
+import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition, GameEffect} from './ponte-virtuale.service';
 
 @Injectable({
   providedIn: 'root'
@@ -55,6 +55,12 @@ export class SharedDataService {
     this.pv.start(this.scenario, this.play);
     this.findNextStory();
     this.options = this.getOptions();
+    this.savePlay();
+  }
+
+  resolveEffect(effect: GameEffect) {
+    this.pv.applyEffect(effect, this.scenario, this.play);
+    this.updateGui();
     this.savePlay();
   }
 
@@ -128,6 +134,18 @@ export class SharedDataService {
 
   visitTappa(location: string) {
     this.pv.visit(this.scenario, this.play, location);
+    this.updateGui();
+    this.savePlay();
+  }
+
+  successfulChallenge() {
+    this.pv.successfulChallenge(this.scenario, this.play);
+    this.updateGui();
+    this.savePlay();
+  }
+
+  failedChallenge() {
+    this.pv.failedChallenge(this.scenario, this.play);
     this.updateGui();
     this.savePlay();
   }

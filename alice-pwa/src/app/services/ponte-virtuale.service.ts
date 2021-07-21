@@ -21,6 +21,8 @@ export class PonteVirtualeService {
     if (
       GameEventStart.validEvent(rule, scenario, play) ||
       GameEventVisit.validEvent(rule, scenario, play) ||
+      GameEventSuccessfulChallenge.validEvent(rule, scenario, play) ||
+      GameEventFailedChallenge.validEvent(rule, scenario, play) ||
       GameEventQrCode.validEvent(rule, scenario, play) ||
       !rule.trigger
       ) {
@@ -37,6 +39,18 @@ export class PonteVirtualeService {
 
   visit(scenario: GameScenario, play: GamePlay, location: string) {
     play.event = new GameEventVisit(location);
+    this.runScenarioRules(scenario, play);
+  }
+
+  successfulChallenge(scenario: GameScenario, play: GamePlay) {
+    play.event = new GameEventSuccessfulChallenge(play.challenge.challenge);
+    play.challenge = null;
+    this.runScenarioRules(scenario, play);
+  }
+
+  failedChallenge(scenario: GameScenario, play: GamePlay) {
+    play.event = new GameEventFailedChallenge(play.challenge.challenge);
+    play.challenge = null;
     this.runScenarioRules(scenario, play);
   }
 
@@ -139,6 +153,38 @@ export class GameEventVisit {
     let event = (play.event as GameEventVisit);
     let r = /visit:(.*)/;
     return event.location && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
+  }
+
+}
+
+export class GameEventSuccessfulChallenge {
+
+  challenge: string;
+
+  constructor(challenge: string) {
+    this.challenge = challenge;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventSuccessfulChallenge);
+    let r = /success:(.*)/;
+    return event.challenge && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.challenge;
+  }
+
+}
+
+export class GameEventFailedChallenge {
+
+  challenge: string;
+
+  constructor(challenge: string) {
+    this.challenge = challenge;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventFailedChallenge);
+    let r = /failed:(.*)/;
+    return event.challenge && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.challenge;
   }
 
 }
@@ -411,6 +457,7 @@ export class GameChallenge {
 export class GameChallengePlaceFeatures extends GameChallenge {
   svgmap: string;
   code: 'features';
+  success: string[];
   static check(challenge: GameChallengePlaceFeatures): boolean {
     return challenge.code === 'features';
   }

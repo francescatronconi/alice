@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameChallenge, GameChallengeData, GameChallengePlaceFeatures, GameChallengePlaceFeaturesGuess } from 'src/app/services/ponte-virtuale.service';
+import { GameChallenge, GameChallengeData, GameChallengePlaceFeatures, GameChallengePlaceFeaturesGuess, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 import { SvgMapArea } from '../../widgets/svg-canvas/svg-canvas.component';
 
@@ -10,32 +10,54 @@ import { SvgMapArea } from '../../widgets/svg-canvas/svg-canvas.component';
 })
 export class ChallengeFindFeaturesComponent implements OnInit {
 
+  challenge: GameChallengePlaceFeatures;
   data: GameChallengePlaceFeaturesGuess;
-  features: GameChallengePlaceFeatures;
 
   svgmap: SvgMap;
 
-  constructor(private shared: SharedDataService) { }
+  constructor(
+    private shared: SharedDataService,
+    private pv: PonteVirtualeService,
+    ) { }
 
   ngOnInit(): void {
     console.log('ngOnInit');
     console.log(this.data);
-    console.log(this.features);
+    console.log(this.challenge);
     this.svgmap = this.shared.getSvgMap('challenge-01');
   }
 
   init(challenge: GameChallenge, data: GameChallengeData) {
-    this.features = challenge as GameChallengePlaceFeatures;
+    this.challenge = challenge as GameChallengePlaceFeatures;
     this.data = data as GameChallengePlaceFeaturesGuess;
   }
 
   clickArea(area: SvgMapArea) {
     console.log(area);
-    if (area.id === 'feature-01') {
-      this.shared.play.challenge = null;
+    this.data.guess[area.id] = !this.data.guess[area.id];
+    if (this.isDoneButton(area)) {
+      let allFound = this.challenge.success.filter(present => !this.data.guess[present]).length === 0;
+      let noWrong = Object.keys(this.data.guess).filter(miss => !this.data.guess[miss]).filter(miss => this.challenge.success.includes(miss)).length === 0;
+      if (allFound && noWrong) {
+        this.shared.successfulChallenge();
+      } else {
+        this.shared.failedChallenge();
+      }
+    } else {
       this.shared.updateGui();
       this.shared.savePlay();
     }
+  }
+
+  areaClass(area: SvgMapArea): {[id: string]: boolean} {
+    if (this.isDoneButton(area)) {
+      return {};
+    }
+    return {removed: this.data.guess[area.id] ? false: true};
+  }
+
+  isDoneButton(area: SvgMapArea): boolean {
+    return area.id === 'done';
   }
 
 }
