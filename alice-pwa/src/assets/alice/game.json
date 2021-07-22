@@ -18,7 +18,7 @@
         {"trigger": "visit:biblioteca", "effect": {"options": "options-A", "location": "biblioteca"}},
         {"trigger": "success:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"], "badge": "cappellaio-matto"}},
         {"trigger": "failed:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"]}},
-        {"trigger": "qrcode:https://www.youtube.com/watch?v=Y2N6J9Nk5Ug", "effect": {"options": "options-A", "story": [{"read": "intro-1.html"}]}}
+        {"trigger": "qrcode:https://www.youtube.com/watch?v=Y2N6J9Nk5Ug", "effect": {"story": [{"read": "qr-code.html"}]}}
     ],  
     "options": [
         {"id": "options-A", "options": [

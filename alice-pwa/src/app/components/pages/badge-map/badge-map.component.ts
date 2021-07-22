@@ -175,7 +175,6 @@ export class BadgeMapItem {
       this.captureTranslate();
       this.captureMatrix();
     }
-    console.log(this);
   }
 
   checkBadge(shared: SharedDataService): BadgeMapItem {

@@ -19,12 +19,12 @@ export class PonteVirtualeService {
 
   checkAndRunRule(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
     if (
+      !rule.trigger || 
       GameEventStart.validEvent(rule, scenario, play) ||
       GameEventVisit.validEvent(rule, scenario, play) ||
       GameEventSuccessfulChallenge.validEvent(rule, scenario, play) ||
       GameEventFailedChallenge.validEvent(rule, scenario, play) ||
-      GameEventQrCode.validEvent(rule, scenario, play) ||
-      !rule.trigger
+      GameEventQrCode.validEvent(rule, scenario, play)
       ) {
         if(!rule.condition || this.checkCondition(rule.condition, play, scenario)) {
           if (rule.effect) {
@@ -152,7 +152,7 @@ export class GameEventVisit {
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventVisit);
     let r = /visit:(.*)/;
-    return event.location && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
+    return event.location && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
   }
 
 }
@@ -168,7 +168,7 @@ export class GameEventSuccessfulChallenge {
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventSuccessfulChallenge);
     let r = /success:(.*)/;
-    return event.success && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.success;
+    return event.success && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.success;
   }
 
 }
@@ -184,7 +184,7 @@ export class GameEventFailedChallenge {
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventFailedChallenge);
     let r = /failed:(.*)/;
-    return event.failed && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.failed;
+    return event.failed && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.failed;
   }
 
 }
@@ -200,7 +200,7 @@ export class GameEventQrCode {
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventQrCode);
     let r = /qrcode:(.*)/;
-    return event.qrcode && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.qrcode;
+    return event.qrcode && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.qrcode;
   }
 
 }
@@ -485,6 +485,3 @@ export class MapButton {
   action: string[];
 
 }
-
-
-
