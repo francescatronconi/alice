@@ -159,32 +159,32 @@ export class GameEventVisit {
 
 export class GameEventSuccessfulChallenge {
 
-  challenge: string;
+  success: string;
 
   constructor(challenge: string) {
-    this.challenge = challenge;
+    this.success = challenge;
   }
 
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventSuccessfulChallenge);
     let r = /success:(.*)/;
-    return event.challenge && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.challenge;
+    return event.success && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.success;
   }
 
 }
 
 export class GameEventFailedChallenge {
 
-  challenge: string;
+  failed: string;
 
   constructor(challenge: string) {
-    this.challenge = challenge;
+    this.failed = challenge;
   }
 
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventFailedChallenge);
     let r = /failed:(.*)/;
-    return event.challenge && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.challenge;
+    return event.failed && rule.trigger && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.failed;
   }
 
 }
