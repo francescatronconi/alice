@@ -16,7 +16,7 @@
                 {"effect": {"score": 3}}
             ]},
         {"trigger": "visit:biblioteca", "effect": {"options": "options-A", "location": "biblioteca"}},
-        {"trigger": "success:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"], "badge": "cappellaio-matto"}},
+        {"trigger": "success:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"], "badge": "cappellaio-matto", "story": [{"read": "qr-code.html"}]}},
         {"trigger": "failed:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"]}},
         {"trigger": "qrcode:https://www.youtube.com/watch?v=Y2N6J9Nk5Ug", "effect": {"story": [{"read": "qr-code.html"}]}}
     ],  
