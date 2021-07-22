@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/smartapp.scss"
             ],
             "scripts": [
               "./node_modules/html5-qrcode/dist/html5-qrcode.min.js"
