@@ -12,7 +12,6 @@ import { ListenTrackComponent } from './components/widgets/listen-track/listen-t
 import { TellStoryComponent } from './components/pages/tell-story/tell-story.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WatchVideoComponent } from './components/widgets/watch-video/watch-video.component';
-import { PopupComponent } from './components/pages/popup/popup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoryPopupComponent } from './components/pages/story-popup/story-popup.component';
 import { BadgeComponent } from './components/pages/badge/badge.component';
@@ -42,7 +41,6 @@ import { InlineStyleComponent } from './components/widgets/inline-style/inline-s
     ListenTrackComponent,
     TellStoryComponent,
     WatchVideoComponent,
-    PopupComponent,
     StoryPopupComponent,
     BadgeComponent,
     ReadStoryComponent,
