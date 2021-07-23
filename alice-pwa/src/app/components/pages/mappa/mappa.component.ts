@@ -19,6 +19,7 @@ import { GamePlay, GameScenario, PonteVirtualeService } from 'src/app/services/p
 import { LocationService } from 'src/app/services/location.service';
 import { Coordinate } from 'ol/coordinate';
 import { Observable, Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-mappa',
@@ -31,7 +32,6 @@ export class MappaComponent implements OnInit, OnDestroy {
   map: Map;
   youLayer: VectorLayer;
   featuresLayer: VectorLayer;
-  currentLocation: MapLocation;
   overlay: Overlay;
   location: MapLocation;
   featureById: { [id: string]: Feature };
@@ -189,23 +189,41 @@ export class MappaComponent implements OnInit, OnDestroy {
     delete this.featureById[location.id];
   }
 
-  clickTappa(evt: any) {
+  clickMappa(evt: any) {
     var pixel = []
     pixel = this.map.getEventPixel(evt);
     var features: FeatureLike[] = this.map.getFeaturesAtPixel(pixel);
     var coordinate = this.map.getEventCoordinate(evt);
     if (features.length > 0) {
-      this.currentLocation = features[0].get('location');
+      this.location = features[0].get('location');
       this.overlay.setPosition(coordinate);
+    } else {
+      this.closeLocation();
     }
   };
 
-  closeLocation(value: boolean): void {
+  closeLocation(): void {
+    this.location = null;
     this.overlay.setPosition(undefined);
   }
 
-  gioca(location: MapLocation): void {
+  clickGioca(location: MapLocation): void {
     this.shared.visitTappa(location.id);
+  }
+
+  nearToPlay(): boolean {
+    return this.location && (!this.location.near || this.checkDistance()) ? true: false;
+  }
+
+  private checkDistance() {
+    let difQuadLat = Math.pow(this.location.lat - this.position.coords.latitude,2)
+    let difQuadLon = Math.pow(this.location.lon - this.position.coords.longitude, 2)
+    let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000
+    return distance < environment.nearby;
+  }
+
+  findWayHref(location: MapLocation) {
+    return `https://www.google.com/maps/dir/${this.position.coords.latitude},${this.position.coords.longitude}/${location.lat},${location.lon}`;
   }
 
 }
