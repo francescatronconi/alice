@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Canterbury Regular';
+    src: url('./fonts/Canterbury.ttf') format("truetype");
+}
+
+.narrative {
+    font-family: "Canterbury Regular";
+    color: red;
+}

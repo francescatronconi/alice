@@ -1,12 +1,23 @@
-- scansione QR code: non cambia la fotocamera
-- scansione QR code: inquadratura "sballata"
-x desiderata: app manda alla pagina dei badge quando se ne ottiene uno
-- fix pulsanti app sulla destra in modalità portrait
-- riportare css in smartapp.scss
+- impostare il gioco corrente
+- challenge: identikit
+- challenge: builder
+- challenge: trova la differenze
+- svgmap per le options: permette di fare una scelta grafica!
+- webcam per selfie https://www.npmjs.com/package/ngx-webcam
+- pagina dei badge: show score (per la collezione di carte)
+- configurazioni: volume audio
 - popup delle location in mappa: aggiustare immagine di sfondo e icone
 - pulsanti custom sulle location in mappa (per tornare in libreria)
 - effetto nuovo: play sound
 - effetto nuovo: play music
+- effetto nuovo: play video
+- story: audio della lettura
 - mappa openstreet: andare alla posizione corrente
-- effetto nuovo: route to (porta ad una pagina della app)
-- challenge: trova le feature
+- editor di game.json e risorse: https://stackoverflow.com/questions/8608724/how-to-zip-files-using-javascript
+x challenge: trova le feature
+x effetto nuovo: route to (porta ad una pagina della app)
+x scansione QR code: non cambia la fotocamera
+x scansione QR code: inquadratura "sballata"
+x desiderata: app manda alla pagina dei badge quando se ne ottiene uno
+x fix pulsanti app sulla destra in modalità portrait
+x riportare css in smartapp.scss

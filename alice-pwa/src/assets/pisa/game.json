@@ -1,0 +1,12 @@
+{
+    "id": "pisa-01",
+    "rules": [
+        {"trigger": "start", "effect": {"route": ["diario"], "story": [{"read": "intro.html"}]}}
+    ],  
+    "options": [],
+    "badges": [],
+    "svgmaps": [],
+    "locations": [],
+    "challenges": [],
+    "buttons": []
+}

@@ -4,6 +4,6 @@
 
 export const environment = {
   production: false,
-  gameUrl: './assets/fufi',
+  gameUrl: './assets/pisa',
   nearby: 1000
 };

@@ -55,6 +55,7 @@ export class SharedDataService {
     this.pv.start(this.scenario, this.play);
     this.findNextStory();
     this.options = this.getOptions();
+    this.updateGui();
     this.savePlay();
   }
 

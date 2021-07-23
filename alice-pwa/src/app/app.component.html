@@ -2,9 +2,10 @@
     Caricamento...
 </ng-container>
 <ng-container *ngIf="shared.scenario">
+    <app-inline-style></app-inline-style>
     <ng-container *ngIf="!(shared.play)">
         <div class="blackdim"></div>
-        <div class="fullpage alice" >
+        <div class="fullpage narrative" >
             <div class="modal" (click)="shared.startGame()">Inizia la partita!</div>
         </div>
     </ng-container>
