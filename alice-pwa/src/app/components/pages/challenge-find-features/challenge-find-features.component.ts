@@ -24,7 +24,7 @@ export class ChallengeFindFeaturesComponent implements OnInit {
     console.log('ngOnInit');
     console.log(this.data);
     console.log(this.challenge);
-    this.svgmap = this.shared.getSvgMap('challenge-01');
+    this.svgmap = this.shared.getSvgMap(this.challenge.svgmap);
   }
 
   init(challenge: GameChallenge, data: GameChallengeData) {

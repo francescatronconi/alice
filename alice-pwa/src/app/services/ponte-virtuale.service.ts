@@ -336,7 +336,7 @@ export class GameEffectChallenge extends GameEffect {
   challenge: string;
   static run(effect: GameEffectChallenge, scenario: GameScenario, play: GamePlay) {
     scenario.challenges
-    .filter(challenge => challenge.id = effect.challenge)
+    .filter(challenge => challenge.id === effect.challenge)
     .forEach(challenge => {
       GameChallenge.initPlay(challenge, scenario, play);
     })
@@ -449,9 +449,18 @@ export class GameChallenge {
     if ( GameChallengePlaceFeatures.check(challenge as GameChallengePlaceFeatures) ) {
       GameChallengePlaceFeatures.init(challenge, scenario, play);
     }
+    if ( GameChallengeIdentikit.check(challenge as GameChallengeIdentikit) ) {
+      GameChallengeIdentikit.init(challenge, scenario, play);
+    }
   }
   id: string;
   code: string;
+}
+export class GameChallengeData {
+  challenge: string;
+  constructor(challenge: GameChallenge) {
+    this.challenge = challenge.id;
+  }  
 }
 
 export class GameChallengePlaceFeatures extends GameChallenge {
@@ -470,12 +479,34 @@ export class PlaceFeature {
   present: boolean;
   image?: string;
 }
-
-export class GameChallengeData {
-  challenge: string;
-}
 export class GameChallengePlaceFeaturesGuess extends GameChallengeData {
   guess: {[id: string]: boolean};
+}
+
+export class GameChallengeIdentikit extends GameChallenge {
+  svgmap: string;
+  code: 'identikit';
+  options: GameChallengeIdentikitOption[]
+  static check(challenge: GameChallengeIdentikit): boolean {
+    return challenge.code === 'identikit';
+  }
+  static init(challenge: GameChallenge, scenario: GameScenario, play: GamePlay) {
+    play.challenge = new GameChallengeIdentikitData(challenge as GameChallengeIdentikit);
+  }
+}
+export class GameChallengeIdentikitOption {
+  id: string;
+  options: number;
+  success: number; 
+}
+export class GameChallengeIdentikitData extends GameChallengeData {
+  options: {[id: string]: number};
+  constructor(challenge: GameChallengeIdentikit) {
+    super(challenge);
+    this.options = {}
+    challenge.options
+    .forEach(option => this.options[option.id] = 1);
+  }
 }
 
 export class MapButton {

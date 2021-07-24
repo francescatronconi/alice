@@ -1,0 +1,72 @@
+import { Component, OnInit } from '@angular/core';
+import { GameChallenge, GameChallengeData, GameChallengeIdentikit, GameChallengeIdentikitData, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
+import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
+import { SvgMapArea } from '../../widgets/svg-canvas/svg-canvas.component';
+
+@Component({
+  selector: 'app-challenge-identikit',
+  templateUrl: './challenge-identikit.component.html',
+  styleUrls: ['./challenge-identikit.component.scss']
+})
+export class ChallengeIdentikitComponent implements OnInit {
+
+  challenge: GameChallengeIdentikit;
+  data: GameChallengeIdentikitData;
+
+  svgmap: SvgMap;
+  max: {[id:string]: number};
+
+  constructor(
+    private shared: SharedDataService,
+    ) { }
+
+  ngOnInit(): void {
+    console.log('ngOnInit');
+    console.log(this.data);
+    console.log(this.challenge);
+    this.svgmap = this.shared.getSvgMap(this.challenge.svgmap);
+    this.max = {};
+    this.challenge.options
+    .forEach(option => this.max[option.id] = option.options);
+  }
+
+  init(challenge: GameChallenge, data: GameChallengeData) {
+    this.challenge = challenge as GameChallengeIdentikit;
+    this.data = data as GameChallengeIdentikitData;
+  }
+
+  clickArea(area: SvgMapArea) {
+    if (this.isDoneButton(area)) {
+      this.checkDone();
+    } else {
+      if (this.data.options[area.id] === this.max[area.id]) {
+        this.data.options[area.id] = 1;
+      } else {
+        this.data.options[area.id] = this.data.options[area.id] + 1;
+      }
+      this.shared.updateGui();
+      this.shared.savePlay();
+    }
+  }
+  checkDone() {
+    let wrong = this.challenge.options
+    .filter(option => this.data.options[option.id] != option.success)
+    .length;
+    if (wrong === 0) {
+      this.shared.successfulChallenge();
+    } else {
+      this.shared.failedChallenge();
+    }
+  }
+
+  areaClass(area: SvgMapArea): {[id: string]: boolean} {
+    let c = {};
+    c[`identikit-area-${this.data.options[area.id]}`] = true;
+    return c;
+  }
+
+  isDoneButton(area: SvgMapArea): boolean {
+    return area.id === 'done';
+  }
+
+}

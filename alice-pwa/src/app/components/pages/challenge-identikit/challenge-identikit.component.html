@@ -1,0 +1,36 @@
+<div #canvas *ngIf="svgmap" app-svg-canvas [svgmap]="svgmap">
+    <svg:defs>
+        <style>
+            .identikit-option {
+                opacity: 0;
+            }
+            .identikit-area-1 .identikit-option-1 {
+                opacity: 1;
+            }
+            .identikit-area-2 .identikit-option-2 {
+                opacity: 1;
+            }
+            .identikit-area-3 .identikit-option-3 {
+                opacity: 1;
+            }
+            .identikit-area-4 .identikit-option-4 {
+                opacity: 1;
+            }
+            .identikit-area-5 .identikit-option-5 {
+                opacity: 1;
+            }
+            .identikit-area-6 .identikit-option-6 {
+                opacity: 1;
+            }
+            .identikit-area-7 .identikit-option-7 {
+                opacity: 1;
+            }
+            .identikit-area-8 .identikit-option-8 {
+                opacity: 1;
+            }
+        </style>
+    </svg:defs>
+    <svg:g *ngFor="let area of canvas.areas" [class]="areaClass(area)">
+        <svg:g app-svg-area [area]="area" (onClickArea)="clickArea($event)"></svg:g>
+    </svg:g>
+</div>

@@ -8,7 +8,8 @@
         {"trigger": "visit:cattedrale", "effect": {"story": [{"read": "intro-1.html"}], "challenge": "playme"}},
         {"trigger": "visit:star", "effect": {"route": ["badgemap", "cappellaio-matto"], "story": [{"read": "intro-star.html"}]}},
         {"trigger": "visit:circle", "effect": {"route": ["diario"]}},
-        {"trigger": "visit:challenge-01", "effect": {"challenge": "c-01"}},
+        {"trigger": "visit:challenge-features", "effect": {"challenge": "c-01"}},
+        {"trigger": "visit:challenge-identikit", "effect": {"challenge": "c-02"}},
         {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
         {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
             "rules": [
@@ -18,6 +19,7 @@
         {"trigger": "visit:biblioteca", "effect": {"options": "options-A", "location": "biblioteca"}},
         {"trigger": "success:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"], "badge": "cappellaio-matto", "story": [{"read": "qr-code.html"}]}},
         {"trigger": "failed:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"]}},
+        {"trigger": "success:c-02", "effect": {"route": ["badgemap", "regina-cuori"], "badge": "regina-cuori", "story": [{"read": "qr-code.html"}]}},
         {"trigger": "qrcode:https://www.youtube.com/watch?v=Y2N6J9Nk5Ug", "effect": {"story": [{"read": "qr-code.html"}]}}
     ],  
     "options": [
@@ -40,8 +42,9 @@
         {"badge": "badge-03", "src": "horse.svg"}
     ],
     "svgmaps": [
-        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle", "challenge-01"]},
-        {"id": "challenge-01", "svg": "challenge-01.svg", "background": null, "ids": ["done", "feature-02", "feature-03", "feature-04"]}
+        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle", "challenge-features", "challenge-identikit"]},
+        {"id": "challenge-features", "svg": "challenge-01.svg", "background": null, "ids": ["done", "feature-02", "feature-03", "feature-04"]},
+        {"id": "challenge-identikit", "svg": "challenge-identikit.svg", "background": null, "ids": ["done", "identikit-01", "identikit-02", "identikit-03"]}
     ],
     "locations": [
         {"id":"cattedrale", "name": "./assets/svg/cattedrale.svg", "icon": "./assets/svg/cat.svg", "description": "cattedrale", 
@@ -52,7 +55,12 @@
             "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
     ],
     "challenges": [
-        {"id": "c-01", "code": "features", "svgmap": "challenge-01", "success": ["feature-03", "feature-04"]}
+        {"id": "c-01", "code": "features", "svgmap": "challenge-features", "success": ["feature-03", "feature-04"]},
+        {"id": "c-02", "code": "identikit", "svgmap": "challenge-identikit", "options": [
+            {"id": "identikit-01", "options": 3, "success": 1},
+            {"id": "identikit-02", "options": 3, "success": 2},
+            {"id": "identikit-03", "options": 3, "success": 3}
+        ]}
     ],
     "buttons": [
         {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
