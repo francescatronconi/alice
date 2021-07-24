@@ -6,6 +6,9 @@
             }
         </style>
     </svg:defs>
+    <svg:g id="shadow-box" class="box">
+        <svg:rect x="-100" y="-100" width="300" height="300" style="fill:black; opacity: 0.5;"></svg:rect>
+    </svg:g>
     <svg:g *ngFor="let area of canvas.areas" [class]="areaClass(area)">
         <svg:g app-svg-area [area]="area" (onClickArea)="clickArea($event)"></svg:g>
     </svg:g>
