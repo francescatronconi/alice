@@ -307,6 +307,7 @@ export class GameEffectStory extends GameEffect {
 }
 export class GameEffectStoryItem {
   read?: string;
+  video?: string;
 }
 GameEffect.register(GameEffectStory);
 

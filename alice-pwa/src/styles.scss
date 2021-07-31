@@ -47,6 +47,42 @@
     text-align: center;
 }
 
+.background {
+  background-color: lightgray;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* The image used */
+  //background-image: url("./assets/tiled.jpg");
+  //background-repeat: repeat;
+}
+
+.ondemand-video {
+  video {
+    width: 100%;
+  }
+}
+
+.video-player{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.75);
+  video {
+      width: 100%;
+      height: 90%;
+      position: absolute;
+  }
+}
+
+
+// Altri CSS da rivedere
+
 .buttonStartGame {
     background-color: #4CAF50; /* Green */
     border: none;

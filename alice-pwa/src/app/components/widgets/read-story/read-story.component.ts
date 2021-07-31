@@ -13,13 +13,19 @@ export class ReadStoryComponent implements OnInit {
   @Input() story: GamePlayStory;
 
   html: string;
+  video: string;
 
   constructor(private shared: SharedDataService) { }
 
   ngOnInit(): void {
-    this.shared.getHtmlResource(this.story.origin.read).then(html => {
-      this.html = html.replace(/src="\.\/(.*)"/, `src="${environment.gameUrl}/$1"`);
-    });
+    if (this.story.origin.video) {
+      this.video = `${environment.gameUrl}/${this.story.origin.video}`;
+    }
+    if (this.story.origin.read) {
+      this.shared.getHtmlResource(this.story.origin.read).then(html => {
+        this.html = html.replace(/src="\.\/(.*)"/, `src="${environment.gameUrl}/$1"`);
+      });
+    }
   }
 
 }

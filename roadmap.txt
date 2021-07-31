@@ -1,4 +1,8 @@
-- impostare il gioco corrente
+- sito: supporto pre, durante e post
+- analytics: quante persone hanno giocato?
+- feedback: dove e come? Facebook? Sito?
+
+- impostare il gioco corrente: URL (supporto QR)
 - challenge: identikit
 - challenge: builder
 - challenge: trova la differenze
@@ -12,7 +16,8 @@
 - effetto nuovo: play music
 - effetto nuovo: play video
 - story: audio della lettura
-- mappa openstreet: andare alla posizione corrente
+- mappa openstreet: andare alla posizione corrente (se rilevata)
+- mappa openstreet: disabilitare prossimità se navigazione disabilitata (come si richiede abilitazione?)
 - editor di game.json e risorse: https://stackoverflow.com/questions/8608724/how-to-zip-files-using-javascript
 x challenge: trova le feature
 x effetto nuovo: route to (porta ad una pagina della app)

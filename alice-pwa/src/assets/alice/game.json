@@ -5,7 +5,7 @@
             {"read": "intro-1.html"},
             {"read": "intro-2.html"}
         ]}},
-        {"trigger": "visit:cattedrale", "effect": {"story": [{"read": "intro-1.html"}], "challenge": "playme"}},
+        {"trigger": "visit:cattedrale", "effect": {"story": [{"read": "intro-1.html"}, {"video": "telefonata.mp4"}], "challenge": "playme"}},
         {"trigger": "visit:star", "effect": {"route": ["badgemap", "cappellaio-matto"], "story": [{"read": "intro-star.html"}]}},
         {"trigger": "visit:circle", "effect": {"route": ["diario"]}},
         {"trigger": "visit:challenge-features", "effect": {"challenge": "c-01"}},
