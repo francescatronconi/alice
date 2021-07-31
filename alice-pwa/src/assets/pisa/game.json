@@ -1,12 +1,29 @@
 {
     "id": "pisa-01",
     "rules": [
-        {"trigger": "start", "effect": {"route": ["diario"], "story": [{"read": "intro.html"}]}}
+        {"trigger": "start", "effect": {"route": ["diario"], "story": [{"read": "intro.html"}]}},
+        {"trigger": "visit:piazza-xx-settembre", "effect": {"route": ["diario"], "story": [{"read": "piazza-xx-settembre.html"}], "challenge": "piazza-xx-settembre"}},
+        {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["diario"], "story": [{"read": "piazza-xx-settembre-success.html"}], "badge": "piazza-xx-settembre"}}
     ],  
     "options": [],
     "badges": [],
-    "svgmaps": [],
-    "locations": [],
-    "challenges": [],
-    "buttons": []
+    "svgmaps": [
+        {"id": "piazza-xx-settembre", "svg": "piazza-xx-settembre.svg", "background": "palazzo-pretorio", "ids": ["porticati", "altana", "orologio", "balcone", "fregi", "done"]}
+    ],
+    "locations": [
+        {"id":"piazza-xx-settembre", "name": "Piazza XX settembre", "icon": "./assets/pisa/location.svg", "description": "Piazza XX settembre", 
+            "lon": 10.40161331607924, "lat": 43.71547052889889, "near": false}
+    ],
+    "challenges": [
+        {"id": "piazza-xx-settembre", "code": "identikit", "svgmap": "piazza-xx-settembre", "options": [
+            {"id": "fregi", "options": 3, "success": 1},
+            {"id": "orologio", "options": 3, "success": 2},
+            {"id": "altana", "options": 3, "success": 3},
+            {"id": "porticati", "options": 3, "success": 3}
+        ]}
+    ],
+    "buttons": [
+        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
+        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]}
+    ]
 }

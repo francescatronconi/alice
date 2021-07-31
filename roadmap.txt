@@ -1,4 +1,4 @@
-- sito: supporto pre, durante e post
+- sito: supporto pre, durante e pos
 - analytics: quante persone hanno giocato?
 - feedback: dove e come? Facebook? Sito?
 
@@ -26,3 +26,8 @@ x scansione QR code: inquadratura "sballata"
 x desiderata: app manda alla pagina dei badge quando se ne ottiene uno
 x fix pulsanti app sulla destra in modalità portrait
 x riportare css in smartapp.scss
+
+
+---
+SvgMap
+- gli use si rompono se utilizzano xlink:href --> usare solo href

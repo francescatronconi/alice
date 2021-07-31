@@ -10,6 +10,7 @@ export class SvgCanvasComponent implements OnInit {
 
   @Input() svgmap: SvgMap;
   @Output() onClickArea = new EventEmitter<SvgMapArea>();
+  @Input() css: {[id: string]: boolean};
 
   svg: Document;
   background: SvgMapArea;
@@ -20,6 +21,9 @@ export class SvgCanvasComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    if (!this.css) {
+      this.css = {'fullsvg': true};
+    }
     this.initSvgMap();
   }
 
@@ -48,6 +52,7 @@ export class SvgMapArea {
   element: HTMLElement;
 
   constructor(id: string, element: HTMLElement) {
+    console.log(id, element);
     this.id = id;
     this.element = element;
   }

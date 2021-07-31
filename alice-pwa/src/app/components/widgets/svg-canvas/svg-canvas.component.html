@@ -1,4 +1,4 @@
-<svg class="fullsvg" viewBox="0 0 100 100">
+<svg [class]="css" viewBox="0 0 100 100" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g *ngIf="background" app-svg-area [area]="background"></g>
     <g #usercontent><ng-content></ng-content></g>
     <ng-container *ngIf="!usercontent.children.length">

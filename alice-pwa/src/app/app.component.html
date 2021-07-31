@@ -12,8 +12,8 @@
     <ng-container *ngIf="shared.play">
         <router-outlet></router-outlet>
         <div app-buttons-overlay></div>
+        <div app-face-challenge *ngIf="shared.play.challenge"></div>
         <div app-story-popup *ngIf="shared.currentStory"></div>
         <div app-option-popup *ngIf="!shared.currentStory && shared.options"></div>
-        <div app-face-challenge *ngIf="shared.play.challenge"></div>
     </ng-container>
 </ng-container>
