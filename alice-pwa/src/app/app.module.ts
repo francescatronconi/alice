@@ -30,6 +30,8 @@ import { SvgCanvasComponent } from './components/widgets/svg-canvas/svg-canvas.c
 import { SvgAreaComponent } from './components/widgets/svg-area/svg-area.component';
 import { InlineStyleComponent } from './components/widgets/inline-style/inline-style.component';
 import { ChallengeIdentikitComponent } from './components/pages/challenge-identikit/challenge-identikit.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -65,6 +67,7 @@ import { ChallengeIdentikitComponent } from './components/pages/challenge-identi
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

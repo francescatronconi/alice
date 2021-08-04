@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  gameUrl: './assets/alice',
+  gameUrl: './assets/pisa',
   nearby: 1000
 };

@@ -19,6 +19,12 @@
 - mappa openstreet: andare alla posizione corrente (se rilevata)
 - mappa openstreet: disabilitare prossimità se navigazione disabilitata (come si richiede abilitazione?)
 - editor di game.json e risorse: https://stackoverflow.com/questions/8608724/how-to-zip-files-using-javascript
+- disclaimer prima di raggiungere il gioco: cosa usa e perché
+- disclaimer sei tu l'unico responsabile per le tue azioni
+
+- rilascio: screeshot e title
+- pwa per apple: https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+
 x challenge: trova le feature
 x effetto nuovo: route to (porta ad una pagina della app)
 x scansione QR code: non cambia la fotocamera

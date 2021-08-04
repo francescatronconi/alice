@@ -3,7 +3,7 @@
     "rules": [
         {"trigger": "start", "effect": {"route": ["diario"], "story": [{"read": "intro.html"}]}},
         {"trigger": "visit:piazza-xx-settembre", "effect": {"route": ["diario"], "story": [{"read": "piazza-xx-settembre.html"}], "challenge": "piazza-xx-settembre"}},
-        {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-success.html"}], "badge": "piazza-xx-settembre"}},
+        {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-success.html", "video":"telefonata.mp4"}], "badge": "piazza-xx-settembre"}},
         {"trigger": "failed:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-failed.html"}]}}
     ],  
     "options": [],

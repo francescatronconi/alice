@@ -1,7 +1,7 @@
 <ng-container *ngIf="!(shared.scenario)">
     Caricamento...
 </ng-container>
-<ng-container *ngIf="shared.scenario">
+<div class="bg" *ngIf="shared.scenario">
     <app-inline-style></app-inline-style>
     <ng-container *ngIf="!(shared.play)">
         <div class="blackdim"></div>
@@ -16,4 +16,4 @@
         <div app-story-popup *ngIf="shared.currentStory"></div>
         <div app-option-popup *ngIf="!shared.currentStory && shared.options"></div>
     </ng-container>
-</ng-container>
+</div>
