@@ -25,11 +25,11 @@
      inkscape:window-width="1853"
      units="px"
      showgrid="false"
-     inkscape:current-layer="layer18"
+     inkscape:current-layer="palazzo-pretorio"
      inkscape:document-units="px"
-     inkscape:cy="40.076009"
-     inkscape:cx="131.50105"
-     inkscape:zoom="3.959798"
+     inkscape:cy="30.741098"
+     inkscape:cx="210.97589"
+     inkscape:zoom="2.8"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -4323,6 +4323,18 @@
       <g
          id="palazzo-pretorio"
          inkscape:label="#g2439">
+        <path
+           style="display:inline;fill:#ac9d93;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="M -7.2982246,81.666244 102.46178,82.048762 c 0,0 -3.917928,22.337648 -13.06328,25.022308 -9.462637,2.7778 -33.125658,3.32329 -42.931483,2.27284 -13.994261,-1.49914 -32.126656,2.51148 -44.4467119,-4.29315 -4.2285018,-2.33549 -9.3185297,-23.384516 -9.3185297,-23.384516 z"
+           id="path10815"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccsssc" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path10817"
+           d="M -7.2982246,81.666244 102.46178,82.048762 c 0,0 3.16603,-52.681767 1.93297,-65.617266 C 102.27907,-5.7633636 87.708833,7.988444 69.447987,-4.8033246 58.966131,-12.14589 24.075999,-5.7791804 9.5964499,-1.5203301 -4.9960646,2.771746 14.157605,27.854645 4.5456859,39.643386 -13.935019,62.309437 -7.2982246,81.666244 -7.2982246,81.666244 Z"
+           style="display:inline;fill:#aaeeff;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           sodipodi:nodetypes="ccssssc" />
         <path
            inkscape:connector-curvature="0"
            id="path10258"

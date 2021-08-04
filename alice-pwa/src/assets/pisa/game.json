@@ -3,7 +3,8 @@
     "rules": [
         {"trigger": "start", "effect": {"route": ["diario"], "story": [{"read": "intro.html"}]}},
         {"trigger": "visit:piazza-xx-settembre", "effect": {"route": ["diario"], "story": [{"read": "piazza-xx-settembre.html"}], "challenge": "piazza-xx-settembre"}},
-        {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["diario"], "story": [{"read": "piazza-xx-settembre-success.html"}], "badge": "piazza-xx-settembre"}}
+        {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-success.html"}], "badge": "piazza-xx-settembre"}},
+        {"trigger": "failed:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-failed.html"}]}}
     ],  
     "options": [],
     "badges": [],
@@ -16,9 +17,9 @@
     ],
     "challenges": [
         {"id": "piazza-xx-settembre", "code": "identikit", "svgmap": "piazza-xx-settembre", "options": [
-            {"id": "fregi", "options": 3, "success": 1},
-            {"id": "orologio", "options": 3, "success": 2},
-            {"id": "altana", "options": 3, "success": 3},
+            {"id": "fregi", "options": 3, "success": 3},
+            {"id": "orologio", "options": 3, "success": 3},
+            {"id": "altana", "options": 3, "success": 1},
             {"id": "porticati", "options": 3, "success": 3}
         ]}
     ],
