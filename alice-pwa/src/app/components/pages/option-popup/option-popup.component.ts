@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 import { Option } from 'src/app/services/ponte-virtuale.service';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 
 @Component({
   selector: '[app-option-popup]',
@@ -13,6 +14,7 @@ export class OptionPopupComponent implements OnInit {
 
   constructor(
     public shared: SharedDataService,
+    public audio: AudioPlayService,
     ) {}
 
 
@@ -21,6 +23,7 @@ export class OptionPopupComponent implements OnInit {
   }
 
   clickOption(option: Option) {
+    this.audio.play('action');
     this.shared.setOption(option);
   }
 

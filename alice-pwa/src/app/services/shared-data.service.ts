@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { AudioPlayService } from './audio-play.service';
 import { ButtonsMenuService } from './buttons-menu.service';
 import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition, GameEffect} from './ponte-virtuale.service';
 
@@ -28,6 +29,7 @@ export class SharedDataService {
 
   constructor(
     private pv: PonteVirtualeService,
+    private audio: AudioPlayService,
     private http: HttpClient,
     public menu: ButtonsMenuService,
     private router: Router,
@@ -37,6 +39,7 @@ export class SharedDataService {
       this.scenario = scenario;
       this.loadButtons();
       this.loadPlay();
+      this.loadStandardAudio();
       this.scenarioReadySource.next(scenario);
     });
   }
@@ -104,6 +107,17 @@ export class SharedDataService {
         localStorage.removeItem("ponte-virtuale-play");
       }
     }
+  }
+
+  loadStandardAudio() {
+    this.loadAudio('action');
+  }
+  loadAudio(id: string) {
+    this.scenario.audio
+    .filter(a => a.id === id)
+    .forEach(a => {
+      this.audio.register(id, `${environment.gameUrl}/${a.src}`);
+    })
   }
 
   updateGui() {

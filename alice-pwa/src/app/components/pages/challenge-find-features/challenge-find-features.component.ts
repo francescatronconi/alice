@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { GameChallenge, GameChallengeData, GameChallengePlaceFeatures, GameChallengePlaceFeaturesGuess, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 import { SvgMapArea } from '../../widgets/svg-canvas/svg-canvas.component';
@@ -17,7 +18,7 @@ export class ChallengeFindFeaturesComponent implements OnInit {
 
   constructor(
     private shared: SharedDataService,
-    private pv: PonteVirtualeService,
+    private audio: AudioPlayService,
     ) { }
 
   ngOnInit(): void {
@@ -33,6 +34,7 @@ export class ChallengeFindFeaturesComponent implements OnInit {
   }
 
   clickArea(area: SvgMapArea) {
+    this.audio.play('action');
     console.log(area);
     this.data.guess[area.id] = !this.data.guess[area.id];
     if (this.isDoneButton(area)) {

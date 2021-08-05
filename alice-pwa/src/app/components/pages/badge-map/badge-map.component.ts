@@ -3,6 +3,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 
 @Component({
   selector: 'app-badge-map',
@@ -98,6 +99,7 @@ export class BadgeMapComponent implements OnInit {
   constructor(
     private shared: SharedDataService,
     private route: ActivatedRoute,
+    private audio: AudioPlayService,
 
   ) { }
 
@@ -149,6 +151,7 @@ export class BadgeMapComponent implements OnInit {
   }
 
   clickArea(area: BadgeMapItem) {
+    this.audio.play('action');
     area.state = area.state === 'mini' ? 'full' : 'mini';
     this.moveForward(area);
   }

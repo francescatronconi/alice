@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
 declare var Html5Qrcode;
@@ -18,7 +19,7 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
   code: string;
   ratio = 1.3333;
 
-  constructor(private shared: SharedDataService) { }
+  constructor(private shared: SharedDataService, private audio: AudioPlayService) { }
 
   ngOnInit(): void {
     Html5Qrcode.getCameras().then(devices => {
@@ -74,6 +75,11 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
       // Start failed, handle it. For example,
       console.log(`Unable to start scanning, error: ${err}`);
     });
+  }
+
+  clickDevice(device: CameraDevice) {
+    this.audio.play('action');
+    this.startCamera(device);
   }
 
   stopCamera() {

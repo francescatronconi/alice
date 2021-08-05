@@ -62,6 +62,7 @@
             {"id": "identikit-03", "options": 3, "success": 3}
         ]}
     ],
+    "audio": [],
     "buttons": [
         {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
         {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { on } from 'events';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { GameScenario } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 
@@ -23,6 +24,7 @@ export class SvgMapComponent implements OnInit {
     private route: ActivatedRoute,
     private shared: SharedDataService,
     private router: Router,
+    private audio: AudioPlayService,
     ) { }
 
   ngOnInit(): void {

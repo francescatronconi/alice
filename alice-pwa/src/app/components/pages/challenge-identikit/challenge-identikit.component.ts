@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { GameChallenge, GameChallengeData, GameChallengeIdentikit, GameChallengeIdentikitData, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 import { SvgMapArea } from '../../widgets/svg-canvas/svg-canvas.component';
@@ -18,6 +19,7 @@ export class ChallengeIdentikitComponent implements OnInit {
 
   constructor(
     private shared: SharedDataService,
+    private audio: AudioPlayService,
     ) { }
 
   ngOnInit(): void {
@@ -36,6 +38,7 @@ export class ChallengeIdentikitComponent implements OnInit {
   }
 
   clickArea(area: SvgMapArea) {
+    this.audio.play('action');
     if (this.isDoneButton(area)) {
       this.checkDone();
     } else {

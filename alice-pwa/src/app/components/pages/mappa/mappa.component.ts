@@ -20,6 +20,7 @@ import { LocationService } from 'src/app/services/location.service';
 import { Coordinate } from 'ol/coordinate';
 import { Observable, Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 
 @Component({
   selector: 'app-mappa',
@@ -43,6 +44,7 @@ export class MappaComponent implements OnInit, OnDestroy {
     public shared: SharedDataService,
     private pv: PonteVirtualeService,
     private loc: LocationService,
+    private audio: AudioPlayService,
   ) { }
 
   ngOnDestroy(): void {
@@ -190,11 +192,12 @@ export class MappaComponent implements OnInit, OnDestroy {
   }
 
   clickMappa(evt: any) {
-    var pixel = []
+    var pixel = [];
     pixel = this.map.getEventPixel(evt);
     var features: FeatureLike[] = this.map.getFeaturesAtPixel(pixel);
     var coordinate = this.map.getEventCoordinate(evt);
     if (features.length > 0) {
+      this.audio.play('action');
       this.location = features[0].get('location');
       this.overlay.setPosition(coordinate);
     } else {
@@ -202,12 +205,18 @@ export class MappaComponent implements OnInit, OnDestroy {
     }
   };
 
+  clickCloseLocation() {
+    this.audio.play('action');
+    this.closeLocation();
+  }
+
   closeLocation(): void {
     this.location = null;
     this.overlay.setPosition(undefined);
   }
 
   clickGioca(location: MapLocation): void {
+    this.audio.play('action');
     this.shared.visitTappa(location.id);
   }
 

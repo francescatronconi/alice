@@ -123,6 +123,7 @@ export class GameScenario {
   options: GameOption[];
   locations: MapLocation[];
   svgmaps: SvgMap[];
+  audio: AudioSource[];
   buttons: MapButton[];
   challenges: GameChallenge[]
 
@@ -515,5 +516,12 @@ export class MapButton {
   id: string;
   icon: string;
   action: string[];
+
+}
+
+export class AudioSource {
+
+  id: string;
+  src: string;
 
 }
