@@ -59,6 +59,7 @@
     "buttons": [
         {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
         {"id": "badges", "icon": "./assets/svg/badge.svg", "action": ["badgemap", "badges"]},
-        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]}
+        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
+        {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}
     ]
 }

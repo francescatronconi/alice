@@ -136,6 +136,11 @@
         padding-left: 10px;
         padding-bottom: 70px;
     }
+    .fullpage::after {
+        content: "_";
+        font-size: 70px;
+        opacity: 0;
+    }
     .splash-title {
         div {
             padding-top: 70px;
@@ -167,6 +172,11 @@
         padding-right: 70px;
         padding-left: 70px;
         padding-bottom: 10px;
+    }
+    .fullpage::after {
+        content: "_";
+        font-size: 10px;
+        opacity: 0;
     }
     .splash-title {
         div {
