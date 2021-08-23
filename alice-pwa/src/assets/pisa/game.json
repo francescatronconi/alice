@@ -1,14 +1,14 @@
 {
     "id": "pisa-01",
     "rules": [
-        {"trigger": "start", "effect": {"route": ["diario"], "story": [{"read": "intro.html", "video": "intro.mp4"}]}},
-        {"trigger": "visit:piazza-xx-settembre", "effect": {"route": ["diario"], "story": [{"read": "piazza-xx-settembre.html"}], "challenge": "piazza-xx-settembre"}},
+        {"trigger": "start", "effect": {"route": ["mappa"], "story": [{"read": "intro.html", "video": "intro.mp4"}]}},
+        {"trigger": "visit:piazza-xx-settembre", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-xx-settembre.html"}], "challenge": "piazza-xx-settembre"}},
         {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["badgemap", "badges", "piazza-xx-settembre"], "story": [{"read": "piazza-xx-settembre-success.html"}], "badge": "piazza-xx-settembre"}},
         {"trigger": "failed:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-failed.html"}]}},
-        {"trigger": "visit:piazza-martiri-liberta", "effect": {"route": ["diario"], "story": [{"read": "piazza-martiri-liberta.html"}], "challenge": "piazza-martiri-liberta"}},
+        {"trigger": "visit:piazza-martiri-liberta", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-martiri-liberta.html"}], "challenge": "piazza-martiri-liberta"}},
         {"trigger": "success:piazza-martiri-liberta", "effect": {"route": ["badgemap", "badges", "piazza-martiri-liberta"], "story": [{"read": "piazza-martiri-liberta-success.html"}], "badge": "piazza-martiri-liberta"}},
         {"trigger": "failed:piazza-martiri-liberta", "effect": {"route": ["mappa"], "story": [{"read": "piazza-martiri-liberta-failed.html"}]}},
-        {"trigger": "visit:piazza-gambacorti", "effect": {"route": ["diario"], "story": [{"read": "piazza-gambacorti.html"}], "challenge": "piazza-gambacorti"}},
+        {"trigger": "visit:piazza-gambacorti", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-gambacorti.html"}], "challenge": "piazza-gambacorti"}},
         {"trigger": "success:piazza-gambacorti", "effect": {"route": ["badgemap", "badges", "piazza-gambacorti"], "story": [{"read": "piazza-gambacorti-success.html"}], "badge": "piazza-gambacorti"}},
         {"trigger": "failed:piazza-gambacorti", "effect": {"route": ["mappa"], "story": [{"read": "piazza-gambacorti-failed.html"}]}}
         ],  
@@ -57,8 +57,8 @@
         {"id": "action", "src": "audio/action.ogg"}
     ],
     "buttons": [
-        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
         {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
-        {"id": "badges", "icon": "./assets/svg/badge.svg", "action": ["badgemap", "badges"]}
+        {"id": "badges", "icon": "./assets/svg/badge.svg", "action": ["badgemap", "badges"]},
+        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]}
     ]
 }
