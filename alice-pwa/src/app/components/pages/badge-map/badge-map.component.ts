@@ -100,13 +100,14 @@ export class BadgeMapComponent implements OnInit {
     private shared: SharedDataService,
     private route: ActivatedRoute,
     private audio: AudioPlayService,
-
   ) { }
 
   ngOnInit(): void {
     this.serializer = new XMLSerializer();
-    this.svgmap = {"id": "agora", "svg": "badges.svg", "background": null, "ids": ["badge-01", "badge-02", "cappellaio-matto", "regina-cuori"]};
-    this.initSvgMap();
+    this.route.params.subscribe(params => {
+      this.svgmap = this.shared.getSvgMap(params['id']);
+      this.initSvgMap();
+    });
   }
 
   badgeStatePin(badge: BadgeMapItem) {
