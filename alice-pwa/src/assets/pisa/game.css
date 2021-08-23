@@ -2,16 +2,20 @@
     font-family: 'Canterbury Regular';
     src: url('./fonts/Canterbury.ttf') format("truetype");
 }
+@font-face {
+    font-family: 'Garamond';
+    src: url('./fonts/Garamond-Regular.ttf') format("truetype");
+}
 
 .narrative {
-    font-family: "Canterbury Regular";
+    font-family: "Garamond";
     font-size: 1.6em;
     color: black;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
 .welcome {
-    font-family: "Canterbury Regular";
+    font-family: "Garamond";
     font-size: 1.6em;
     color: black;
 }

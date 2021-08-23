@@ -8,7 +8,8 @@
             <path id="path8659-7-3" d="m 87.646268,80.092183 2.994201,0.954673 6.335558,-7.029866 -5.901614,10.067463 z" style="display:inline;fill:#000000;stroke:none;stroke-width:0.68732953px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
         </g>
         <g id="gambacorti-bg">
-            <ellipse style="opacity:1;vector-effect:none;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" id="path2110" cx="51.875" cy="65.446426" rx="73.839287" ry="36.517857" />
+            <path style="opacity:1;vector-effect:none;fill:#ffcc00;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" d="m 125.71429,65.446426 c 0,20.168255 -33.058979,36.517854 -73.83929,36.517854 -40.78031,0 -73.839288,-16.3496 -73.839287,-36.517854 3e-6,-52.240599 32.301361,-72.6308097 73.081673,-72.6308097 40.780312,-8e-7 74.596904,29.4815837 74.596904,72.6308097 z" id="ellipse4659" />
+            <ellipse ry="36.517857" rx="73.839287" cy="65.446426" cx="51.875" id="path2110" style="opacity:1;vector-effect:none;fill:#d45500;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
         </g>
 
         <g id="piruli">
