@@ -20,7 +20,12 @@ export class SvgAreaComponent implements OnInit {
   }
 
   xml(): string {
-    return this.serializer.serializeToString(this.area.element);
+    if (this.area.element) {
+      return this.serializer.serializeToString(this.area.element);
+    } else {
+      console.log(`cannot find ${this.area.id}`);
+      return '';
+    }
   }
 
   clickArea(area: SvgMapArea) {

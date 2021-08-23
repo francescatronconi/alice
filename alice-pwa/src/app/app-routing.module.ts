@@ -18,6 +18,7 @@ const routes: Routes = [
   {path: 'svgmap/:id', component: SvgMapComponent},
   //{path: 'biblioteca', component: SvgMapComponent},
   {path: 'badge', component: BadgeComponent},
+  {path: 'badgemap/:id/:badge', component: BadgeMapComponent},
   {path: 'badgemap/:id', component: BadgeMapComponent},
   {path: 'badgemap', component: BadgeMapComponent},
   {path: 'qrcode', component: QrCodePopupComponent},

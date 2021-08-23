@@ -3,12 +3,15 @@
     "rules": [
         {"trigger": "start", "effect": {"route": ["diario"], "story": [{"read": "intro.html", "video": "intro.mp4"}]}},
         {"trigger": "visit:piazza-xx-settembre", "effect": {"route": ["diario"], "story": [{"read": "piazza-xx-settembre.html"}], "challenge": "piazza-xx-settembre"}},
-        {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-success.html"}], "badge": "piazza-xx-settembre"}},
+        {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["badgemap", "badges", "piazza-xx-settembre"], "story": [{"read": "piazza-xx-settembre-success.html"}], "badge": "piazza-xx-settembre"}},
         {"trigger": "failed:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-failed.html"}]}},
         {"trigger": "visit:piazza-martiri-liberta", "effect": {"route": ["diario"], "story": [{"read": "piazza-martiri-liberta.html"}], "challenge": "piazza-martiri-liberta"}},
-        {"trigger": "success:piazza-martiri-liberta", "effect": {"route": ["mappa"], "story": [{"read": "piazza-martiri-liberta-success.html"}], "badge": "piazza-martiri-liberta"}},
-        {"trigger": "failed:piazza-martiri-liberta", "effect": {"route": ["mappa"], "story": [{"read": "piazza-martiri-liberta-failed.html"}]}}
-    ],  
+        {"trigger": "success:piazza-martiri-liberta", "effect": {"route": ["badgemap", "badges", "piazza-martiri-liberta"], "story": [{"read": "piazza-martiri-liberta-success.html"}], "badge": "piazza-martiri-liberta"}},
+        {"trigger": "failed:piazza-martiri-liberta", "effect": {"route": ["mappa"], "story": [{"read": "piazza-martiri-liberta-failed.html"}]}},
+        {"trigger": "visit:piazza-gambacorti", "effect": {"route": ["diario"], "story": [{"read": "piazza-gambacorti.html"}], "challenge": "piazza-gambacorti"}},
+        {"trigger": "success:piazza-gambacorti", "effect": {"route": ["badgemap", "badges", "piazza-gambacorti"], "story": [{"read": "piazza-gambacorti-success.html"}], "badge": "piazza-gambacorti"}},
+        {"trigger": "failed:piazza-gambacorti", "effect": {"route": ["mappa"], "story": [{"read": "piazza-gambacorti-failed.html"}]}}
+        ],  
     "options": [],
     "badges": [
         {"badge": "piazza-xx-settembre", "src": "cat.svg"},
@@ -18,13 +21,14 @@
     "svgmaps": [
         {"id": "badges", "svg": "badges.svg", "background": null, "ids": ["piazza-xx-settembre", "piazza-martiri-liberta", "piazza-gambacorti"]},
         {"id": "piazza-xx-settembre", "svg": "piazza-xx-settembre.svg", "background": "palazzo-pretorio", "ids": ["porticati", "altana", "orologio", "balcone", "fregi", "done"]},
-        {"id": "piazza-martiri-liberta", "svg": "piazza-martiri-liberta.svg", "background": "pietro-leopoldo-bg", "ids": ["lettera1", "lettera2", "lettera3", "lettera4", "lettera5", "done"]}
+        {"id": "piazza-martiri-liberta", "svg": "piazza-martiri-liberta.svg", "background": "pietro-leopoldo-bg", "ids": ["lettera1", "lettera2", "lettera3", "lettera4", "lettera5", "done"]},
+        {"id": "piazza-gambacorti", "svg": "piazza-gambacorti.svg", "background": "gambacorti-bg", "ids": ["lampione", "panchina", "fontana", "piruli", "done"]}
     ],
     "locations": [
         {"id":"piazza-xx-settembre", "name": "Piazza XX settembre", "icon": "./assets/pisa/location.svg", "description": "Piazza XX settembre", 
         "lon": 10.40161331607924, "lat": 43.71547052889889, "near": false},
         {"id":"piazza-gambacorti", "name": "Piazza gambacorti", "icon": "./assets/pisa/location.svg", "description": "Piazza della pera", 
-        "lon": 10.433407, "lat": 43.6929782, "near": false},
+        "lon": 10.401390452401817, "lat": 43.714100292782604, "near": false},
         {"id":"piazza-martiri-liberta", "name": "Piazza martiri della libertà", "icon": "./assets/pisa/location.svg", "description": "Piazza martiri della libertà", 
         "lon": 10.403612780795902, "lat": 43.72033143755821, "near": false}
         ],
@@ -41,6 +45,12 @@
             {"id": "lettera3", "options": 5, "success": 2},
             {"id": "lettera4", "options": 5, "success": 4},
             {"id": "lettera5", "options": 5, "success": 3}
+        ]},
+        {"id": "piazza-gambacorti", "code": "identikit", "svgmap": "piazza-gambacorti", "options": [
+            {"id": "lampione", "options": 3, "success": 2},
+            {"id": "panchina", "options": 4, "success": 3},
+            {"id": "fontana", "options": 3, "success": 2},
+            {"id": "piruli", "options": 3, "success": 3}
         ]}
     ],
     "audio": [

@@ -36,7 +36,7 @@ export class SvgCanvasComponent implements OnInit {
       }
       this.areas = this.svgmap.ids
       .map(id => new SvgMapArea(id, this.svg.getElementById(id)))
-      .filter(area => area.element);
+      .filter(area => area.element ? true: false);
     });
   }
 

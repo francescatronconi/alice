@@ -105,7 +105,7 @@ export class BadgeMapComponent implements OnInit {
   ngOnInit(): void {
     this.serializer = new XMLSerializer();
     this.route.params.subscribe(params => {
-      this.svgmap = this.shared.getSvgMap(params['id']);
+      this.svgmap = this.shared.getSvgMap(params['id'] ? params['id'] : 'badges');
       this.initSvgMap();
     });
   }
@@ -124,11 +124,11 @@ export class BadgeMapComponent implements OnInit {
       this.areas = this.svgmap.ids
       .map(id => new BadgeMapItem(id, this.svg.getElementById(id)))
       .map(item => item.checkBadge(this.shared))
-      .filter(area => area.element);
-      if (this.route.snapshot.paramMap.get('id')) {
+      .filter(area => area.element ? true: false);
+      if (this.route.snapshot.paramMap.get('badge')) {
         let move: BadgeMapItem[] = [];
         this.areas
-        .filter(a => a.id === this.route.snapshot.paramMap.get('id'))
+        .filter(a => a.id === this.route.snapshot.paramMap.get('badge'))
         .forEach(a => {
           a.state = 'full';
           move.push(a);
