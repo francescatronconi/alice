@@ -4419,7 +4419,7 @@
       </g>
     </g>
     <g
-       style="display:none"
+       style="display:inline"
        id="layer22">
       <path
          style="fill:none;stroke:#000000;stroke-width:1.11324584px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
@@ -4576,6 +4576,12 @@
         </g>
         <g
            id="piruli">
+          <circle
+             r="20"
+             cy="83.39286"
+             cx="61.60714"
+             id="path3279-4"
+             style="display:inline;opacity:0;vector-effect:none;fill:#3737c8;fill-opacity:1;stroke:none;stroke-width:1.0666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
           <g
              id="switch-button-2"
              style="display:inline"
@@ -4610,6 +4616,12 @@
         </g>
         <g
            id="panchina">
+          <circle
+             r="20"
+             cy="46.25"
+             cx="76.25"
+             id="path3279-33"
+             style="display:inline;opacity:0;vector-effect:none;fill:#3737c8;fill-opacity:1;stroke:none;stroke-width:1.0666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
           <g
              transform="translate(-5.2090548,45.811451)"
              style="display:inline"
@@ -4665,6 +4677,12 @@
         </g>
         <g
            id="fontana">
+          <circle
+             r="20"
+             cy="72.5"
+             cx="15.178572"
+             id="path3279"
+             style="display:inline;opacity:0;vector-effect:none;fill:#3737c8;fill-opacity:1;stroke:none;stroke-width:1.0666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
           <g
              id="g2081"
              style="display:inline"
@@ -4751,6 +4769,12 @@
         </g>
         <g
            id="lampione">
+          <circle
+             r="20"
+             cy="26.785713"
+             cx="29.821428"
+             id="path3279-3"
+             style="display:inline;opacity:0;vector-effect:none;fill:#3737c8;fill-opacity:1;stroke:none;stroke-width:1.0666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
           <g
              transform="translate(-73.601912,21.704309)"
              style="display:inline"
@@ -4864,7 +4888,7 @@
          id="path3425" />
     </g>
     <g
-       style="display:inline"
+       style="display:none"
        id="layer20">
       <g
          id="pietro-leopoldo">

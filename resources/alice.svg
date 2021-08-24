@@ -25,7 +25,7 @@
      inkscape:window-width="1853"
      units="px"
      showgrid="false"
-     inkscape:current-layer="pietro-leopoldo"
+     inkscape:current-layer="piruli"
      inkscape:document-units="px"
      inkscape:cy="26.922232"
      inkscape:cx="95.207106"
@@ -91,7 +91,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -5677,7 +5677,7 @@
        inkscape:groupmode="layer"
        id="layer22"
        inkscape:label="piazza gambacorti"
-       style="display:none">
+       style="display:inline">
       <path
          inkscape:connector-curvature="0"
          id="path3264"
@@ -5864,6 +5864,12 @@
         <g
            id="piruli"
            inkscape:label="#g2262">
+          <circle
+             style="display:inline;opacity:0;vector-effect:none;fill:#3737c8;fill-opacity:1;stroke:none;stroke-width:1.0666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+             id="path3279-4"
+             cx="61.60714"
+             cy="83.39286"
+             r="20" />
           <g
              transform="translate(-11.101912,75.097166)"
              style="display:inline"
@@ -5905,6 +5911,12 @@
         <g
            id="panchina"
            inkscape:label="#g2253">
+          <circle
+             style="display:inline;opacity:0;vector-effect:none;fill:#3737c8;fill-opacity:1;stroke:none;stroke-width:1.0666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+             id="path3279-33"
+             cx="76.25"
+             cy="46.25"
+             r="20" />
           <g
              inkscape:label="#g8568"
              id="g2075"
@@ -5975,6 +5987,12 @@
         <g
            id="fontana"
            inkscape:label="#g2226">
+          <circle
+             style="display:inline;opacity:0;vector-effect:none;fill:#3737c8;fill-opacity:1;stroke:none;stroke-width:1.0666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+             id="path3279"
+             cx="15.178572"
+             cy="72.5"
+             r="20" />
           <g
              transform="translate(-82.173341,75.275738)"
              style="display:inline"
@@ -6079,6 +6097,12 @@
         <g
            id="lampione"
            inkscape:label="#g2240">
+          <circle
+             style="display:inline;opacity:0;vector-effect:none;fill:#3737c8;fill-opacity:1;stroke:none;stroke-width:1.0666666;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+             id="path3279-3"
+             cx="29.821428"
+             cy="26.785713"
+             r="20" />
           <g
              inkscape:label="#g8568"
              id="g2087"
@@ -6216,7 +6240,7 @@
        inkscape:groupmode="layer"
        id="layer20"
        inkscape:label="piazza santa caterina"
-       style="display:inline">
+       style="display:none">
       <g
          id="pietro-leopoldo"
          inkscape:label="#g2401">
