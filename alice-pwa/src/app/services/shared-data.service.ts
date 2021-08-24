@@ -192,6 +192,10 @@ export class SharedDataService {
     .toPromise();
   }
 
+  public getGameResourceUrl(path: string): string {
+    return path.startsWith('/') ? environment.gameUrl + path : path;
+  }
+
   public getSvgMap(id: string): SvgMap {
     let result: SvgMap = null;
     this.scenario.svgmaps

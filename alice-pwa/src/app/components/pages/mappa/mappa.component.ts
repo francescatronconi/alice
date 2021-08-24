@@ -139,8 +139,8 @@ export class MappaComponent implements OnInit, OnDestroy {
     this.youFeature.setStyle(
       new Style({
         image: new Icon({
-          anchor: [0.5, 0.5],
-          src: './assets/svg/user.svg',
+          anchor: this.shared.scenario.map.user && this.shared.scenario.map.user.anchor ? this.shared.scenario.map.user.anchor : [0.5, 0.5],
+          src: this.shared.scenario.map.user ? this.shared.getGameResourceUrl(this.shared.scenario.map.user.icon) : './assets/svg/user.svg',
         })
       })
     );

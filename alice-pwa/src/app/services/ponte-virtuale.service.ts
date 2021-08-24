@@ -125,8 +125,18 @@ export class GameScenario {
   svgmaps: SvgMap[];
   audio: AudioSource[];
   buttons: MapButton[];
-  challenges: GameChallenge[]
+  challenges: GameChallenge[];
+  map: MapInitData;
 
+}
+
+export class MapInitData {
+  user?: MapIcon;
+}
+
+export class MapIcon {
+  anchor?: number[];
+  icon: string;
 }
 
 export class GameEvent {

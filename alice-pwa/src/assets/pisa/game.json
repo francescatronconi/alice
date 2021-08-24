@@ -25,11 +25,11 @@
         {"id": "piazza-gambacorti", "svg": "piazza-gambacorti.svg", "background": "gambacorti-bg", "ids": ["lampione", "panchina", "fontana", "piruli", "done"]}
     ],
     "locations": [
-        {"id":"piazza-xx-settembre", "name": "Piazza XX settembre", "icon": "./assets/pisa/location.svg", "description": "Piazza XX settembre", 
+        {"id":"piazza-xx-settembre", "name": "Piazza XX settembre", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza XX settembre", 
         "lon": 10.40161331607924, "lat": 43.71547052889889, "near": false},
-        {"id":"piazza-gambacorti", "name": "Piazza gambacorti", "icon": "./assets/pisa/location.svg", "description": "Piazza della pera", 
+        {"id":"piazza-gambacorti", "name": "Piazza gambacorti", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza della pera", 
         "lon": 10.401390452401817, "lat": 43.714100292782604, "near": false},
-        {"id":"piazza-martiri-liberta", "name": "Piazza martiri della libertà", "icon": "./assets/pisa/location.svg", "description": "Piazza martiri della libertà", 
+        {"id":"piazza-martiri-liberta", "name": "Piazza martiri della libertà", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza martiri della libertà", 
         "lon": 10.403612780795902, "lat": 43.72033143755821, "near": false}
         ],
     "challenges": [
@@ -61,5 +61,8 @@
         {"id": "badges", "icon": "./assets/svg/badge.svg", "action": ["badgemap", "badges"]},
         {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
         {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}
-    ]
+    ],
+    "map": {
+        "user": {"icon": "/mappa/alice.png"}
+    }
 }
