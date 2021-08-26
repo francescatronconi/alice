@@ -89,11 +89,11 @@ export class MappaComponent implements OnInit, OnDestroy {
       this.shared.scenario.locations
       .filter(l => l.id === this.shared.play.zoomTo)
       .forEach(l => center = olProj.fromLonLat([l.lon, l.lat]));
-      zoom = 16;
+      zoom = 18;
       this.shared.clearZoomTo();
     } else {
       center = olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude]);
-      zoom = 13;
+      zoom = 18;
     }
     return new View({
       center: center,
