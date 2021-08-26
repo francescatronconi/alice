@@ -143,7 +143,7 @@ export class BadgeMapComponent implements OnInit {
 
   xml(area: BadgeMapItem): string {
     let x = this.serializer.serializeToString(area.element);
-    return x.replace('href="./', `href="${environment.gameUrl}/`);
+    return x.replace('href="~/', `href="${environment.gameUrl}/`);
   }
 
   private moveForward(area: BadgeMapItem) {

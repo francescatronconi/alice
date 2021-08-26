@@ -32,6 +32,7 @@ import { InlineStyleComponent } from './components/widgets/inline-style/inline-s
 import { ChallengeIdentikitComponent } from './components/pages/challenge-identikit/challenge-identikit.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CameraComponent } from './camponents/pages/camera/camera.component';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { environment } from '../environments/environment';
     SvgAreaComponent,
     InlineStyleComponent,
     ChallengeIdentikitComponent,
+    CameraComponent,
   ],
   imports: [
     BrowserModule,

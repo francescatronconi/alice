@@ -1,0 +1,55 @@
+{
+    "id": "pisa-01",
+    "rules": [
+        {"trigger": "start", "effect": {"route": ["mappa"], "story": [{"read": "intro.html", "video": "intro.mp4"}]}},
+        {"trigger": "visit:foro-boario-torri", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "foro-boario-torri.html"}], "challenge": "foro-boario-torri"}},
+        {"trigger": "success:foro-boario-torri", "effect": {"route": ["badgemap", "badges", "foro-boario-torri"], "story": [{"read": "foro-boario-torri-success.html"}], "badge": "foro-boario-torri"}},
+        {"trigger": "failed:foro-boario-torri", "effect": {"route": ["mappa"], "story": [{"read": "foro-boario-torri-failed.html"}]}},
+        {"trigger": "visit:foro-boario-logo", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "foro-boario-logo.html"}], "challenge": "foro-boario-logo"}},
+        {"trigger": "success:foro-boario-logo", "effect": {"route": ["badgemap", "badges", "foro-boario-logo"], "story": [{"read": "foro-boario-logo-success.html"}], "badge": "foro-boario-logo"}},
+        {"trigger": "failed:foro-boario-logo", "effect": {"route": ["mappa"], "story": [{"read": "foro-boario-logo-failed.html"}]}}
+        ],  
+    "options": [],
+    "badges": [
+        {"badge": "foro-boario-torri", "src": "cat.svg"},
+        {"badge": "foro-boario-logo", "src": "cat.svg"}
+    ],
+    "svgmaps": [
+        {"id": "badges", "svg": "badges.svg", "background": null, "ids": ["foro-boario-torri", "foro-boario-logo", "piazza-gambacorti"]},
+        {"id": "foro-boario-torri", "svg": "foro-boario-torri.svg", "background": "foro-boario-torri-bg", "ids": ["torri-base", "torri-basso", "torri-alto", "torri-bordo", "done"]},
+        {"id": "foro-boario-logo", "svg": "foro-boario-logo.svg", "background": "foro-boario-logo-bg", "ids": ["lettera1", "lettera2", "lettera3", "lettera4", "lettera5", "done"]}
+    ],
+    "locations": [
+        {"id":"foro-boario-torri", "name": "Ingresso del Foro Boario", "icon": "./assets/pisa/mappa/carte.png", "description": "Ingresso del Foro Boario", 
+        "lon": 10.507863891150771, "lat": 43.85632733310117, "near": false},
+        {"id":"foro-boario-logo", "name": "Ripartire Festival", "icon": "./assets/pisa/mappa/carte.png", "description": "Ripartire Festival", 
+        "lon": 10.508263185840338, "lat": 43.856366007705134, "near": false}
+        ],
+    "challenges": [
+        {"id": "foro-boario-torri", "code": "identikit", "svgmap": "foro-boario-torri", "options": [
+            {"id": "torri-base", "options": 3, "success": 2},
+            {"id": "torri-basso", "options": 4, "success": 3},
+            {"id": "torri-alto", "options": 4, "success": 3},
+            {"id": "torri-bordo", "options": 3, "success": 1}
+        ]},
+        {"id": "foro-boario-logo", "code": "identikit", "svgmap": "foro-boario-logo", "options": [
+            {"id": "lettera1", "options": 5, "success": 3},
+            {"id": "lettera2", "options": 5, "success": 5},
+            {"id": "lettera3", "options": 5, "success": 2},
+            {"id": "lettera4", "options": 5, "success": 4},
+            {"id": "lettera5", "options": 5, "success": 3}
+        ]}
+    ],
+    "audio": [
+        {"id": "action", "src": "audio/action.ogg"}
+    ],
+    "buttons": [
+        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
+        {"id": "badges", "icon": "./assets/svg/badge.svg", "action": ["badgemap", "badges"]},
+        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
+        {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}
+    ],
+    "map": {
+        "user": {"icon": "/mappa/alice.png"}
+    }
+}

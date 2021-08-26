@@ -23,7 +23,13 @@ export class ReadStoryComponent implements OnInit {
     }
     if (this.story.origin.read) {
       this.shared.getHtmlResource(this.story.origin.read).then(html => {
-        this.html = html.replace(/src="\.\/(.*)"/, `src="${environment.gameUrl}/$1"`);
+        let nexthtml = html;
+        let maxreplace = 100;
+        while (this.html != nexthtml && maxreplace > 0) {
+          this.html = nexthtml;
+          nexthtml = this.html.replace(/src="~\/(.*)"/g, `src="${environment.gameUrl}/$1"`);
+          maxreplace = maxreplace -1;
+        }
       });
     }
   }
