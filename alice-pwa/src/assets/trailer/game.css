@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Alice in Wonderland';
+    src: url('./fonts/Alice_in_Wonderland_3.ttf') format("truetype");
+}
+
+.narrative {
+    font-family: "Garamond-Regular";
+}
+
+.welcome {
+    font-family: "Garamond-Regular";
+    font-size: 1.6em;
+    color: black;
+}

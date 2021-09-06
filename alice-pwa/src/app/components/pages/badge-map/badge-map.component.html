@@ -21,8 +21,18 @@
 
     </defs>
     
+    <g *ngIf="background">
+        <g [innerHTML]="xml(background) | safe: 'html'"></g>
+    </g>
+
     <g *ngFor="let area of areas" (click)="clickArea(area)" [class]="area.style">
         <g [@badge]="badgeStatePin(area)" [innerHTML]="xml(area) | safe: 'html'"></g>
+    </g>
+
+    <g *ngIf="selected">
+        <g *ngFor="let trig of triggers" (click)="clickTrigger(trig)">
+            <g [innerHTML]="txml(trig) | safe: 'html'"></g>
+        </g>
     </g>
 
 </svg>

@@ -153,6 +153,12 @@ export class SharedDataService {
     this.savePlay();
   }
 
+  triggerAction(action: string) {
+    this.pv.trigger(this.scenario, this.play, action);
+    this.updateGui();
+    this.savePlay();
+  }
+
   successfulChallenge() {
     this.pv.successfulChallenge(this.scenario, this.play);
     this.updateGui();

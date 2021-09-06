@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //gameUrl: 'https://www.dantar.it/resources/alice',
-  gameUrl: './assets/ripartire',
+  gameUrl: './assets/trailer',
   nearby: 1000
 };
 

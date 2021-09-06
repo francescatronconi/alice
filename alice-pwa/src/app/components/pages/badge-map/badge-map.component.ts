@@ -94,6 +94,8 @@ export class BadgeMapComponent implements OnInit {
 
   background: BadgeMapItem;
   areas: BadgeMapItem[];
+  selected: BadgeMapItem;
+  triggers: TriggerMapItem[];
   serializer: XMLSerializer;
 
   constructor(
@@ -137,12 +139,22 @@ export class BadgeMapComponent implements OnInit {
           this.moveForward(area);
         });
       };
-  
+      this.triggers = [];
+      this.svg.querySelectorAll('.badge-trigger').forEach(native => {
+        if (native && native.getAttribute('id')) {
+          this.triggers.push(new TriggerMapItem(native.getAttribute('id'), native));
+        }
+      });
     });
   }
 
   xml(area: BadgeMapItem): string {
     let x = this.serializer.serializeToString(area.element);
+    return x.replace('href="~/', `href="${environment.gameUrl}/`);
+  }
+
+  txml(trig: TriggerMapItem): string {
+    let x = this.serializer.serializeToString(trig.element);
     return x.replace('href="~/', `href="${environment.gameUrl}/`);
   }
 
@@ -155,6 +167,13 @@ export class BadgeMapComponent implements OnInit {
     this.audio.play('action');
     area.state = area.state === 'mini' ? 'full' : 'mini';
     this.moveForward(area);
+    this.selected = area.state === 'mini'? null: area;
+  }
+
+  clickTrigger(trig: TriggerMapItem) {
+    this.audio.play('action');
+    this.shared.triggerAction(`${trig.element.getAttribute('id')}:${this.selected.id}`);
+    console.log(`${trig.element.getAttribute('id')}:${this.selected.id}`);
   }
 
 }
@@ -204,6 +223,21 @@ export class BadgeMapItem {
       this.dx = Number(m[2]);
       this.dy = Number(m[3]);
     }
+  }
+
+}
+
+export class TriggerMapItem {
+
+  state: string;
+  id: string;
+  element: Element;
+  style: string;
+
+  constructor(id: string, element: Element) {
+    this.id = id;
+    this.element = element;
+    this.state = 'mini';
   }
 
 }
