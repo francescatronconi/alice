@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   //gameUrl: 'https://www.dantar.it/resources/alice',
   gameUrl: './assets/trailer',
-  nearby: 1000
+  nearby: 1000,
+  gaMeasurementId: 'G-QK32TSKP6N', // alice
 };
 
 /*

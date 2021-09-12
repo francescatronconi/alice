@@ -142,6 +142,9 @@ export class GameScenario {
 
 export class MapInitData {
   user?: MapIcon;
+  lat?: number;
+  lon?: number;
+  zoom: number;
 }
 
 export class MapIcon {

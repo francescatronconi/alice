@@ -32,7 +32,7 @@
     ],
     "locations": [
         {"id":"torre-guinigi", "name": "Torre Guinigi", "icon": "./assets/pisa/mappa/carte.png", "description": "Torre Guinigi", 
-        "lon": 10.506937856535545, "lat": 43.84369534529272, "near": false},
+        "lon": 10.507002229542898, "lat": 43.8436863982509, "near": false},
         {"id":"piazza-gambacorti", "name": "Piazza gambacorti", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza della pera", 
         "lon": 10.401390452401817, "lat": 43.714100292782604, "near": false},
         {"id":"piazza-martiri-liberta", "name": "Piazza martiri della libertà", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza martiri della libertà", 
@@ -63,12 +63,13 @@
         {"id": "action", "src": "audio/action.ogg"}
     ],
     "buttons": [
-        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
         {"id": "badges", "icon": "./assets/svg/badge.svg", "action": ["badgemap", "badges"]},
-        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
-        {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}
+        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]}
     ],
     "map": {
-        "user": {"icon": "/mappa/alice.png"}
+        "user": {"icon": "/mappa/alice.png"},
+        "lon": 10.506937856535545, 
+        "lat": 43.84369534529272, 
+        "zoom": 15
     }
 }

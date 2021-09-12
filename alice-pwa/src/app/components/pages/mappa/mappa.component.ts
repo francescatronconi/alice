@@ -92,8 +92,8 @@ export class MappaComponent implements OnInit, OnDestroy {
       zoom = 18;
       this.shared.clearZoomTo();
     } else {
-      center = olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude]);
-      zoom = 18;
+      center = olProj.fromLonLat([this.shared.scenario.map.lon, this.shared.scenario.map.lat]);
+      zoom = this.shared.scenario.map.zoom;
     }
     return new View({
       center: center,
@@ -132,24 +132,9 @@ export class MappaComponent implements OnInit, OnDestroy {
     // Main view and center
     this.map.setView(this.mapView());
     // You: navigation position
-    this.youFeature = new Feature({
-      geometry: new Point(olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])),
-      name: "Tu"
-    });
-    this.youFeature.setStyle(
-      new Style({
-        image: new Icon({
-          anchor: this.shared.scenario.map.user && this.shared.scenario.map.user.anchor ? this.shared.scenario.map.user.anchor : [0.5, 0.5],
-          src: this.shared.scenario.map.user ? this.shared.getGameResourceUrl(this.shared.scenario.map.user.icon) : './assets/svg/user.svg',
-        })
-      })
-    );
-    this.youLayer = new VectorLayer({
-      source: new VectorSource({
-        features: [this.youFeature]
-      }),
-    });
-    this.map.addLayer(this.youLayer);
+    if (this.position) {
+      this.addYourPosition();
+    }
     // features
     this.featuresLayer = new VectorLayer({
       source: new VectorSource({ features: [] })
@@ -169,6 +154,27 @@ export class MappaComponent implements OnInit, OnDestroy {
       }
     });
     this.map.addOverlay(this.overlay);
+  }
+
+  addYourPosition() {
+    this.youFeature = new Feature({
+      geometry: new Point(olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])),
+      name: "Tu"
+    });
+    this.youFeature.setStyle(
+      new Style({
+        image: new Icon({
+          anchor: this.shared.scenario.map.user && this.shared.scenario.map.user.anchor ? this.shared.scenario.map.user.anchor : [0.5, 0.5],
+          src: this.shared.scenario.map.user ? this.shared.getGameResourceUrl(this.shared.scenario.map.user.icon) : './assets/svg/user.svg',
+        })
+      })
+    );
+    this.youLayer = new VectorLayer({
+      source: new VectorSource({
+        features: [this.youFeature]
+      }),
+    });
+    this.map.addLayer(this.youLayer);
   }
 
   private addFeatureLocation(location: MapLocation) {
@@ -232,7 +238,11 @@ export class MappaComponent implements OnInit, OnDestroy {
   }
 
   findWayHref(location: MapLocation) {
-    return `https://www.google.com/maps/dir/${this.position.coords.latitude},${this.position.coords.longitude}/${location.lat},${location.lon}`;
+    if (this.position) {
+      return `https://www.google.com/maps/dir/${this.position.coords.latitude},${this.position.coords.longitude}/${location.lat},${location.lon}`;
+    } else {
+      return `https://www.google.com/maps?q=${location.lat},${location.lon}`;
+    }
   }
 
 }

@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  gameUrl: './assets/ripartire',
-  nearby: 1000
+  gameUrl: './assets/trailer',
+  nearby: 1000,
+  gaMeasurementId: 'G-QK32TSKP6N', // alice
 };
