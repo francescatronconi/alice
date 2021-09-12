@@ -3,27 +3,23 @@
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
         {"trigger": "starme:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
+        {"trigger": "starme:badge-alice", "effect": {"location": "piazza-anfiteatro"}},
         {"trigger": "visit:torre-guinigi", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}},
         {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "torre-guinigi"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "torre-guinigi"}},
         {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}]}},
-        {"trigger": "visit:piazza-martiri-liberta", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-martiri-liberta.html"}], "challenge": "piazza-martiri-liberta"}},
-        {"trigger": "success:piazza-martiri-liberta", "effect": {"route": ["badgemap", "badges", "piazza-martiri-liberta"], "story": [{"read": "piazza-martiri-liberta-success.html"}], "badge": "piazza-martiri-liberta"}},
-        {"trigger": "failed:piazza-martiri-liberta", "effect": {"route": ["mappa"], "story": [{"read": "piazza-martiri-liberta-failed.html"}]}},
-        {"trigger": "visit:piazza-gambacorti", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-gambacorti.html"}], "challenge": "piazza-gambacorti"}},
-        {"trigger": "success:piazza-gambacorti", "effect": {"route": ["badgemap", "badges", "piazza-gambacorti"], "story": [{"read": "piazza-gambacorti-success.html"}], "badge": "piazza-gambacorti"}},
-        {"trigger": "failed:piazza-gambacorti", "effect": {"route": ["mappa"], "story": [{"read": "piazza-gambacorti-failed.html"}]}}
+        {"trigger": "visit:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-anfiteatro.html"}], "challenge": "piazza-anfiteatro"}},
+        {"trigger": "success:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges", "piazza-anfiteatro"], "story": [{"read": "piazza-anfiteatro-success.html"}], "badge": "piazza-anfiteatro"}},
+        {"trigger": "failed:piazza-anfiteatro", "effect": {"route": ["mappa"], "story": [{"read": "piazza-anfiteatro-failed.html"}]}}
         ],  
     "options": [],
     "badges": [
         {"badge": "torre-guinigi", "src": "cat.svg"},
-        {"badge": "piazza-martiri-liberta", "src": "cat.svg"},
-        {"badge": "piazza-gambacorti", "src": "horse.svg"}
+        {"badge": "piazza-anfiteatro", "src": "cat.svg"}
     ],
     "svgmaps": [
         {"id": "badges", "svg": "copertina-alice.svg", "background": "bosco", "ids": ["badge-alice", "badge-bianconiglio"]},
         {"id": "torre-guinigi", "svg": "torre-guinigi.svg", "background": "palazzo-pretorio", "ids": ["porticati", "altana", "orologio", "balcone", "fregi", "done"]},
-        {"id": "piazza-martiri-liberta", "svg": "piazza-martiri-liberta.svg", "background": "pietro-leopoldo-bg", "ids": ["lettera1", "lettera2", "lettera3", "lettera4", "lettera5", "done"]},
-        {"id": "piazza-gambacorti", "svg": "piazza-gambacorti.svg", "background": "gambacorti-bg", "ids": ["lampione", "panchina", "fontana", "piruli", "done"]}
+        {"id": "piazza-anfiteatro", "svg": "piazza-anfiteatro.svg", "background": "pietro-leopoldo-bg", "ids": ["lettera1", "lettera2", "lettera3", "lettera4", "lettera5", "done"]}
     ],
     "gui": [
         {"id": "agora", "svgmap": "badges", "items": [
@@ -33,10 +29,8 @@
     "locations": [
         {"id":"torre-guinigi", "name": "Torre Guinigi", "icon": "./assets/pisa/mappa/carte.png", "description": "Torre Guinigi", 
         "lon": 10.507002229542898, "lat": 43.8436863982509, "near": false},
-        {"id":"piazza-gambacorti", "name": "Piazza gambacorti", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza della pera", 
-        "lon": 10.401390452401817, "lat": 43.714100292782604, "near": false},
-        {"id":"piazza-martiri-liberta", "name": "Piazza martiri della libertà", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza martiri della libertà", 
-        "lon": 10.403612780795902, "lat": 43.72033143755821, "near": false}
+        {"id":"piazza-anfiteatro", "name": "Piazza Anfiteatro", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza Anfiteatro", 
+        "lon": 10.506224343678047, "lat": 43.84550472268838, "near": false}
         ],
     "challenges": [
         {"id": "torre-guinigi", "code": "identikit", "svgmap": "torre-guinigi", "options": [
@@ -45,18 +39,12 @@
             {"id": "altana", "options": 3, "success": 1},
             {"id": "porticati", "options": 3, "success": 3}
         ]},
-        {"id": "piazza-martiri-liberta", "code": "identikit", "svgmap": "piazza-martiri-liberta", "options": [
+        {"id": "piazza-anfiteatro", "code": "identikit", "svgmap": "piazza-anfiteatro", "options": [
             {"id": "lettera1", "options": 5, "success": 3},
             {"id": "lettera2", "options": 5, "success": 5},
             {"id": "lettera3", "options": 5, "success": 2},
             {"id": "lettera4", "options": 5, "success": 4},
             {"id": "lettera5", "options": 5, "success": 3}
-        ]},
-        {"id": "piazza-gambacorti", "code": "identikit", "svgmap": "piazza-gambacorti", "options": [
-            {"id": "lampione", "options": 3, "success": 2},
-            {"id": "panchina", "options": 4, "success": 3},
-            {"id": "fontana", "options": 3, "success": 2},
-            {"id": "piruli", "options": 3, "success": 3}
         ]}
     ],
     "audio": [

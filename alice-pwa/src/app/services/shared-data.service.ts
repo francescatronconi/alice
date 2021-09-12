@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { stringify } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AudioPlayService } from './audio-play.service';
 import { ButtonsMenuService } from './buttons-menu.service';
+import { GoogleAnalyticsService } from './google-analytics.service';
 import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition, GameEffect} from './ponte-virtuale.service';
 
 @Injectable({
@@ -33,9 +33,12 @@ export class SharedDataService {
     private http: HttpClient,
     public menu: ButtonsMenuService,
     private router: Router,
+    private analytics: GoogleAnalyticsService,
   ) { 
+    this.analytics.init(environment.gaMeasurementId);
     this.pv.loadGameScenario(`${environment.gameUrl}/game.json`)
     .then((scenario) => {
+      this.analytics.event('start', 'app', 'init');
       this.scenario = scenario;
       this.loadButtons();
       this.loadPlay();
@@ -106,6 +109,8 @@ export class SharedDataService {
       } else {
         localStorage.removeItem("ponte-virtuale-play");
       }
+    } else {
+      this.analytics.event('player', 'app', 'new');
     }
   }
 
