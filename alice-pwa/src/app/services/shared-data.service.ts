@@ -171,6 +171,12 @@ export class SharedDataService {
     this.savePlay();
   }
 
+  cancelChallenge() {
+    this.pv.cancelChallenge(this.scenario, this.play);
+    this.updateGui();
+    this.savePlay();
+  }
+
   qrCode(code: string): boolean  {
     this.pv.qr(this.scenario, this.play, code);
     this.updateGui();

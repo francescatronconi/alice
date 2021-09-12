@@ -41,16 +41,31 @@ export class ChallengeIdentikitComponent implements OnInit {
     this.audio.play('action');
     if (this.isDoneButton(area)) {
       this.checkDone();
-    } else {
-      if (this.data.options[area.id] === this.max[area.id]) {
-        this.data.options[area.id] = 1;
-      } else {
-        this.data.options[area.id] = this.data.options[area.id] + 1;
-      }
-      this.shared.updateGui();
-      this.shared.savePlay();
+      return;
     }
+    if (this.isExitButton(area)) {
+      this.exitGame();
+      return;
+    }
+    this.toggleOption(area);
   }
+
+  exitGame() {
+    this.shared.cancelChallenge();
+    this.shared.updateGui();
+    this.shared.savePlay();
+  }
+
+  toggleOption(area: SvgMapArea) {
+    if (this.data.options[area.id] === this.max[area.id]) {
+      this.data.options[area.id] = 1;
+    } else {
+      this.data.options[area.id] = this.data.options[area.id] + 1;
+    }
+    this.shared.updateGui();
+    this.shared.savePlay();
+  }
+
   checkDone() {
     let wrong = this.challenge.options
     .filter(option => this.data.options[option.id] != option.success)
@@ -69,7 +84,10 @@ export class ChallengeIdentikitComponent implements OnInit {
   }
 
   isDoneButton(area: SvgMapArea): boolean {
-    return area.id === 'done';
+    return area.id === 'done' || area.hasClass('button-done');
+  }
+  isExitButton(area: SvgMapArea): boolean {
+    return area.id === 'exit' || area.hasClass('button-exit');
   }
 
 }

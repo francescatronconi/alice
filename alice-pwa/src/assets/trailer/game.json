@@ -2,10 +2,10 @@
     "id": "lucca-trailer-v01",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
-        {"trigger": "starme:badge-bianconiglio", "effect": {"location": "piazza-xx-settembre"}},
-        {"trigger": "visit:piazza-xx-settembre", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-xx-settembre.html"}], "challenge": "piazza-xx-settembre"}},
-        {"trigger": "success:piazza-xx-settembre", "effect": {"route": ["badgemap", "badges", "piazza-xx-settembre"], "story": [{"read": "piazza-xx-settembre-success.html"}], "badge": "piazza-xx-settembre"}},
-        {"trigger": "failed:piazza-xx-settembre", "effect": {"route": ["mappa"], "story": [{"read": "piazza-xx-settembre-failed.html"}]}},
+        {"trigger": "starme:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
+        {"trigger": "visit:torre-guinigi", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}},
+        {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "torre-guinigi"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "torre-guinigi"}},
+        {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}]}},
         {"trigger": "visit:piazza-martiri-liberta", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-martiri-liberta.html"}], "challenge": "piazza-martiri-liberta"}},
         {"trigger": "success:piazza-martiri-liberta", "effect": {"route": ["badgemap", "badges", "piazza-martiri-liberta"], "story": [{"read": "piazza-martiri-liberta-success.html"}], "badge": "piazza-martiri-liberta"}},
         {"trigger": "failed:piazza-martiri-liberta", "effect": {"route": ["mappa"], "story": [{"read": "piazza-martiri-liberta-failed.html"}]}},
@@ -15,13 +15,13 @@
         ],  
     "options": [],
     "badges": [
-        {"badge": "piazza-xx-settembre", "src": "cat.svg"},
+        {"badge": "torre-guinigi", "src": "cat.svg"},
         {"badge": "piazza-martiri-liberta", "src": "cat.svg"},
         {"badge": "piazza-gambacorti", "src": "horse.svg"}
     ],
     "svgmaps": [
         {"id": "badges", "svg": "copertina-alice.svg", "background": "bosco", "ids": ["badge-alice", "badge-bianconiglio"]},
-        {"id": "piazza-xx-settembre", "svg": "piazza-xx-settembre.svg", "background": "palazzo-pretorio", "ids": ["porticati", "altana", "orologio", "balcone", "fregi", "done"]},
+        {"id": "torre-guinigi", "svg": "torre-guinigi.svg", "background": "palazzo-pretorio", "ids": ["porticati", "altana", "orologio", "balcone", "fregi", "done"]},
         {"id": "piazza-martiri-liberta", "svg": "piazza-martiri-liberta.svg", "background": "pietro-leopoldo-bg", "ids": ["lettera1", "lettera2", "lettera3", "lettera4", "lettera5", "done"]},
         {"id": "piazza-gambacorti", "svg": "piazza-gambacorti.svg", "background": "gambacorti-bg", "ids": ["lampione", "panchina", "fontana", "piruli", "done"]}
     ],
@@ -31,15 +31,15 @@
         ]}
     ],
     "locations": [
-        {"id":"piazza-xx-settembre", "name": "Piazza XX settembre", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza XX settembre", 
-        "lon": 10.40161331607924, "lat": 43.71547052889889, "near": false},
+        {"id":"torre-guinigi", "name": "Torre Guinigi", "icon": "./assets/pisa/mappa/carte.png", "description": "Torre Guinigi", 
+        "lon": 10.506937856535545, "lat": 43.84369534529272, "near": false},
         {"id":"piazza-gambacorti", "name": "Piazza gambacorti", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza della pera", 
         "lon": 10.401390452401817, "lat": 43.714100292782604, "near": false},
         {"id":"piazza-martiri-liberta", "name": "Piazza martiri della libertà", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza martiri della libertà", 
         "lon": 10.403612780795902, "lat": 43.72033143755821, "near": false}
         ],
     "challenges": [
-        {"id": "piazza-xx-settembre", "code": "identikit", "svgmap": "piazza-xx-settembre", "options": [
+        {"id": "torre-guinigi", "code": "identikit", "svgmap": "torre-guinigi", "options": [
             {"id": "fregi", "options": 3, "success": 3},
             {"id": "orologio", "options": 3, "success": 3},
             {"id": "altana", "options": 3, "success": 1},

@@ -60,6 +60,10 @@ export class PonteVirtualeService {
     this.runScenarioRules(scenario, play);
   }
 
+  cancelChallenge(scenario: GameScenario, play: GamePlay) {
+    play.challenge = null;
+  }
+
   qr(scenario: GameScenario, play: GamePlay, code: string) {
     play.event = new GameEventQrCode(code);
     this.runScenarioRules(scenario, play);
