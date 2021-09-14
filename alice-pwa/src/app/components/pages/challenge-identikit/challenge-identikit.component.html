@@ -38,7 +38,7 @@
         <svg:g *ngIf="wrapper.options" (click)="clickWrapper(wrapper)" [class]="wrapper.getClass()">
             <svg:g app-svg-area [area]="wrapper.area"></svg:g>
         </svg:g>
-        <svg:g *ngIf="!wrapper.options" app-svg-area [area]="wrapper.area"></svg:g>
+        <svg:g *ngIf="!wrapper.options" app-svg-area (onClickArea)="clickArea($event)" [area]="wrapper.area"></svg:g>
     </svg:g>
     
 </div>

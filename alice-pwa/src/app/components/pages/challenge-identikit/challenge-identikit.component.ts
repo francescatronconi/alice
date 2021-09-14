@@ -49,10 +49,6 @@ export class ChallengeIdentikitComponent implements OnInit {
       this.exitGame();
       return;
     }
-    if (this.isToggleButton(area)) {
-      this.toggleOption(area);
-      return;
-    }
   }
 
   exitGame() {
@@ -81,16 +77,30 @@ export class ChallengeIdentikitComponent implements OnInit {
     if (wrapper.current >= wrapper.options.length) {
       wrapper.current = 0;
     }
+    this.data.options[`identikit-${wrapper.index}`];
   }
 
   containerClass(wrapper: SvgMapAreaWrapper): string {
     return `identikit-area-${wrapper.current}`;
   }
 
-  checkDone() {
+  checkDoneOld() {
     let wrong = this.challenge.options
     .filter(option => this.data.options[option.id] != option.success)
     .length;
+    if (wrong === 0) {
+      this.shared.successfulChallenge();
+    } else {
+      this.shared.failedChallenge();
+    }
+  }
+
+  checkDone() {
+    let wrong = this.wrappers
+    .filter(wrapper => wrapper.options)
+    .filter(wrapper => wrapper.current != wrapper.correct)
+    .length;
+    console.log(wrong);
     if (wrong === 0) {
       this.shared.successfulChallenge();
     } else {
@@ -110,7 +120,7 @@ export class ChallengeIdentikitComponent implements OnInit {
 
   wrapAreas(areas: SvgMapArea[]) {
     if (!this.wrappers) {
-      this.wrappers = areas.map(area => new SvgMapAreaWrapper(area));
+      this.wrappers = areas.map((area, index) => new SvgMapAreaWrapper(index, area));
     }
     return this.wrappers;
   }
@@ -119,12 +129,14 @@ export class ChallengeIdentikitComponent implements OnInit {
 
 class SvgMapAreaWrapper {
 
+  index: number;
   area: SvgMapArea;
   options: SvgMapArea[];
   current: number;
   correct: number;
   
-  constructor(area: SvgMapArea) {
+  constructor(index: number, area: SvgMapArea) {
+    this.index = index;
     this.area = area;
     if (area.hasClass('identikit')) {
       this.readOptions();
