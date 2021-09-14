@@ -452,6 +452,7 @@ export class GamePlay {
   event: GameEvent;
   challenge: GameChallengeData;
   route: string[];
+  settings: {[setting:string]: string};
 
   constructor() {
     this.situation = [];
@@ -463,6 +464,7 @@ export class GamePlay {
     this.tags= [];
     this.challenge = null;
     this.route = null;
+    this.settings = {};
   }
 }
 

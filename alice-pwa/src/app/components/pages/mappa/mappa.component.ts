@@ -40,6 +40,11 @@ export class MappaComponent implements OnInit, OnDestroy {
   playChangeSub: Subscription;
   subscriptions: Subscription[];
 
+  showdisclaimer: boolean;
+  canusegps: boolean;
+  gpsIsNeeded: boolean;
+  watchsubscribed: boolean;
+
   constructor(
     public shared: SharedDataService,
     private pv: PonteVirtualeService,
@@ -54,12 +59,34 @@ export class MappaComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.featureById = {};
     this.position = null;
+    this.subscriptions = [];
+    this.subscriptions.push(this.shared.playChangedOb.subscribe(change => this.refreshFeatures(change)));
+    // disclaimer
+    let settings = this.shared.getSettings();
+    if ('location' in settings) {
+      this.showdisclaimer = false;
+      if (settings['location'] === 'enabled') {
+        this.enableGps();
+      }
+    } else {
+      this.showdisclaimer = true;
+    }
+    this.startOlMap();
+  }
+
+  enableGps() {
+    this.watchsubscribed = false;
     navigator.geolocation.getCurrentPosition((position) => {
       this.position = position;
+      this.subscriptions.push(this.loc.init().subscribe(position => {
+        this.updatePosition(position)
+        if (!this.watchsubscribed) {
+          this.watchsubscribed = true;
+          this.subscriptions.push(this.loc.watchPosition().subscribe(position => {this.updatePosition(position)}));
+        }
+      }));
+      this.addYourPosition();
     });
-    this.subscriptions = [];
-    this.subscriptions.push(this.loc.watchPosition().subscribe(position => {this.updatePosition(position)}));
-    this.subscriptions.push(this.shared.playChangedOb.subscribe(change => this.refreshFeatures(change)));
   }
 
   updatePosition(position: any) {
@@ -131,16 +158,14 @@ export class MappaComponent implements OnInit, OnDestroy {
     });
     // Main view and center
     this.map.setView(this.mapView());
-    // You: navigation position
-    if (this.position) {
-      this.addYourPosition();
-    }
     // features
     this.featuresLayer = new VectorLayer({
       source: new VectorSource({ features: [] })
     });
+    this.gpsIsNeeded = this.shared.scenario.locations.filter(location => location.near).length > 0;
     this.shared.scenario.locations
       .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
+      .filter(location => this.canusegps || !location.near)
       .forEach(location => {
         this.addFeatureLocation(location);
       });
@@ -224,6 +249,16 @@ export class MappaComponent implements OnInit, OnDestroy {
   clickGioca(location: MapLocation): void {
     this.audio.play('action');
     this.shared.visitTappa(location.id);
+  }
+
+  clickAllowNavigation(canusegps: boolean) {
+    this.audio.play('action');
+    this.canusegps = canusegps;
+    this.shared.putSetting('location', canusegps ? 'enable': 'disable');
+    this.showdisclaimer = false;
+    if (canusegps) {
+      this.enableGps();
+    }
   }
 
   nearToPlay(): boolean {

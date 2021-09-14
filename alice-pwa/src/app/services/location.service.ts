@@ -9,16 +9,29 @@ export class LocationService {
   public locationTrackingActive = false;
   public position: any;
   private watchLocationOb: Subject<any>;
+  private initOb: Subject<any>;
 
   constructor() {
     if (navigator.geolocation) {
       this.watchLocationOb = new BehaviorSubject<any>(this.position);
+      this.initOb = new BehaviorSubject<any>(this.position);
+    }
+  }
+
+  init(): Observable<any> {
+    if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
+          this.locationTrackingActive = true;
           this.position = position;
-        }
+          this.initOb.next(this.position);
+        },
+        (err) => {
+          this.locationTrackingActive = false;
+        },
       );
     }
+    return this.initOb;
   }
 
   watchPosition(): Observable<any> {

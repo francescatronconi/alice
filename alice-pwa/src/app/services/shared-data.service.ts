@@ -47,6 +47,19 @@ export class SharedDataService {
     });
   }
 
+  getSettings(): {[setting:string]: string} {
+    if (!this.play.settings) {
+      this.play.settings = {};
+    }
+    return this.play.settings;
+  }
+
+  putSetting(setting: string, value: string) {
+    let settings = this.getSettings();
+    settings[setting] = value;
+    this.savePlay();
+  }
+
   private loadButtons() {
     this.scenario.buttons.forEach(b => this.menu.add({
       id: b.id, icon: b.icon, action: () => {

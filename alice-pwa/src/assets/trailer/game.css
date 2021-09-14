@@ -3,6 +3,10 @@
     src: url('./fonts/Alice_in_Wonderland_3.ttf') format("truetype");
 }
 
+.panel {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 .narrative {
     font-family: "Garamond-Regular";
 }
