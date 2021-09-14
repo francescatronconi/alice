@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Alice in Wonderland';
-    src: url('./fonts/Alice_in_Wonderland_3.ttf') format("truetype");
+    src: url('~/fonts/Alice_in_Wonderland_3.ttf') format("truetype");
 }
 
 .panel {
@@ -15,4 +15,20 @@
     font-family: "Garamond-Regular";
     font-size: 1.6em;
     color: black;
+}
+
+.bg {
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* The image used */
+    background-image: url('~/seamless.png');
+    /* Full height */
+    /* Center and scale the image nicely */
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: auto;
 }

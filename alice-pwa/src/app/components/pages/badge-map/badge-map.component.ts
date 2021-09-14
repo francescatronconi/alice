@@ -150,12 +150,18 @@ export class BadgeMapComponent implements OnInit {
 
   xml(area: BadgeMapItem): string {
     let x = this.serializer.serializeToString(area.element);
-    return x.replace('href="~/', `href="${environment.gameUrl}/`);
+    while (x.includes('href="~/')) {
+      x = x.replace('href="~/', `href="${environment.gameUrl}/`);
+    }
+    return x;
   }
 
   txml(trig: TriggerMapItem): string {
     let x = this.serializer.serializeToString(trig.element);
-    return x.replace('href="~/', `href="${environment.gameUrl}/`);
+    while (x.includes('href="~/')) {
+      x = x.replace('href="~/', `href="${environment.gameUrl}/`);
+    }
+    return x;
   }
 
   private moveForward(area: BadgeMapItem) {

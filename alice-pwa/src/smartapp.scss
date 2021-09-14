@@ -7,14 +7,13 @@
 .bg {
     background-color: lightblue;
     position: fixed;
+    /* Full height */
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     /* The image used */
     background-image: url("./assets/bg.jpg");
-    /* Full height */
-    height: 100%;
     /* Center and scale the image nicely */
     background-position: center center;
     background-repeat: no-repeat;
