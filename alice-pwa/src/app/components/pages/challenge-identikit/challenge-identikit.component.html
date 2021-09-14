@@ -4,6 +4,9 @@
             .identikit-option {
                 display: none;
             }
+            .identikit-area-0 .identikit-option-0 {
+                display: inline;
+            }
             .identikit-area-1 .identikit-option-1 {
                 display: inline;
             }
@@ -31,8 +34,11 @@
         </style>
     </svg:defs>
 
-    <svg:g *ngFor="let area of canvas.areas" [class]="areaClass(area)">
-        <svg:g app-svg-area [area]="area" (onClickArea)="clickArea($event)"></svg:g>
+    <svg:g *ngFor="let wrapper of wrapAreas(canvas.areas)">
+        <svg:g *ngIf="wrapper.options" (click)="clickWrapper(wrapper)" [class]="wrapper.getClass()">
+            <svg:g app-svg-area [area]="wrapper.area"></svg:g>
+        </svg:g>
+        <svg:g *ngIf="!wrapper.options" app-svg-area [area]="wrapper.area"></svg:g>
     </svg:g>
     
 </div>

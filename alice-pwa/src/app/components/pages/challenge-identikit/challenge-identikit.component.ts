@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { GameChallenge, GameChallengeData, GameChallengeIdentikit, GameChallengeIdentikitData, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
-import { SvgMapArea } from '../../widgets/svg-canvas/svg-canvas.component';
+import { SvgCanvasComponent, SvgMapArea } from '../../widgets/svg-canvas/svg-canvas.component';
 
 @Component({
   selector: 'app-challenge-identikit',
@@ -16,6 +16,8 @@ export class ChallengeIdentikitComponent implements OnInit {
 
   svgmap: SvgMap;
   max: {[id:string]: number};
+
+  wrappers: SvgMapAreaWrapper[];
 
   constructor(
     private shared: SharedDataService,
@@ -47,7 +49,10 @@ export class ChallengeIdentikitComponent implements OnInit {
       this.exitGame();
       return;
     }
-    this.toggleOption(area);
+    if (this.isToggleButton(area)) {
+      this.toggleOption(area);
+      return;
+    }
   }
 
   exitGame() {
@@ -66,6 +71,22 @@ export class ChallengeIdentikitComponent implements OnInit {
     this.shared.savePlay();
   }
 
+  clickWrapper(wrapper: SvgMapAreaWrapper) {
+    this.audio.play('action');
+    this.toggleContainer(wrapper);
+  }
+
+  toggleContainer(wrapper: SvgMapAreaWrapper) {
+    wrapper.current = wrapper.current +1;
+    if (wrapper.current >= wrapper.options.length) {
+      wrapper.current = 0;
+    }
+  }
+
+  containerClass(wrapper: SvgMapAreaWrapper): string {
+    return `identikit-area-${wrapper.current}`;
+  }
+
   checkDone() {
     let wrong = this.challenge.options
     .filter(option => this.data.options[option.id] != option.success)
@@ -77,17 +98,57 @@ export class ChallengeIdentikitComponent implements OnInit {
     }
   }
 
-  areaClass(area: SvgMapArea): {[id: string]: boolean} {
-    let c = {};
-    c[`identikit-area-${this.data.options[area.id]}`] = true;
-    return c;
-  }
-
   isDoneButton(area: SvgMapArea): boolean {
     return area.id === 'done' || area.hasClass('button-done');
   }
   isExitButton(area: SvgMapArea): boolean {
     return area.id === 'exit' || area.hasClass('button-exit');
   }
+  isToggleButton(area: SvgMapArea): boolean {
+    return area.id === 'exit' || area.hasClass('button-toggle');
+  }
+
+  wrapAreas(areas: SvgMapArea[]) {
+    if (!this.wrappers) {
+      this.wrappers = areas.map(area => new SvgMapAreaWrapper(area));
+    }
+    return this.wrappers;
+  }
+
+}
+
+class SvgMapAreaWrapper {
+
+  area: SvgMapArea;
+  options: SvgMapArea[];
+  current: number;
+  correct: number;
+  
+  constructor(area: SvgMapArea) {
+    this.area = area;
+    if (area.hasClass('identikit')) {
+      this.readOptions();
+    }
+  }
+
+  readOptions() {
+    this.options = [];
+    this.area.element.querySelectorAll('.option').forEach(option => {
+      let index = this.options.length;
+      option.classList.add(`identikit-option`);
+      option.classList.add(`identikit-option-${index}`);
+      if (option.classList.contains('correct')) {
+        this.correct = index;
+      };
+      this.options.push(new SvgMapArea(option.getAttribute('id'), option as HTMLElement));
+    });
+    this.current = 0;
+  }
+
+  getClass() {
+    let c = {};
+    c[`identikit-area-${this.current}`] = true;
+    return c;
+  }  
 
 }
