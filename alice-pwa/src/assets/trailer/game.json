@@ -40,8 +40,8 @@
         {"id": "action", "src": "audio/action.ogg"}
     ],
     "buttons": [
-        {"id": "badges", "icon": "./assets/svg/badge.svg", "action": ["badgemap", "badges"]},
-        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]}
+        {"id": "badges", "icon": "./assets/trailer/badge.svg", "action": ["badgemap", "badges"]},
+        {"id": "mappa", "icon": "./assets/trailer/mappa.svg", "action": ["mappa"]}
     ],
     "map": {
         "user": {"icon": "/mappa/alice.png"},
