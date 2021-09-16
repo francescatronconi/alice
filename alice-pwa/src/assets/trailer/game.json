@@ -5,21 +5,21 @@
         {"trigger": "starme:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
         {"trigger": "starme:badge-alice", "effect": {"location": "piazza-anfiteatro"}},
         {"trigger": "visit:torre-guinigi", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}},
-        {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "torre-guinigi"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "torre-guinigi"}},
+        {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "badge-bianconiglio"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "badge-bianconiglio"}},
         {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}]}},
         {"trigger": "visit:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-anfiteatro.html"}], "challenge": "piazza-anfiteatro"}},
-        {"trigger": "success:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges", "piazza-anfiteatro"], "story": [{"read": "piazza-anfiteatro-success.html"}], "badge": "piazza-anfiteatro"}},
+        {"trigger": "success:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges", "badge-alice"], "story": [{"read": "piazza-anfiteatro-success.html"}], "badge": "badge-alice"}},
         {"trigger": "failed:piazza-anfiteatro", "effect": {"route": ["mappa"], "story": [{"read": "piazza-anfiteatro-failed.html"}]}}
         ],  
     "options": [],
     "badges": [
-        {"badge": "torre-guinigi", "src": "cat.svg"},
-        {"badge": "piazza-anfiteatro", "src": "cat.svg"}
+        {"badge": "badge-alice", "src": "cat.svg"},
+        {"badge": "badge-bianconiglio", "src": "cat.svg"}
     ],
     "svgmaps": [
         {"id": "badges", "svg": "copertina-alice.svg", "background": "bosco", "ids": ["badge-alice", "badge-bianconiglio"]},
-        {"id": "torre-guinigi", "svg": "torre-guinigi.svg", "background": "palazzo-pretorio", "ids": ["porticati", "altana", "orologio", "balcone", "fregi", "done"]},
-        {"id": "piazza-anfiteatro", "svg": "piazza-anfiteatro.svg", "background": "pietro-leopoldo-bg", "ids": ["lettera1", "lettera2", "lettera3", "lettera4", "lettera5", "done"]}
+        {"id": "torre-guinigi", "svg": "torre-guinigi.svg", "background": "palazzo-pretorio", "ids": []},
+        {"id": "piazza-anfiteatro", "svg": "piazza-anfiteatro.svg", "background": "pietro-leopoldo-bg", "ids": []}
     ],
     "gui": [
         {"id": "agora", "svgmap": "badges", "items": [
@@ -33,19 +33,8 @@
         "lon": 10.506224343678047, "lat": 43.84550472268838, "near": false}
         ],
     "challenges": [
-        {"id": "torre-guinigi", "code": "identikit", "svgmap": "torre-guinigi", "options": [
-            {"id": "fregi", "options": 3, "success": 3},
-            {"id": "orologio", "options": 3, "success": 3},
-            {"id": "altana", "options": 3, "success": 1},
-            {"id": "porticati", "options": 3, "success": 3}
-        ]},
-        {"id": "piazza-anfiteatro", "code": "identikit", "svgmap": "piazza-anfiteatro", "options": [
-            {"id": "lettera1", "options": 5, "success": 3},
-            {"id": "lettera2", "options": 5, "success": 5},
-            {"id": "lettera3", "options": 5, "success": 2},
-            {"id": "lettera4", "options": 5, "success": 4},
-            {"id": "lettera5", "options": 5, "success": 3}
-        ]}
+        {"id": "torre-guinigi", "code": "identikit", "svgmap": "torre-guinigi", "options": []},
+        {"id": "piazza-anfiteatro", "code": "identikit", "svgmap": "piazza-anfiteatro", "options": []}
     ],
     "audio": [
         {"id": "action", "src": "audio/action.ogg"}
