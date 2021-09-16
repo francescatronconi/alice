@@ -18,6 +18,12 @@ export class AppComponent {
     public shared: SharedDataService,
   ) {
     this.titleService.setTitle(this.title);
+    this.shared.scenarioReadyObs.subscribe(scenario => {
+      if (!this.shared.play) {
+        this.shared.startGame();
+      }
+    });
+
   }
 
 }
