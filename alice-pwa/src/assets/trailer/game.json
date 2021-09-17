@@ -6,10 +6,10 @@
         {"trigger": "starme:badge-alice", "effect": {"location": "piazza-anfiteatro"}},
         {"trigger": "visit:torre-guinigi", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}},
         {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "badge-bianconiglio"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "badge-bianconiglio"}},
-        {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}]}},
+        {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}], "challenge": "torre-guinigi"}},
         {"trigger": "visit:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-anfiteatro.html"}], "challenge": "piazza-anfiteatro"}},
         {"trigger": "success:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges", "badge-alice"], "story": [{"read": "piazza-anfiteatro-success.html"}], "badge": "badge-alice"}},
-        {"trigger": "failed:piazza-anfiteatro", "effect": {"route": ["mappa"], "story": [{"read": "piazza-anfiteatro-failed.html"}]}}
+        {"trigger": "failed:piazza-anfiteatro", "effect": {"route": ["mappa"], "story": [{"read": "piazza-anfiteatro-failed.html"}], "challenge": "piazza-anfiteatro"}}
         ],  
     "options": [],
     "badges": [
