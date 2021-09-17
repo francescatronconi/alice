@@ -209,7 +209,7 @@ export class MappaComponent implements OnInit, OnDestroy {
     });
     feature.setStyle(new Style({
       image: new Icon({
-        anchor: [0.5, 0.5],
+        anchor: location.anchor ? location.anchor : [0.5, 0.5],
         src: location.icon,
       })
     }));

@@ -15,6 +15,6 @@ export class CheckInComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.router.navigate(this.shared.scenario.buttons[0].action);
+    //this.router.navigate(this.shared.scenario.buttons[0].action);
   }
 }

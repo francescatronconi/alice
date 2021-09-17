@@ -25,9 +25,6 @@ export class ChallengeIdentikitComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    console.log('ngOnInit');
-    console.log(this.data);
-    console.log(this.challenge);
     this.svgmap = this.shared.getSvgMap(this.challenge.svgmap);
     this.max = {};
     this.challenge.options
@@ -100,7 +97,6 @@ export class ChallengeIdentikitComponent implements OnInit {
     .filter(wrapper => wrapper.options)
     .filter(wrapper => wrapper.current != wrapper.correct)
     .length;
-    console.log(wrong);
     if (wrong === 0) {
       this.shared.successfulChallenge();
     } else {

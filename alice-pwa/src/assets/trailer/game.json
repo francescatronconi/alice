@@ -27,10 +27,10 @@
         ]}
     ],
     "locations": [
-        {"id":"torre-guinigi", "name": "Torre Guinigi", "icon": "./assets/pisa/mappa/carte.png", "description": "Torre Guinigi", 
+        {"id":"torre-guinigi", "name": "Torre Guinigi", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "description": "Torre Guinigi", 
         "lon": 10.507002229542898, "lat": 43.8436863982509, "near": false},
-        {"id":"piazza-anfiteatro", "name": "Piazza Anfiteatro", "icon": "./assets/pisa/mappa/carte.png", "description": "Piazza Anfiteatro", 
-        "lon": 10.506224343678047, "lat": 43.84550472268838, "near": false}
+        {"id":"piazza-anfiteatro", "name": "Piazza Anfiteatro", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "description": "Piazza Anfiteatro", 
+        "lon": 10.506167694742302, "lat": 43.845341075353694, "near": false}
         ],
     "challenges": [
         {"id": "torre-guinigi", "code": "identikit", "svgmap": "torre-guinigi", "options": []},

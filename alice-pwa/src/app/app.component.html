@@ -1,8 +1,78 @@
 <ng-container *ngIf="!(shared.scenario)">
     Caricamento...
 </ng-container>
-<div class="bg" *ngIf="shared.scenario">
+
+<svg class="fullsvg" viewBox="0 0 100 100" style="background-color:white">
+    <g
+       id="books-frame">
+      <image
+         width="25.19685"
+         height="116.7874"
+         preserveAspectRatio="none"
+         xlink:href="./assets/trailer/books-sml.png"
+         id="image18080"
+         x="48.947598"
+         y="73.220116"
+         transform="scale(-1,1)" />
+      <image
+         width="25.19685"
+         height="116.7874"
+         preserveAspectRatio="none"
+         xlink:href="./assets/trailer/books-sml.png"
+         id="image18078"
+         x="-127.61889"
+         y="-110.97298"
+         transform="scale(-1)" />
+      <image
+         y="36.561543"
+         x="-26.387421"
+         id="image18075"
+         xlink:href="./assets/trailer/books-sml.png"
+         preserveAspectRatio="none"
+         height="116.7874"
+         width="25.19685" />
+      <image
+         width="9.389945"
+         height="43.522392"
+         preserveAspectRatio="none"
+         xlink:href="./assets/trailer/books-sml.png"
+         id="image18088"
+         x="60.926342"
+         y="-206.40714"
+         transform="scale(1,-1)" />
+      <image
+         transform="scale(-1,1)"
+         y="170.28876"
+         x="-82.423691"
+         id="image18082"
+         xlink:href="./assets/trailer/books-sml.png"
+         preserveAspectRatio="none"
+         height="62.228352"
+         width="13.42575" />
+      <image
+         transform="scale(-1)"
+         y="-248.73601"
+         x="-128.83546"
+         id="image18084"
+         xlink:href="./assets/trailer/books-sml.png"
+         preserveAspectRatio="none"
+         height="99.640266"
+         width="21.497362" />
+      <image
+         width="25.19685"
+         height="116.7874"
+         preserveAspectRatio="none"
+         xlink:href="./assets/trailer/books-sml.png"
+         id="image18086"
+         x="83.12326"
+         y="135.98441" />
+    </g>
+
+</svg>
+
+<div *ngIf="shared.scenario">
     <app-inline-style></app-inline-style>
+
     <ng-container *ngIf="!(shared.play)">
         <div class="blackdim"></div>
         <div class="fullpage narrative" >

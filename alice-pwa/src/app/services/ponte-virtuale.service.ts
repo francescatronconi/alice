@@ -77,9 +77,7 @@ export class PonteVirtualeService {
 
   checkCondition(condition: GameCondition, play:GamePlay, scenario:GameScenario): boolean {
     let check: boolean = true;
-    console.log(condition);
     if(GameRule.validCondition(condition)) {
-      console.log("valid", condition);
       if (GameConditionBadge.valid(condition as GameConditionBadge)) {
         check = check && GameConditionBadge.check(condition as GameConditionBadge, play);
       }
@@ -191,9 +189,6 @@ export class GameEventTriggerAction {
 
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventTriggerAction);
-    if (rule.trigger != event.action) {
-      console.log(event.action, 'is not', rule.trigger);
-    }
     return event.action && rule.trigger === event.action;
   }
 
@@ -273,7 +268,6 @@ export class GameConditionBadge extends GameCondition {
   }
 
   static check(condition: GameConditionBadge, play: GamePlay) : boolean {
-    console.log("condition badge", play.badges, condition.badge);
     return play.badges.includes(condition.badge);
   }
 

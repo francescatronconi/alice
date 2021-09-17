@@ -23,7 +23,6 @@ export class SvgAreaComponent implements OnInit {
     if (this.area.element) {
       return this.serializer.serializeToString(this.area.element);
     } else {
-      console.log(`cannot find ${this.area.id}`);
       return '';
     }
   }

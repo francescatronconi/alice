@@ -256,6 +256,7 @@ export class MapLocation {
   near: boolean;
   condition: GameCondition;
   description: string;
+  anchor: number[];
 }
 
 export class SvgMap {

@@ -69,7 +69,6 @@ export class SvgMapArea {
   element: HTMLElement;
 
   constructor(id: string, element: HTMLElement) {
-    console.log(id, element);
     this.id = id;
     this.element = element;
   }

@@ -15,7 +15,6 @@ export class InlineStyleComponent implements OnInit {
 
   ngOnInit(): void {
     this.shared.getHtmlResource('game.css').then(scss => {
-      console.log(scss);
       this.scss = scss;
       while (this.scss.includes("url('~/")) {
         this.scss = this.scss.replace(/url\('~\/(.*)'\)/, `url('${environment.gameUrl}/$1')`);
