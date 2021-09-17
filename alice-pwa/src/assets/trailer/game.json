@@ -1,5 +1,5 @@
 {
-    "id": "lucca-trailer-v01",
+    "id": "lucca-trailer-v02",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
         {"trigger": "gotomap:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
