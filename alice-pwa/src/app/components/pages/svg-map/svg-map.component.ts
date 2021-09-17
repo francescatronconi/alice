@@ -5,6 +5,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { GameScenario } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-svg-map',
@@ -66,7 +67,11 @@ export class SvgMapComponent implements OnInit {
   }
 
   xml(area: SvgMapArea): string {
-    return this.serializer.serializeToString(area.element);
+    let x = this.serializer.serializeToString(area.element);
+    while (x.includes('href="~/')) {
+      x = x.replace('href="~/', `href="${environment.gameUrl}/`);
+    }
+    return x;
   }
 
   clickArea(area: SvgMapArea) {

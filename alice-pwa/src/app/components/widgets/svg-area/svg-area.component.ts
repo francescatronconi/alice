@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { SvgMapArea } from '../svg-canvas/svg-canvas.component';
 
 @Component({
@@ -21,7 +22,11 @@ export class SvgAreaComponent implements OnInit {
 
   xml(): string {
     if (this.area.element) {
-      return this.serializer.serializeToString(this.area.element);
+      let x = this.serializer.serializeToString(this.area.element);
+      while (x.includes('href="~/')) {
+        x = x.replace('href="~/', `href="${environment.gameUrl}/`);
+      }
+      return x;
     } else {
       return '';
     }

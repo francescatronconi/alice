@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
+
+   <g id="books-frame">
+      <g class="item" id="g29327" style="opacity: 50%;">
+         <image transform="scale(-1,1)" y="71.202209" x="42.89389" id="image18080" xlink:href="~/books-sml.png" preserveAspectRatio="none" height="116.7874" width="25.19685" />
+         <image transform="scale(-1)" y="-110.97298" x="-144.43475" id="image18078" xlink:href="~/books-sml.png" preserveAspectRatio="none" height="116.7874" width="25.19685" />
+         <image width="25.19685" height="116.7874" preserveAspectRatio="none" xlink:href="~/books-sml.png" id="image18075" x="-45.412392" y="37.988415" />
+         <image width="25.19685" height="116.7874" preserveAspectRatio="none" xlink:href="~/books-sml.png" id="image27442" x="142.44379" y="0.91192204" />
+         <image width="19.621878" height="90.947403" preserveAspectRatio="none" xlink:href="~/books-sml.png" id="image27448" x="-121.89309" y="-3.4235799" transform="rotate(-90)" />
+         <image y="-105.4781" x="120.89085" id="image27450" xlink:href="~/books-sml.png" preserveAspectRatio="none" height="90.947403" width="19.621878" transform="rotate(90)" />
+         <image transform="rotate(-90)" y="45.006088" x="18.014839" id="image27452" xlink:href="~/books-sml.png" preserveAspectRatio="none" height="90.947403" width="19.621878" />
+         <image transform="rotate(90)" width="19.621878" height="90.947403" preserveAspectRatio="none" xlink:href="~/books-sml.png" id="image27454" x="-19.689716" y="-119.26711" />
+      </g>
+   </g>
+
+</svg>

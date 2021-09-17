@@ -2,8 +2,8 @@
     "id": "lucca-trailer-v01",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
-        {"trigger": "starme:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
-        {"trigger": "starme:badge-alice", "effect": {"location": "piazza-anfiteatro"}},
+        {"trigger": "gotomap:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
+        {"trigger": "gotomap:badge-alice", "effect": {"location": "piazza-anfiteatro"}},
         {"trigger": "visit:torre-guinigi", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}},
         {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "badge-bianconiglio"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "badge-bianconiglio"}},
         {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}], "challenge": "torre-guinigi"}},
@@ -17,6 +17,8 @@
         {"badge": "badge-bianconiglio", "src": "cat.svg"}
     ],
     "svgmaps": [
+        {"id": "welcome", "svg": "welcome.svg", "ids": []},
+        {"id": "frame", "svg": "books-frame.svg", "ids": []},
         {"id": "badges", "svg": "copertina-alice.svg", "background": "bosco", "ids": ["badge-alice", "badge-bianconiglio"]},
         {"id": "torre-guinigi", "svg": "torre-guinigi.svg", "background": "palazzo-pretorio", "ids": []},
         {"id": "piazza-anfiteatro", "svg": "piazza-anfiteatro.svg", "background": "pietro-leopoldo-bg", "ids": []}
