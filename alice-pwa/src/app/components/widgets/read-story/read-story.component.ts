@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HrefResolverService } from 'src/app/services/href-resolver.service';
 import { GamePlayStory } from 'src/app/services/ponte-virtuale.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 import { environment } from 'src/environments/environment';
@@ -15,7 +16,10 @@ export class ReadStoryComponent implements OnInit {
   html: string;
   video: string;
 
-  constructor(private shared: SharedDataService) { }
+  constructor(
+    private shared: SharedDataService, 
+    private resolver: HrefResolverService,
+  ) { }
 
   ngOnInit(): void {
     if (this.story.origin.video) {
@@ -23,13 +27,7 @@ export class ReadStoryComponent implements OnInit {
     }
     if (this.story.origin.read) {
       this.shared.getHtmlResource(this.story.origin.read).then(html => {
-        let nexthtml = html;
-        let maxreplace = 100;
-        while (this.html != nexthtml && maxreplace > 0) {
-          this.html = nexthtml;
-          nexthtml = this.html.replace(/src="~\/(.*)"/g, `src="${environment.gameUrl}/$1"`);
-          maxreplace = maxreplace -1;
-        }
+        this.html = this.resolver.digest(html);
       });
     }
   }

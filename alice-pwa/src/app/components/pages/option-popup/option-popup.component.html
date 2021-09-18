@@ -1,8 +1,5 @@
 <div class="blackdim"></div>
 <div class="fullpage narrative" >
-    <div class="modal">
-        <div *ngFor="let option of shared.options">
-            <div (click)="clickOption(option)">{{option.text}}</div>
-        </div>
-    </div>
+    <div class="modal" *ngIf="read" [innerHTML]="read"></div>
+    <div class="button" *ngFor="let option of shared.options.options" (click)="clickOption(option)">{{option.text}}</div>
 </div>

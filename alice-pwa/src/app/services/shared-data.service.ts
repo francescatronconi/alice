@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment';
 import { AudioPlayService } from './audio-play.service';
 import { ButtonsMenuService } from './buttons-menu.service';
 import { GoogleAnalyticsService } from './google-analytics.service';
-import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition, GameEffect} from './ponte-virtuale.service';
+import { Option, GamePlay, GamePlayStory, GameScenario, PonteVirtualeService, GameCondition, GameEffect, GameOption} from './ponte-virtuale.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class SharedDataService {
   scenario: GameScenario;
   play: GamePlay;
   currentStory: GamePlayStory;
-  options: Option[];
+  options: GameOption;
 
   private playChangedSource = new Subject<PlayChange>();
   playChangedOb = this.playChangedSource.asObservable();
@@ -202,7 +202,7 @@ export class SharedDataService {
     return true;
   }
 
-  getOptions() {
+  getOptions(): GameOption {
     return this.pv.getOptions(this.scenario, this.play);
   }
 

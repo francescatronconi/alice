@@ -98,19 +98,19 @@ export class PonteVirtualeService {
     GameEffect.validateAndRun(effect, scenario, play);
   }
 
-  getOptions(scenario: GameScenario, play: GamePlay) {
-    let options: Option[];
+  getOptions(scenario: GameScenario, play: GamePlay): GameOption {
+    let options: GameOption;
     if(play.options.length > 0) {
       scenario.options
       .filter((gameOption) => gameOption.id === play.options[0]) 
-      .forEach((gameOption) => (options = gameOption.options))
+      .forEach((gameOption) => (options = gameOption))
       }
     return options;
   }
 
   setOption(play: GamePlay, scenario: GameScenario, option: Option) {
-    this.applyEffect(option.effect, scenario, play)
     play.options.shift();
+    this.applyEffect(option.effect, scenario, play)
   }
   
   constructor(
@@ -475,6 +475,7 @@ export class GameBadge {
 
 export class GameOption {
   id: string;
+  read: string;
   options: Option[];
 }
 

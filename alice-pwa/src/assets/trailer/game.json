@@ -3,16 +3,29 @@
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
         {"trigger": "gotomap:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
-        {"trigger": "gotomap:badge-alice", "effect": {"location": "piazza-anfiteatro"}},
+        {"trigger": "gotomap:badge-alice", "rules": [
+            {"condition": {"noTag": "quiz-alice-done"}, "effect": {"options": "quiz-alice"}},
+            {"condition": {"tag": "quiz-alice-done"}, "effect": {"location": "piazza-anfiteatro"}}
+        ]},
         {"trigger": "visit:torre-guinigi", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}},
         {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "badge-bianconiglio"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "badge-bianconiglio"}},
         {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}], "challenge": "torre-guinigi"}},
-        {"trigger": "visit:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "piazza-anfiteatro.html"}], "challenge": "piazza-anfiteatro"}},
+        {"trigger": "visit:piazza-anfiteatro", "rules": [
+            {"condition": {"noTag": "quiz-alice-done"}, "effect": {"story": [{"read": "location-locked.html"}], "route": ["badgemap", "badges", "badge-alice"]}},
+            {"condition": {"tag": "quiz-alice-done"}, "effect": {"story": [{"read": "piazza-anfiteatro.html"}], "challenge": "piazza-anfiteatro"}}
+        ]},
         {"trigger": "success:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges", "badge-alice"], "story": [{"read": "piazza-anfiteatro-success.html"}], "badge": "badge-alice"}},
         {"trigger": "failed:piazza-anfiteatro", "effect": {"route": ["mappa"], "story": [{"read": "piazza-anfiteatro-failed.html"}], "challenge": "piazza-anfiteatro"}}
         ],  
-    "options": [],
-    "badges": [
+        "options": [
+            {"id": "quiz-alice", "read": "quiz-alice.html", "options": [
+                {"text": "Scelta 1", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
+                {"text": "Scelta 2", "effect": {"story": [{"read": "quiz-alice-success.html"}], "tag": "quiz-alice-done", "location": "piazza-anfiteatro"}},
+                {"text": "Scelta 3", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
+                {"text": "Ok, non lo so", "effect": {}}
+            ]}
+        ],
+        "badges": [
         {"badge": "badge-alice", "src": "cat.svg"},
         {"badge": "badge-bianconiglio", "src": "cat.svg"}
     ],
