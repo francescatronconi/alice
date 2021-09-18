@@ -1,13 +1,19 @@
 {
-    "id": "lucca-trailer-v02",
+    "id": "lucca-trailer-v03",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
-        {"trigger": "badge:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
+        {"trigger": "badge:badge-bianconiglio", "rules": [
+            {"condition": {"noTag": "quiz-bianconiglio-done"}, "effect": {"options": "quiz-bianconiglio"}},
+            {"condition": {"tag": "quiz-bianconiglio-done"}, "effect": {"location": "torre-guinigi"}}
+        ]},
         {"trigger": "badge:badge-alice", "rules": [
             {"condition": {"noTag": "quiz-alice-done"}, "effect": {"options": "quiz-alice"}},
             {"condition": {"tag": "quiz-alice-done"}, "effect": {"location": "piazza-anfiteatro"}}
         ]},
-        {"trigger": "visit:torre-guinigi", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}},
+        {"trigger": "visit:torre-guinigi", "rules": [
+            {"condition": {"noTag": "quiz-bianconiglio-done"}, "effect": {"story": [{"read": "location-locked.html"}], "route": ["badgemap", "badges", "badge-bianconiglio"]}},
+            {"condition": {"tag": "quiz-bianconiglio-done"}, "effect": {"story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}}
+        ]},
         {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "badge-bianconiglio"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "badge-bianconiglio"}},
         {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}], "challenge": "torre-guinigi"}},
         {"trigger": "visit:piazza-anfiteatro", "rules": [
@@ -19,10 +25,16 @@
         ],  
         "options": [
             {"id": "quiz-alice", "read": "quiz-alice.html", "options": [
-                {"text": "Scelta 1", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
-                {"text": "Scelta 2", "effect": {"story": [{"read": "quiz-alice-success.html"}], "tag": "quiz-alice-done", "location": "piazza-anfiteatro"}},
-                {"text": "Scelta 3", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
-                {"text": "Ok, non lo so", "effect": {}}
+                {"text": "Mangiando un fungo", "effect": {"story": [{"read": "quiz-alice-success.html"}], "tag": "quiz-alice-done", "location": "piazza-anfiteatro"}},
+                {"text": "Bevendo un tè", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
+                {"text": "Annusando un giglio", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
+                {"text": "Non lo so", "effect": {}}
+            ]},
+            {"id": "quiz-bianconiglio", "read": "quiz-bianconiglio.html", "options": [
+                {"text": "I dadi", "effect": {"story": [{"read": "quiz-bianconiglio-failed.html"}], "options": "quiz-bianconiglio"}},
+                {"text": "I guanti", "effect": {"story": [{"read": "quiz-bianconiglio-success.html"}], "tag": "quiz-bianconiglio-done", "location": "torre-guinigi"}},
+                {"text": "I gemelli d'oro", "effect": {"story": [{"read": "quiz-bianconiglio-failed.html"}], "options": "quiz-bianconiglio"}},
+                {"text": "Non lo so", "effect": {}}
             ]}
         ],
         "badges": [
