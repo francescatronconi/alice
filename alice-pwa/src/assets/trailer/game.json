@@ -1,5 +1,6 @@
 {
     "id": "lucca-trailer-v03",
+    "credits": "credits.html",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
         {"trigger": "search:badge-bianconiglio", "rules": [
@@ -68,7 +69,8 @@
     ],
     "buttons": [
         {"id": "badges", "icon": "./assets/trailer/badge.svg", "action": ["badgemap", "badges"]},
-        {"id": "mappa", "icon": "./assets/trailer/mappa.svg", "action": ["mappa"]}
+        {"id": "mappa", "icon": "./assets/trailer/mappa.svg", "action": ["mappa"]},
+        {"id": "credits", "icon": "./assets/svg/credits.svg", "action": ["credits"]}
     ],
     "map": {
         "user": {"icon": "/mappa/alice.png"},

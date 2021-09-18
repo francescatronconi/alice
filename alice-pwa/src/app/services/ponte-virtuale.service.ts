@@ -135,6 +135,7 @@ export class GameScenario {
   buttons: MapButton[];
   challenges: GameChallenge[];
   map: MapInitData;
+  credits: string;
 
 }
 

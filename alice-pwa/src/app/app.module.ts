@@ -34,6 +34,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CameraComponent } from './camponents/pages/camera/camera.component';
 import { RotateScreenComponent } from './components/pages/rotate-screen/rotate-screen.component';
+import { CreditsComponent } from './components/pages/credits/credits.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { RotateScreenComponent } from './components/pages/rotate-screen/rotate-s
     ChallengeIdentikitComponent,
     CameraComponent,
     RotateScreenComponent,
+    CreditsComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 })
 export class ButtonsOverlayComponent implements OnInit {
 
+  credits: string;
+
   constructor(
     public menu: ButtonsMenuService,
     private shared: SharedDataService,
@@ -17,6 +19,7 @@ export class ButtonsOverlayComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.credits = this.shared.scenario.credits;
   }
 
   clickItem(button: MenuButton) {
