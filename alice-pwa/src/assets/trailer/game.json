@@ -2,8 +2,8 @@
     "id": "lucca-trailer-v02",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
-        {"trigger": "gotomap:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
-        {"trigger": "gotomap:badge-alice", "rules": [
+        {"trigger": "badge:badge-bianconiglio", "effect": {"location": "torre-guinigi"}},
+        {"trigger": "badge:badge-alice", "rules": [
             {"condition": {"noTag": "quiz-alice-done"}, "effect": {"options": "quiz-alice"}},
             {"condition": {"tag": "quiz-alice-done"}, "effect": {"location": "piazza-anfiteatro"}}
         ]},

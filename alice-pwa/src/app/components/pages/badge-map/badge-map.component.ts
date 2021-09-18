@@ -134,6 +134,7 @@ export class BadgeMapComponent implements OnInit {
         .forEach(a => {
           a.state = 'full';
           move.push(a);
+          this.selected = a;
         });
         move.forEach(area => {
           this.moveForward(area);
@@ -171,9 +172,36 @@ export class BadgeMapComponent implements OnInit {
 
   clickArea(area: BadgeMapItem) {
     this.audio.play('action');
-    area.state = area.state === 'mini' ? 'full' : 'mini';
-    this.moveForward(area);
-    this.selected = area.state === 'mini'? null: area;
+    if (area.state === 'full') {
+      this.handleClickArea(area);
+    } else {
+      if (this.selected) {
+        this.closeSelected();
+      } else {
+        this.handleClickArea(area);
+      }
+    }
+  }
+  
+  private closeSelected() {
+    this.selected.state = 'mini';
+    this.selected = null;
+  }
+
+  private handleClickArea(area: BadgeMapItem) {
+    if (area.state === 'mini') {
+      area.state = 'full';
+      this.selected = area;
+      this.moveForward(area);
+    } else {
+      this.shared.triggerAction(`badge:${this.selected.id}`);
+    }
+  }
+
+  clickBackground() {
+    if (this.selected) {
+      this.closeSelected();
+    }
   }
 
   clickTrigger(trig: TriggerMapItem) {
