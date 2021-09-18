@@ -33,6 +33,7 @@ import { ChallengeIdentikitComponent } from './components/pages/challenge-identi
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CameraComponent } from './camponents/pages/camera/camera.component';
+import { RotateScreenComponent } from './components/pages/rotate-screen/rotate-screen.component';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { CameraComponent } from './camponents/pages/camera/camera.component';
     InlineStyleComponent,
     ChallengeIdentikitComponent,
     CameraComponent,
+    RotateScreenComponent,
   ],
   imports: [
     BrowserModule,

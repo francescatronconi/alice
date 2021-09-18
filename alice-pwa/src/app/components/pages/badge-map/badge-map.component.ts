@@ -4,6 +4,7 @@ import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service'
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { AudioPlayService } from 'src/app/services/audio-play.service';
+import { TickersService } from 'src/app/services/tickers.service';
 
 @Component({
   selector: 'app-badge-map',
@@ -102,6 +103,7 @@ export class BadgeMapComponent implements OnInit {
     private shared: SharedDataService,
     private route: ActivatedRoute,
     private audio: AudioPlayService,
+    private timers: TickersService,
   ) { }
 
   ngOnInit(): void {
@@ -110,6 +112,17 @@ export class BadgeMapComponent implements OnInit {
       this.svgmap = this.shared.getSvgMap(params['id'] ? params['id'] : 'badges');
       this.initSvgMap();
     });
+    if (this.openBadgeName()) {
+      this.timers.once('dwindle', 1000, () => {
+        if (this.selected && this.selected.checkBadge(this.shared)) {
+          this.closeSelected();
+        };
+      });
+    }
+  }
+
+  private openBadgeName(): string {
+    return this.route.snapshot.paramMap.get('badge');
   }
 
   badgeStatePin(badge: BadgeMapItem) {
@@ -125,12 +138,12 @@ export class BadgeMapComponent implements OnInit {
       }
       this.areas = this.svgmap.ids
       .map(id => new BadgeMapItem(id, this.svg.getElementById(id)))
-      .map(item => item.checkBadge(this.shared))
+      .map(item => item.initStyle(this.shared))
       .filter(area => area.element ? true: false);
-      if (this.route.snapshot.paramMap.get('badge')) {
+      if (this.openBadgeName()) {
         let move: BadgeMapItem[] = [];
         this.areas
-        .filter(a => a.id === this.route.snapshot.paramMap.get('badge'))
+        .filter(a => a.id === this.openBadgeName())
         .forEach(a => {
           a.state = 'full';
           move.push(a);
@@ -194,12 +207,18 @@ export class BadgeMapComponent implements OnInit {
       this.selected = area;
       this.moveForward(area);
     } else {
-      this.shared.triggerAction(`badge:${this.selected.id}`);
+      area.state = 'mini';
+      if (area.checkBadge(this.shared)) {
+        this.shared.triggerAction(`activate:${this.selected.id}`);
+      } else {
+        this.shared.triggerAction(`search:${this.selected.id}`);
+      }
     }
   }
 
   clickBackground() {
     if (this.selected) {
+      this.audio.play('action');
       this.closeSelected();
     }
   }
@@ -234,9 +253,13 @@ export class BadgeMapItem {
     }
   }
 
-  checkBadge(shared: SharedDataService): BadgeMapItem {
-    this.style = shared.play.badges.includes(this.id) ? 'present': 'missing';
+  initStyle(shared: SharedDataService): BadgeMapItem {
+    this.style = this.checkBadge(shared) ? 'present': 'missing';
     return this;
+  }
+
+  checkBadge(shared: SharedDataService): boolean {
+    return shared.play.badges.includes(this.id);
   }
 
   captureTranslate() {

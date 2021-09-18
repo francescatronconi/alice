@@ -2,11 +2,11 @@
     "id": "lucca-trailer-v03",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
-        {"trigger": "badge:badge-bianconiglio", "rules": [
+        {"trigger": "search:badge-bianconiglio", "rules": [
             {"condition": {"noTag": "quiz-bianconiglio-done"}, "effect": {"options": "quiz-bianconiglio"}},
             {"condition": {"tag": "quiz-bianconiglio-done"}, "effect": {"location": "torre-guinigi"}}
         ]},
-        {"trigger": "badge:badge-alice", "rules": [
+        {"trigger": "search:badge-alice", "rules": [
             {"condition": {"noTag": "quiz-alice-done"}, "effect": {"options": "quiz-alice"}},
             {"condition": {"tag": "quiz-alice-done"}, "effect": {"location": "piazza-anfiteatro"}}
         ]},
