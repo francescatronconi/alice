@@ -42,7 +42,7 @@
         {"badge": "badge-bianconiglio", "src": "cat.svg"}
     ],
     "svgmaps": [
-        {"id": "welcome", "svg": "welcome.svg", "ids": []},
+        {"id": "welcome", "svg": "books-frame.svg", "ids": []},
         {"id": "frame", "svg": "books-frame.svg", "ids": []},
         {"id": "badges", "svg": "copertina-alice.svg", "background": "bosco", "ids": ["badge-alice", "badge-bianconiglio"]},
         {"id": "torre-guinigi", "svg": "torre-guinigi.svg", "background": "palazzo-pretorio", "ids": []},
