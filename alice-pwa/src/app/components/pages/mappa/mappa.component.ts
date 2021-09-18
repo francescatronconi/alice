@@ -230,7 +230,11 @@ export class MappaComponent implements OnInit, OnDestroy {
     if (features.length > 0) {
       this.audio.play('action');
       this.location = features[0].get('location');
-      this.overlay.setPosition(coordinate);
+      if (this.location) {
+        this.overlay.setPosition(coordinate);
+      } else {
+        this.overlay.setPosition(undefined);
+      }
     } else {
       this.closeLocation();
     }
@@ -254,7 +258,7 @@ export class MappaComponent implements OnInit, OnDestroy {
   clickAllowNavigation(canusegps: boolean) {
     this.audio.play('action');
     this.canusegps = canusegps;
-    this.shared.putSetting('location', canusegps ? 'enable': 'disable');
+    this.shared.putSetting('location', canusegps ? 'enabled': 'disabled');
     this.showdisclaimer = false;
     if (canusegps) {
       this.enableGps();

@@ -78,8 +78,12 @@ export class PonteVirtualeService {
   checkCondition(condition: GameCondition, play:GamePlay, scenario:GameScenario): boolean {
     let check: boolean = true;
     if(GameRule.validCondition(condition)) {
+      // DEBT refactor this so that each class takes care of its own code
       if (GameConditionBadge.valid(condition as GameConditionBadge)) {
         check = check && GameConditionBadge.check(condition as GameConditionBadge, play);
+      }
+      if (GameConditionBadges.valid(condition as GameConditionBadges)) {
+        check = check && GameConditionBadges.check(condition as GameConditionBadges, play);
       }
       if (GameConditionNoBadge.valid(condition as GameConditionNoBadge)) {
         check = check && GameConditionNoBadge.check(condition as GameConditionNoBadge, play);
@@ -270,6 +274,20 @@ export class GameConditionBadge extends GameCondition {
 
   static check(condition: GameConditionBadge, play: GamePlay) : boolean {
     return play.badges.includes(condition.badge);
+  }
+
+}
+export class GameConditionBadges extends GameCondition {
+  badges: string[];
+
+  static valid(condition: GameConditionBadges) {
+    return condition.badges ? true : false;
+  }
+
+  static check(condition: GameConditionBadges, play: GamePlay) : boolean {
+    return condition.badges
+    .filter(badge => !play.badges.includes(badge))
+    .length === 0;
   }
 
 }
