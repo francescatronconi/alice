@@ -198,14 +198,8 @@ export class BadgeMapComponent implements OnInit {
   }
 
   private handleFullClickArea(area: BadgeMapItem) {
-    if (this.selected === area) {
-      this.closeSelected();
-      this.shared.triggerAction(`${this.selected.checkBadge(this.shared) ? 'activate' : 'search'}:${this.selected.id}`);
-    } else {
-      // should not occur
-      area.state = 'mini';
-      this.selected = null;
-    }
+    this.shared.triggerAction(`${this.selected.checkBadge(this.shared) ? 'activate' : 'search'}:${this.selected.id}`);
+    this.closeSelected();
   }
 
   private handleMiniClickArea(area: BadgeMapItem) {
