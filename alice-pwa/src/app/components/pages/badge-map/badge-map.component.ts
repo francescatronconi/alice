@@ -112,13 +112,13 @@ export class BadgeMapComponent implements OnInit {
       this.svgmap = this.shared.getSvgMap(params['id'] ? params['id'] : 'badges');
       this.initSvgMap();
     });
-    if (this.openBadgeName()) {
-      this.timers.once('dwindle', 1000, () => {
-        if (this.selected && this.selected.checkBadge(this.shared)) {
-          this.closeSelected();
-        };
-      });
-    }
+    // if (this.openBadgeName()) {
+    //   this.timers.once('dwindle', 1000, () => {
+    //     if (this.selected && this.selected.checkBadge(this.shared)) {
+    //       this.closeSelected();
+    //     };
+    //   });
+    // }
   }
 
   private openBadgeName(): string {
@@ -186,13 +186,9 @@ export class BadgeMapComponent implements OnInit {
   clickArea(area: BadgeMapItem) {
     this.audio.play('action');
     if (area.state === 'full') {
-      this.handleClickArea(area);
+      this.handleFullClickArea(area);
     } else {
-      if (this.selected) {
-        this.closeSelected();
-      } else {
-        this.handleClickArea(area);
-      }
+      this.handleMiniClickArea(area);
     }
   }
   
@@ -201,18 +197,24 @@ export class BadgeMapComponent implements OnInit {
     this.selected = null;
   }
 
-  private handleClickArea(area: BadgeMapItem) {
-    if (area.state === 'mini') {
+  private handleFullClickArea(area: BadgeMapItem) {
+    if (this.selected === area) {
+      this.closeSelected();
+      this.shared.triggerAction(`${this.selected.checkBadge(this.shared) ? 'activate' : 'search'}:${this.selected.id}`);
+    } else {
+      // should not occur
+      area.state = 'mini';
+      this.selected = null;
+    }
+  }
+
+  private handleMiniClickArea(area: BadgeMapItem) {
+    if (this.selected) {
+      this.closeSelected();
+    } else {
       area.state = 'full';
       this.selected = area;
       this.moveForward(area);
-    } else {
-      area.state = 'mini';
-      if (area.checkBadge(this.shared)) {
-        this.shared.triggerAction(`activate:${this.selected.id}`);
-      } else {
-        this.shared.triggerAction(`search:${this.selected.id}`);
-      }
     }
   }
 
