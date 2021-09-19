@@ -1,5 +1,5 @@
 {
-    "id": "lucca-trailer-v04",
+    "id": "lucca-trailer-v05",
     "credits": "credits.html",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
@@ -12,13 +12,13 @@
             {"condition": {"tag": "quiz-alice-done"}, "effect": {"location": "piazza-anfiteatro"}}
         ]},
         {"trigger": "visit:torre-guinigi", "rules": [
-            {"condition": {"noTag": "quiz-bianconiglio-done"}, "effect": {"story": [{"read": "location-locked.html"}], "route": ["badgemap", "badges", "badge-bianconiglio"]}},
+            {"condition": {"noTag": "quiz-bianconiglio-done"}, "effect": {"story": [{"read": "quiz-bianconiglio-locked.html"}], "route": ["badgemap", "badges", "badge-bianconiglio"]}},
             {"condition": {"tag": "quiz-bianconiglio-done"}, "effect": {"story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}}
         ]},
         {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "badge-bianconiglio"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "badge-bianconiglio"}},
         {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}], "challenge": "torre-guinigi"}},
         {"trigger": "visit:piazza-anfiteatro", "rules": [
-            {"condition": {"noTag": "quiz-alice-done"}, "effect": {"story": [{"read": "location-locked.html"}], "route": ["badgemap", "badges", "badge-alice"]}},
+            {"condition": {"noTag": "quiz-alice-done"}, "effect": {"story": [{"read": "quiz-alice-locked.html"}], "route": ["badgemap", "badges", "badge-alice"]}},
             {"condition": {"tag": "quiz-alice-done"}, "effect": {"story": [{"read": "piazza-anfiteatro.html"}], "challenge": "piazza-anfiteatro"}}
         ]},
         {"trigger": "success:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges", "badge-alice"], "story": [{"read": "piazza-anfiteatro-success.html"}], "badge": "badge-alice"}},
@@ -29,7 +29,7 @@
         ],  
         "options": [
             {"id": "quiz-alice", "read": "quiz-alice.html", "options": [
-                {"text": "... mangia un fungo", "effect": {"story": [{"read": "quiz-alice-success.html"}], "tag": "quiz-alice-done", "location": "piazza-anfiteatro"}},
+                {"text": "... mangia un pasticcino", "effect": {"story": [{"read": "quiz-alice-success.html"}], "tag": "quiz-alice-done", "location": "piazza-anfiteatro"}},
                 {"text": "... beve un tè", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
                 {"text": "... annusa un giglio", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
                 {"text": "Non lo so", "effect": {}}
