@@ -1,5 +1,5 @@
 {
-    "id": "lucca-trailer-v03",
+    "id": "lucca-trailer-v04",
     "credits": "credits.html",
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
