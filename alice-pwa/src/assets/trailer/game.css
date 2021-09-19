@@ -68,6 +68,16 @@ h2 {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+.privacy-policy {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.privacy-policy .button {
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid black;
+}
+
 .quiz-letterario .citazione {
     margin: 1.5em 10px;
     padding: 0.5em 10px;
@@ -89,3 +99,4 @@ h2 {
     margin-right: 0.25em;
     vertical-align: -0.6em;
 }
+

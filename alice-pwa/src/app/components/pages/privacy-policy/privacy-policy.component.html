@@ -1,0 +1,169 @@
+<div class="fullpage">
+
+    <div class="privacy-policy">
+  
+      <h2>Privacy Policy e Trattamento dei Cookie</h2>
+  
+      <p class="fall-in-item">In questa sezione vengono fornite le informazioni in merito al trattamento
+        dei dati personali degli utenti che consultano le pagine del sito
+        internet <a href="">{{policy.site}}</a> (di seguito: "Sito") o
+        che usufruiscono dei servizi sullo stesso messi a disposizione.</p>
+  
+      <p class="fall-in-item">L'informativa è resa esclusivamente per il sito di <em>ALICE</em> e non
+        anche per gli altri siti <em>web</em> eventualmente consultati dall'utente
+        tramite i <em>link</em> presenti all'interno del Sito.</p>
+  
+      <p class="fall-in-item"><strong><br>Titolare del trattamento e Responsabile per la privacy</strong></p>
+  
+      <p class="fall-in-item">Titolare del trattamento è {{policy.titolare}}, e-mail: <a href="mailto:{{policy.mail}}">{{policy.mail}}</a><br/></p>
+  
+      <p class="fall-in-item"><strong><br>Tipologie di dati trattati e finalità del trattamento</strong></p>
+  
+      <p class="fall-in-item">La consultazione del Sito <strong>non</strong> comporta il trattamento di
+        dati idonei a identificare direttamente o indirettamente una persona fisica
+        (es. nome, cognome, indirizzo e-mail. Numero di telefono) ad <strong>eccezione</strong>
+        dell'indirizzo IP.</p>
+  
+      <p class="fall-in-item"><em>Dati di navigazione</em></p>
+  
+      <p class="fall-in-item">I dati di navigazione sono quelli acquisiti automaticamente dai sistemi e
+        dai programmi preposti al funzionamento del Sito e sono necessari per la
+        fruizione dei servizi web (es. indirizzi IP o nomi a dominio dei terminali
+        utilizzati dagli utenti).</p>
+  
+      <p class="fall-in-item">Tali dati possono essere utilizzati anche per elaborare statistiche
+        anonime sulla consultazione del Sito e per controllarne il corretto
+        funzionamento. In questi casi, i dati di navigazione non consentono di
+        identificare gli utenti interessati.</p>
+  
+      <p class="fall-in-item">I dati di navigazione possono essere altresì usati per l'accertamento di
+        responsabilità in caso di reati ai danni del Sito ovvero realizzati
+        attraverso il Sito.</p>
+  
+      <p class="fall-in-item"><em>Cookie</em></p>
+  
+      <p class="fall-in-item">I <em>cookie</em> sono informazioni (piccoli <em>file </em>di testo) che
+        i siti <em>web</em> trasmettono al dispositivo utilizzato dall'utente
+        (PC, <em>smartphone</em>, <em>tablet</em>). Tali informazioni consentono
+        di effettuare la navigazione, di eseguire autenticazioni informatiche,
+        di raccogliere informazioni sul numero di visitatori e sulle modalità di
+        fruizione del sito, nonché di monitorare e profilare gli utenti.</p>
+  
+      <p class="fall-in-item"><strong><br>Tipologia di <em>cookie</em> utilizzati dal Sito</strong></p>
+  
+      <p class="fall-in-item">Il Sito utilizza i seguenti <em>cookie</em>:</p>
+  
+      <p class="fall-in-item"><strong><em>Cookie</em></strong><strong> tecnici di sessione</strong>.
+        Tali <em>cookie</em> sono necessari al corretto funzionamento del Sito e
+        consentono una navigazione efficiente e sicura. I <em>cookie</em> di
+        sessione non vengono memorizzati in modo persistente sul dispositivo
+        dell'utente e svaniscono con la chiusura del <em>browser</em>.
+        L'utilizzo dei <em>cookie</em> di sessione non richiede il consenso dell'utente.</p>
+  
+      <p class="fall-in-item"><strong><em>Cookie</em></strong><strong> di terze parti</strong>.
+        Tali <em>cookie</em> sono inviati da siti gestiti da terze parti,
+        che li raccolgono e utilizzano in piena autonomia. Di seguito, i
+        <em>cookie</em> di terze parti operativi sul Sito e i <em>link</em>
+        alle informative sulle relative modalità di gestione:</p>
+  
+      <ul>
+        <li><strong><em>cookie</em></strong><strong> analitici</strong>.
+          Il Sito utilizza Google Analytics, un servizio di analisi del
+          traffico <em>web</em> fornito da Google, Inc. (di seguito: "Google"),
+          che impiega dei <em>cookie</em> per analizzare i comportamenti di
+          utilizzo del Sito.<br>
+          Per maggiori informazioni sulla <em>policy</em> privacy di Google Analytics,
+          v. <a href="http://www.google.com/analytics/terms/it.html">http://www.google.com/analytics/terms/it.html</a>;
+          <a href="http://www.google.it/policies/privacy/partners/">www.google.it/policies/privacy/partners/</a>;
+        </li>
+      </ul>
+  
+      <p class="fall-in-item">Il Sito mette a disposizione degli utenti pulsanti per la condivisione
+        di contenuti tramite <em>social network</em> o altri strumenti di
+        comunicazione. Le pagine che contengono tali pulsanti non rilasciano
+        <em>cookie</em> né del Sito, né di terze parti. Tuttavia,
+        cliccando il simbolo dello strumento di condivisione prescelto,
+        l'utente accederà a funzionalità o piattaforme di terze parti –
+        di cui il Titolare non è in alcun modo responsabile –
+        che potrebbero rilasciare <em>cookie</em>.
+      </p>
+  
+      <p class="fall-in-item"><strong>Gestione dei <em>cookie</em></strong></p>
+  
+      <p class="fall-in-item"><em>Consenso all'utilizzo dei cookie</em></p>
+  
+      <p class="fall-in-item">L'utilizzo di <em>cookie</em> di profilazione di terze parti
+        richiede il consenso dell'utente. In questo momento 
+        <strong *ngIf="cookies.stated && cookies.accept">hai dato il tuo consenso</strong>
+        <strong *ngIf="cookies.stated && !cookies.accept">NON hai dato il tuo consenso</strong> 
+        <strong *ngIf="!cookies.stated">non hai ancora espresso il consenso</strong> 
+        all'utilizzo dei cookie. Puoi cambiare l'impostazione corrente qui di seguito:
+      </p>
+  
+      <p class="button">
+        <span class="as-button" *ngIf="!cookies.stated || !cookies.accept" (click)="cookies.doAccept()">Dai il consenso all'utilizzo dei cookie</span>
+        <span class="as-button" *ngIf="!cookies.stated || cookies.accept" (click)="cookies.doDeny()">Nega il consenso all'utilizzo dei cookie</span>
+      </p>
+  
+      <p class="fall-in-item">Al momento dell'accesso a qualunque pagina del Sito, è presente un
+        <em>banner</em> che contiene un'informativa sintetica sui
+        <em>cookie</em> utilizzati. Fornendo l'autorizzazione tramite il
+        <em>banner</em>, l'utente esprime il proprio consenso all'uso dei
+        <em>cookie</em> di terze parti. Il consenso è richiesto solo al primo
+        accesso al Sito; attraverso un <em>cookie</em> tecnico, il consenso
+        espresso dell'utente viene memorizzato, in modo da consentirgli di
+        accedere direttamente alle pagine del Sito nel corso delle successive
+        visite. Resta fermo il diritto dell'utente di disattivare i
+        <em>cookie</em> in ogni momento o di cancellarli. In tal caso, al
+        ritorno, il Sito richiederà nuovamente all'utente il consenso.</p>
+  
+      <p class="fall-in-item">Per Google Analytics, l'utente può disabilitarne i <em>cookie</em>
+        installando sul proprio <em>browser</em> la componente di
+        <em>opt-out</em> fornita da Google, disponibile al seguente link
+        <a href="https://tools.google.com/dlpage/gaoptout">https://tools.google.com/dlpage/gaoptout</a>.</p>
+  
+      <p class="fall-in-item">La disattivazione dei <em>cookie</em> di terze parti non compromette
+        l'utilizzo del Sito.</p>
+  
+      <p class="fall-in-item"><em>Gestione tramite il browser</em></p>
+  
+      <p class="fall-in-item">L'utente può gestire le preferenze relative ai <em>cookie</em>
+        direttamente all'interno del proprio <em>browser</em> di navigazione
+        e impedirne l'installazione. Tramite le preferenze del <em>browser</em>
+        è, inoltre, possibile eliminare i <em>cookie</em> installati.</p>
+  
+      <p class="fall-in-item">È importante sottolineare che la disabilitazione dei <em>cookie</em>
+        può limitare le possibilità di utilizzo del Sito e impedire all'utente
+        di beneficiare in pieno delle funzionalità e dei servizi del Sito. </p>
+  
+      <p class="fall-in-item">Di seguito, le istruzioni dei principali <em>browser</em> per la gestione dei <em>cookie</em>:</p>
+  
+      <ul>
+        <li>Google Chrome: <a href="https://support.google.com/chrome/answer/95647?hl=it" target="_blank" rel="noreferrer noopener">https://support.google.com/chrome/answer/95647?hl=it</a>;</li>
+        <li>Internet Explorer: <a href="http://windows.microsoft.com/it-it/windows7/block-enable-or-allow-cookies" target="_blank" rel="noreferrer noopener">http://windows.microsoft.com/it-it/windows7/block-enable-or-allow-cookies</a>;</li>
+        <li>Mozilla Firefox: <a href="http://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie">http://support.mozilla.org/it/kb/Attivare%20e%20disattivare%20i%20cookie</a>;</li>
+        <li>Apple Safari: <a href="http://support.apple.com/kb/PH5049" target="_blank" rel="noreferrer noopener">http://support.apple.com/kb/PH5049</a>;</li>
+        <li>Opera: <a href="http://help.opera.com/Windows/10.00/it/cookies.html">http://help.opera.com/Windows/10.00/it/cookies.html</a>.</li>
+      </ul>
+  
+      <p class="fall-in-item">Per i dispositivi mobili, occorre fare riferimento ai relativi manuali di
+        istruzioni per scoprire come gestire i <em>cookie</em>.</p>
+  
+      <p class="fall-in-item"><strong><br>Modalità e durata del trattamento</strong></p>
+  
+      <p class="fall-in-item">Il server in cui è localizzato il Sito si trova in Germania.</p>
+  
+      <p class="fall-in-item">Il trattamento è effettuato per il tempo strettamente necessario a
+        perseguire gli scopi per cui i dati personali sono raccolti.</p>
+  
+      <p class="fall-in-item"><strong><br>Diritti degli interessati</strong></p>
+  
+      <p class="fall-in-item">Coloro che ritengono che il trattamento dei dati personali a loro riferiti
+        effettuato attraverso il Sito avvenga in violazione della normativa sulla
+        protezione dei dati personali hanno il diritto di presentare reclamo al
+        <a href="http://www.garanteprivacy.it/web/guest/home/docweb/-/docweb-display/docweb/6826945">Garante privacy</a>.</p>
+  
+    </div>
+    <div class="footer"> </div>
+  </div>
+  

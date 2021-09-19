@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
+import { AcceptCookieService } from './services/accept-cookie.service';
 import { SharedDataService, SvgMap } from './services/shared-data.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class AppComponent {
   constructor (
     private titleService: Title,
     public shared: SharedDataService,
+    public cookies: AcceptCookieService,
   ) {
     this.titleService.setTitle(this.title);
     this.shared.scenarioReadyObs.subscribe(scenario => {

@@ -2,7 +2,7 @@
     "id": "lucca-trailer-v05",
     "credits": "credits.html",
     "rules": [
-        {"trigger": "start", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "intro.html"}]}},
+        {"trigger": "start", "effect": {"route": [""], "story": [{"read": "intro.html"}]}},
         {"trigger": "search:badge-bianconiglio", "rules": [
             {"condition": {"noTag": "quiz-bianconiglio-done"}, "effect": {"options": "quiz-bianconiglio"}},
             {"condition": {"tag": "quiz-bianconiglio-done"}, "effect": {"location": "torre-guinigi"}}

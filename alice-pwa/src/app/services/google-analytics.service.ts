@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { AcceptCookieService } from './accept-cookie.service';
 
 declare let gtag: Function;
 
@@ -12,7 +13,7 @@ export class GoogleAnalyticsService {
 
   // cfr https://blexin.com/it/blog/google-analytics/
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private cookies: AcceptCookieService) {
   }
 
   public init(gaMeasurementId: string) {
@@ -20,11 +21,10 @@ export class GoogleAnalyticsService {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (this.gaMeasurementId) {
-          gtag('config', this.gaMeasurementId,
-          {
-            'page_path': event.urlAfterRedirects
-          }
-          );
+          gtag('config', this.gaMeasurementId,{
+            'page_path': event.urlAfterRedirects,
+            'anonimize_ip': !this.cookies.accept
+          });
         } else {
           console.log('gtag config', this.gaMeasurementId, event.urlAfterRedirects);
         }

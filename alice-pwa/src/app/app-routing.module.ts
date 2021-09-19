@@ -11,6 +11,7 @@ import { QrCodePopupComponent } from './components/pages/qr-code-popup/qr-code-p
 import { BadgeMapComponent } from './components/pages/badge-map/badge-map.component';
 import { CameraComponent } from './camponents/pages/camera/camera.component';
 import { CreditsComponent } from './components/pages/credits/credits.component';
+import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privacy-policy.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'partita', component: PartitaComponent},
   {path: ':key/story', component: TellStoryComponent},
   {path: 'credits', component: CreditsComponent},
+  {path: 'privacy-policy', component: PrivacyPolicyComponent},
 ];
 
 @NgModule({
