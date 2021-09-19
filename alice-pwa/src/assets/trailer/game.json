@@ -29,9 +29,9 @@
         ],  
         "options": [
             {"id": "quiz-alice", "read": "quiz-alice.html", "options": [
-                {"text": "Mangiando un fungo", "effect": {"story": [{"read": "quiz-alice-success.html"}], "tag": "quiz-alice-done", "location": "piazza-anfiteatro"}},
-                {"text": "Bevendo un tè", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
-                {"text": "Annusando un giglio", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
+                {"text": "... mangia un fungo", "effect": {"story": [{"read": "quiz-alice-success.html"}], "tag": "quiz-alice-done", "location": "piazza-anfiteatro"}},
+                {"text": "... beve un tè", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
+                {"text": "... annusa un giglio", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
                 {"text": "Non lo so", "effect": {}}
             ]},
             {"id": "quiz-bianconiglio", "read": "quiz-bianconiglio.html", "options": [
