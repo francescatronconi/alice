@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: 'MomsDiner';
+    src: url('~/fonts/MomsDiner.ttf') format("truetype");
+}
+
+@font-face {
     font-family: 'BodoniFLF Bold';
     src: url('~/fonts/BodoniFLF.bold.ttf') format("truetype");
 }

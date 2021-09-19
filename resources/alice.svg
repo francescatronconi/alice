@@ -28,11 +28,11 @@
      inkscape:window-width="1853"
      units="px"
      showgrid="false"
-     inkscape:current-layer="layer37"
+     inkscape:current-layer="books-frame"
      inkscape:document-units="px"
-     inkscape:cy="33.791551"
-     inkscape:cx="92.372724"
-     inkscape:zoom="4.205"
+     inkscape:cy="80.296765"
+     inkscape:cx="158.05119"
+     inkscape:zoom="2.1025"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -125,7 +125,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2586,7 +2586,7 @@
      inkscape:groupmode="layer"
      id="layer37"
      inkscape:label="mappa icone"
-     style="display:inline">
+     style="display:none">
     <path
        style="opacity:1;vector-effect:none;fill:#d20258;fill-opacity:1;stroke:none;stroke-width:7.78466177;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
        d="m 50.883884,25.679302 -25,25 -24.99999957,-25 C 0.88388455,11.872184 12.076766,0.67930246 25.883884,0.67930222 c 13.807119,0 25,11.19288078 25,24.99999978 z"
@@ -8433,7 +8433,7 @@
      inkscape:groupmode="layer"
      id="layer29"
      inkscape:label="game alice lucca trailer"
-     style="display:none">
+     style="display:inline">
     <g
        inkscape:groupmode="layer"
        id="layer36"
@@ -8582,17 +8582,17 @@
        style="display:inline">
       <g
          id="books-frame"
-         inkscape:label="#g18097">
+         inkscape:label="#g18097"
+         class="item">
         <image
-           style="display:inline"
-           width="134.73685"
-           height="100"
+           sodipodi:absref="/home/daniele/Pictures/Alice/sticker/sfondo-sml.jpg"
+           y="-35.983593"
+           x="-66.287369"
+           id="image2800"
+           xlink:href="file:///home/daniele/Pictures/Alice/sticker/sfondo-sml.jpg"
            preserveAspectRatio="none"
-           xlink:href="file:///home/daniele/Pictures/Alice/sticker/play-me.jpg"
-           id="image19967-3"
-           x="-17"
-           y="0"
-           sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/copertina-alice.jpg" />
+           height="135.9836"
+           width="237.97128" />
         <g
            aria-label="play_me!"
            transform="rotate(-15)"
@@ -8685,7 +8685,102 @@
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.94372749px;font-family:Daniel;-inkscape-font-specification:'Daniel, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#017bc2;fill-opacity:1;stroke:#007ac0;stroke-width:0.22359283;stroke-opacity:1"
              id="path2718" />
         </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:19.59389305px;line-height:1.25;font-family:MomsDiner;-inkscape-font-specification:'MomsDiner, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#0277c1;fill-opacity:1;stroke:none;stroke-width:0.4898473"
+           x="0.6724323"
+           y="24.691881"
+           id="text2735"><tspan
+             sodipodi:role="line"
+             id="tspan2733"
+             x="0.6724323"
+             y="24.691881"
+             style="fill:#0277c1;fill-opacity:1;stroke-width:0.4898473">A.L.I.C.E</tspan></text>
+        <text
+           id="text2757"
+           y="31.204342"
+           x="0.79982984"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:5.23923492px;line-height:1.25;font-family:MomsDiner;-inkscape-font-specification:'MomsDiner, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#0277c1;fill-opacity:1;stroke:none;stroke-width:0.13098086"
+           xml:space="preserve"><tspan
+             style="fill:#0277c1;fill-opacity:1;stroke-width:0.13098086"
+             y="31.204342"
+             x="0.79982984"
+             id="tspan2755"
+             sodipodi:role="line">Alice's Lucca Interactive Creative Experience</tspan></text>
+        <image
+           sodipodi:absref="/home/daniele/Pictures/Alice/sticker/books-tall-sml.png"
+           y="-14.630271"
+           x="74.994797"
+           id="image2789"
+           xlink:href="file:///home/daniele/Pictures/Alice/sticker/books-tall-sml.png"
+           preserveAspectRatio="none"
+           height="100.7874"
+           width="71.307091" />
+        <image
+           sodipodi:absref="/home/daniele/Pictures/Alice/sticker/books-short-sml.png"
+           y="-11.93974"
+           x="41.026768"
+           id="image2778"
+           xlink:href="file:///home/daniele/Pictures/Alice/sticker/books-short-sml.png"
+           preserveAspectRatio="none"
+           height="100.7874"
+           width="71.307091" />
+        <image
+           sodipodi:absref="/home/daniele/Pictures/Alice/sticker/alice.png"
+           y="34.739117"
+           x="65.989525"
+           id="image2767"
+           xlink:href="file:///home/daniele/Pictures/Alice/sticker/alice.png"
+           preserveAspectRatio="none"
+           height="57.521412"
+           width="57.521412" />
+        <image
+           sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/logo/citta-che-legge.png"
+           y="82.455772"
+           x="-9.2110281"
+           id="image6613"
+           xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/logo/citta-che-legge.png"
+           preserveAspectRatio="none"
+           height="19.237171"
+           width="19.237171" />
+        <image
+           sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/logo/logo-agora.jpg"
+           y="86.280647"
+           x="35.478653"
+           id="image6624"
+           xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/logo/logo-agora.jpg"
+           preserveAspectRatio="none"
+           height="11.094956"
+           width="8.9229565" />
+        <image
+           sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/logo/logo-cepell.png"
+           y="79.328094"
+           x="2.4447486"
+           id="image6635"
+           xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/logo/logo-cepell.png"
+           preserveAspectRatio="none"
+           height="25.87702"
+           width="36.630764" />
+        <image
+           sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/logo/lucca-creative-hub.png"
+           y="87.434166"
+           x="-16.710403"
+           id="image6646"
+           xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/logo/lucca-creative-hub.png"
+           preserveAspectRatio="none"
+           height="10.514545"
+           width="9.1345119" />
       </g>
+      <image
+         style="display:inline"
+         width="134.73685"
+         height="100"
+         preserveAspectRatio="none"
+         xlink:href="file:///home/daniele/Pictures/Alice/sticker/play-me.jpg"
+         id="image19967-3"
+         x="148.08937"
+         y="155.11296"
+         sodipodi:absref="/home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/copertina-alice.jpg" />
     </g>
     <g
        inkscape:groupmode="layer"
