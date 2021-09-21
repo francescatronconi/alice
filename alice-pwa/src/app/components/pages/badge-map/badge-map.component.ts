@@ -198,6 +198,7 @@ export class BadgeMapComponent implements OnInit {
   }
 
   private handleFullClickArea(area: BadgeMapItem) {
+    this.triggerAction(this.selected);
     this.shared.triggerAction(`${this.selected.checkBadge(this.shared) ? 'activate' : 'search'}:${this.selected.id}`);
     this.closeSelected();
   }
@@ -206,10 +207,22 @@ export class BadgeMapComponent implements OnInit {
     if (this.selected) {
       this.closeSelected();
     } else {
-      area.state = 'full';
-      this.selected = area;
-      this.moveForward(area);
+      if (area.checkBadge(this.shared)) {
+        area.state = 'full';
+        this.selected = area;
+        this.moveForward(area);
+      } else {
+        this.triggerAction(area);
+      }
     }
+  }
+
+  private triggerAction(area: BadgeMapItem) {
+    this.shared.triggerAction(`${area.checkBadge(this.shared) ? 'activate' : 'search'}:${area.id}`);
+  }
+
+  badgeAnimationDone(event:any) {
+    console.log(event);
   }
 
   clickBackground() {
