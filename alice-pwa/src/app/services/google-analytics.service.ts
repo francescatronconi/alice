@@ -18,6 +18,11 @@ export class GoogleAnalyticsService {
 
   public init(gaMeasurementId: string) {
     this.gaMeasurementId = gaMeasurementId;
+    if (this.gaMeasurementId) {
+      gtag('js', new Date());
+    } else {
+      console.log('gtag js')
+    }
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (this.gaMeasurementId) {
@@ -26,7 +31,7 @@ export class GoogleAnalyticsService {
             'anonimize_ip': !this.cookies.accept
           });
         } else {
-          console.log('gtag config', this.gaMeasurementId, event.urlAfterRedirects);
+          console.log('gtag config', this.gaMeasurementId, this.cookies.accept, event.urlAfterRedirects);
         }
       }
     });
