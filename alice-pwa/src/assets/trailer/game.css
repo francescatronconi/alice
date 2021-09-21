@@ -30,7 +30,8 @@ h2 {
 }
 
 .panel {
-    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .narrative {

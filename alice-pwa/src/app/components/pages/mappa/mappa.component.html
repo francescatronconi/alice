@@ -31,21 +31,23 @@
 
 </svg>
 
-<div class="fullpage panel narrative" *ngIf="showdisclaimer">
-   <div class="modal">
-      <h1>Posso sapere dove sei?</h1>
-      <div>Questa mappa mostra i luoghi che puoi raggiungere per giocare le tappe del gioco.</div>
-      <div>Se nella mappa vuoi vedere anche la tua posizione, occorre che il gioco possa utilizzare il GPS del tuo dispositivo.</div>
-      <div>
-         Sappi che teniamo alla tua privacy e al rispetto dei tuoi dati personali.
-         I dati della tua posizione e dei tuoi spostamenti <strong>non</strong> sono registrati dalla app e <strong>non</strong> sono trasmessi a nessun server: 
-         tutti i dati sono trattati come tuoi dati riservati e restano solo sul tuo dispositivo e solo per il fine del gioco.
+<div class="fullpage narrative" *ngIf="showdisclaimer">
+   <div class="panel">
+      <div class="modal">
+         <h2>Posso sapere dove sei?</h2>
+         <div>Questa mappa mostra i luoghi che puoi raggiungere per giocare le tappe del gioco.</div>
+         <div>Se nella mappa vuoi vedere anche la tua posizione, occorre che il gioco possa utilizzare il GPS del tuo dispositivo.</div>
+         <div>
+            Sappi che teniamo alla tua privacy e al rispetto dei tuoi dati personali.
+            I dati della tua posizione e dei tuoi spostamenti <strong>non</strong> sono registrati dalla app e <strong>non</strong> sono trasmessi a nessun server: 
+            tutti i dati sono trattati come tuoi dati riservati e restano solo sul tuo dispositivo e solo per il fine del gioco.
+         </div>
+         <div *ngIf="gpsIsNeeded">
+            Nota che alcune tappe del gioco richiedono che il tuo dispositivo sia rilevato nei pressi della tappa per poterla giocare. 
+            Se non acconsenti all'utilizzo del GPS queste tappe non saranno accessibili.
+         </div>
       </div>
-      <div *ngIf="gpsIsNeeded">
-         Nota che alcune tappe del gioco richiedono che il tuo dispositivo sia rilevato nei pressi della tappa per poterla giocare. 
-         Se non acconsenti all'utilizzo del GPS queste tappe non saranno accessibili.
-      </div>
+      <div class="button" (click)="clickAllowNavigation(true)">Ok, grazie, utilizza il GPS del mio dispositivo e mostrami le tappe del gioco che richiedono la mia presenza!</div>
+      <div class="button" (click)="clickAllowNavigation(false)">No grazie, non utilizzare il GPS del mio dispositivo e nascondi le tappe del gioco che richiedono la mia presenza!</div>
    </div>
-   <div class="button" (click)="clickAllowNavigation(true)">Ok, grazie, utilizza il GPS del mio dispositivo e mostrami le tappe del gioco che richiedono la mia presenza!</div>
-   <div class="button" (click)="clickAllowNavigation(false)">No grazie, non utilizzare il GPS del mio dispositivo e nascondi le tappe del gioco che richiedono la mia presenza!</div>
 </div>
