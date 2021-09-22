@@ -67,19 +67,19 @@
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             },
-            "daniele": {
+            "trailer": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.daniele.ts"
+                  "with": "src/environments/environment.trailer.ts"
                 }
               ]
             },
-            "dezhi": {
+            "sept25": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dezhi.ts"
+                  "with": "src/environments/environment.sept25.ts"
                 }
               ]
             }
@@ -94,11 +94,11 @@
             "production": {
               "browserTarget": "alice-pwa:build:production"
             },
-            "daniele": {
-              "browserTarget": "alice-pwa:build:daniele"
+            "trailer": {
+              "browserTarget": "alice-pwa:build:trailer"
             },
-            "dezhi": {
-              "browserTarget": "alice-pwa:build:dezhi"
+            "sept25": {
+              "browserTarget": "alice-pwa:build:sept25"
             }
           }
         },

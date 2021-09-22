@@ -1,0 +1,83 @@
+{
+    "id": "lucca-trailer-v05",
+    "credits": "credits.html",
+    "rules": [
+        {"trigger": "start", "effect": {"route": [""], "story": [{"read": "intro.html"}]}},
+        {"trigger": "search:badge-brucaliffo", "effect": {"location": "map-brucaliffo"}},
+        {"trigger": "visit:map-brucaliffo", "effect": {"story": [{"read": "tappe/brucaliffo.html"}]}},
+        {"trigger": "search:badge-dodo", "effect": {"location": "map-dodo"}},
+        {"trigger": "visit:map-dodo", "effect": {"story": [{"read": "tappe/dodo.html"}]}},
+        {"trigger": "search:badge-cappellaio-matto", "effect": {"location": "map-cappellaio-matto"}},
+        {"trigger": "visit:map-cappellaio-matto", "effect": {"story": [{"read": "tappe/cappellaio-mattohtml"}]}},
+        {"trigger": "search:badge-re-cuori", "effect": {"location": "map-re-cuori"}},
+        {"trigger": "visit:map-re-cuori", "effect": {"story": [{"read": "tappe/re-cuori.html"}]}},
+        {"trigger": "search:badge-regina-cuori", "effect": {"location": "map-regina-cuori"}},
+        {"trigger": "visit:map-regina-cuori", "effect": {"story": [{"read": "tappe/regina-cuori.html"}]}},
+        {"trigger": "search:badge-pinco-panco", "effect": {"location": "map-pinco-panco"}},
+        {"trigger": "visit:map-pinco-panco", "effect": {"story": [{"read": "tappe/pinco-panco.html"}]}},
+        {"trigger": "search:badge-fiori", "effect": {"location": "map-fiori"}},
+        {"trigger": "visit:map-fiori", "effect": {"story": [{"read": "tappe/fiori.html"}]}},
+        {"trigger": "search:badge-tricheco-carpentiere", "effect": {"location": "map-tricheco-carpentiere"}},
+        {"trigger": "visit:map-tricheco-carpentiere", "effect": {"story": [{"read": "tappe/tricheco-carpentiere.html"}]}},
+        {"trigger": "search:badge-humpty-dumpty", "effect": {"location": "map-humpty-dumpty"}},
+        {"trigger": "visit:map-humpty-dumpty", "effect": {"story": [{"read": "tappe/humpty-dumpty.html"}]}},
+        {"trigger": "search:badge-stregatto", "effect": {"location": "map-stregatto"}},
+        {"trigger": "visit:map-stregatto", "effect": {"story": [{"read": "tappe/stregatto.html"}]}}
+    ],  
+    "options": [],
+    "badges": [
+        {"badge": "badge-brucaliffo", "src": "cat.svg"},
+        {"badge": "badge-dodo", "src": "cat.svg"},
+        {"badge": "badge-cappellaio-matto", "src": "cat.svg"},
+        {"badge": "badge-re-cuori", "src": "cat.svg"},
+        {"badge": "badge-regina-cuori", "src": "cat.svg"},
+        {"badge": "badge-pinco-panco", "src": "cat.svg"},
+        {"badge": "badge-fiori", "src": "cat.svg"},
+        {"badge": "badge-tricheco-carpentiere", "src": "cat.svg"},
+        {"badge": "badge-humpty-dumpty", "src": "cat.svg"},
+        {"badge": "badge-stregatto", "src": "cat.svg"}
+    ],
+    "svgmaps": [
+        {"id": "welcome", "svg": "welcome.svg", "ids": []},
+        {"id": "frame", "svg": "frame.svg", "ids": []},
+        {"id": "badges", "svg": "badges.svg", "background": "g2776", "ids": [
+            "badge-brucaliffo",
+            "badge-dodo",
+            "badge-cappellaio-matto",
+            "badge-re-cuori",
+            "badge-regina-cuori",
+            "badge-pinco-panco",
+            "badge-fiori",
+            "badge-tricheco-carpentiere",
+            "badge-humpty-dumpty",
+            "badge-stregatto"
+        ]}
+    ],
+    "locations": [
+        {"id":"map-brucaliffo", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-dodo", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-cappellaio-matto", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-re-cuori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-regina-cuori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-pinco-panco", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-fiori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-tricheco-carpentiere", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-humpty-dumpty", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
+        {"id":"map-stregatto", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908}
+    ],
+    "challenges": [],
+    "audio": [
+        {"id": "action", "src": "audio/action.ogg"}
+    ],
+    "buttons": [
+        {"id": "badges", "icon": "./assets/trailer/badge.svg", "action": ["badgemap", "badges"]},
+        {"id": "mappa", "icon": "./assets/trailer/mappa.svg", "action": ["mappa"]},
+        {"id": "credits", "icon": "./assets/svg/credits.svg", "action": ["credits"]}
+    ],
+    "map": {
+        "user": {"icon": "/mappa/head.png", "anchor": [0.5, 1]},
+        "lon": 10.506937856535545, 
+        "lat": 43.84369534529272, 
+        "zoom": 15
+    }
+}

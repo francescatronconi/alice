@@ -13,7 +13,6 @@ export class CheckInComponent implements OnInit {
 
   constructor(
     public shared: SharedDataService,
-    private router: Router,
   ) {}
 
   ngOnInit(): void {

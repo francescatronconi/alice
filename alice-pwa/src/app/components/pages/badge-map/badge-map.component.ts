@@ -222,7 +222,7 @@ export class BadgeMapComponent implements OnInit {
   }
 
   badgeAnimationDone(event:any) {
-    console.log(event);
+    //console.log(event);
   }
 
   clickBackground() {
@@ -235,7 +235,7 @@ export class BadgeMapComponent implements OnInit {
   clickTrigger(trig: TriggerMapItem) {
     this.audio.play('action');
     this.shared.triggerAction(`${trig.element.getAttribute('id')}:${this.selected.id}`);
-    console.log(`${trig.element.getAttribute('id')}:${this.selected.id}`);
+    //console.log(`${trig.element.getAttribute('id')}:${this.selected.id}`);
   }
 
 }

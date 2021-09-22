@@ -140,6 +140,7 @@ export class GameScenario {
   challenges: GameChallenge[];
   map: MapInitData;
   credits: string;
+  layout: string;
 
 }
 
