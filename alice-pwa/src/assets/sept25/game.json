@@ -3,8 +3,14 @@
     "credits": "credits.html",
     "rules": [
         {"trigger": "start", "effect": {"route": [""], "story": [{"read": "intro.html"}]}},
+
         {"trigger": "search:badge-brucaliffo", "effect": {"location": "map-brucaliffo"}},
-        {"trigger": "visit:map-brucaliffo", "effect": {"story": [{"read": "tappe/brucaliffo.html"}]}},
+        {"trigger": "visit:map-brucaliffo", "effect": {"story": [{"read": "tappe/brucaliffo.html"}], "options": "ready-qrcode"}},
+        {"trigger": "qrcode:2593", "rules": [
+            {"condition": "noTag:brucaliffo", "effect": {"tag": "brucaliffo", "badge": "badge-brucaliffo", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-brucaliffo"], "story": [{"read": "tappe/brucaliffo-success.html"}]}}
+        ]},
+
         {"trigger": "search:badge-dodo", "effect": {"location": "map-dodo"}},
         {"trigger": "visit:map-dodo", "effect": {"story": [{"read": "tappe/dodo.html"}]}},
         {"trigger": "search:badge-cappellaio-matto", "effect": {"location": "map-cappellaio-matto"}},
@@ -44,7 +50,13 @@
         ], "noTag": "victory-shown"}, "effect": {"story": [{"read": "victory.html"}], "tag": "victory-shown"}
         }
     ],  
-    "options": [],
+    "options": [
+        {"id": "ready-qrcode", "read": "tappe/ready-qrcode.html", "options": [
+            {"text": "Devo ancora superare la prova!", "effect": {"story": [{"read": "tappe/ready-to-play.html"}]}},
+            {"text": "Ho superato la prova! Devo registrare il codice QR con la fotocamera!", "effect": {"route": ["qrcode"]}},
+            {"text": "Esci", "effect": {}}
+        ]}
+    ],
     "badges": [
         {"badge": "badge-brucaliffo", "src": "badges/brucaliffo.png"},
         {"badge": "badge-dodo", "src": "badges/dodo.png"},
@@ -74,16 +86,23 @@
         ]}
     ],
     "locations": [
-        {"id":"map-brucaliffo", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-dodo", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-cappellaio-matto", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-re-cuori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-regina-cuori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-pinco-panco", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-fiori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-tricheco-carpentiere", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-humpty-dumpty", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908},
-        {"id":"map-stregatto", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506431595003981, "lat": 43.84285867021908}
+        {"id":"map-brucaliffo", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506438300525973, "lat": 43.842945723669075},
+        {"id":"map-dodo", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.504808035420542, "lat": 43.842967313755665},
+        {"id":"map-cappellaio-matto", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.496645636980382, "lat": 43.840256949508664},
+        {"id":"map-re-cuori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.497064188776076, "lat": 43.84072889304245},
+        {"id":"map-regina-cuori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.50674329479071, "lat": 43.83947674502335},
+        {"id":"map-pinco-panco", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.512347526987744, "lat": 43.84647871870673},
+        {"id":"map-fiori", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.514214394688153, "lat": 43.84449340791067},
+        {"id":"map-tricheco-carpentiere", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506502858297749, "lat": 43.83945700482301},
+        {"id":"map-humpty-dumpty", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084},
+        {"id":"map-humpty-dumpty", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084},
+        {"id":"map-lucca-libri", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.505437469176439, "lat": 43.83828244849533},
+        {"id":"map-pensieri-belli", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.501874162560684, "lat": 43.84049729895711},
+        {"id":"map-il-collezionista", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503966069570199, "lat": 43.84222160447871},
+        {"id":"map-san-martino", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.505584401875714, "lat": 43.84096504531929},
+        {"id":"map-piazza-anfiteatro", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084},
+        {"id":"map-torre-guinigi", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084},
+        {"id":"map-piazza-napoleone", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084}
     ],
     "challenges": [],
     "audio": [

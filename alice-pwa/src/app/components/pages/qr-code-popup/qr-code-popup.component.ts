@@ -19,6 +19,7 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
   device: CameraDevice;
   code: string;
   ratio = 1.3333;
+  emergency = '';
 
   constructor(
     private shared: SharedDataService, 
@@ -115,8 +116,8 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
     return {width: `${0.9 * Math.min(upper, lower * this.ratio)}px`};
   }
 
-  emergencyCode() {
-    this.router.navigate(['qrcode', '8081']);
+  emergencyCode(code: string) {
+    this.router.navigate(['qrcode', code]);
   }
 
 }

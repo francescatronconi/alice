@@ -38,6 +38,7 @@ import { CreditsComponent } from './components/pages/credits/credits.component';
 import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privacy-policy.component';
 import { DirectTriggerComponent } from './components/pages/direct-trigger/direct-trigger.component';
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { DirectTriggerComponent } from './components/pages/direct-trigger/direct
     BrowserAnimationsModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    FormsModule,
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
