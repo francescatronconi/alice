@@ -157,6 +157,9 @@ export class SharedDataService {
   findNextStory() {
     let unpublished = this.play.story.filter(item => !item.published);
     this.currentStory = unpublished.length > 0 ? unpublished[0] : null ;
+    if (this.currentStory && this.currentStory.origin && this.currentStory.origin.read) {
+      this.analytics.event(this.currentStory.origin.read, 'story', 'read');
+    }
   }
 
   readCurrentStory() {

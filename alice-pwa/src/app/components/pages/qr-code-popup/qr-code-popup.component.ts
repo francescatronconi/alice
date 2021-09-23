@@ -83,14 +83,16 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
   }
 
   stopCamera() {
-    this.scanner.stop()
-    .then((ignore) => {
-      console.log('stop ok', ignore);
-    })
-    .catch((error) => {
-      console.log('stop error', error);
-    })
-    this.scanner.clear();
+    if (this.scanner) {
+      this.scanner.stop()
+      .then((ignore) => {
+        console.log('stop ok', ignore);
+      })
+      .catch((error) => {
+        console.log('stop error', error);
+      })
+      this.scanner.clear();
+    }
     this.scanner = null;
   }
 

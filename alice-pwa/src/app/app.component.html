@@ -28,6 +28,6 @@
        Inoltre puoi cambiare questa impostazione dalla pagina stessa dove trovi la nostra <a href="#/privacy-policy">privacy policy</a>.
     </div>
     <div class="as-button" (click)="cookies.doAccept()">OK</div>
- </div>
+</div>
 
-<div *ngIf="shared.scenario.layout === 'landscape'" app-rotate-screen></div>
+<div *ngIf="shared.scenario && shared.scenario.layout === 'landscape'" app-rotate-screen></div>

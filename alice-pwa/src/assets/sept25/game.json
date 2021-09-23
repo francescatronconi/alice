@@ -22,7 +22,23 @@
         {"trigger": "search:badge-humpty-dumpty", "effect": {"location": "map-humpty-dumpty"}},
         {"trigger": "visit:map-humpty-dumpty", "effect": {"story": [{"read": "tappe/humpty-dumpty.html"}]}},
         {"trigger": "search:badge-stregatto", "effect": {"location": "map-stregatto"}},
-        {"trigger": "visit:map-stregatto", "effect": {"story": [{"read": "tappe/stregatto.html"}]}}
+        {"trigger": "visit:map-stregatto", "effect": {"story": [{"read": "tappe/stregatto.html"}]}},
+        {"trigger": "qrcode:qr4482", "effect": {"route": [""], "story": [{"read": "tappe/libreria-1.html"}]}},
+        {"trigger": "qrcode:qr3795", "effect": {"route": [""], "story": [{"read": "tappe/libreria-2.html"}]}},
+        {"trigger": "qrcode:qr8081", "effect": {"route": [""], "story": [{"read": "tappe/libreria-3.html"}]}},
+        {"condition": {"badges": [
+            "badge-brucaliffo",
+            "badge-dodo",
+            "badge-cappellaio-matto",
+            "badge-re-cuori",
+            "badge-regina-cuori",
+            "badge-pinco-panco",
+            "badge-fiori",
+            "badge-tricheco-carpentiere",
+            "badge-humpty-dumpty",
+            "badge-stregatto"
+        ], "noTag": "victory-shown"}, "effect": {"story": [{"read": "victory.html"}], "tag": "victory-shown"}
+        }
     ],  
     "options": [],
     "badges": [

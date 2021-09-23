@@ -64,7 +64,11 @@ export class PonteVirtualeService {
     play.challenge = null;
   }
 
-  qr(scenario: GameScenario, play: GamePlay, code: string) {
+  qr(scenario: GameScenario, play: GamePlay, trigger: string) {
+    let code = trigger;
+    if (code.startsWith('http') && code.lastIndexOf('/') > 0) {
+      code = code.substring(code.lastIndexOf('/') + 1);
+    }
     play.event = new GameEventQrCode(code);
     this.runScenarioRules(scenario, play);
   }
@@ -243,6 +247,9 @@ export class GameEventQrCode {
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventQrCode);
     let r = /qrcode:(.*)/;
+    if (event.qrcode) {
+      console.log(play.event, rule);
+    }
     return event.qrcode && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.qrcode;
   }
 

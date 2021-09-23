@@ -32,6 +32,7 @@ const routes: Routes = [
   {path: ':key/story', component: TellStoryComponent},
   {path: 'credits', component: CreditsComponent},
   {path: 'privacy-policy', component: PrivacyPolicyComponent},
+  {path: 'trigger/:id', component: PrivacyPolicyComponent},
 ];
 
 @NgModule({
