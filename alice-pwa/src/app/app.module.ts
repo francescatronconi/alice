@@ -36,6 +36,7 @@ import { CameraComponent } from './camponents/pages/camera/camera.component';
 import { RotateScreenComponent } from './components/pages/rotate-screen/rotate-screen.component';
 import { CreditsComponent } from './components/pages/credits/credits.component';
 import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privacy-policy.component';
+import { DirectTriggerComponent } from './components/pages/direct-trigger/direct-trigger.component';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privac
     RotateScreenComponent,
     CreditsComponent,
     PrivacyPolicyComponent,
+    DirectTriggerComponent,
   ],
   imports: [
     BrowserModule,

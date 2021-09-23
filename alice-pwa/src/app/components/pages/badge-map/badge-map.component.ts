@@ -192,6 +192,10 @@ export class BadgeMapComponent implements OnInit {
     }
   }
   
+  areaClasses(): {[cl: string]: boolean} {
+    return this.shared.statusCssClasses();
+  }
+
   private closeSelected() {
     this.selected.state = 'mini';
     this.selected = null;

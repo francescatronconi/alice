@@ -29,8 +29,10 @@
         <rect x="-200" y="-200" width="500" height="500" style="fill:white; opacity: 0;"></rect>
     </g>
 
-    <g *ngFor="let area of areas" (click)="clickArea(area)" [class]="area.style">
-        <g [@badge]="badgeStatePin(area)" (@badge.done)="badgeAnimationDone($event)" [innerHTML]="xml(area) | safe: 'html'"></g>
+    <g [ngClass]="areaClasses()">
+        <g *ngFor="let area of areas" (click)="clickArea(area)" [class]="area.style">
+            <g [@badge]="badgeStatePin(area)" (@badge.done)="badgeAnimationDone($event)" [innerHTML]="xml(area) | safe: 'html'"></g>
+        </g>
     </g>
 
     <g *ngIf="selected">

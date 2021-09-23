@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
@@ -19,9 +20,21 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
   code: string;
   ratio = 1.3333;
 
-  constructor(private shared: SharedDataService, private audio: AudioPlayService) { }
+  constructor(
+    private shared: SharedDataService, 
+    private route: ActivatedRoute,
+    private audio: AudioPlayService,
+    ) { }
 
   ngOnInit(): void {
+    if (this.route.snapshot.paramMap.get('id')) {
+      this.shared.qrCode(this.route.snapshot.paramMap.get('id'));
+    } else {
+      this.initCamera();
+    }
+  }
+
+  private initCamera() {
     Html5Qrcode.getCameras().then(devices => {
       /**
        * devices would be an array of objects of type:

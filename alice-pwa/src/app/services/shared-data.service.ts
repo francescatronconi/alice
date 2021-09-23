@@ -239,6 +239,19 @@ export class SharedDataService {
     return result;
   }  
 
+  statusCssClasses(): { [cl: string]: boolean; } {
+    // to be used with [ngClass]
+    let result: {[cl: string]: boolean} = {};
+    this.play.tags.forEach(tag => {
+      result[`tag-${tag}`] = true;
+    });
+    this.scenario.badges.forEach(badge => {
+      result[`hasbadge-${badge.badge}`] = this.play.badges.includes(badge.badge);
+      result[`nobadge-${badge.badge}`] = !this.play.badges.includes(badge.badge);
+    });
+    return result;
+  }
+
 }
 
 export class StoryChapter {

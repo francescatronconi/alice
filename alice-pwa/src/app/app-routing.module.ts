@@ -27,12 +27,12 @@ const routes: Routes = [
   {path: 'badgemap/:id', component: BadgeMapComponent},
   {path: 'badgemap', component: BadgeMapComponent},
   {path: 'qrcode', component: QrCodePopupComponent},
+  {path: 'qrcode/:id', component: QrCodePopupComponent},
   {path: 'camera', component: CameraComponent},
   {path: 'partita', component: PartitaComponent},
   {path: ':key/story', component: TellStoryComponent},
   {path: 'credits', component: CreditsComponent},
   {path: 'privacy-policy', component: PrivacyPolicyComponent},
-  {path: 'trigger/:id', component: PrivacyPolicyComponent},
 ];
 
 @NgModule({
