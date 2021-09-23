@@ -31,7 +31,7 @@
 
     <g [ngClass]="areaClasses()">
         <g *ngFor="let area of areas" (click)="clickArea(area)" [class]="area.style">
-            <g [@badge]="badgeStatePin(area)" (@badge.done)="badgeAnimationDone($event)" [innerHTML]="xml(area) | safe: 'html'"></g>
+            <g [@badge]="badgeStatePin(area)" [innerHTML]="xml(area) | safe: 'html'"></g>
         </g>
     </g>
 

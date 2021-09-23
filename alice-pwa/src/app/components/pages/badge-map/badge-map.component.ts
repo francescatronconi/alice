@@ -167,6 +167,9 @@ export class BadgeMapComponent implements OnInit {
     while (x.includes('href="~/')) {
       x = x.replace('href="~/', `href="${environment.gameUrl}/`);
     }
+    while (x.includes('{score}')) {
+      x = x.replace('{score}', `${this.shared.play.score}`);
+    }
     return x;
   }
 
@@ -203,7 +206,6 @@ export class BadgeMapComponent implements OnInit {
 
   private handleFullClickArea(area: BadgeMapItem) {
     this.triggerAction(this.selected);
-    this.shared.triggerAction(`${this.selected.checkBadge(this.shared) ? 'activate' : 'search'}:${this.selected.id}`);
     this.closeSelected();
   }
 
@@ -225,10 +227,6 @@ export class BadgeMapComponent implements OnInit {
     this.shared.triggerAction(`${area.checkBadge(this.shared) ? 'activate' : 'search'}:${area.id}`);
   }
 
-  badgeAnimationDone(event:any) {
-    //console.log(event);
-  }
-
   clickBackground() {
     if (this.selected) {
       this.audio.play('action');
@@ -239,7 +237,6 @@ export class BadgeMapComponent implements OnInit {
   clickTrigger(trig: TriggerMapItem) {
     this.audio.play('action');
     this.shared.triggerAction(`${trig.element.getAttribute('id')}:${this.selected.id}`);
-    //console.log(`${trig.element.getAttribute('id')}:${this.selected.id}`);
   }
 
 }

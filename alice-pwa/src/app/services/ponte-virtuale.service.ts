@@ -247,9 +247,6 @@ export class GameEventQrCode {
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventQrCode);
     let r = /qrcode:(.*)/;
-    if (event.qrcode) {
-      console.log(play.event, rule);
-    }
     return event.qrcode && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.qrcode;
   }
 

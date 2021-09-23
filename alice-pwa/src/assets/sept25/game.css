@@ -13,6 +13,11 @@
     src: url('~/fonts/BodoniFLF.bold.ttf') format("truetype");
 }
 
+@font-face {
+    font-family: 'Sweet Dream';
+    src: url('~/fonts/Sweet-Dreamdemo.ttf') format("truetype");
+}
+
 h2 {
     text-transform: uppercase;
     text-align: center;

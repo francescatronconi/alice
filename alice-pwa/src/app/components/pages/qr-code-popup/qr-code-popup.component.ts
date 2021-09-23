@@ -40,7 +40,6 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
        * devices would be an array of objects of type:
        * { id: "id", label: "label" }
        */
-      console.log('devices', devices);
       if (devices && devices.length) {
         this.devices = devices;
         if (this.devices.length === 1) {
@@ -75,7 +74,6 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
       },
       qrCodeMessage => {
         // do something when code is read. For example:
-        console.log(`QR Code detected: ${qrCodeMessage}`);
         this.shared.qrCode(qrCodeMessage);
         this.code = qrCodeMessage;
         this.stopCamera();
@@ -99,7 +97,6 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
     if (this.scanner) {
       this.scanner.stop()
       .then((ignore) => {
-        console.log('stop ok', ignore);
       })
       .catch((error) => {
         console.log('stop error', error);

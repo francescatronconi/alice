@@ -8,7 +8,7 @@
         {"trigger": "search:badge-dodo", "effect": {"location": "map-dodo"}},
         {"trigger": "visit:map-dodo", "effect": {"story": [{"read": "tappe/dodo.html"}]}},
         {"trigger": "search:badge-cappellaio-matto", "effect": {"location": "map-cappellaio-matto"}},
-        {"trigger": "visit:map-cappellaio-matto", "effect": {"story": [{"read": "tappe/cappellaio-mattohtml"}]}},
+        {"trigger": "visit:map-cappellaio-matto", "effect": {"story": [{"read": "tappe/cappellaio-matto.html"}]}},
         {"trigger": "search:badge-re-cuori", "effect": {"location": "map-re-cuori"}},
         {"trigger": "visit:map-re-cuori", "effect": {"story": [{"read": "tappe/re-cuori.html"}]}},
         {"trigger": "search:badge-regina-cuori", "effect": {"location": "map-regina-cuori"}},
@@ -23,10 +23,14 @@
         {"trigger": "visit:map-humpty-dumpty", "effect": {"story": [{"read": "tappe/humpty-dumpty.html"}]}},
         {"trigger": "search:badge-stregatto", "effect": {"location": "map-stregatto"}},
         {"trigger": "visit:map-stregatto", "effect": {"story": [{"read": "tappe/stregatto.html"}]}},
-        {"trigger": "qrcode:4482", "effect": {"route": [""], "tag": "stregatto-testa", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-1.html"}]}},
-        {"trigger": "qrcode:3795", "effect": {"route": [""], "tag": "stregatto-coda", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-2.html"}]}},
-        {"trigger": "qrcode:8081", "effect": {"route": [""], "tag": "stregatto-corpo", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-3.html"}]}},
+        {"trigger": "qrcode:4482", "effect": {"score": 1, "route": ["badgemap", "badges", "badge-stregatto"], "tag": "stregatto-testa", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-1.html"}]}},
+        {"trigger": "qrcode:3795", "effect": {"score": 1, "route": ["badgemap", "badges", "badge-stregatto"], "tag": "stregatto-coda", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-2.html"}]}},
+        {"trigger": "qrcode:8081", "rules": [
+            {"condition": "noTag:stregatto-corpo", "effect": {"tag": "stregatto-corpo", "badge": "badge-stregatto", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-3.html"}]}}
+        ]},
         {"condition": {"badges": [
+            "punteggio-gioco",
             "badge-brucaliffo",
             "badge-dodo",
             "badge-cappellaio-matto",

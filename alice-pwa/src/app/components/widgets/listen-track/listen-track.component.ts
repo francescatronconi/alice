@@ -29,11 +29,9 @@ export class ListenTrackComponent implements OnInit {
   }
 
   onEnded(event: any) {
-    console.log(event);
   }
 
   logMe(something) {
-    console.log(something);
   }
 
   clickAudio() {
