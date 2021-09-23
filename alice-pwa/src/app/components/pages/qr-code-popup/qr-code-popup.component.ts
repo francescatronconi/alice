@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
@@ -24,6 +24,7 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
     private shared: SharedDataService, 
     private route: ActivatedRoute,
     private audio: AudioPlayService,
+    private router: Router,
     ) { }
 
   ngOnInit(): void {
@@ -112,6 +113,10 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
     let lower = Math.min(h, w);
     let upper = Math.max(h, w);
     return {width: `${0.9 * Math.min(upper, lower * this.ratio)}px`};
+  }
+
+  emergencyCode() {
+    this.router.navigate(['qrcode', '8081']);
   }
 
 }

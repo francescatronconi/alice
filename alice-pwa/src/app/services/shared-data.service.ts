@@ -164,6 +164,7 @@ export class SharedDataService {
 
   readCurrentStory() {
     this.currentStory.published = true;
+    // this is not clear: is it breaking *ngIf="this.currentStory" ?
     this.findNextStory();
     this.savePlay();
   }

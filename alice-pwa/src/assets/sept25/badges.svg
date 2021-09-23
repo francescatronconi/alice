@@ -3,84 +3,93 @@
    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
 
    <g id="mappa-agora">
-      <g class="item" id="g2776">
-         <image style="display:inline" y="11.237244" x="-14.644661" id="image2732" xlink:href="~/badges/mappa.jpg" preserveAspectRatio="none" height="100" width="100" transform="rotate(-15)" />
-   <g
-      class="item"
-      id="punteggio-gioco">
-      <path
-         id="path2429-7"
-         d="m 134.8475,55.600808 c 0.50689,7.667213 -5.66911,11.856084 -13.01895,12.295183 -6.52764,0.389979 -11.82476,-2.52331 -13.06294,-8.146294 -1.45404,-6.603323 6.77293,-15.217429 14.52855,-14.86952 7.58448,0.340234 11.18195,5.103045 11.55334,10.720631 z"
-         style="display:inline;opacity:1;vector-effect:none;fill:#ab662d;fill-opacity:1;stroke:none;stroke-width:0.37930176;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
-      <path
-         style="display:inline;opacity:1;vector-effect:none;fill:#d3e366;fill-opacity:1;stroke:none;stroke-width:0.37556869;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         d="m 133.73027,51.889969 c 1.04209,7.829948 -3.55513,13.015778 -10.74249,14.014321 -6.02002,0.836366 -12.66684,0.10905 -14.32982,-5.995041 -1.74894,-6.419613 4.36424,-15.964233 12.07251,-16.66958 7.51753,-0.68789 12.30486,3.428759 12.9998,8.6503 z"
-         id="path2431-6" />
-      <image
-         y="33.819931"
-         x="109.52431"
-         id="image4883"
-         xlink:href="~/badges/carte-sml.png"
-         preserveAspectRatio="none"
-         height="17.11879"
-         width="24.205967" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.34022617px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
-         x="109.42545"
-         y="74.845764"
-         id="text4906"><tspan
-         id="tspan4904"
-         x="109.42545"
-         y="74.845764"
-         style="fill:#512603;fill-opacity:1;stroke-width:0.23350567">Punteggio</tspan></text>
-      <text
-         id="text4910"
-         y="65.088852"
-         x="121.60609"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1"
-         xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1"
-         y="65.088852"
-         x="121.60609"
-         id="tspan4908">{score}</tspan></text>
-      <path
-         style="display:inline;opacity:1;vector-effect:none;fill:#ab662d;fill-opacity:1;stroke:none;stroke-width:0.41754198;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
-         d="m 83.375271,117.58202 c 0.780091,6.03721 -8.724621,9.33556 -20.035843,9.68131 -10.045877,0.30707 -18.198013,-1.98687 -20.103542,-6.41445 -2.237732,-5.19949 10.423372,-11.9823 22.35908,-11.70835 11.672328,0.2679 17.208745,4.01817 17.780305,8.44149 z"
-         id="path4912" />
-      <path
-         id="path4914"
-         d="m 81.655882,114.66009 c 1.603751,6.16535 -5.471258,10.2487 -16.532427,11.03496 -9.264663,0.65856 -19.493955,0.0859 -22.05324,-4.72053 -2.691575,-5.05485 6.716459,-12.57034 18.579295,-13.12574 11.569293,-0.54164 18.936876,2.69983 20.006372,6.81131 z"
-         style="display:inline;opacity:1;vector-effect:none;fill:#d3e366;fill-opacity:1;stroke:none;stroke-width:0.41343257;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
-      <image
-         width="24.205967"
-         height="17.11879"
-         preserveAspectRatio="none"
-         xlink:href="~/badges/carte-sml.png"
-         id="image4916"
-         x="61.220444"
-         y="100.43257" />
-      <text
-         id="text4920"
-         y="121.6763"
-         x="17.49222"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.34022617px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
-         xml:space="preserve"><tspan
-         style="fill:#512603;fill-opacity:1;stroke-width:0.23350567"
-         y="121.6763"
-         x="17.49222"
-         id="tspan4918">Punteggio</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1"
-         x="58.210308"
-         y="124.44882"
-         id="text4924"><tspan
-         id="tspan4922"
-         x="58.210308"
-         y="124.44882"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1">{score}</tspan></text>
-   </g>
+      <g
+         class="item"
+         id="g2776">
+         <image
+            style="display:inline"
+            y="11.237244"
+            x="-14.644661"
+            id="image2732"
+            xlink:href="~/badges/mappa.jpg"
+            preserveAspectRatio="none"
+            height="100"
+            width="100"
+            transform="rotate(-15)" />
+         <path
+            id="path2429-7"
+            d="m 134.8475,55.600808 c 0.50689,7.667213 -5.66911,11.856084 -13.01895,12.295183 -6.52764,0.389979 -11.82476,-2.52331 -13.06294,-8.146294 -1.45404,-6.603323 6.77293,-15.217429 14.52855,-14.86952 7.58448,0.340234 11.18195,5.103045 11.55334,10.720631 z"
+            style="display:inline;opacity:1;vector-effect:none;fill:#ab662d;fill-opacity:1;stroke:none;stroke-width:0.37930176;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+         <path
+            style="display:inline;opacity:1;vector-effect:none;fill:#d3e366;fill-opacity:1;stroke:none;stroke-width:0.37556869;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+            d="m 133.73027,51.889969 c 1.04209,7.829948 -3.55513,13.015778 -10.74249,14.014321 -6.02002,0.836366 -12.66684,0.10905 -14.32982,-5.995041 -1.74894,-6.419613 4.36424,-15.964233 12.07251,-16.66958 7.51753,-0.68789 12.30486,3.428759 12.9998,8.6503 z"
+            id="path2431-6" />
+         <image
+            y="29.3015"
+            x="107.04321"
+            id="image4883-4-5"
+            xlink:href="~/badges/carte-sml.png"
+            preserveAspectRatio="none"
+            height="21.63722"
+            width="30.595028"
+            style="display:inline" />
+         <text
+            xml:space="preserve"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.34022617px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+            x="109.42545"
+            y="74.845764"
+            id="text4906"><tspan
+            id="tspan4904"
+            x="109.42545"
+            y="74.845764"
+            style="fill:#512603;fill-opacity:1;stroke-width:0.23350567">Punteggio</tspan></text>
+         <text
+            id="text4910"
+            y="65.088852"
+            x="121.60609"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1"
+            xml:space="preserve"><tspan
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1"
+            y="65.088852"
+            x="121.60609"
+            id="tspan4908">{score}</tspan></text>
+         <path
+            style="display:inline;opacity:1;vector-effect:none;fill:#ab662d;fill-opacity:1;stroke:none;stroke-width:0.46910018;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+            d="m 85.979444,117.58202 c 0.984638,6.03721 -11.012286,9.33556 -25.289399,9.68131 -12.679986,0.30707 -22.969676,-1.98687 -25.37485,-6.41445 -2.824483,-5.19949 13.156463,-11.9823 28.221808,-11.70835 14.732905,0.2679 21.721014,4.01817 22.442441,8.44149 z"
+            id="path4912" />
+         <path
+            id="path4914"
+            d="m 83.809218,114.66009 c 2.024268,6.16535 -6.905864,10.2487 -20.86736,11.03496 -11.693931,0.65856 -24.605425,0.0859 -27.835774,-4.72053 -3.397328,-5.05485 8.477568,-12.57034 23.450934,-13.12574 14.602852,-0.54164 23.902274,2.69983 25.2522,6.81131 z"
+            style="display:inline;opacity:1;vector-effect:none;fill:#d3e366;fill-opacity:1;stroke:none;stroke-width:0.46448332;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+         <image
+            y="99.243507"
+            x="56.173355"
+            id="image4883-4"
+            xlink:href="~/badges/carte-sml.png"
+            preserveAspectRatio="none"
+            height="21.63722"
+            width="30.595028"
+            style="display:inline" />
+         <text
+            id="text4920"
+            y="121.6763"
+            x="9.4066076"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.34022617px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+            xml:space="preserve"><tspan
+            style="fill:#512603;fill-opacity:1;stroke-width:0.23350567"
+            y="121.6763"
+            x="9.4066076"
+            id="tspan4918">Punteggio</tspan></text>
+         <text
+            xml:space="preserve"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1"
+            x="50.124695"
+            y="124.44882"
+            id="text4924"><tspan
+            id="tspan4922"
+            x="50.124695"
+            y="124.44882"
+            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1">{score}</tspan></text>
       </g>
       <g class="item badge" id="badge-pinco-panco" transform="matrix(0.1,0,0,0.1,8.6224736,57.483652)">
          <image y="-50" x="-50" id="image2300" xlink:href="~/badges/pinco-panco.jpg" preserveAspectRatio="none" height="100" width="100" />
