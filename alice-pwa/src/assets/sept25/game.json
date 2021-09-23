@@ -4,15 +4,20 @@
     "rules": [
         {"trigger": "start", "effect": {"route": [""], "story": [{"read": "intro.html"}]}},
 
-        {"trigger": "search:badge-brucaliffo", "effect": {"location": "map-brucaliffo"}},
-        {"trigger": "visit:map-brucaliffo", "effect": {"story": [{"read": "tappe/brucaliffo.html"}], "options": "ready-qrcode"}},
+        {"trigger": "search:badge-brucaliffo", "effect": {"story": [{"read": "tappe/brucaliffo.html"}], "location": "map-brucaliffo"}},
+        {"trigger": "visit:map-brucaliffo", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:2593", "rules": [
-            {"condition": "noTag:brucaliffo", "effect": {"tag": "brucaliffo", "badge": "badge-brucaliffo", "score": 1}},
+            {"condition": {"noTag": "brucaliffo"}, "effect": {"tag": "brucaliffo", "badge": "badge-brucaliffo", "score": 1}},
             {"effect": {"route": ["badgemap", "badges", "badge-brucaliffo"], "story": [{"read": "tappe/brucaliffo-success.html"}]}}
         ]},
 
-        {"trigger": "search:badge-dodo", "effect": {"location": "map-dodo"}},
-        {"trigger": "visit:map-dodo", "effect": {"story": [{"read": "tappe/dodo.html"}]}},
+        {"trigger": "search:badge-dodo", "effect": {"story": [{"read": "tappe/dodo.html"}], "location": "map-dodo"}},
+        {"trigger": "visit:map-dodo", "effect": {"options": "ready-qrcode"}},
+        {"trigger": "qrcode:6369", "rules": [
+            {"condition": {"noTag": "dodo"}, "effect": {"tag": "dodo", "badge": "badge-dodo", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-dodo"], "story": [{"read": "tappe/dodo-success.html"}]}}
+        ]},
+
         {"trigger": "search:badge-cappellaio-matto", "effect": {"location": "map-cappellaio-matto"}},
         {"trigger": "visit:map-cappellaio-matto", "effect": {"story": [{"read": "tappe/cappellaio-matto.html"}]}},
         {"trigger": "search:badge-re-cuori", "effect": {"location": "map-re-cuori"}},
@@ -32,7 +37,7 @@
         {"trigger": "qrcode:4482", "effect": {"score": 1, "route": ["badgemap", "badges", "badge-stregatto"], "tag": "stregatto-testa", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-1.html"}]}},
         {"trigger": "qrcode:3795", "effect": {"score": 1, "route": ["badgemap", "badges", "badge-stregatto"], "tag": "stregatto-coda", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-2.html"}]}},
         {"trigger": "qrcode:8081", "rules": [
-            {"condition": "noTag:stregatto-corpo", "effect": {"tag": "stregatto-corpo", "badge": "badge-stregatto", "score": 1}},
+            {"condition": {"noTag":"stregatto-corpo"}, "effect": {"tag": "stregatto-corpo", "badge": "badge-stregatto", "score": 1}},
             {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-3.html"}]}}
         ]},
         {"condition": {"badges": [
