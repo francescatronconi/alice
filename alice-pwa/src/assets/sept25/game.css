@@ -101,9 +101,15 @@ h2 {
     vertical-align: -0.6em;
 }
 
-.stregatto-full {
+.stregatto-parte {
     display: none;
 }
-.tag-pippo .stregatto-full {
+.tag-stregatto-corpo .stregatto-corpo {
+    display: inline;
+}
+.tag-stregatto-testa .stregatto-testa {
+    display: inline;
+}
+.tag-stregatto-coda .stregatto-coda {
     display: inline;
 }
