@@ -50,6 +50,10 @@ h2 {
     font-size: 1.2em;
     color: #0277c1;
 }
+.narrative-image {
+    width: 100%;
+    text-align: center;
+}
 
 .welcome {
     font-family: "Belleza";
