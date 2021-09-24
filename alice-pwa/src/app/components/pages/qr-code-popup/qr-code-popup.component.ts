@@ -20,6 +20,7 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
   code: string;
   ratio = 1.3333;
   emergency = '';
+  noCamera: boolean;
 
   constructor(
     private shared: SharedDataService, 
@@ -29,6 +30,7 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
     ) { }
 
   ngOnInit(): void {
+    this.noCamera = false;
     if (this.route.snapshot.paramMap.get('id')) {
       this.shared.qrCode(this.route.snapshot.paramMap.get('id'));
     } else {
@@ -37,6 +39,7 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
   }
 
   private initCamera() {
+    this.noCamera = false;
     Html5Qrcode.getCameras().then(devices => {
       /**
        * devices would be an array of objects of type:
@@ -50,9 +53,23 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
         // .. use this to start scanning.
       }
     }).catch(err => {
+      this.handleErrors();
       console.log(err);
       // handle err
     });
+  }
+
+  handleErrors() {
+    this.stopCamera();
+    this.noCamera = true;
+  }
+
+  clickNoCamera() {
+    this.audio.play('action');
+    if (this.scanner) {
+      this.stopCamera();
+    }
+    this.noCamera = true;
   }
 
   ngOnDestroy(): void {
@@ -91,6 +108,7 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
   }
 
   clickDevice(device: CameraDevice) {
+    this.noCamera = false;
     this.audio.play('action');
     this.startCamera(device);
   }
@@ -117,6 +135,7 @@ export class QrCodePopupComponent implements OnInit, OnDestroy {
   }
 
   emergencyCode(code: string) {
+    this.audio.play('action');
     this.router.navigate(['qrcode', code]);
   }
 
