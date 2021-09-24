@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { SharedDataService, SvgMap } from 'src/app/services/shared-data.service';
 
 @Component({
@@ -13,10 +14,17 @@ export class CheckInComponent implements OnInit {
 
   constructor(
     public shared: SharedDataService,
+    private router: Router,
+    private audio: AudioPlayService,
   ) {}
 
   ngOnInit(): void {
-    //this.router.navigate(this.shared.scenario.buttons[0].action);
     this.svgmap = this.shared.getSvgMap('welcome');
   }
+
+  clickPlay() {
+    this.audio.play('action');
+    this.router.navigate(this.shared.scenario.buttons[0].action);
+  }
+
 }

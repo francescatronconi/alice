@@ -1,7 +1,8 @@
-<div class="blackdim" (click)="clickOk()"></div>
-<div class="fullpage narrative" >
+<div class="blackdim"></div>
+<div class="fullpage narrative" (click)="clickOk()">
     <div class="modal" (click)="clickOk()">
         <div *ngIf="storyA" app-read-story [story]="storyA"></div>
         <div *ngIf="storyB" app-read-story [story]="storyB"></div>
     </div>
+    <div (click)="clickOk()" style="text-align: right;" class="button">&nbsp;</div>
 </div>
