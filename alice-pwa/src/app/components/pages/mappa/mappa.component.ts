@@ -178,7 +178,9 @@ export class MappaComponent implements OnInit, OnDestroy {
       source: new VectorSource({ features: [] })
     });
     this.gpsIsNeeded = this.shared.scenario.locations.filter(location => location.near).length > 0;
-    this.shared.scenario.locations
+    let sorted = this.shared.scenario.locations.map(location => location);
+    sorted.sort((a, b) => b.lat < a.lat ? -1 : 1)
+    sorted
       .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
       .filter(location => this.canusegps || !location.near)
       .forEach(location => {
