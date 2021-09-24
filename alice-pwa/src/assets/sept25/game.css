@@ -118,3 +118,8 @@ h2 {
 .tag-stregatto-coda .stregatto-coda {
     display: inline;
 }
+
+.panel-menu-list svg {
+    height: 50px;
+    width: 50px;
+}

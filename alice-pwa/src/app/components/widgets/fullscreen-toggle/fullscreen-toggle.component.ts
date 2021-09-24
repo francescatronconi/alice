@@ -11,12 +11,14 @@ export class FullscreenToggleComponent implements OnInit {
   
   fullscreen: boolean;
   d: any;
+  enabled: boolean;
   
   constructor() { }
 
   ngOnInit(): void {
     this.d = document;
     this.fullscreen = false;
+    this.enabled = (this.d.documentElement && this.d.documentElement.requestFullscreen) ? true: false;
   }
 
   requestFullscreen() {
