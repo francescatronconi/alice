@@ -82,6 +82,14 @@
                   "with": "src/environments/environment.dezhi.ts"
                 }
               ]
+            },
+            "papale": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.papale.ts"
+                }
+              ]
             }
           }
         },
@@ -99,7 +107,10 @@
             },
             "dezhi": {
               "browserTarget": "alice-pwa:build:dezhi"
-            }
+            },
+	    "papale": {
+		    "browserTarget": "alice-pwa:build:papale"
+	    }
           }
         },
         "extract-i18n": {
