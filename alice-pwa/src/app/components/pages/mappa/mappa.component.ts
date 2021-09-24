@@ -212,8 +212,7 @@ export class MappaComponent implements OnInit, OnDestroy {
         features: [this.youFeature]
       }),
     });
-    this.map.getLayers().insertAt(0, this.youLayer);
-    //this.map.addLayer(this.youLayer);
+    this.map.getLayers().insertAt(1, this.youLayer);
   }
 
   private addFeatureLocation(location: MapLocation) {
