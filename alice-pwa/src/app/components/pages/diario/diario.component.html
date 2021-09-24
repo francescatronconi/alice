@@ -1,5 +1,4 @@
-<div class="fullpage alice">
-    <h1>Diario di Alice</h1>
+<div class="fullpage narrative">
     <div *ngIf="shared.play" style="padding-bottom: 50px;">
         <ng-container *ngFor="let story of shared.play.story">
             <div *ngIf="story.published" app-read-story [story]="story"></div>

@@ -14,7 +14,9 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"]
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

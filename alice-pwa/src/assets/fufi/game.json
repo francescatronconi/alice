@@ -1,4 +1,5 @@
 {
+    "id": "fufi",
     "rules": [
         {
             "trigger": "start",
@@ -35,6 +36,7 @@
                 "badge": "badge-pappa"
             },
             "effect": {
+                "badge": "badge-fufi",
                 "story": [
                     {"read": "pera-pappa.html"}
                 ]
@@ -88,9 +90,16 @@
             "src": "nana.png"
         },
         {
+            "badge": "badge-fufi",
+            "src": "nana.png"
+        },
+        {
             "badge": "badge-gelsomina",
             "src": "gelsomina.png"
         }
+    ],
+    "svgmaps": [
+        {"id": "agora", "svg": "catmap.svg", "ids": ["star", "circle"]}
     ],
     "locations": [
         {"id":"pera", "name": "Piazza della Pera", "icon": "./assets/svg/cat.svg", 
@@ -98,6 +107,6 @@
         {"id":"spina", "name": "Chiesa della Spina", "icon": "./assets/svg/cat.svg", 
             "lon": 10.396527610113797, "lat": 43.71516029559875},
         {"id":"miracoli", "name": "Piazza dei Miracoli", "icon": "./assets/svg/cat.svg", 
-            "lon": 10.39463575948577, "lat": 43.72291597453732, "condition": {"badge": "badge-fufi"}}    
+            "lon": 10.39463575948577, "lat": 43.72291597453732, "condition": {"badge": "badge-fufi"}}
     ]
 }

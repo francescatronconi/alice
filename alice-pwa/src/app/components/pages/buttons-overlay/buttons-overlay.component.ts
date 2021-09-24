@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AudioPlayService } from 'src/app/services/audio-play.service';
 import { ButtonsMenuService, MenuButton } from 'src/app/services/buttons-menu.service';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
@@ -9,15 +10,20 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 })
 export class ButtonsOverlayComponent implements OnInit {
 
+  credits: string;
+
   constructor(
     public menu: ButtonsMenuService,
     private shared: SharedDataService,
+    private audio: AudioPlayService,
   ) { }
 
   ngOnInit(): void {
+    this.credits = this.shared.scenario.credits;
   }
 
   clickItem(button: MenuButton) {
+    this.audio.play('action');
     button.action(this.shared);
   }
 

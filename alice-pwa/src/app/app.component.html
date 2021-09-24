@@ -1,10 +1,34 @@
-<router-outlet></router-outlet>
-<div app-buttons-overlay></div>
-<ng-container *ngIf="!(shared.play)">
-        <div class="startdim"></div>
-        <div class="alice centralized">
-            <button class="buttonStartGame" (click)="shared.startGame()">Inizia la partita!</button>
-        </div>
+<ng-container *ngIf="!(shared.scenario)">
+    Caricamento...
 </ng-container>
-<div app-story-popup *ngIf="shared.currentStory"></div>
-<div app-option-popup *ngIf="!shared.currentStory && shared.options"></div>
+
+<div *ngIf="shared.scenario">
+    <app-inline-style></app-inline-style>
+    
+    <div *ngIf="svgFrame" app-svg-canvas [svgmap]="svgFrame"></div>
+    <ng-container *ngIf="!(shared.play)">
+        <div class="blackdim"></div>
+        <div class="fullpage narrative" >
+            <div class="modal" (click)="shared.startGame()">Inizia la partita!</div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="shared.play">
+        <router-outlet></router-outlet>
+        <div app-buttons-overlay></div>
+        <div app-face-challenge *ngIf="shared.play.challenge"></div>
+        <div app-story-popup *ngIf="shared.currentStory"></div>
+        <div app-option-popup *ngIf="!shared.currentStory && shared.options"></div>
+    </ng-container>
+</div>
+
+<div class="fixed-footer cookie-disclaimer" *ngIf="!cookies.stated">
+    <div>
+       Utilizziamo esclusivamente cookie tecnici e cookie analitici a scopo di rilevamento statistico delle visite.
+       Se continui ad utilizzare questo sito noi assumiamo che tu ne sia felice! <br />
+       Se così non fosse puoi <a (click)="cookies.doDeny()">negare</a> il tuo consenso.
+       Inoltre puoi cambiare questa impostazione dalla pagina stessa dove trovi la nostra <a href="#/privacy-policy">privacy policy</a>.
+    </div>
+    <div class="as-button" (click)="cookies.doAccept()">OK</div>
+ </div>
+
+<div *ngIf="false" app-rotate-screen></div>

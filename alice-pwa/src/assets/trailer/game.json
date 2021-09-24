@@ -1,0 +1,84 @@
+{
+    "id": "lucca-trailer-v05",
+    "credits": "credits.html",
+    "rules": [
+        {"trigger": "start", "effect": {"route": [""], "story": [{"read": "intro.html"}]}},
+        {"trigger": "search:badge-bianconiglio", "rules": [
+            {"condition": {"noTag": "quiz-bianconiglio-done"}, "effect": {"options": "quiz-bianconiglio"}},
+            {"condition": {"tag": "quiz-bianconiglio-done"}, "effect": {"location": "torre-guinigi"}}
+        ]},
+        {"trigger": "search:badge-alice", "rules": [
+            {"condition": {"noTag": "quiz-alice-done"}, "effect": {"options": "quiz-alice"}},
+            {"condition": {"tag": "quiz-alice-done"}, "effect": {"location": "piazza-anfiteatro"}}
+        ]},
+        {"trigger": "visit:torre-guinigi", "rules": [
+            {"condition": {"noTag": "quiz-bianconiglio-done"}, "effect": {"story": [{"read": "quiz-bianconiglio-locked.html"}], "route": ["badgemap", "badges", "badge-bianconiglio"]}},
+            {"condition": {"tag": "quiz-bianconiglio-done"}, "effect": {"story": [{"read": "torre-guinigi.html"}], "challenge": "torre-guinigi"}}
+        ]},
+        {"trigger": "success:torre-guinigi", "effect": {"route": ["badgemap", "badges", "badge-bianconiglio"], "story": [{"read": "torre-guinigi-success.html"}], "badge": "badge-bianconiglio"}},
+        {"trigger": "failed:torre-guinigi", "effect": {"route": ["mappa"], "story": [{"read": "torre-guinigi-failed.html"}], "challenge": "torre-guinigi"}},
+        {"trigger": "visit:piazza-anfiteatro", "rules": [
+            {"condition": {"noTag": "quiz-alice-done"}, "effect": {"story": [{"read": "quiz-alice-locked.html"}], "route": ["badgemap", "badges", "badge-alice"]}},
+            {"condition": {"tag": "quiz-alice-done"}, "effect": {"story": [{"read": "piazza-anfiteatro.html"}], "challenge": "piazza-anfiteatro"}}
+        ]},
+        {"trigger": "success:piazza-anfiteatro", "effect": {"route": ["badgemap", "badges", "badge-alice"], "story": [{"read": "piazza-anfiteatro-success.html"}], "badge": "badge-alice"}},
+        {"trigger": "failed:piazza-anfiteatro", "effect": {"route": ["mappa"], "story": [{"read": "piazza-anfiteatro-failed.html"}], "challenge": "piazza-anfiteatro"}},
+        {"condition": {"badges": ["badge-alice", "badge-bianconiglio"], "noTag": "victory-shown"}, "effect": {
+            "story": [{"read": "victory.html"}], "tag": "victory-shown"
+        }}
+        ],  
+        "options": [
+            {"id": "quiz-alice", "read": "quiz-alice.html", "options": [
+                {"text": "... mangia un pasticcino", "effect": {"story": [{"read": "quiz-alice-success.html"}], "tag": "quiz-alice-done", "location": "piazza-anfiteatro"}},
+                {"text": "... beve un tè", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
+                {"text": "... annusa un giglio", "effect": {"story": [{"read": "quiz-alice-failed.html"}], "options": "quiz-alice"}},
+                {"text": "Non lo so", "effect": {}}
+            ]},
+            {"id": "quiz-bianconiglio", "read": "quiz-bianconiglio.html", "options": [
+                {"text": "I dadi", "effect": {"story": [{"read": "quiz-bianconiglio-failed.html"}], "options": "quiz-bianconiglio"}},
+                {"text": "I guanti", "effect": {"story": [{"read": "quiz-bianconiglio-success.html"}], "tag": "quiz-bianconiglio-done", "location": "torre-guinigi"}},
+                {"text": "I gemelli d'oro", "effect": {"story": [{"read": "quiz-bianconiglio-failed.html"}], "options": "quiz-bianconiglio"}},
+                {"text": "Non lo so", "effect": {}}
+            ]}
+        ],
+        "badges": [
+        {"badge": "badge-alice", "src": "cat.svg"},
+        {"badge": "badge-bianconiglio", "src": "cat.svg"}
+    ],
+    "svgmaps": [
+        {"id": "welcome", "svg": "books-frame.svg", "ids": []},
+        {"id": "frame", "svg": "books-frame.svg", "ids": []},
+        {"id": "badges", "svg": "copertina-alice.svg", "background": "bosco", "ids": ["badge-alice", "badge-bianconiglio"]},
+        {"id": "torre-guinigi", "svg": "torre-guinigi.svg", "background": "palazzo-pretorio", "ids": []},
+        {"id": "piazza-anfiteatro", "svg": "piazza-anfiteatro.svg", "background": "pietro-leopoldo-bg", "ids": []}
+    ],
+    "gui": [
+        {"id": "agora", "svgmap": "badges", "items": [
+            {}
+        ]}
+    ],
+    "locations": [
+        {"id":"torre-guinigi", "name": "Torre Guinigi", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "description": "Torre Guinigi", 
+        "lon": 10.507002229542898, "lat": 43.8436863982509, "near": false},
+        {"id":"piazza-anfiteatro", "name": "Piazza Anfiteatro", "icon": "./assets/trailer/mappa/spade.png", "anchor": [0.5, 1], "description": "Piazza Anfiteatro", 
+        "lon": 10.506167694742302, "lat": 43.845341075353694, "near": false}
+        ],
+    "challenges": [
+        {"id": "torre-guinigi", "code": "identikit", "svgmap": "torre-guinigi", "options": []},
+        {"id": "piazza-anfiteatro", "code": "identikit", "svgmap": "piazza-anfiteatro", "options": []}
+    ],
+    "audio": [
+        {"id": "action", "src": "audio/action.ogg"}
+    ],
+    "buttons": [
+        {"id": "badges", "icon": "./assets/trailer/badge.svg", "action": ["badgemap", "badges"]},
+        {"id": "mappa", "icon": "./assets/trailer/mappa.svg", "action": ["mappa"]},
+        {"id": "credits", "icon": "./assets/svg/credits.svg", "action": ["credits"]}
+    ],
+    "map": {
+        "user": {"icon": "/mappa/head.png", "anchor": [0.5, 1]},
+        "lon": 10.506937856535545, 
+        "lat": 43.84369534529272, 
+        "zoom": 15
+    }
+}

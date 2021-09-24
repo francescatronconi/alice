@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MapLocation} from './shared-data.service';
+import { MapLocation } from './shared-data.service';
+import { SvgMap } from './shared-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,14 +19,21 @@ export class PonteVirtualeService {
 
   checkAndRunRule(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
     if (
+      !rule.trigger || 
+      GameEventTriggerAction.validEvent(rule, scenario, play) ||
       GameEventStart.validEvent(rule, scenario, play) ||
-      GameEventVisit.validEvent(rule, scenario, play)
+      GameEventVisit.validEvent(rule, scenario, play) ||
+      GameEventSuccessfulChallenge.validEvent(rule, scenario, play) ||
+      GameEventFailedChallenge.validEvent(rule, scenario, play) ||
+      GameEventQrCode.validEvent(rule, scenario, play)
       ) {
-        if (rule.effect) {
-          this.applyEffect(rule.effect, scenario, play);
-        }
-        if (rule.rules) {
-          rule.rules.forEach(sub => this.checkAndRunRule(sub, scenario, play));
+        if(!rule.condition || this.checkCondition(rule.condition, play, scenario)) {
+          if (rule.effect) {
+            this.applyEffect(rule.effect, scenario, play);
+          }
+          if (rule.rules) {
+            rule.rules.forEach(sub => this.checkAndRunRule(sub, scenario, play));
+          }
         }
     }
   }
@@ -35,8 +43,33 @@ export class PonteVirtualeService {
     this.runScenarioRules(scenario, play);
   }
 
+  trigger(scenario: GameScenario, play: GamePlay, action: string) {
+    play.event = new GameEventTriggerAction(action);
+    this.runScenarioRules(scenario, play);
+  }
+
+  successfulChallenge(scenario: GameScenario, play: GamePlay) {
+    play.event = new GameEventSuccessfulChallenge(play.challenge.challenge);
+    play.challenge = null;
+    this.runScenarioRules(scenario, play);
+  }
+
+  failedChallenge(scenario: GameScenario, play: GamePlay) {
+    play.event = new GameEventFailedChallenge(play.challenge.challenge);
+    play.challenge = null;
+    this.runScenarioRules(scenario, play);
+  }
+
+  cancelChallenge(scenario: GameScenario, play: GamePlay) {
+    play.challenge = null;
+  }
+
+  qr(scenario: GameScenario, play: GamePlay, code: string) {
+    play.event = new GameEventQrCode(code);
+    this.runScenarioRules(scenario, play);
+  }
+
   apply(rule: GameRule, scenario: GameScenario, play: GamePlay): void {
-    console.log(rule)
     if(this.checkCondition(rule.condition, play, scenario)) {
       this.applyEffect(rule.effect, scenario, play)
     }
@@ -45,8 +78,12 @@ export class PonteVirtualeService {
   checkCondition(condition: GameCondition, play:GamePlay, scenario:GameScenario): boolean {
     let check: boolean = true;
     if(GameRule.validCondition(condition)) {
+      // DEBT refactor this so that each class takes care of its own code
       if (GameConditionBadge.valid(condition as GameConditionBadge)) {
         check = check && GameConditionBadge.check(condition as GameConditionBadge, play);
+      }
+      if (GameConditionBadges.valid(condition as GameConditionBadges)) {
+        check = check && GameConditionBadges.check(condition as GameConditionBadges, play);
       }
       if (GameConditionNoBadge.valid(condition as GameConditionNoBadge)) {
         check = check && GameConditionNoBadge.check(condition as GameConditionNoBadge, play);
@@ -62,36 +99,22 @@ export class PonteVirtualeService {
   }
 
   applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
-    if (GameEffectStory.valid(effect as GameEffectStory)) {
-      GameEffectStory.run(effect as GameEffectStory, scenario, play);
-    }
-    if (GameEffectBadge.valid(effect as GameEffectBadge)) {
-      GameEffectBadge.run(effect as GameEffectBadge, scenario, play);
-    }
-    if (GameEffectOptions.valid(effect as GameEffectOptions)) {
-      GameEffectOptions.run(effect as GameEffectOptions, scenario, play);
-    }
-    if (GameEffectScore.valid(effect as GameEffectScore)) {
-      GameEffectScore.run(effect as GameEffectScore, scenario, play);
-    }
-    if (GameEffectTag.valid(effect as GameEffectTag)) {
-      GameEffectTag.run(effect as GameEffectTag, scenario, play);
-    }
+    GameEffect.validateAndRun(effect, scenario, play);
   }
 
-  getOptions(scenario: GameScenario, play: GamePlay) {
-    let options: Option[];
+  getOptions(scenario: GameScenario, play: GamePlay): GameOption {
+    let options: GameOption;
     if(play.options.length > 0) {
       scenario.options
       .filter((gameOption) => gameOption.id === play.options[0]) 
-      .forEach((gameOption) => (options = gameOption.options))
+      .forEach((gameOption) => (options = gameOption))
       }
     return options;
   }
 
   setOption(play: GamePlay, scenario: GameScenario, option: Option) {
-    this.applyEffect(option.effect, scenario, play)
     play.options.shift();
+    this.applyEffect(option.effect, scenario, play)
   }
   
   constructor(
@@ -106,12 +129,30 @@ export class PonteVirtualeService {
 
 export class GameScenario {
 
+  id: string;
   rules: GameRule[];
   badges: GameBadge[];
   options: GameOption[];
   locations: MapLocation[];
+  svgmaps: SvgMap[];
+  audio: AudioSource[];
   buttons: MapButton[];
+  challenges: GameChallenge[];
+  map: MapInitData;
+  credits: string;
 
+}
+
+export class MapInitData {
+  user?: MapIcon;
+  lat?: number;
+  lon?: number;
+  zoom: number;
+}
+
+export class MapIcon {
+  anchor?: number[];
+  icon: string;
 }
 
 export class GameEvent {
@@ -143,6 +184,69 @@ export class GameEventVisit {
 
 }
 
+export class GameEventTriggerAction {
+
+  action: string;
+
+  constructor(action: string) {
+    this.action = action;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventTriggerAction);
+    return event.action && rule.trigger === event.action;
+  }
+
+}
+
+export class GameEventSuccessfulChallenge {
+
+  success: string;
+
+  constructor(challenge: string) {
+    this.success = challenge;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventSuccessfulChallenge);
+    let r = /success:(.*)/;
+    return event.success && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.success;
+  }
+
+}
+
+export class GameEventFailedChallenge {
+
+  failed: string;
+
+  constructor(challenge: string) {
+    this.failed = challenge;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventFailedChallenge);
+    let r = /failed:(.*)/;
+    return event.failed && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.failed;
+  }
+
+}
+
+export class GameEventQrCode {
+
+  qrcode: string;
+
+  constructor(qrcode: string) {
+    this.qrcode = qrcode;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventQrCode);
+    let r = /qrcode:(.*)/;
+    return event.qrcode && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.qrcode;
+  }
+
+}
+
 export class GameRule {
 
   trigger: string;
@@ -153,9 +257,6 @@ export class GameRule {
   static validCondition(condition: GameCondition) {
     return condition ? true : false;
   }
-}
-
-export class GameEffect {
 }
 
 export class GameCondition {
@@ -173,6 +274,20 @@ export class GameConditionBadge extends GameCondition {
 
   static check(condition: GameConditionBadge, play: GamePlay) : boolean {
     return play.badges.includes(condition.badge);
+  }
+
+}
+export class GameConditionBadges extends GameCondition {
+  badges: string[];
+
+  static valid(condition: GameConditionBadges) {
+    return condition.badges ? true : false;
+  }
+
+  static check(condition: GameConditionBadges, play: GamePlay) : boolean {
+    return condition.badges
+    .filter(badge => !play.badges.includes(badge))
+    .length === 0;
   }
 
 }
@@ -216,6 +331,26 @@ export class GameConditionNoTag extends GameCondition {
   
 }
 
+// GameEffect
+
+export class GameEffect {
+  static _effects: typeof GameEffect[] = [];
+  static register(effectClass: typeof GameEffect) {
+    this._effects.push(effectClass);
+  }
+  static run(effect: GameEffect, scenario: GameScenario, play: GamePlay) {}
+  static valid(effect: GameEffect): boolean {
+    return false;
+  }
+  static validateAndRun(effect: GameEffect, scenario: GameScenario, play: GamePlay) {
+    this._effects.forEach(ec => {
+      if (ec.valid(effect)) {
+        ec.run(effect, scenario, play);
+      }
+    });
+  }
+}
+
 export class GameEffectStory extends GameEffect {
   story: GameEffectStoryItem[];
   static run(effect: GameEffectStory, scenario: GameScenario, play: GamePlay) {
@@ -225,20 +360,22 @@ export class GameEffectStory extends GameEffect {
     return effect.story ? true : false;
   }
 }
-
 export class GameEffectStoryItem {
   read?: string;
+  video?: string;
 }
+GameEffect.register(GameEffectStory);
 
 export class GameEffectBadge extends GameEffect {
   badge: string;
   static run(effect: GameEffectBadge, scenario: GameScenario, play: GamePlay) {
     if (!play.badges.includes(effect.badge)) play.badges.push(effect.badge);
   }
-  static valid(effect: GameEffectBadge) {
+  static valid(effect: GameEffectBadge): boolean {
     return effect.badge ? true : false;
   }
 }
+GameEffect.register(GameEffectBadge);
 
 export class GameEffectTag extends GameEffect {
   tag: string;
@@ -249,6 +386,48 @@ export class GameEffectTag extends GameEffect {
     return effect.tag ? true : false;
   }
 }
+GameEffect.register(GameEffectTag);
+
+export class GameEffectChallenge extends GameEffect {
+  challenge: string;
+  static run(effect: GameEffectChallenge, scenario: GameScenario, play: GamePlay) {
+    scenario.challenges
+    .filter(challenge => challenge.id === effect.challenge)
+    .forEach(challenge => {
+      GameChallenge.initPlay(challenge, scenario, play);
+    })
+  }
+  static valid(effect: GameEffectChallenge) {
+    return effect.challenge ? true : false;
+  }
+}
+GameEffect.register(GameEffectChallenge);
+
+export class GameEffectGoToLocation extends GameEffect {
+  location: string;
+  static run(effect: GameEffectGoToLocation, scenario: GameScenario, play: GamePlay) {
+    scenario.locations
+    .filter(l => l.id === effect.location)
+    .forEach(l => {
+      play.zoomTo = effect.location;
+    });
+  }
+  static valid(effect: GameEffectGoToLocation) {
+    return effect.location ? true : false;
+  }
+}
+GameEffect.register(GameEffectGoToLocation);
+
+export class GameEffectRoute extends GameEffect {
+  route: string[];
+  static run(effect: GameEffectRoute, scenario: GameScenario, play: GamePlay) {
+    play.route = effect.route.map(s => s);
+  }
+  static valid(effect: GameEffectRoute) {
+    return effect.route ? true : false;
+  }
+}
+GameEffect.register(GameEffectRoute);
 
 export class GameEffectScore extends GameEffect {
  score: number;
@@ -259,6 +438,7 @@ export class GameEffectScore extends GameEffect {
     return effect.score ? true : false;
   }
 }
+GameEffect.register(GameEffectScore);
 
 export class GameEffectOptions extends GameEffect {
   options: string;
@@ -269,9 +449,11 @@ export class GameEffectOptions extends GameEffect {
     return effect.options ? true : false;
   }
 }
+GameEffect.register(GameEffectOptions);
 
 export class GamePlay {
   
+  id: string;
   situation: string[];
   story: GamePlayStory[];
   badges: string[];
@@ -281,6 +463,9 @@ export class GamePlay {
   zoomTo: string;
   tags: string[];
   event: GameEvent;
+  challenge: GameChallengeData;
+  route: string[];
+  settings: {[setting:string]: string};
 
   constructor() {
     this.situation = [];
@@ -290,6 +475,9 @@ export class GamePlay {
     this.locationScore = [];
     this.score = 0;
     this.tags= [];
+    this.challenge = null;
+    this.route = null;
+    this.settings = {};
   }
 }
 
@@ -306,6 +494,7 @@ export class GameBadge {
 
 export class GameOption {
   id: string;
+  read: string;
   options: Option[];
 }
 
@@ -314,12 +503,82 @@ export class Option {
   effect: GameEffect;
 }
 
+export class GameChallenge {
+  static initPlay(challenge: GameChallenge, scenario: GameScenario, play: GamePlay) {
+    if ( GameChallengePlaceFeatures.check(challenge as GameChallengePlaceFeatures) ) {
+      GameChallengePlaceFeatures.init(challenge, scenario, play);
+    }
+    if ( GameChallengeIdentikit.check(challenge as GameChallengeIdentikit) ) {
+      GameChallengeIdentikit.init(challenge, scenario, play);
+    }
+  }
+  id: string;
+  code: string;
+}
+export class GameChallengeData {
+  challenge: string;
+  constructor(challenge: GameChallenge) {
+    this.challenge = challenge.id;
+  }  
+}
+
+export class GameChallengePlaceFeatures extends GameChallenge {
+  svgmap: string;
+  code: 'features';
+  success: string[];
+  static check(challenge: GameChallengePlaceFeatures): boolean {
+    return challenge.code === 'features';
+  }
+  static init(challenge: GameChallenge, scenario: GameScenario, play: GamePlay) {
+    play.challenge = {challenge: challenge.id, guess: {}} as GameChallengeData;
+  }
+}
+export class PlaceFeature {
+  id: string;
+  present: boolean;
+  image?: string;
+}
+export class GameChallengePlaceFeaturesGuess extends GameChallengeData {
+  guess: {[id: string]: boolean};
+}
+
+export class GameChallengeIdentikit extends GameChallenge {
+  svgmap: string;
+  code: 'identikit';
+  options: GameChallengeIdentikitOption[]
+  static check(challenge: GameChallengeIdentikit): boolean {
+    return challenge.code === 'identikit';
+  }
+  static init(challenge: GameChallenge, scenario: GameScenario, play: GamePlay) {
+    play.challenge = new GameChallengeIdentikitData(challenge as GameChallengeIdentikit);
+  }
+}
+export class GameChallengeIdentikitOption {
+  id: string;
+  options: number;
+  success: number; 
+}
+export class GameChallengeIdentikitData extends GameChallengeData {
+  options: {[id: string]: number};
+  constructor(challenge: GameChallengeIdentikit) {
+    super(challenge);
+    this.options = {}
+    challenge.options
+    .forEach(option => this.options[option.id] = 1);
+  }
+}
+
 export class MapButton {
 
   id: string;
   icon: string;
-  action: string;
+  action: string[];
+
 }
 
+export class AudioSource {
 
+  id: string;
+  src: string;
 
+}

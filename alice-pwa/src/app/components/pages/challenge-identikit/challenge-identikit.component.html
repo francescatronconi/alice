@@ -1,0 +1,46 @@
+<div #canvas *ngIf="svgmap" app-svg-canvas [svgmap]="svgmap" [css]="{'fullsvg': true, 'background-shadow': true}">
+    <svg:defs>
+        <style>
+            .identikit-option {
+                display: none;
+            }
+            .identikit-area-0 .identikit-option-0 {
+                display: inline;
+            }
+            .identikit-area-1 .identikit-option-1 {
+                display: inline;
+            }
+            .identikit-area-2 .identikit-option-2 {
+                display: inline;
+            }
+            .identikit-area-3 .identikit-option-3 {
+                display: inline;
+            }
+            .identikit-area-4 .identikit-option-4 {
+                display: inline;
+            }
+            .identikit-area-5 .identikit-option-5 {
+                display: inline;
+            }
+            .identikit-area-6 .identikit-option-6 {
+                display: inline;
+            }
+            .identikit-area-7 .identikit-option-7 {
+                display: inline;
+            }
+            .identikit-area-8 .identikit-option-8 {
+                display: inline;
+            }
+        </style>
+    </svg:defs>
+
+    <svg:g *ngIf="canvas.areas">
+        <svg:g *ngFor="let wrapper of wrapAreas(canvas.areas)">
+            <svg:g *ngIf="wrapper.options" (click)="clickWrapper(wrapper)" [class]="wrapper.getClass()">
+                <svg:g app-svg-area [area]="wrapper.area"></svg:g>
+            </svg:g>
+            <svg:g *ngIf="!wrapper.options" app-svg-area (onClickArea)="clickArea($event)" [area]="wrapper.area"></svg:g>
+        </svg:g>
+    </svg:g>
+    
+</div>

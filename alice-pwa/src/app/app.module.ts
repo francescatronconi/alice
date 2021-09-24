@@ -12,13 +12,30 @@ import { ListenTrackComponent } from './components/widgets/listen-track/listen-t
 import { TellStoryComponent } from './components/pages/tell-story/tell-story.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WatchVideoComponent } from './components/widgets/watch-video/watch-video.component';
-import { PopupComponent } from './components/pages/popup/popup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoryPopupComponent } from './components/pages/story-popup/story-popup.component';
 import { BadgeComponent } from './components/pages/badge/badge.component';
 import { ReadStoryComponent } from './components/widgets/read-story/read-story.component';
 import { OptionPopupComponent } from './components/pages/option-popup/option-popup.component';
 import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
+import { SafePipe } from './pipes/safe.pipe';
+import { ShineComponent } from './components/animations/shine/shine.component';
+import { QrCodePopupComponent } from './components/pages/qr-code-popup/qr-code-popup.component';
+import { BadgeMapComponent } from './components/pages/badge-map/badge-map.component';
+import { FullscreenToggleComponent } from './components/widgets/fullscreen-toggle/fullscreen-toggle.component';
+import { FaceChallengeComponent } from './components/pages/face-challenge/face-challenge.component';
+import { ChallengeViewDirective } from './directives/challenge-view.directive';
+import { ChallengeFindFeaturesComponent } from './components/pages/challenge-find-features/challenge-find-features.component';
+import { SvgCanvasComponent } from './components/widgets/svg-canvas/svg-canvas.component';
+import { SvgAreaComponent } from './components/widgets/svg-area/svg-area.component';
+import { InlineStyleComponent } from './components/widgets/inline-style/inline-style.component';
+import { ChallengeIdentikitComponent } from './components/pages/challenge-identikit/challenge-identikit.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { CameraComponent } from './camponents/pages/camera/camera.component';
+import { RotateScreenComponent } from './components/pages/rotate-screen/rotate-screen.component';
+import { CreditsComponent } from './components/pages/credits/credits.component';
+import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -31,18 +48,34 @@ import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
     ListenTrackComponent,
     TellStoryComponent,
     WatchVideoComponent,
-    PopupComponent,
     StoryPopupComponent,
     BadgeComponent,
     ReadStoryComponent,
     OptionPopupComponent,
     SvgMapComponent,
+    SafePipe,
+    ShineComponent,
+    QrCodePopupComponent,
+    BadgeMapComponent,
+    FullscreenToggleComponent,
+    FaceChallengeComponent,
+    ChallengeViewDirective,
+    ChallengeFindFeaturesComponent,
+    SvgCanvasComponent,
+    SvgAreaComponent,
+    InlineStyleComponent,
+    ChallengeIdentikitComponent,
+    CameraComponent,
+    RotateScreenComponent,
+    CreditsComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

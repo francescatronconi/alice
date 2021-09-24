@@ -16,7 +16,7 @@ export class BadgeComponent implements OnInit {
   constructor(public shared: SharedDataService) { }
   
   ngOnInit(): void {
-    this.punteggio = this.shared.play.score
+    this.punteggio = this.shared.play.score;
   }
   
   badges(): GameBadge[] {

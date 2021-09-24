@@ -1,0 +1,8 @@
+<div *ngIf="style" [innerHTML]="style | safe: 'html'"></div>
+<style src="srcUrl() | safe: 'url'"></style>
+<style [innerHTML]="style | safe: 'html'"></style>
+<style>
+    .pisa {
+        color: blue;
+    }
+</style>

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Canterbury Regular';
+    src: url('~/fonts/Canterbury.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'AR JULIAN';
+    src: url('~/fonts/ar-julian.ttf') format("truetype");
+}
+
+.narrative {
+    font-family: "Garamond-Regular";
+    font-size: 1.6em;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.welcome {
+    font-family: "Garamond-Regular";
+    font-size: 1.6em;
+    color: black;
+}

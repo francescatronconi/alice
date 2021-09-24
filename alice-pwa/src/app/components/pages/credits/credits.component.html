@@ -1,0 +1,3 @@
+<div *ngIf="credits"  class="fullpage">
+    <div  class="credits" [innerHTML]="credits | safe: 'html'"></div>
+</div>

@@ -1,1 +1,9 @@
 <div *ngIf="html" [innerHTML]="html"></div>
+<div *ngIf="video">
+    <div class="ondemand-video">
+        <video controls>
+            <source [src]="video" type="video/mp4">
+            Il tuo browser non supporta i video.
+        </video>
+    </div>
+</div>

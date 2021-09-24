@@ -1,27 +1,31 @@
 {
+    "id": "devel",
     "rules": [
         {"trigger": "start", "effect": {"story": [
             {"read": "intro-1.html"},
             {"read": "intro-2.html"}
         ]}},
-        {"trigger": "visit:cattedrale", "effect": {"story": [
-            {"read": "intro-1.html"},
-            {"read": "intro-2.html"}
-            ]}, 
-            "condition": {"nobadge": "badge-02", "noTag":"tramutato-in-rospo"}
-        },
+        {"trigger": "visit:cattedrale", "effect": {"story": [{"read": "intro-1.html"}, {"video": "telefonata.mp4"}], "challenge": "playme"}},
+        {"trigger": "visit:star", "effect": {"route": ["badgemap", "cappellaio-matto"], "story": [{"read": "intro-star.html"}]}},
+        {"trigger": "visit:circle", "effect": {"route": ["diario"]}},
+        {"trigger": "visit:challenge-features", "effect": {"challenge": "c-01"}},
+        {"trigger": "visit:challenge-identikit", "effect": {"challenge": "c-02"}},
         {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
         {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
             "rules": [
                 {"condition": {"badge": "badge-01"},"effect": {"badge": "badge-03"}},
                 {"effect": {"score": 3}}
             ]},
-        {"trigger": "visit:biblioteca", "effect": {"options": "options-A"}}
+        {"trigger": "visit:biblioteca", "effect": {"options": "options-A", "location": "biblioteca"}},
+        {"trigger": "success:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"], "badge": "cappellaio-matto", "story": [{"read": "qr-code.html"}]}},
+        {"trigger": "failed:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"]}},
+        {"trigger": "success:c-02", "effect": {"route": ["badgemap", "regina-cuori"], "badge": "regina-cuori", "story": [{"read": "qr-code.html"}]}},
+        {"trigger": "qrcode:https://www.youtube.com/watch?v=Y2N6J9Nk5Ug", "effect": {"story": [{"read": "qr-code.html"}]}}
     ],  
     "options": [
         {"id": "options-A", "options": [
             {"text": "Busta numero 1", "effect": {"badge": "badge-03"}},
-            {"text": "Busta numero 2", "effect": {"tag":"tramutato-in-rospo"}},
+            {"text": "Busta numero 2", "effect": {"badge": "cappellaio-matto", "tag":"tramutato-in-rospo", "route": ["badgemap", "cappellaio-matto"]}},
             {"text": "Busta numero 3", "effect": {"options": "options-B"}}
         ]},
         {"id": "options-B", "options": [
@@ -37,6 +41,11 @@
         {"badge": "badge-02", "src": "cat.svg"},
         {"badge": "badge-03", "src": "horse.svg"}
     ],
+    "svgmaps": [
+        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle", "challenge-features", "challenge-identikit"]},
+        {"id": "challenge-features", "svg": "challenge-01.svg", "background": null, "ids": ["done", "feature-02", "feature-03", "feature-04"]},
+        {"id": "challenge-identikit", "svg": "challenge-identikit.svg", "background": null, "ids": ["done", "identikit-01", "identikit-02", "identikit-03"]}
+    ],
     "locations": [
         {"id":"cattedrale", "name": "./assets/svg/cattedrale.svg", "icon": "./assets/svg/cat.svg", "description": "cattedrale", 
             "lon": 10.506664809575186, "lat": 43.84051516173453, "near": true,  "condition": {"badge":"badge-03"}},
@@ -45,11 +54,21 @@
         {"id":"conservatorio", "name": "./assets/svg/clarinetto.svg", "icon": "./assets/svg/cat.svg", "description": "conservatorio",
             "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
     ],
+    "challenges": [
+        {"id": "c-01", "code": "features", "svgmap": "challenge-features", "success": ["feature-03", "feature-04"]},
+        {"id": "c-02", "code": "identikit", "svgmap": "challenge-identikit", "options": [
+            {"id": "identikit-01", "options": 3, "success": 1},
+            {"id": "identikit-02", "options": 3, "success": 2},
+            {"id": "identikit-03", "options": 3, "success": 3}
+        ]}
+    ],
+    "audio": [],
     "buttons": [
-        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": "diario"},
-        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": "mappa"},
-        {"id": "badge", "icon": "./assets/svg/badge.svg", "action": "badge"},
-        {"id": "biblioteca", "icon": "./assets/svg/biblioteca.svg", "action": "biblioteca"},
-        {"id": "partita", "icon": "./assets/svg/partita.svg", "action": "partita"}
+        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
+        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
+        {"id": "badge", "icon": "./assets/svg/biblioteca.svg", "action": ["svgmap", "agora"]},
+        {"id": "badgemap", "icon": "./assets/svg/badge.svg", "action": ["badgemap"]},
+        {"id": "biblioteca", "icon": "./assets/svg/cat.svg", "action": ["qrcode"]},
+        {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}
     ]
 }

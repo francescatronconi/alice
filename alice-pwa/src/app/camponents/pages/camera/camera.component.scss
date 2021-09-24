@@ -1,0 +1,22 @@
+@media screen and (orientation:landscape) {
+    .myvideo {
+        height: 100%;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    .myvideo {
+        width: 100%;
+    }
+}
+
+.myphoto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    border: 1px solid red;
+    img {
+        width: 100%;
+    }
+}

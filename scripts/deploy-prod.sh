@@ -11,9 +11,11 @@ HACKGIT=~/hack/git
 NGDIR=$HACKGIT/alice/alice-pwa
 
 cd $NGDIR
-ng build --base-href=./ --prod
+#ng build --configuration=daniele --base-href=./
+ng build --configuration=production --base-href=./
 
 REMOTE="ssh dantar "
 
-rsync --delete -varzh $NGDIR/dist/alice-pwa/* dantar:/home/daniele/html/alice/
+rsync --delete -varzh $NGDIR/dist/alice-pwa/* dantar:/home/daniele/html/trailer/
+#rsync --delete -varzh $NGDIR/dist/alice-pwa/* dantar:/home/daniele/html/ripartire/
 

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { GamePlayStory } from './services/ponte-virtuale.service';
-import { SharedDataService } from './services/shared-data.service';
+import { Title } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment';
+import { AcceptCookieService } from './services/accept-cookie.service';
+import { SharedDataService, SvgMap } from './services/shared-data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,23 @@ import { SharedDataService } from './services/shared-data.service';
 })
 export class AppComponent {
 
-  title = 'Alice a Lucca';
+  title = 'Alice il gioco';
+  environment = environment;
+  svgFrame: SvgMap;
 
   constructor (
+    private titleService: Title,
     public shared: SharedDataService,
-  ) {}
+    public cookies: AcceptCookieService,
+  ) {
+    this.titleService.setTitle(this.title);
+    this.shared.scenarioReadyObs.subscribe(scenario => {
+      this.svgFrame = this.shared.getSvgMap('frame');
+      if (!this.shared.play) {
+        this.shared.startGame();
+      }
+    });
+
+  }
 
 }

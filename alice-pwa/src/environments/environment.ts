@@ -5,8 +5,14 @@
 export const environment = {
   production: false,
   //gameUrl: 'https://www.dantar.it/resources/alice',
-  gameUrl: './assets/alice',
-  nearby: 1000
+  gameUrl: './assets/trailer',
+  nearby: 1000,
+  gaMeasurementId: null, // alice = 'G-QK32TSKP6N'
+  privacy: {
+    site: 'https://alice.vivavoce.it',
+    titolare: 'Associazione VivaVoce',
+    mail: 'info@vivavoce.it'
+  }
 };
 
 /*

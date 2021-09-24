@@ -1,4 +1,11 @@
 export const environment = {
   production: true,
-  gameUrl: 'https://www.dantar.it/resources/alice/game-data.json',
+  gameUrl: './assets/trailer',
+  nearby: 1000,
+  gaMeasurementId: 'G-QK32TSKP6N', // alice
+  privacy: {
+    site: 'https://alice.vivavoce.it',
+    titolare: 'Associazione VivaVoce',
+    mail: 'info@vivavoce.it'
+  }  
 };
