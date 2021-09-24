@@ -28,11 +28,11 @@
      inkscape:window-width="1853"
      units="px"
      showgrid="false"
-     inkscape:current-layer="mappa-agora"
+     inkscape:current-layer="layer37"
      inkscape:document-units="px"
-     inkscape:cy="47.192725"
-     inkscape:cx="101.32516"
-     inkscape:zoom="4.205"
+     inkscape:cy="-80.564409"
+     inkscape:cx="137.15893"
+     inkscape:zoom="2.973384"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -2753,7 +2753,7 @@
      inkscape:groupmode="layer"
      id="layer37"
      inkscape:label="mappa icone"
-     style="display:none">
+     style="display:inline">
     <path
        style="opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:7.78466177;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
        d="m 42.322647,23.301181 -25,25 -24.9999992,-25 c 10e-8,-13.8071183 11.1928816,-24.9999998 24.9999992,-25.0000001 13.807119,0 25,11.1928808 25,25.0000001 z"
@@ -2843,9 +2843,9 @@
        height="100.34602"
        width="150.51901"
        clip-path="url(#clipPath2727)"
-       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/trailer/mappa/head.png"
-       inkscape:export-xdpi="124"
-       inkscape:export-ydpi="124" />
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/head.png"
+       inkscape:export-xdpi="96.001213"
+       inkscape:export-ydpi="96.001213" />
     <g
        transform="matrix(0.31999998,0,0,0.31999998,-1130.9729,-420.07382)"
        inkscape:label="icone"
@@ -3393,6 +3393,144 @@
        inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/button-act.png"
        inkscape:export-xdpi="44.160004"
        inkscape:export-ydpi="44.160004" />
+    <path
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -12.171875,148.77148 c -2.007924,0 -3.625,1.61513 -3.625,3.62305 v 16.05078 c 0,2.00793 1.617076,3.625 3.625,3.625 h 22.871094 c 0.485105,0.26689 1.263107,0.47416 2.439453,0.60742 2.88728,0.49464 4.608891,3.2496 5.742187,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.50586,-7.40039 l -0.134766,0.002 c 0.660088,-0.11264 1.221407,-0.23037 1.708985,-0.35157 h 24.777343 c 2.007924,0 3.623047,-1.61707 3.623047,-3.625 v -16.05078 c 0,-2.00792 -1.615123,-3.62305 -3.623047,-3.62305 z"
+       id="path5240-8"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/eat-me.png"
+       inkscape:export-xdpi="108.21663"
+       inkscape:export-ydpi="108.21663"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.50907624"
+       x="19.048573"
+       y="167.1519"
+       id="text9640"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/eat-me.png"
+       inkscape:export-xdpi="108.21663"
+       inkscape:export-ydpi="108.21663"><tspan
+         sodipodi:role="line"
+         id="tspan9638"
+         x="19.048573"
+         y="167.1519"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.50907624">Eat Me</tspan></text>
+    <path
+       inkscape:export-ydpi="108.21662"
+       inkscape:export-xdpi="108.21662"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/drink-me.png"
+       id="path9660"
+       d="m -12.171875,184.4211 c -2.007924,0 -3.625,1.61513 -3.625,3.62305 v 16.05078 c 0,2.00793 1.617076,3.625 3.625,3.625 h 22.871094 c 0.485105,0.26689 1.263107,0.47416 2.439453,0.60742 2.88728,0.49464 4.608891,3.2496 5.742187,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.50586,-7.40039 l -0.134766,0.002 c 0.660088,-0.11264 1.221407,-0.23037 1.708985,-0.35157 h 24.777343 c 2.007924,0 3.623047,-1.61707 3.623047,-3.625 v -16.05078 c 0,-2.00792 -1.615123,-3.62305 -3.623047,-3.62305 z"
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       inkscape:connector-curvature="0" />
+    <text
+       inkscape:export-ydpi="108.21662"
+       inkscape:export-xdpi="108.21662"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/drink-me.png"
+       id="text9664"
+       y="202.80151"
+       x="19.048573"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.50907624"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.50907624"
+         y="202.80151"
+         x="19.048573"
+         id="tspan9662"
+         sodipodi:role="line">Drink Me</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -12.171875,220.40703 c -2.007924,0 -3.625,1.61513 -3.625,3.62305 v 16.05078 c 0,2.00793 1.617076,3.625 3.625,3.625 h 22.871094 c 0.485105,0.26689 1.263107,0.47416 2.439453,0.60742 2.88728,0.49464 4.608891,3.2496 5.742187,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.50586,-7.40039 l -0.134766,0.002 c 0.660088,-0.11264 1.221407,-0.23037 1.708985,-0.35157 h 24.777343 c 2.007924,0 3.623047,-1.61707 3.623047,-3.625 v -16.05078 c 0,-2.00792 -1.615123,-3.62305 -3.623047,-3.62305 z"
+       id="path9666"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/wear-me.png"
+       inkscape:export-xdpi="108.21664"
+       inkscape:export-ydpi="108.21664" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.50907624"
+       x="19.048573"
+       y="238.78745"
+       id="text9670"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/wear-me.png"
+       inkscape:export-xdpi="108.21664"
+       inkscape:export-ydpi="108.21664"><tspan
+         sodipodi:role="line"
+         id="tspan9668"
+         x="19.048573"
+         y="238.78745"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.50907624">Wear Me</tspan></text>
+    <path
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 89.61805,129.46005 c -13.749854,0.4559 -26.907123,14.87304 -26.101564,26.75 0.699685,10.31601 9.413334,14.98867 19.185546,16.0957 2.88728,0.49464 4.608892,3.2496 5.742188,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.50586,-7.40039 l -0.13477,0.002 c 10.91153,-1.86185 18.81321,-8.81114 19.62696,-21.41992 0.64745,-10.03191 -6.74615,-19.53161 -21.07032,-21.07031 -0.91797,-0.0986 -1.83725,-0.13 -2.7539,-0.0996 z"
+       id="path9672"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/find-me.png"
+       inkscape:export-xdpi="96.001228"
+       inkscape:export-ydpi="96.001228" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.59335226"
+       x="92.940025"
+       y="166.75974"
+       id="text9640-1"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/find-me.png"
+       inkscape:export-xdpi="96.001228"
+       inkscape:export-ydpi="96.001228"><tspan
+         sodipodi:role="line"
+         id="tspan9638-8"
+         x="92.940025"
+         y="166.75974"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0.59335226">Me</tspan></text>
+    <text
+       inkscape:export-ydpi="96.001228"
+       inkscape:export-xdpi="96.001228"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/find-me.png"
+       id="text9696"
+       y="153.82397"
+       x="84.708168"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.59335226"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0.59335226"
+         y="153.82397"
+         x="84.708168"
+         id="tspan9694"
+         sodipodi:role="line">Find</tspan></text>
+    <path
+       inkscape:export-ydpi="96.001228"
+       inkscape:export-xdpi="96.001228"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/read-me.png"
+       inkscape:connector-curvature="0"
+       id="path9700"
+       d="m 98.698613,185.62501 c -13.749854,0.4559 -26.907123,14.87304 -26.101564,26.75 0.699685,10.31601 9.413334,14.98867 19.185546,16.0957 2.88728,0.49464 4.608892,3.2496 5.742188,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.505857,-7.40039 l -0.13477,0.002 c 10.91153,-1.86185 18.81321,-8.81114 19.62696,-21.41992 0.64745,-10.03191 -6.74615,-19.53161 -21.07032,-21.07031 -0.91797,-0.0986 -1.837247,-0.13 -2.753897,-0.0996 z"
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+    <text
+       inkscape:export-ydpi="96.001228"
+       inkscape:export-xdpi="96.001228"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/read-me.png"
+       id="text9704"
+       y="222.9247"
+       x="102.02059"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.59335226;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.59335226;"
+         y="222.9247"
+         x="102.02059"
+         id="tspan9702"
+         sodipodi:role="line">Me</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.59335226;"
+       x="93.788734"
+       y="209.98894"
+       id="text9708"
+       inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/mappa/read-me.png"
+       inkscape:export-xdpi="96.001228"
+       inkscape:export-ydpi="96.001228"><tspan
+         sodipodi:role="line"
+         id="tspan9706"
+         x="93.788734"
+         y="209.98894"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.59335226;">Read</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -9007,7 +9145,7 @@
      inkscape:groupmode="layer"
      id="layer26"
      inkscape:label="game alice 25"
-     style="display:inline">
+     style="display:none">
     <g
        inkscape:groupmode="layer"
        id="layer28"

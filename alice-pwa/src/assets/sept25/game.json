@@ -144,6 +144,7 @@
             {"condition": {"noTag":"piazza-napoleone"}, "effect": {"tag": "piazza-napoleone", "score": 1}},
             {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/piazza-napoleone-success.html"}]}}
         ]},
+        {"trigger": "visit:biblioteca-agora", "effect": {"story": [{"read": "tappe/biblioteca-agora.html"}]}},
 
         {"condition": {"badges": [
             "punteggio-gioco",
@@ -201,6 +202,7 @@
         ]}
     ],
     "locations": [
+        {"id":"biblioteca-agora", "icon": "./assets/sept25/mappa/read-me.png", "anchor": [0.5, 1], "lon": 10.506014768376597, "lat": 43.84181452864434},
         {"id":"franklin-33", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502028472868352, "lat": 43.84485690257682, "near": true},
         {"id":"the-little-folk", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502387073489482, "lat": 43.84038685106595, "near": true},
         {"id":"ciclo-di-vino", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.508031250345251, "lat": 43.847012467131364, "near": true},
