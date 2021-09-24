@@ -181,32 +181,32 @@ export class GameEventStart extends GameEvent {
 
 export class GameEventVisit {
 
-  location: string;
+  visitlocation: string;
 
   constructor(location: string) {
-    this.location = location;
+    this.visitlocation = location;
   }
 
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventVisit);
     let r = /visit:(.*)/;
-    return event.location && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
+    return event.visitlocation && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.visitlocation;
   }
 
 }
 
 export class GameEventTooFar {
 
-  location: string;
+  toofarlocation: string;
 
   constructor(location: string) {
-    this.location = location;
+    this.toofarlocation = location;
   }
 
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventTooFar);
     let r = /toofar:(.*)/;
-    return event.location && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
+    return event.toofarlocation && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.toofarlocation;
   }
 
 }

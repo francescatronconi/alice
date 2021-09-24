@@ -84,10 +84,25 @@
             {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-il-collezionista-corpo.html"}]}}
         ]},
 
-        {"trigger": "visit:map-piazza-anfiteatro", "effect": {"options": "lib-search", "story": [{"read": "tappe/libreria-lucca-libri.html"}]}},
+        {"trigger": "toofar:map-san-martino", "effect": {"story": [{"read": "tappe/san-martino-toofar.html"}]}},
+        {"trigger": "visit:map-san-martino", "rules": [
+            {"condition": {"noTag":"san-martino"}, "effect": {"tag": "san-martino", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/san-martino-success.html"}]}}
+        ]},
+        {"trigger": "toofar:map-piazza-anfiteatro", "effect": {"story": [{"read": "tappe/piazza-anfiteatro-toofar.html"}]}},
         {"trigger": "visit:map-piazza-anfiteatro", "rules": [
             {"condition": {"noTag":"piazza-anfiteatro"}, "effect": {"tag": "piazza-anfiteatro", "score": 1}},
-            {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/piazza-anfitratro-success.html"}]}}
+            {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/piazza-anfiteatro-success.html"}]}}
+        ]},
+        {"trigger": "toofar:map-torre-guinigi", "effect": {"story": [{"read": "tappe/torre-guinigi-toofar.html"}]}},
+        {"trigger": "visit:map-torre-guinigi", "rules": [
+            {"condition": {"noTag":"torre-guinigi"}, "effect": {"tag": "torre-guinigi", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/torre-guinigi-success.html"}]}}
+        ]},
+        {"trigger": "toofar:map-piazza-napoleone", "effect": {"story": [{"read": "tappe/piazza-napoleone-toofar.html"}]}},
+        {"trigger": "visit:map-piazza-napoleone", "rules": [
+            {"condition": {"noTag":"piazza-napoleone"}, "effect": {"tag": "piazza-napoleone", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/piazza-napoleone-success.html"}]}}
         ]},
 
         {"condition": {"badges": [

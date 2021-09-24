@@ -58,7 +58,7 @@ export class MappaComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.featureById = {};
-    this.position = null;
+    this.loc.position = null;
     this.subscriptions = [];
     this.subscriptions.push(this.shared.playChangedOb.subscribe(change => this.refreshFeatures(change)));
     // disclaimer
@@ -78,7 +78,7 @@ export class MappaComponent implements OnInit, OnDestroy {
     this.canusegps = true;
     this.watchsubscribed = false;
     navigator.geolocation.getCurrentPosition((position) => {
-      this.position = position;
+      this.loc.position = position;
       this.subscriptions.push(this.loc.init().subscribe(position => {
         this.updatePosition(position)
         if (!this.watchsubscribed) {
@@ -92,12 +92,12 @@ export class MappaComponent implements OnInit, OnDestroy {
 
   updatePosition(position: any) {
     if (position) {
-      this.position = position;
+      this.loc.position = position;
       if (!this.map) {
         this.startOlMap();
       }
       this.youFeature.setGeometry(new Point(
-        olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])
+        olProj.fromLonLat([this.loc.position.coords.longitude, this.loc.position.coords.latitude])
       ))
     }
   }
@@ -196,7 +196,7 @@ export class MappaComponent implements OnInit, OnDestroy {
 
   addYourPosition() {
     this.youFeature = new Feature({
-      geometry: new Point(olProj.fromLonLat([this.position.coords.longitude, this.position.coords.latitude])),
+      geometry: new Point(olProj.fromLonLat([this.loc.position.coords.longitude, this.loc.position.coords.latitude])),
       name: "Tu"
     });
     this.youFeature.setStyle(
@@ -293,15 +293,16 @@ export class MappaComponent implements OnInit, OnDestroy {
   }
 
   private checkDistance(location: MapLocation): boolean {
-    let difQuadLat = Math.pow(location.lat - this.position.coords.latitude,2)
-    let difQuadLon = Math.pow(location.lon - this.position.coords.longitude, 2)
-    let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000
+    let difQuadLat = Math.pow(location.lat - this.loc.position.coords.latitude,2);
+    let difQuadLon = Math.pow(location.lon - this.loc.position.coords.longitude, 2);
+    let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000;
+    console.log('distance', distance, environment.nearby, distance < environment.nearby);
     return distance < environment.nearby;
   }
 
   findWayHref(location: MapLocation) {
-    if (this.position) {
-      return `https://www.google.com/maps/dir/${this.position.coords.latitude},${this.position.coords.longitude}/${location.lat},${location.lon}`;
+    if (this.loc.position) {
+      return `https://www.google.com/maps/dir/${this.loc.position.coords.latitude},${this.loc.position.coords.longitude}/${location.lat},${location.lon}`;
     } else {
       return `https://www.google.com/maps?q=${location.lat},${location.lon}`;
     }

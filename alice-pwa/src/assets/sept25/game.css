@@ -60,6 +60,10 @@ h2 {
     text-align: center;
 }
 
+.narrative-image img {
+    max-width: 100%;
+}
+
 .welcome {
     font-family: "Belleza";
     font-size: 1.6em;

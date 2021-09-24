@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   //gameUrl: 'https://www.dantar.it/resources/alice',
   gameUrl: './assets/sept25',
-  nearby: 1000,
+  nearby: 0.5,
   gaMeasurementId: null, // alice = 'G-QK32TSKP6N'
   privacy: {
     site: 'https://alice.vivavoce.it',
