@@ -115,7 +115,13 @@ export class MappaComponent implements OnInit, OnDestroy {
     if (this.shared.play.zoomTo) {
       this.shared.scenario.locations
       .filter(l => l.id === this.shared.play.zoomTo)
-      .forEach(l => center = olProj.fromLonLat([l.lon, l.lat]));
+      .forEach(l => {
+        center = olProj.fromLonLat([l.lon, l.lat])
+        if (this.overlay) {
+          this.location = l;
+          this.overlay.setPosition(center);
+        }
+      });
       zoom = 18;
       this.shared.clearZoomTo();
     } else {
@@ -156,6 +162,15 @@ export class MappaComponent implements OnInit, OnDestroy {
         })
       ]
     });
+    // popup overlay
+    this.overlay = new Overlay({
+      element: document.getElementById('popup'),
+      autoPan: true,
+      autoPanAnimation: {
+        duration: 250
+      }
+    });
+    this.map.addOverlay(this.overlay);
     // Main view and center
     this.map.setView(this.mapView());
     // features
@@ -169,16 +184,7 @@ export class MappaComponent implements OnInit, OnDestroy {
       .forEach(location => {
         this.addFeatureLocation(location);
       });
-    // popup overlay
     this.map.addLayer(this.featuresLayer);
-    this.overlay = new Overlay({
-      element: document.getElementById('popup'),
-      autoPan: true,
-      autoPanAnimation: {
-        duration: 250
-      }
-    });
-    this.map.addOverlay(this.overlay);
   }
 
   addYourPosition() {
