@@ -7,63 +7,63 @@
         {"trigger": "search:badge-brucaliffo", "effect": {"story": [{"read": "tappe/brucaliffo.html"}], "location": "map-brucaliffo"}},
         {"trigger": "visit:map-brucaliffo", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:2593", "rules": [
-            {"condition": {"noTag": "brucaliffo"}, "effect": {"tag": "brucaliffo", "badge": "badge-brucaliffo", "score": 1}},
+            {"condition": {"noTag": "brucaliffo"}, "effect": {"tag": "brucaliffo", "badge": "badge-brucaliffo", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-brucaliffo"], "story": [{"read": "tappe/brucaliffo-success.html"}]}}
         ]},
 
         {"trigger": "search:badge-dodo", "effect": {"story": [{"read": "tappe/dodo.html"}], "location": "map-dodo"}},
         {"trigger": "visit:map-dodo", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:6369", "rules": [
-            {"condition": {"noTag": "dodo"}, "effect": {"tag": "dodo", "badge": "badge-dodo", "score": 1}},
+            {"condition": {"noTag": "dodo"}, "effect": {"tag": "dodo", "badge": "badge-dodo", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-dodo"], "story": [{"read": "tappe/dodo-success.html"}]}}
         ]},
 
         {"trigger": "search:badge-cappellaio-matto", "effect": {"story": [{"read": "tappe/cappellaio-matto.html"}], "location": "map-cappellaio-matto"}},
         {"trigger": "visit:map-cappellaio-matto", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:9184", "rules": [
-            {"condition": {"noTag": "cappellaio-matto"}, "effect": {"tag": "cappellaio-matto", "badge": "badge-cappellaio-matto", "score": 1}},
+            {"condition": {"noTag": "cappellaio-matto"}, "effect": {"tag": "cappellaio-matto", "badge": "badge-cappellaio-matto", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-cappellaio-matto"], "story": [{"read": "tappe/cappellaio-matto-success.html"}]}}
         ]},
 
         {"trigger": "search:badge-re-cuori", "effect": {"story": [{"read": "tappe/re-cuori.html"}], "location": "map-re-cuori"}},
         {"trigger": "visit:map-re-cuori", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:5834", "rules": [
-            {"condition": {"noTag": "re-cuori"}, "effect": {"tag": "re-cuori", "badge": "badge-re-cuori", "score": 1}},
+            {"condition": {"noTag": "re-cuori"}, "effect": {"tag": "re-cuori", "badge": "badge-re-cuori", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-re-cuori"], "story": [{"read": "tappe/re-cuori-success.html"}]}}
         ]},
 
         {"trigger": "search:badge-regina-cuori", "effect": {"story": [{"read": "tappe/regina-cuori.html"}], "location": "map-regina-cuori"}},
         {"trigger": "visit:map-regina-cuori", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:7381", "rules": [
-            {"condition": {"noTag": "regina-cuori"}, "effect": {"tag": "regina-cuori", "badge": "badge-regina-cuori", "score": 1}},
+            {"condition": {"noTag": "regina-cuori"}, "effect": {"tag": "regina-cuori", "badge": "badge-regina-cuori", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-regina-cuori"], "story": [{"read": "tappe/regina-cuori-success.html"}]}}
         ]},
 
         {"trigger": "search:badge-pinco-panco", "effect": {"story": [{"read": "tappe/pinco-panco.html"}], "location": "map-pinco-panco"}},
         {"trigger": "visit:map-pinco-panco", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:8462", "rules": [
-            {"condition": {"noTag": "pinco-panco"}, "effect": {"tag": "pinco-panco", "badge": "badge-pinco-panco", "score": 1}},
+            {"condition": {"noTag": "pinco-panco"}, "effect": {"tag": "pinco-panco", "badge": "badge-pinco-panco", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-pinco-panco"], "story": [{"read": "tappe/pinco-panco-success.html"}]}}
         ]},
 
         {"trigger": "search:badge-fiori", "effect": {"story": [{"read": "tappe/fiori.html"}], "location": "map-fiori"}},
         {"trigger": "visit:map-fiori", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:9026", "rules": [
-            {"condition": {"noTag": "fiori"}, "effect": {"tag": "fiori", "badge": "badge-fiori", "score": 1}},
+            {"condition": {"noTag": "fiori"}, "effect": {"tag": "fiori", "badge": "badge-fiori", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-fiori"], "story": [{"read": "tappe/fiori-success.html"}]}}
         ]},
 
         {"trigger": "search:badge-tricheco-carpentiere", "effect": {"story": [{"read": "tappe/tricheco-carpentiere.html"}], "location": "map-tricheco-carpentiere"}},
         {"trigger": "visit:map-tricheco-carpentiere", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:5499", "rules": [
-            {"condition": {"noTag": "tricheco-carpentiere"}, "effect": {"tag": "tricheco-carpentiere", "badge": "badge-tricheco-carpentiere", "score": 1}},
+            {"condition": {"noTag": "tricheco-carpentiere"}, "effect": {"tag": "tricheco-carpentiere", "badge": "badge-tricheco-carpentiere", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-tricheco-carpentiere"], "story": [{"read": "tappe/tricheco-carpentiere-success.html"}]}}
         ]},
 
         {"trigger": "search:badge-humpty-dumpty", "effect": {"story": [{"read": "tappe/humpty-dumpty.html"}], "location": "map-humpty-dumpty"}},
         {"trigger": "visit:map-humpty-dumpty", "effect": {"options": "ready-qrcode"}},
         {"trigger": "qrcode:1638", "rules": [
-            {"condition": {"noTag": "humpty-dumpty"}, "effect": {"tag": "humpty-dumpty", "badge": "badge-humpty-dumpty", "score": 1}},
+            {"condition": {"noTag": "humpty-dumpty"}, "effect": {"tag": "humpty-dumpty", "badge": "badge-humpty-dumpty", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-humpty-dumpty"], "story": [{"read": "tappe/humpty-dumpty-success.html"}]}}
         ]},
 
@@ -72,40 +72,71 @@
         {"trigger": "visit:map-pensieri-belli", "effect": {"options": "lib-search", "story": [{"read": "tappe/libreria-pensieri-belli.html"}]}},
         {"trigger": "visit:map-il-collezionista", "effect": {"options": "lib-search", "story": [{"read": "tappe/libreria-il-collezionista.html"}]}},
         {"trigger": "qrcode:4482", "rules": [
-            {"condition": {"noTag":"stregatto-testa"}, "effect": {"tag": "stregatto-testa", "badge": "badge-stregatto", "score": 1}},
+            {"condition": {"noTag":"stregatto-testa"}, "effect": {"tag": "stregatto-testa", "badge": "badge-stregatto", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-lucca-libri-testa.html"}]}}
         ]},
         {"trigger": "qrcode:3795", "rules": [
-            {"condition": {"noTag":"stregatto-coda"}, "effect": {"tag": "stregatto-coda", "badge": "badge-stregatto", "score": 1}},
+            {"condition": {"noTag":"stregatto-coda"}, "effect": {"tag": "stregatto-coda", "badge": "badge-stregatto", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-pensieri-belli-coda.html"}]}}
         ]},
         {"trigger": "qrcode:8081", "rules": [
-            {"condition": {"noTag":"stregatto-corpo"}, "effect": {"tag": "stregatto-corpo", "badge": "badge-stregatto", "score": 1}},
+            {"condition": {"noTag":"stregatto-corpo"}, "effect": {"tag": "stregatto-corpo", "badge": "badge-stregatto", "score": 3}},
             {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-il-collezionista-corpo.html"}]}}
         ]},
 
-        {"trigger": "visit:franklin-33", "effect": {"story": [{"read": "tappe/franklin-33.html"}]}},
-        {"trigger": "visit:the-little-folk", "effect": {"story": [{"read": "tappe/the-little-folk.html"}]}},
-        {"trigger": "visit:ciclo-di-vino", "effect": {"story": [{"read": "tappe/ciclo-di-vino.html"}]}},
-        {"trigger": "visit:the-cervesia-taproom", "effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}]}},
-        {"trigger": "visit:the-cervesia-beershop", "effect": {"story": [{"read": "tappe/the-cervesia-beershop.html"}]}},
-        {"trigger": "visit:lebowski-cocktail-bar", "effect": {"story": [{"read": "tappe/lebowski-cocktail-bar.html"}]}},
-        {"trigger": "visit:alice-allo-specchio", "effect": {"story": [{"read": "tappe/alice-allo-specchio.html"}]}},
-        {"trigger": "visit:gelateria-de-coltelli", "effect": {"story": [{"read": "tappe/gelateria-de-coltelli.html"}]}},
-
+        {"trigger": "toofar:franklin-33", "effect": {"story": [{"read": "tappe/franklin-33.html"}, {"read": "tappe/toofar-locali.html"}]}},
+        {"trigger": "visit:franklin-33", "rules": [
+            {"condition": {"noTag":"franklin-33"}, "effect": {"tag": "franklin-33", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/franklin-33.html"}]}}
+        ]},
+        {"trigger": "toofar:the-little-folk", "effect": {"story": [{"read": "tappe/the-little-folk.html"}, {"read": "tappe/toofar-locali.html"}]}},
+        {"trigger": "visit:the-little-folk", "rules": [
+            {"condition": {"noTag":"the-little-folk"}, "effect": {"tag": "the-little-folk", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/the-little-folk.html"}]}}
+        ]},
+        {"trigger": "toofar:ciclo-di-vino", "effect": {"story": [{"read": "tappe/ciclo-di-vino.html"}, {"read": "tappe/toofar-locali.html"}]}},
+        {"trigger": "visit:ciclo-di-vino", "rules": [
+            {"condition": {"noTag":"ciclo-di-vino"}, "effect": {"tag": "ciclo-di-vino", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/ciclo-di-vino.html"}]}}
+        ]},
+        {"trigger": "toofar:the-cervesia-taproom", "effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}, {"read": "tappe/toofar-locali.html"}]}},
+        {"trigger": "visit:the-cervesia-taproom", "rules": [
+            {"condition": {"noTag":"the-cervesia-taproom"}, "effect": {"tag": "the-cervesia-taproom", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}]}}
+        ]},
+        {"trigger": "toofar:the-cervesia-beershop", "effect": {"story": [{"read": "tappe/the-cervesia-beershop.html"}, {"read": "tappe/toofar-locali.html"}]}},
+        {"trigger": "visit:the-cervesia-taproom", "rules": [
+            {"condition": {"noTag":"the-cervesia-taproom"}, "effect": {"tag": "the-cervesia-taproom", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}]}}
+        ]},
+        {"trigger": "toofar:lebowski-cocktail-bar", "effect": {"story": [{"read": "tappe/lebowski-cocktail-bar.html"}, {"read": "tappe/toofar-locali.html"}]}},
+        {"trigger": "visit:lebowski-cocktail-bar", "rules": [
+            {"condition": {"noTag":"lebowski-cocktail-bar"}, "effect": {"tag": "lebowski-cocktail-bar", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/lebowski-cocktail-bar.html"}]}}
+        ]},
+        {"trigger": "toofar:alice-allo-specchio", "effect": {"story": [{"read": "tappe/alice-allo-specchio.html"}, {"read": "tappe/toofar-locali.html"}]}},
+        {"trigger": "visit:alice-allo-specchio", "rules": [
+            {"condition": {"noTag":"alice-allo-specchio"}, "effect": {"tag": "alice-allo-specchio", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/alice-allo-specchio.html"}]}}
+        ]},
+        {"trigger": "toofar:gelateria-de-coltelli", "effect": {"story": [{"read": "tappe/gelateria-de-coltelli.html"}, {"read": "tappe/toofar-locali.html"}]}},
+        {"trigger": "visit:gelateria-de-coltelli", "rules": [
+            {"condition": {"noTag":"gelateria-de-coltelli"}, "effect": {"tag": "gelateria-de-coltelli", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/gelateria-de-coltelli.html"}]}}
+        ]},
         {"trigger": "toofar:map-san-martino", "effect": {"story": [{"read": "tappe/san-martino-toofar.html"}]}},
         {"trigger": "visit:map-san-martino", "rules": [
-            {"condition": {"noTag":"san-martino"}, "effect": {"tag": "san-martino", "score": 1}},
+            {"condition": {"noTag":"san-martino"}, "effect": {"tag": "san-martino", "score": 2}},
             {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/san-martino-success.html"}]}}
         ]},
         {"trigger": "toofar:map-piazza-anfiteatro", "effect": {"story": [{"read": "tappe/piazza-anfiteatro-toofar.html"}]}},
         {"trigger": "visit:map-piazza-anfiteatro", "rules": [
-            {"condition": {"noTag":"piazza-anfiteatro"}, "effect": {"tag": "piazza-anfiteatro", "score": 1}},
+            {"condition": {"noTag":"piazza-anfiteatro"}, "effect": {"tag": "piazza-anfiteatro", "score": 2}},
             {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/piazza-anfiteatro-success.html"}]}}
         ]},
         {"trigger": "toofar:map-torre-guinigi", "effect": {"story": [{"read": "tappe/torre-guinigi-toofar.html"}]}},
         {"trigger": "visit:map-torre-guinigi", "rules": [
-            {"condition": {"noTag":"torre-guinigi"}, "effect": {"tag": "torre-guinigi", "score": 1}},
+            {"condition": {"noTag":"torre-guinigi"}, "effect": {"tag": "torre-guinigi", "score": 2}},
             {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/torre-guinigi-success.html"}]}}
         ]},
         {"trigger": "toofar:map-piazza-napoleone", "effect": {"story": [{"read": "tappe/piazza-napoleone-toofar.html"}]}},
@@ -170,14 +201,14 @@
         ]}
     ],
     "locations": [
-        {"id":"franklin-33", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502028472868352, "lat": 43.84485690257682},
-        {"id":"the-little-folk", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502387073489482, "lat": 43.84038685106595},
-        {"id":"ciclo-di-vino", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.508031250345251, "lat": 43.847012467131364},
-        {"id":"the-cervesia-taproom", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.508161060578765, "lat": 43.84695975439839},
-        {"id":"the-cervesia-beershop", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.504692893899197, "lat": 43.845106219219886},
-        {"id":"lebowski-cocktail-bar", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.503000461681347, "lat": 43.843436914687246},
-        {"id":"alice-allo-specchio", "icon": "./assets/sept25/mappa/wear-me.png", "anchor": [0.5, 1], "lon": 10.507589211793418, "lat": 43.84672705382186},
-        {"id":"gelateria-de-coltelli", "icon": "./assets/sept25/mappa/eat-me.png", "anchor": [0.5, 1], "lon": 10.501914082129673, "lat": 43.84293242006106},
+        {"id":"franklin-33", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502028472868352, "lat": 43.84485690257682, "near": true},
+        {"id":"the-little-folk", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502387073489482, "lat": 43.84038685106595, "near": true},
+        {"id":"ciclo-di-vino", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.508031250345251, "lat": 43.847012467131364, "near": true},
+        {"id":"the-cervesia-taproom", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.508161060578765, "lat": 43.84695975439839, "near": true},
+        {"id":"the-cervesia-beershop", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.504692893899197, "lat": 43.845106219219886, "near": true},
+        {"id":"lebowski-cocktail-bar", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.503000461681347, "lat": 43.843436914687246, "near": true},
+        {"id":"alice-allo-specchio", "icon": "./assets/sept25/mappa/wear-me.png", "anchor": [0.5, 1], "lon": 10.507589211793418, "lat": 43.84672705382186, "near": true},
+        {"id":"gelateria-de-coltelli", "icon": "./assets/sept25/mappa/eat-me.png", "anchor": [0.5, 1], "lon": 10.501914082129673, "lat": 43.84293242006106, "near": true},
         {"id":"map-brucaliffo", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506438300525973, "lat": 43.842945723669075},
         {"id":"map-dodo", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.504808035420542, "lat": 43.842967313755665},
         {"id":"map-cappellaio-matto", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.496645636980382, "lat": 43.840256949508664},
