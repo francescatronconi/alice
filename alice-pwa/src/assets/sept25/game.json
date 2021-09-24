@@ -84,6 +84,14 @@
             {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-il-collezionista-corpo.html"}]}}
         ]},
 
+        {"trigger": "visit:franklin-33", "effect": {"story": [{"read": "tappe/franklin-33.html"}]}},
+        {"trigger": "visit:the-little-folk", "effect": {"story": [{"read": "tappe/the-little-folk.html"}]}},
+        {"trigger": "visit:ciclo-di-vino", "effect": {"story": [{"read": "tappe/ciclo-di-vino.html"}]}},
+        {"trigger": "visit:the-cervesia-taproom", "effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}]}},
+        {"trigger": "visit:the-cervesia-beershop", "effect": {"story": [{"read": "tappe/the-cervesia-beershop.html"}]}},
+        {"trigger": "visit:lebowski-cocktail-bar", "effect": {"story": [{"read": "tappe/lebowski-cocktail-bar.html"}]}},
+        {"trigger": "visit:alice-allo-specchio", "effect": {"story": [{"read": "tappe/alice-allo-specchio.html"}]}},
+
         {"trigger": "toofar:map-san-martino", "effect": {"story": [{"read": "tappe/san-martino-toofar.html"}]}},
         {"trigger": "visit:map-san-martino", "rules": [
             {"condition": {"noTag":"san-martino"}, "effect": {"tag": "san-martino", "score": 1}},
