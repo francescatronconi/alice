@@ -18,28 +18,69 @@
             {"effect": {"route": ["badgemap", "badges", "badge-dodo"], "story": [{"read": "tappe/dodo-success.html"}]}}
         ]},
 
-        {"trigger": "search:badge-cappellaio-matto", "effect": {"location": "map-cappellaio-matto"}},
-        {"trigger": "visit:map-cappellaio-matto", "effect": {"story": [{"read": "tappe/cappellaio-matto.html"}]}},
-        {"trigger": "search:badge-re-cuori", "effect": {"location": "map-re-cuori"}},
-        {"trigger": "visit:map-re-cuori", "effect": {"story": [{"read": "tappe/re-cuori.html"}]}},
-        {"trigger": "search:badge-regina-cuori", "effect": {"location": "map-regina-cuori"}},
-        {"trigger": "visit:map-regina-cuori", "effect": {"story": [{"read": "tappe/regina-cuori.html"}]}},
-        {"trigger": "search:badge-pinco-panco", "effect": {"location": "map-pinco-panco"}},
-        {"trigger": "visit:map-pinco-panco", "effect": {"story": [{"read": "tappe/pinco-panco.html"}]}},
-        {"trigger": "search:badge-fiori", "effect": {"location": "map-fiori"}},
-        {"trigger": "visit:map-fiori", "effect": {"story": [{"read": "tappe/fiori.html"}]}},
-        {"trigger": "search:badge-tricheco-carpentiere", "effect": {"location": "map-tricheco-carpentiere"}},
-        {"trigger": "visit:map-tricheco-carpentiere", "effect": {"story": [{"read": "tappe/tricheco-carpentiere.html"}]}},
-        {"trigger": "search:badge-humpty-dumpty", "effect": {"location": "map-humpty-dumpty"}},
-        {"trigger": "visit:map-humpty-dumpty", "effect": {"story": [{"read": "tappe/humpty-dumpty.html"}]}},
-        {"trigger": "search:badge-stregatto", "effect": {"location": "map-stregatto"}},
-        {"trigger": "visit:map-stregatto", "effect": {"story": [{"read": "tappe/stregatto.html"}]}},
-        {"trigger": "qrcode:4482", "effect": {"score": 1, "route": ["badgemap", "badges", "badge-stregatto"], "tag": "stregatto-testa", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-1.html"}]}},
-        {"trigger": "qrcode:3795", "effect": {"score": 1, "route": ["badgemap", "badges", "badge-stregatto"], "tag": "stregatto-coda", "badge": "badge-stregatto", "story": [{"read": "tappe/libreria-2.html"}]}},
+        {"trigger": "search:badge-cappellaio-matto", "effect": {"story": [{"read": "tappe/cappellaio-matto.html"}], "location": "map-cappellaio-matto"}},
+        {"trigger": "visit:map-cappellaio-matto", "effect": {"options": "ready-qrcode"}},
+        {"trigger": "qrcode:9184", "rules": [
+            {"condition": {"noTag": "cappellaio-matto"}, "effect": {"tag": "cappellaio-matto", "badge": "badge-cappellaio-matto", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-cappellaio-matto"], "story": [{"read": "tappe/cappellaio-matto-success.html"}]}}
+        ]},
+
+        {"trigger": "search:badge-re-cuori", "effect": {"story": [{"read": "tappe/re-cuori.html"}], "location": "map-re-cuori"}},
+        {"trigger": "visit:map-re-cuori", "effect": {"options": "ready-qrcode"}},
+        {"trigger": "qrcode:5834", "rules": [
+            {"condition": {"noTag": "re-cuori"}, "effect": {"tag": "re-cuori", "badge": "badge-re-cuori", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-re-cuori"], "story": [{"read": "tappe/re-cuori-success.html"}]}}
+        ]},
+
+        {"trigger": "search:badge-regina-cuori", "effect": {"story": [{"read": "tappe/regina-cuori.html"}], "location": "map-regina-cuori"}},
+        {"trigger": "visit:map-regina-cuori", "effect": {"options": "ready-qrcode"}},
+        {"trigger": "qrcode:7381", "rules": [
+            {"condition": {"noTag": "regina-cuori"}, "effect": {"tag": "regina-cuori", "badge": "badge-regina-cuori", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-regina-cuori"], "story": [{"read": "tappe/regina-cuori-success.html"}]}}
+        ]},
+
+        {"trigger": "search:badge-pinco-panco", "effect": {"story": [{"read": "tappe/pinco-panco.html"}], "location": "map-pinco-panco"}},
+        {"trigger": "visit:map-pinco-panco", "effect": {"options": "ready-qrcode"}},
+        {"trigger": "qrcode:8462", "rules": [
+            {"condition": {"noTag": "pinco-panco"}, "effect": {"tag": "pinco-panco", "badge": "badge-pinco-panco", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-pinco-panco"], "story": [{"read": "tappe/pinco-panco-success.html"}]}}
+        ]},
+
+        {"trigger": "search:badge-fiori", "effect": {"story": [{"read": "tappe/fiori.html"}], "location": "map-fiori"}},
+        {"trigger": "visit:map-fiori", "effect": {"options": "ready-qrcode"}},
+        {"trigger": "qrcode:9026", "rules": [
+            {"condition": {"noTag": "fiori"}, "effect": {"tag": "fiori", "badge": "badge-fiori", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-fiori"], "story": [{"read": "tappe/fiori-success.html"}]}}
+        ]},
+
+        {"trigger": "search:badge-tricheco-carpentiere", "effect": {"story": [{"read": "tappe/tricheco-carpentiere.html"}], "location": "map-tricheco-carpentiere"}},
+        {"trigger": "visit:map-tricheco-carpentiere", "effect": {"options": "ready-qrcode"}},
+        {"trigger": "qrcode:5499", "rules": [
+            {"condition": {"noTag": "tricheco-carpentiere"}, "effect": {"tag": "tricheco-carpentiere", "badge": "badge-tricheco-carpentiere", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-tricheco-carpentiere"], "story": [{"read": "tappe/tricheco-carpentiere-success.html"}]}}
+        ]},
+
+        {"trigger": "search:badge-humpty-dumpty", "effect": {"story": [{"read": "tappe/humpty-dumpty.html"}], "location": "map-humpty-dumpty"}},
+        {"trigger": "visit:map-humpty-dumpty", "effect": {"options": "ready-qrcode"}},
+        {"trigger": "qrcode:1638", "rules": [
+            {"condition": {"noTag": "humpty-dumpty"}, "effect": {"tag": "humpty-dumpty", "badge": "badge-humpty-dumpty", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-humpty-dumpty"], "story": [{"read": "tappe/humpty-dumpty-success.html"}]}}
+        ]},
+
+        {"trigger": "search:badge-stregatto", "effect": {"route": "mappa", "story": [{"read": "tappe/stregatto.html"}]}},
+        {"trigger": "qrcode:4482", "rules": [
+            {"condition": {"noTag":"stregatto-testa"}, "effect": {"tag": "stregatto-testa", "badge": "badge-stregatto", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-lucca-libri-testa.html"}]}}
+        ]},
+        {"trigger": "qrcode:3795", "rules": [
+            {"condition": {"noTag":"stregatto-coda"}, "effect": {"tag": "stregatto-coda", "badge": "badge-stregatto", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-pensieri-belli-coda.html"}]}}
+        ]},
         {"trigger": "qrcode:8081", "rules": [
             {"condition": {"noTag":"stregatto-corpo"}, "effect": {"tag": "stregatto-corpo", "badge": "badge-stregatto", "score": 1}},
-            {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-3.html"}]}}
+            {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-il-collezionista-corpo.html"}]}}
         ]},
+        
         {"condition": {"badges": [
             "punteggio-gioco",
             "badge-brucaliffo",
