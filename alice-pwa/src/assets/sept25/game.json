@@ -80,7 +80,7 @@
             {"condition": {"noTag":"stregatto-corpo"}, "effect": {"tag": "stregatto-corpo", "badge": "badge-stregatto", "score": 1}},
             {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-il-collezionista-corpo.html"}]}}
         ]},
-        
+
         {"condition": {"badges": [
             "punteggio-gioco",
             "badge-brucaliffo",
@@ -157,7 +157,7 @@
     "buttons": [
         {"id": "badges", "icon": "./assets/sept25/biblio.svg", "action": ["badgemap", "badges"]},
         {"id": "mappa", "icon": "./assets/sept25/mappa.svg", "action": ["mappa"]},
-        {"id": "credits", "icon": "./assets/svg/credits.svg", "action": ["credits"]}
+        {"id": "credits", "icon": "./assets/sept25/credits.svg", "action": ["credits"]}
     ],
     "map": {
         "user": {"icon": "/mappa/head.png", "anchor": [0.5, 1]},
