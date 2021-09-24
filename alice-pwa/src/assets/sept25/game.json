@@ -91,6 +91,7 @@
         {"trigger": "visit:the-cervesia-beershop", "effect": {"story": [{"read": "tappe/the-cervesia-beershop.html"}]}},
         {"trigger": "visit:lebowski-cocktail-bar", "effect": {"story": [{"read": "tappe/lebowski-cocktail-bar.html"}]}},
         {"trigger": "visit:alice-allo-specchio", "effect": {"story": [{"read": "tappe/alice-allo-specchio.html"}]}},
+        {"trigger": "visit:gelateria-de-coltelli", "effect": {"story": [{"read": "tappe/gelateria-de-coltelli.html"}]}},
 
         {"trigger": "toofar:map-san-martino", "effect": {"story": [{"read": "tappe/san-martino-toofar.html"}]}},
         {"trigger": "visit:map-san-martino", "rules": [
@@ -174,8 +175,9 @@
         {"id":"ciclo-di-vino", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.508031250345251, "lat": 43.847012467131364},
         {"id":"the-cervesia-taproom", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.508161060578765, "lat": 43.84695975439839},
         {"id":"the-cervesia-beershop", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.504692893899197, "lat": 43.845106219219886},
-        {"id":"lebowski-cocktail-bar", "icon": "./assets/sept25/mappa/eat-me.png", "anchor": [0.5, 1], "lon": 10.503000461681347, "lat": 43.843436914687246},
+        {"id":"lebowski-cocktail-bar", "icon": "./assets/sept25/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.503000461681347, "lat": 43.843436914687246},
         {"id":"alice-allo-specchio", "icon": "./assets/sept25/mappa/wear-me.png", "anchor": [0.5, 1], "lon": 10.507589211793418, "lat": 43.84672705382186},
+        {"id":"gelateria-de-coltelli", "icon": "./assets/sept25/mappa/eat-me.png", "anchor": [0.5, 1], "lon": 10.501914082129673, "lat": 43.84293242006106},
         {"id":"map-brucaliffo", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506438300525973, "lat": 43.842945723669075},
         {"id":"map-dodo", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.504808035420542, "lat": 43.842967313755665},
         {"id":"map-cappellaio-matto", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.496645636980382, "lat": 43.840256949508664},
