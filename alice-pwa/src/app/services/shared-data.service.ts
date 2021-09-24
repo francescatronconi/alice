@@ -175,6 +175,12 @@ export class SharedDataService {
     this.savePlay();
   }
 
+  tooFarTappa(location: string) {
+    this.pv.tooFar(this.scenario, this.play, location);
+    this.updateGui();
+    this.savePlay();
+  }
+
   triggerAction(action: string) {
     this.pv.trigger(this.scenario, this.play, action);
     this.updateGui();

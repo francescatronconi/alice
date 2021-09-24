@@ -75,6 +75,7 @@ export class MappaComponent implements OnInit, OnDestroy {
   }
 
   enableGps() {
+    this.canusegps = true;
     this.watchsubscribed = false;
     navigator.geolocation.getCurrentPosition((position) => {
       this.position = position;
@@ -181,6 +182,10 @@ export class MappaComponent implements OnInit, OnDestroy {
     let sorted = this.shared.scenario.locations.map(location => location);
     sorted.sort((a, b) => b.lat < a.lat ? -1 : 1)
     sorted
+      .map(location => {
+        console.log('location', location.id, location.condition, !location.condition, this.canusegps, !location.near, this.canusegps || !location.near);
+        return location;
+      })
       .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
       .filter(location => this.canusegps || !location.near)
       .forEach(location => {
@@ -207,10 +212,13 @@ export class MappaComponent implements OnInit, OnDestroy {
         features: [this.youFeature]
       }),
     });
-    this.map.addLayer(this.youLayer);
+    this.map.getLayers().insertAt(0, this.youLayer);
+    //this.map.addLayer(this.youLayer);
   }
 
   private addFeatureLocation(location: MapLocation) {
+    console.log('Feature for', location.id);
+
     let feature = new Feature({
       geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
       location: location,
@@ -260,7 +268,15 @@ export class MappaComponent implements OnInit, OnDestroy {
 
   clickGioca(location: MapLocation): void {
     this.audio.play('action');
-    this.shared.visitTappa(location.id);
+    if (location.near) {
+      if (this.checkDistance(location)) {
+        this.shared.visitTappa(location.id);
+      } else {
+        this.shared.tooFarTappa(location.id);
+      }
+    } else {
+      this.shared.visitTappa(location.id);
+    }
   }
 
   clickAllowNavigation(canusegps: boolean) {
@@ -274,12 +290,12 @@ export class MappaComponent implements OnInit, OnDestroy {
   }
 
   nearToPlay(): boolean {
-    return this.location && (!this.location.near || this.checkDistance()) ? true: false;
+    return this.location && (!this.location.near || this.checkDistance(this.location)) ? true: false;
   }
 
-  private checkDistance() {
-    let difQuadLat = Math.pow(this.location.lat - this.position.coords.latitude,2)
-    let difQuadLon = Math.pow(this.location.lon - this.position.coords.longitude, 2)
+  private checkDistance(location: MapLocation): boolean {
+    let difQuadLat = Math.pow(location.lat - this.position.coords.latitude,2)
+    let difQuadLon = Math.pow(location.lon - this.position.coords.longitude, 2)
     let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000
     return distance < environment.nearby;
   }

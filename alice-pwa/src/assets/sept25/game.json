@@ -84,6 +84,12 @@
             {"effect": {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "tappe/libreria-il-collezionista-corpo.html"}]}}
         ]},
 
+        {"trigger": "visit:map-piazza-anfiteatro", "effect": {"options": "lib-search", "story": [{"read": "tappe/libreria-lucca-libri.html"}]}},
+        {"trigger": "visit:map-piazza-anfiteatro", "rules": [
+            {"condition": {"noTag":"piazza-anfiteatro"}, "effect": {"tag": "piazza-anfiteatro", "score": 1}},
+            {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/piazza-anfitratro-success.html"}]}}
+        ]},
+
         {"condition": {"badges": [
             "punteggio-gioco",
             "badge-brucaliffo",
@@ -152,10 +158,10 @@
         {"id":"map-lucca-libri", "icon": "./assets/sept25/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.505437469176439, "lat": 43.83828244849533},
         {"id":"map-pensieri-belli", "icon": "./assets/sept25/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.501874162560684, "lat": 43.84049729895711},
         {"id":"map-il-collezionista", "icon": "./assets/sept25/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.503966069570199, "lat": 43.84222160447871},
-        {"id":"map-san-martino", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.505584401875714, "lat": 43.84096504531929},
-        {"id":"map-piazza-anfiteatro", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084},
-        {"id":"map-torre-guinigi", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084},
-        {"id":"map-piazza-napoleone", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084}
+        {"id":"map-san-martino", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.505578328991632, "lat": 43.84096045281929, "near": true},
+        {"id":"map-piazza-anfiteatro", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506146769057995, "lat": 43.845315996891706, "near": true},
+        {"id":"map-torre-guinigi", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506892849357582, "lat": 43.84368847478595, "near": true},
+        {"id":"map-piazza-napoleone", "icon": "./assets/sept25/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.502524026745453, "lat": 43.84132104910688, "near": true}
     ],
     "challenges": [],
     "audio": [

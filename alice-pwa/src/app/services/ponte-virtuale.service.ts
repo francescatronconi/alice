@@ -23,6 +23,7 @@ export class PonteVirtualeService {
       GameEventTriggerAction.validEvent(rule, scenario, play) ||
       GameEventStart.validEvent(rule, scenario, play) ||
       GameEventVisit.validEvent(rule, scenario, play) ||
+      GameEventTooFar.validEvent(rule, scenario, play) ||
       GameEventSuccessfulChallenge.validEvent(rule, scenario, play) ||
       GameEventFailedChallenge.validEvent(rule, scenario, play) ||
       GameEventQrCode.validEvent(rule, scenario, play)
@@ -40,6 +41,11 @@ export class PonteVirtualeService {
 
   visit(scenario: GameScenario, play: GamePlay, location: string) {
     play.event = new GameEventVisit(location);
+    this.runScenarioRules(scenario, play);
+  }
+
+  tooFar(scenario: GameScenario, play: GamePlay, location: string) {
+    play.event = new GameEventTooFar(location);
     this.runScenarioRules(scenario, play);
   }
 
@@ -184,6 +190,22 @@ export class GameEventVisit {
   static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
     let event = (play.event as GameEventVisit);
     let r = /visit:(.*)/;
+    return event.location && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
+  }
+
+}
+
+export class GameEventTooFar {
+
+  location: string;
+
+  constructor(location: string) {
+    this.location = location;
+  }
+
+  static validEvent(rule: GameRule, scenario: GameScenario, play: GamePlay): boolean {
+    let event = (play.event as GameEventTooFar);
+    let r = /toofar:(.*)/;
     return event.location && rule.trigger.match(r) && rule.trigger.match(r)[1] === event.location;
   }
 
