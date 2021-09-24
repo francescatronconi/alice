@@ -23,6 +23,11 @@
     src: url('~/fonts/Belleza-Regular.ttf') format("truetype");
 }
 
+@font-face {
+    font-family: 'Sweet Dream';
+    src: url('~/fonts/SweetDreamdemo.ttf') format("truetype");
+}
+
 
 h2 {
     text-transform: uppercase;
