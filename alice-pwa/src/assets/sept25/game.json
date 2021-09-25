@@ -87,7 +87,7 @@
         {"trigger": "toofar:franklin-33", "effect": {"story": [{"read": "tappe/franklin-33.html"}, {"read": "tappe/toofar-locali.html"}]}},
         {"trigger": "visit:franklin-33", "rules": [
             {"condition": {"noTag":"franklin-33"}, "effect": {"tag": "franklin-33", "score": 1}},
-            {"effect": {"story": [{"read": "tappe/franklin-33.html"}]}}
+            {"effect": {"story": [{"read": "tappe/franklin-33.html"}], "options": "wanna-selfie"}}
         ]},
         {"trigger": "toofar:the-little-folk", "effect": {"story": [{"read": "tappe/the-little-folk.html"}, {"read": "tappe/toofar-locali.html"}]}},
         {"trigger": "visit:the-little-folk", "rules": [
@@ -144,7 +144,7 @@
             {"condition": {"noTag":"piazza-napoleone"}, "effect": {"tag": "piazza-napoleone", "score": 1}},
             {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/piazza-napoleone-success.html"}]}}
         ]},
-        {"trigger": "visit:biblioteca-agora", "effect": {"story": [{"read": "tappe/biblioteca-agora.html"}]}},
+        {"trigger": "visit:biblioteca-agora", "effect": {"options": "wanna-selfie", "story": [{"read": "tappe/biblioteca-agora.html"}]}},
 
         {"condition": {"badges": [
             "punteggio-gioco",
@@ -170,8 +170,11 @@
         {"id": "lib-search", "options": [
             {"text": "Fatto! Devo registrare il codice QR con la fotocamera!", "effect": {"route": ["qrcode"]}},
             {"text": "Devo ancora chiedere come fare...", "effect": {}}
+        ]},
+        {"id": "wanna-selfie", "read": "selfie/wanna-selfie.html", "options": [
+            {"text": "Sì, apri la fotocamera!", "effect": {"route": ["camera"]}},
+            {"text": "Non adesso, grazie...", "effect": {}}
         ]}
-
     ],
     "badges": [
         {"badge": "badge-brucaliffo", "src": "badges/brucaliffo.png"},

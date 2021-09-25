@@ -1,5 +1,13 @@
-<video (click)="clickVideo($event)" #capture autoplay class="myvideo"></video>
-<div class="myphoto">
-    <img (click)="clickImage($event)" #photo src="" />
-    <img style="display: none" #alice src="assets/pisa/mappa/alice.png" />
+<div class="fullpage narrative">
+    <h2>Fatti un selfie con Alice!</h2>
+    <div>Inquadrati e scatta cliccando sul video!</div>
+    <div class="mycamera">
+        <img class="overpicture" #alice src="assets/sept25/selfie/alice.png" />
+        <video (click)="clickVideo($event)" #capture autoplay class="myvideo"></video>
+    </div>
+    <div style="visibility: {{clicked ? 'visible' : 'hidden'}}">
+        <h2>Scarica la foto!</h2>
+        <div>Scarica l'immagine cliccando la foto qui sotto oppure scatta di nuovo!</div>
+        <img class="selfie" (click)="clickImage($event)" #photo src="" />
+    </div>
 </div>

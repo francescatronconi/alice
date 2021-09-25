@@ -357,6 +357,15 @@
              id="image2934"
              x="-50"
              y="-50" />
+          <image
+             class="stregatto-parte stregatto-coda"
+             width="100"
+             height="100"
+             preserveAspectRatio="none"
+             xlink:href="~/badges/stregatto-codina.png"
+             id="image2934-bis"
+             x="-50"
+             y="-50" />
           <g
              class="shadow"
              id="g2736">
