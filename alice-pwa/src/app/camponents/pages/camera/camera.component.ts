@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 //import Jimp from 'jimp';
 
 //declare const Buffer;
@@ -8,22 +8,32 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   templateUrl: './camera.component.html',
   styleUrls: ['./camera.component.scss']
 })
-export class CameraComponent implements OnInit, AfterViewInit {
+export class CameraComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild("capture") capture: ElementRef;
   @ViewChild("photo") photo: ElementRef;
   @ViewChild("alice") alice: ElementRef;
 
+
+  stream: MediaStream;
   jpg: any;
   clicked: boolean;
 
   constructor() { }
+
+  ngOnDestroy(): void {
+    if (this.stream) {
+      let tracks = this.stream.getTracks();
+      tracks.forEach(t => t.stop());
+    }
+  }
 
   ngAfterViewInit(): void {
     this.clicked = false;
     console.log(this.capture);
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
+        this.stream = stream;
         this.capture.nativeElement.srcObject = stream;
 
         let streamh = stream.getVideoTracks()[0].getSettings().height;

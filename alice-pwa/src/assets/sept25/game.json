@@ -1,5 +1,5 @@
 {
-    "id": "lucca-trailer-v05",
+    "id": "lucca-sept25-v01",
     "credits": "credits.html",
     "rules": [
         {"trigger": "start", "effect": {"route": [""], "story": [{"read": "intro.html"}]}},
@@ -92,38 +92,39 @@
         {"trigger": "toofar:the-little-folk", "effect": {"story": [{"read": "tappe/the-little-folk.html"}, {"read": "tappe/toofar-locali.html"}]}},
         {"trigger": "visit:the-little-folk", "rules": [
             {"condition": {"noTag":"the-little-folk"}, "effect": {"tag": "the-little-folk", "score": 1}},
-            {"effect": {"story": [{"read": "tappe/the-little-folk.html"}]}}
+            {"effect": {"story": [{"read": "tappe/the-little-folk.html"}], "options": "wanna-selfie"}}
         ]},
         {"trigger": "toofar:ciclo-di-vino", "effect": {"story": [{"read": "tappe/ciclo-di-vino.html"}, {"read": "tappe/toofar-locali.html"}]}},
         {"trigger": "visit:ciclo-di-vino", "rules": [
             {"condition": {"noTag":"ciclo-di-vino"}, "effect": {"tag": "ciclo-di-vino", "score": 1}},
-            {"effect": {"story": [{"read": "tappe/ciclo-di-vino.html"}]}}
+            {"effect": {"story": [{"read": "tappe/ciclo-di-vino.html"}], "options": "wanna-selfie"}}
         ]},
         {"trigger": "toofar:the-cervesia-taproom", "effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}, {"read": "tappe/toofar-locali.html"}]}},
         {"trigger": "visit:the-cervesia-taproom", "rules": [
             {"condition": {"noTag":"the-cervesia-taproom"}, "effect": {"tag": "the-cervesia-taproom", "score": 1}},
-            {"effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}]}}
+            {"effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}], "options": "wanna-selfie"}}
         ]},
         {"trigger": "toofar:the-cervesia-beershop", "effect": {"story": [{"read": "tappe/the-cervesia-beershop.html"}, {"read": "tappe/toofar-locali.html"}]}},
-        {"trigger": "visit:the-cervesia-taproom", "rules": [
-            {"condition": {"noTag":"the-cervesia-taproom"}, "effect": {"tag": "the-cervesia-taproom", "score": 1}},
-            {"effect": {"story": [{"read": "tappe/the-cervesia-taproom.html"}]}}
+        {"trigger": "visit:the-cervesia-beershop", "rules": [
+            {"condition": {"noTag":"the-cervesia-beershop"}, "effect": {"tag": "the-cervesia-beershop", "score": 1}},
+            {"effect": {"story": [{"read": "tappe/the-cervesia-beershop.html"}], "options": "wanna-selfie"}}
         ]},
         {"trigger": "toofar:lebowski-cocktail-bar", "effect": {"story": [{"read": "tappe/lebowski-cocktail-bar.html"}, {"read": "tappe/toofar-locali.html"}]}},
         {"trigger": "visit:lebowski-cocktail-bar", "rules": [
             {"condition": {"noTag":"lebowski-cocktail-bar"}, "effect": {"tag": "lebowski-cocktail-bar", "score": 1}},
-            {"effect": {"story": [{"read": "tappe/lebowski-cocktail-bar.html"}]}}
+            {"effect": {"story": [{"read": "tappe/lebowski-cocktail-bar.html"}], "options": "wanna-selfie"}}
         ]},
         {"trigger": "toofar:alice-allo-specchio", "effect": {"story": [{"read": "tappe/alice-allo-specchio.html"}, {"read": "tappe/toofar-locali.html"}]}},
         {"trigger": "visit:alice-allo-specchio", "rules": [
             {"condition": {"noTag":"alice-allo-specchio"}, "effect": {"tag": "alice-allo-specchio", "score": 1}},
-            {"effect": {"story": [{"read": "tappe/alice-allo-specchio.html"}]}}
+            {"effect": {"story": [{"read": "tappe/alice-allo-specchio.html"}], "options": "wanna-selfie"}}
         ]},
         {"trigger": "toofar:gelateria-de-coltelli", "effect": {"story": [{"read": "tappe/gelateria-de-coltelli.html"}, {"read": "tappe/toofar-locali.html"}]}},
         {"trigger": "visit:gelateria-de-coltelli", "rules": [
             {"condition": {"noTag":"gelateria-de-coltelli"}, "effect": {"tag": "gelateria-de-coltelli", "score": 1}},
-            {"effect": {"story": [{"read": "tappe/gelateria-de-coltelli.html"}]}}
+            {"effect": {"story": [{"read": "tappe/gelateria-de-coltelli.html"}], "options": "wanna-selfie"}}
         ]},
+
         {"trigger": "toofar:map-san-martino", "effect": {"story": [{"read": "tappe/san-martino-toofar.html"}]}},
         {"trigger": "visit:map-san-martino", "rules": [
             {"condition": {"noTag":"san-martino"}, "effect": {"tag": "san-martino", "score": 2}},
@@ -144,6 +145,7 @@
             {"condition": {"noTag":"piazza-napoleone"}, "effect": {"tag": "piazza-napoleone", "score": 1}},
             {"effect": {"route": ["badgemap", "badges"], "story": [{"read": "tappe/piazza-napoleone-success.html"}]}}
         ]},
+
         {"trigger": "visit:biblioteca-agora", "effect": {"options": "wanna-selfie", "story": [{"read": "tappe/biblioteca-agora.html"}]}},
 
         {"condition": {"badges": [
