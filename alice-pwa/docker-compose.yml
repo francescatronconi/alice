@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3'
 
 services:
 
@@ -8,5 +8,8 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '127.0.0.1:3000:4200'
+      - '127.0.0.1:3013:4200'
+    volumes:
+      - ./src:/app/src
+
     restart: unless-stopped
