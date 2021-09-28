@@ -1796,13 +1796,13 @@
        width="100" />
     <image
        xlink:href="../alice-pwa/src/assets/trailer/logo/../alice.png"
-       transform="scale(-1,1)"
-       width="29.650429"
-       height="29.650429"
-       preserveAspectRatio="none"
-       id="image428"
+       y="59.992428"
        x="-28.579"
-       y="59.992428" />
+       id="image428"
+       preserveAspectRatio="none"
+       height="29.650429"
+       width="29.650429"
+       transform="scale(-1,1)" />
     <image
        y="14.680467"
        x="37.224247"
@@ -1963,6 +1963,27 @@
            style="fill:#000000;stroke:none;stroke-width:0.30777261px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            d="m 60.649566,6.2674914 c -1.329223,-0.012588 -2.159018,1.451988 -2.733285,4.8822826 -0.125128,0.341874 -0.561845,3.371101 0.561445,3.388503 l 4.54806,0.150882 c 0.344336,-0.05048 0.902051,-0.372565 0.909493,-1.145733 C 64.239004,12.963238 63.797859,8.7157885 63.20973,7.6632863 62.511871,6.7704995 61.669987,6.2743485 60.649566,6.2674914 Z m -7.067951,1.6675027 c -0.600745,0.021175 -1.201409,0.2308294 -1.802153,0.6059242 -0.912725,0.7877809 -2.78051,4.6287307 -2.693611,5.2778197 -0.257525,0.729055 0.15658,1.222138 0.462863,1.387384 l 4.325045,1.41443 c 1.061458,0.367949 1.687354,-2.628316 1.686738,-2.992368 C 56.194472,10.208421 55.91635,8.5486342 54.663026,8.1057094 54.302581,7.9772112 53.942063,7.9222923 53.581615,7.9349941 Z m 5.143169,7.7784689 c -0.344333,0.05049 -0.703679,0.0684 -0.711121,0.841568 -0.08862,0.791203 0.0094,1.495291 0.198969,2.156811 0.697859,0.892787 1.539743,1.388332 2.560164,1.395195 0.859608,-0.269393 1.829911,-0.516353 2.729678,-2.24818 0.126184,-0.321733 0.697234,-1.847771 -0.273508,-1.952433 z m -9.950312,0.544013 c -0.779471,-0.01234 -0.765973,1.439785 -0.758011,1.763682 0.252974,1.935148 1.079371,2.49984 1.79494,3.047068 0.961189,0.342665 1.922375,0.164948 2.883564,-0.435208 0.404447,-0.556746 0.737706,-1.18527 0.925121,-1.959047 0.257526,-0.729055 -0.07422,-0.868679 -0.380508,-1.033922 l -4.298595,-1.35973 c -0.05925,-0.01462 -0.114547,-0.02201 -0.166511,-0.02284 z"
            id="path2433" />
+        <g
+           id="kids-icon">
+          <path
+             id="path2429-3"
+             d="m 111.25413,34.649862 c 0.7335,11.094707 -8.20338,17.15614 -18.838836,17.79153 -9.445706,0.564313 -17.110807,-3.651311 -18.902486,-11.787952 -2.104049,-9.555225 9.800641,-22.020115 21.02328,-21.516679 10.974992,0.492328 16.180632,7.384272 16.718042,15.513101 z"
+             style="display:inline;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.54886198;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+          <path
+             style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:0.54346013;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+             d="m 109.63748,29.280156 c 1.50792,11.330191 -5.1444,18.834256 -15.544735,20.27918 -8.71117,1.210249 -18.32933,0.157799 -20.735719,-8.675019 -2.530776,-9.289389 6.315193,-23.100765 17.469315,-24.121425 10.878099,-0.995399 17.805539,4.961526 18.811139,12.517264 z"
+             id="path2431-67" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.21384621px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.65534616;"
+             x="78.274124"
+             y="43.101814"
+             id="text3024"><tspan
+               id="tspan3022"
+               x="78.274124"
+               y="43.101814"
+               style="stroke-width:0.65534616;stroke:#000000;">Kids</tspan></text>
+        </g>
       </g>
       <g
          id="popup-play">
@@ -2684,6 +2705,112 @@
        id="path5238"
        d="m -52.670188,-38.426802 22.70586,13.780109 -28.656362,18.0080956 c 2.873378,-10.3983176 5.851885,-20.7732736 5.950502,-31.7882046 z"
        style="fill:#000000;stroke:none;stroke-width:1.31693983px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path5240-8"
+       d="m -12.171875,148.77148 c -2.007924,0 -3.625,1.61513 -3.625,3.62305 v 16.05078 c 0,2.00793 1.617076,3.625 3.625,3.625 h 22.871094 c 0.485105,0.26689 1.263107,0.47416 2.439453,0.60742 2.88728,0.49464 4.608891,3.2496 5.742187,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.50586,-7.40039 l -0.134766,0.002 c 0.660088,-0.11264 1.221407,-0.23037 1.708985,-0.35157 h 24.777343 c 2.007924,0 3.623047,-1.61707 3.623047,-3.625 v -16.05078 c 0,-2.00792 -1.615123,-3.62305 -3.623047,-3.62305 z"
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+    <text
+       id="text9640"
+       y="167.1519"
+       x="19.048573"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.50907624"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.50907624"
+         y="167.1519"
+         x="19.048573"
+         id="tspan9638">Eat Me</tspan></text>
+    <path
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m -12.171875,184.4211 c -2.007924,0 -3.625,1.61513 -3.625,3.62305 v 16.05078 c 0,2.00793 1.617076,3.625 3.625,3.625 h 22.871094 c 0.485105,0.26689 1.263107,0.47416 2.439453,0.60742 2.88728,0.49464 4.608891,3.2496 5.742187,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.50586,-7.40039 l -0.134766,0.002 c 0.660088,-0.11264 1.221407,-0.23037 1.708985,-0.35157 h 24.777343 c 2.007924,0 3.623047,-1.61707 3.623047,-3.625 v -16.05078 c 0,-2.00792 -1.615123,-3.62305 -3.623047,-3.62305 z"
+       id="path9660" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.50907624"
+       x="19.048573"
+       y="202.80151"
+       id="text9664"><tspan
+         id="tspan9662"
+         x="19.048573"
+         y="202.80151"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.50907624">Drink Me</tspan></text>
+    <path
+       id="path9666"
+       d="m -12.171875,220.40703 c -2.007924,0 -3.625,1.61513 -3.625,3.62305 v 16.05078 c 0,2.00793 1.617076,3.625 3.625,3.625 h 22.871094 c 0.485105,0.26689 1.263107,0.47416 2.439453,0.60742 2.88728,0.49464 4.608891,3.2496 5.742187,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.50586,-7.40039 l -0.134766,0.002 c 0.660088,-0.11264 1.221407,-0.23037 1.708985,-0.35157 h 24.777343 c 2.007924,0 3.623047,-1.61707 3.623047,-3.625 v -16.05078 c 0,-2.00792 -1.615123,-3.62305 -3.623047,-3.62305 z"
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+    <text
+       id="text9670"
+       y="238.78745"
+       x="19.048573"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.50907624"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.36266708px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.50907624"
+         y="238.78745"
+         x="19.048573"
+         id="tspan9668">Wear Me</tspan></text>
+    <path
+       id="path9672"
+       d="m 89.61805,129.46005 c -13.749854,0.4559 -26.907123,14.87304 -26.101564,26.75 0.699685,10.31601 9.413334,14.98867 19.185546,16.0957 2.88728,0.49464 4.608892,3.2496 5.742188,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.50586,-7.40039 l -0.13477,0.002 c 10.91153,-1.86185 18.81321,-8.81114 19.62696,-21.41992 0.64745,-10.03191 -6.74615,-19.53161 -21.07032,-21.07031 -0.91797,-0.0986 -1.83725,-0.13 -2.7539,-0.0996 z"
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+    <text
+       id="text9640-1"
+       y="166.75974"
+       x="92.940025"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.59335226"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0.59335226"
+         y="166.75974"
+         x="92.940025"
+         id="tspan9638-8">Me</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.59335226"
+       x="84.708168"
+       y="153.82397"
+       id="text9696"><tspan
+         id="tspan9694"
+         x="84.708168"
+         y="153.82397"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#000000;stroke:#000000;stroke-width:0.59335226">Find</tspan></text>
+    <path
+       style="display:inline;opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+       d="m 98.698613,185.62501 c -13.749854,0.4559 -26.907123,14.87304 -26.101564,26.75 0.699685,10.31601 9.413334,14.98867 19.185546,16.0957 2.88728,0.49464 4.608892,3.2496 5.742188,7.14258 0.85777,-3.12546 2.33984,-7.02461 5.505857,-7.40039 l -0.13477,0.002 c 10.91153,-1.86185 18.81321,-8.81114 19.62696,-21.41992 0.64745,-10.03191 -6.74615,-19.53161 -21.07032,-21.07031 -0.91797,-0.0986 -1.837247,-0.13 -2.753897,-0.0996 z"
+       id="path9700" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.59335226"
+       x="102.02059"
+       y="222.9247"
+       id="text9704"><tspan
+         id="tspan9702"
+         x="102.02059"
+         y="222.9247"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.59335226">Me</tspan></text>
+    <text
+       id="text9708"
+       y="209.98894"
+       x="93.788734"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.59335226"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.73364639px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0.59335226"
+         y="209.98894"
+         x="93.788734"
+         id="tspan9706">Read</tspan></text>
+  </g>
+  <g
+     style="display:none"
+     id="layer48">
+    <path
+       id="path9608"
+       d="M 12.295827,92.989568 C 8.0113666,91.500662 4.3712474,88.22393 2.2778266,83.97166 -0.00592503,79.332781 0.00418377,79.460473 2.6065892e-5,55.201166 -0.00211033,42.691574 0.12729797,32.817225 0.30796747,31.705261 0.79418317,28.712811 2.5332593,25.532308 4.8623579,23.375967 8.5465846,19.965026 11.538194,19.078211 19.360555,19.078211 h 5.487694 l 0.140886,-3.756151 c 0.09803,-2.613343 0.298232,-4.055234 0.658053,-4.739186 0.755564,-1.4361913 2.887991,-3.2392583 4.292075,-3.6291519 0.79728,-0.2213911 7.77857,-0.3397813 20.105024,-0.3409445 21.36934,-0.00214 20.860786,-0.054253 23.097768,2.3725857 1.501186,1.6285917 1.973527,3.3976227 1.973527,7.3913697 v 2.701478 h 5.520772 c 7.929102,0 11.009252,0.944463 14.81936,4.54406 2.11443,1.997612 3.83217,5.373606 4.28861,8.428738 0.22132,1.481335 0.301136,9.933937 0.23092,24.454921 -0.0986,20.387063 -0.15438,22.334076 -0.68641,23.949338 -1.73958,5.281405 -5.14197,9.417875 -9.598623,11.669555 l -2.52783,1.277167 -36.632008,0.07225 C 16.421084,93.5415 13.788002,93.50811 12.295827,92.989573 Z M 56.734432,81.997255 c 5.543769,-1.266041 11.514756,-5.061146 15.08902,-9.59045 4.442893,-5.630011 6.418967,-11.76001 6.061688,-18.804001 C 77.65725,49.109712 77.121783,47.030766 75.126887,42.893786 66.838605,25.705745 44.317269,21.679921 30.588407,34.932269 26.533895,38.846049 23.62637,44.18 22.506801,49.758239 c -0.72242,3.599447 -0.491008,9.439175 0.498839,12.58814 2.662545,8.470294 7.78786,14.451558 15.50748,18.09729 1.781148,0.841177 6.510877,2.072448 9.11066,2.371735 1.992807,0.229415 6.163608,-0.14513 9.110652,-0.818149 z M 44.601068,76.105536 C 38.410374,74.608492 32.523087,69.542053 30.019001,63.556609 27.598499,57.770948 27.563417,52.337481 29.909296,46.56424 c 2.034497,-5.006927 6.622412,-9.602486 11.803827,-11.823503 1.800122,-0.771618 6.097658,-1.596951 8.315394,-1.596951 1.975934,0 5.770086,0.692492 7.814767,1.426314 2.504404,0.89882 5.969415,3.309907 8.165457,5.681836 3.479575,3.758261 5.915248,9.751344 5.907709,14.536162 -0.0063,3.947902 -1.492886,8.814487 -3.739408,12.240939 -2.712475,4.137127 -8.160152,7.978203 -12.899606,9.095305 -2.581693,0.608516 -8.122595,0.598757 -10.676363,-0.0188 z m 10.535003,-9.894701 c 2.673495,-1.302033 5.293634,-3.971289 6.259424,-6.376782 0.623143,-1.552058 0.769539,-2.492109 0.771252,-4.95256 0.0021,-2.753004 -0.09308,-3.237839 -1.016252,-5.186608 -2.799443,-5.909488 -9.431764,-8.610945 -15.514821,-6.319445 -9.252332,3.485375 -10.748962,16.161361 -2.572355,21.787017 2.429163,1.671305 4.361991,2.214828 7.437508,2.091476 2.211181,-0.0887 3.074414,-0.282952 4.635244,-1.043098 z"
+       style="fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+  <g
+     style="display:none"
+     id="layer49">
+    <path
+       id="path9611"
+       d="M 89.875,1.2480469 A 10.001,10.001 0 0 0 82.980469,4.2285156 L 4.0410156,82.130859 A 10.001,10.001 0 1 0 18.089844,96.367188 L 97.029297,18.462891 A 10.001,10.001 0 0 0 89.875,1.2480469 Z M 50.044922,6.6132812 c -12.326454,0.00116 -19.308189,0.1184527 -20.105469,0.3398438 -1.404084,0.3898936 -3.537405,2.1927154 -4.292969,3.628906 -0.359821,0.683952 -0.560173,2.126892 -0.658203,4.740235 l -0.140625,3.755859 h -5.486328 c -7.822361,0 -10.8138201,0.885934 -14.4980468,4.296875 C 2.5341826,25.531341 0.79480945,28.712628 0.30859375,31.705078 0.12792425,32.817042 -0.0021364,42.69158 0,55.201172 c 0.00245313,14.313482 0.00409341,20.117217 0.47070312,23.439453 0.033107,-0.03265 0.0602734,-0.06916 0.09375,-0.101563 L 22.175781,57.210938 c -0.175008,-2.60398 -0.08351,-5.392416 0.330078,-7.453126 1.119569,-5.578239 4.02752,-10.912391 8.082032,-14.826171 6.239351,-6.02279 14.293859,-8.464544 22.003906,-7.736329 L 72.101562,7.9414062 C 70.427936,6.578974 67.726616,6.6115105 50.044922,6.6132812 Z M 97.037109,25.478516 76.419922,45.824219 c 0.958321,2.471571 1.297258,4.475167 1.464844,7.779297 0.357279,7.043991 -1.617654,13.172723 -6.060547,18.802734 -3.574264,4.529304 -9.546075,8.325756 -15.089844,9.591797 -2.947044,0.673019 -7.118521,1.045821 -9.111328,0.816406 -1.882269,-0.216687 -4.85901,-0.923227 -7.046875,-1.615234 L 28.123047,93.490234 c 5.38762,0.0084 12.16411,0.0046 22.408203,-0.01563 L 87.162109,93.402344 89.689453,92.125 c 4.456653,-2.25168 7.860029,-6.388517 9.599609,-11.669922 0.532032,-1.615262 0.586947,-3.562156 0.685547,-23.949219 0.07022,-14.520984 -0.0091,-22.973743 -0.230468,-24.455078 -0.335157,-2.243335 -1.354061,-4.655672 -2.707032,-6.572265 z m -50.925781,8.111328 c -1.715789,0.309871 -3.421862,0.731783 -4.398437,1.15039 -5.181415,2.221017 -9.768238,6.817292 -11.802735,11.824219 -0.592174,1.457348 -1.033601,2.893183 -1.322265,4.318359 z M 71.416016,50.763672 60.408203,61.626953 c -0.929975,1.348165 -2.24842,2.644238 -3.679687,3.632813 L 45.556641,76.283203 c 2.793615,0.430635 7.422784,0.383426 9.720703,-0.158203 4.739454,-1.117102 10.187915,-4.958576 12.90039,-9.095703 2.246522,-3.426452 3.731982,-8.292332 3.738282,-12.240235 0.002,-1.277056 -0.180535,-2.641654 -0.5,-4.02539 z"
+       style="display:inline;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
   <g
      style="display:none"
@@ -7331,7 +7458,7 @@
         <g
            class="item badge"
            id="badge-regina-cuori"
-           transform="matrix(0.1,0,0,0.1,34.784943,62.28441)">
+           transform="matrix(0.1,0,0,0.1,43.34618,67.278465)">
           <image
              y="-50"
              x="-50"
@@ -7442,6 +7569,15 @@
              id="image2934"
              x="-50"
              y="-50" />
+          <image
+             class="stregatto-parte stregatto-coda"
+             width="100"
+             height="100"
+             preserveAspectRatio="none"
+             xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/sept25/badges/stregatto-codina.png"
+             id="image2934-0"
+             x="702.76892"
+             y="28.417274" />
           <g
              class="shadow"
              id="g2736">
