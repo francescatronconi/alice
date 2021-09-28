@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 100 100"
+   height="100"
+   width="100">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:none"
+     transform="translate(0,-1022.5196)"
+     id="layer1" />
+  <g
+     style="display:inline"
+     id="layer2">
+    <clipPath
+       id="clipPath879"
+       clipPathUnits="userSpaceOnUse">
+      <circle
+         r="50"
+         cy="0"
+         cx="0"
+         id="circle881"
+         style="display:inline;opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:2.99984694;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+    </clipPath>
+    <image
+       width="200"
+       height="200"
+       preserveAspectRatio="none"
+       xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/pbf2021/badges/dante-1120x1120.jpg"
+       id="image842"
+       x="-50"
+       y="972.51959"
+       style="display:inline"
+       transform="translate(0,-1022.5196)" />
+    <g
+       class="item badge"
+       transform="matrix(0.25,0,0,0.25,86.496225,55.935284)"
+       id="badge-paradiso">
+      <g
+         id="g918">
+        <image
+           y="-50"
+           x="-50"
+           id="image914"
+           xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/pbf2021/badges/caronte.jpg"
+           preserveAspectRatio="none"
+           height="100"
+           width="100"
+           clip-path="url(#clipPath879)" />
+        <circle
+           style="display:inline;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="circle916"
+           cx="0"
+           cy="0"
+           r="48" />
+      </g>
+      <g
+         class="shadow"
+         id="g926">
+        <circle
+           r="50"
+           cy="0"
+           cx="0"
+           id="circle920"
+           style="display:inline;opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:2.99984694;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+        <g
+           aria-label="?"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:106.88019562px;line-height:1.25;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.67200494"
+           id="g924">
+          <path
+             d="m 17.091433,-18.552685 q 0,3.340006 -1.095939,6.105949 -1.043752,2.7137549 -2.661568,5.1665718 -1.617815,2.4006294 -3.4965686,4.5925085 -1.8787535,2.19187896 -3.4965689,4.383758 -1.6178155,2.1396914 -2.713755,4.383758 -1.0437519,2.2440666 -1.0437519,4.7490707 0,0.313126 0.052188,0.782814 0.052188,0.417501 0.1565628,0.835002 l 0.2087503,1.043752 -6.5234494,-0.104375 Q -4.4620438,11.455183 -5.088295,9.3676788 -5.6623585,7.2279874 -5.6623585,4.0967317 q 0,-2.0875039 0.6262511,-4.12282008 0.6262512,-2.08750382 1.5656279,-4.01844482 0.9393767,-1.9831287 2.0353162,-3.8096945 1.09593953,-1.8265658 2.03531625,-3.4443813 0.93937675,-1.670003 1.56562785,-3.131256 0.6262512,-1.461252 0.6262512,-2.713755 0,-2.765942 -1.82656588,-4.592508 -1.82656584,-1.826566 -5.11438432,-1.826566 -1.5656279,0 -2.713755,0.417501 -1.0959395,0.365313 -1.8787534,0.991564 -0.7306264,0.626251 -1.2003147,1.409065 -0.4696887,0.730627 -0.7306267,1.461253 h -3.861882 q -1.200314,-1.043752 -1.878753,-2.60938 -0.678439,-1.565628 -0.678439,-2.765942 0,-1.565628 0.887189,-3.340007 0.939377,-1.826565 2.870318,-3.340006 1.983129,-1.51344 5.0621967,-2.505004 3.0790681,-1.043752 7.41063858,-1.043752 4.33157042,0 7.67157652,1.409065 3.3921942,1.356877 5.6362602,3.653132 2.296254,2.296254 3.444381,5.270947 1.200315,2.922505 1.200315,6.001573 z M 7.5932907,26.641773 q 0,1.722191 -0.6262511,3.235631 -0.6262511,1.51344 -1.7221906,2.60938 -1.0959396,1.095939 -2.6093798,1.774378 -1.4612527,0.626251 -3.13125576,0.626251 -1.72219064,0 -3.23563094,-0.626251 -1.5134402,-0.678439 -2.6093798,-1.774378 -1.0959395,-1.09594 -1.7743782,-2.60938 -0.6262511,-1.51344 -0.6262511,-3.235631 0,-1.670003 0.6262511,-3.131256 0.6784387,-1.51344 1.7743782,-2.60938 1.0959396,-1.095939 2.6093798,-1.72219 1.5134403,-0.626251 3.23563094,-0.626251 1.67000306,0 3.13125576,0.626251 1.5134402,0.626251 2.6093798,1.72219 1.0959395,1.09594 1.7221906,2.60938 0.6262511,1.461253 0.6262511,3.131256 z"
+             style="fill:#ffffff;stroke-width:2.67200494"
+             id="path922" />
+        </g>
+      </g>
+    </g>
+    <g
+       class="item badge"
+       transform="matrix(0.25,0,0,0.25,41.291899,13.761414)"
+       id="badge-inferno">
+      <g
+         id="g912">
+        <image
+           clip-path="url(#clipPath879)"
+           width="100"
+           height="100"
+           preserveAspectRatio="none"
+           xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/pbf2021/badges/caronte.jpg"
+           id="image874"
+           x="-50"
+           y="-50" />
+        <circle
+           r="48"
+           cy="0"
+           cx="0"
+           id="circle849-3"
+           style="display:inline;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+      </g>
+      <g
+         class="shadow"
+         id="g886">
+        <circle
+           style="display:inline;opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:2.99984694;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="circle857"
+           cx="0"
+           cy="0"
+           r="50" />
+        <g
+           id="text861"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:106.88019562px;line-height:1.25;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.67200494"
+           aria-label="?">
+          <path
+             id="path863"
+             style="fill:#ffffff;stroke-width:2.67200494"
+             d="m 17.091433,-18.552685 q 0,3.340006 -1.095939,6.105949 -1.043752,2.7137549 -2.661568,5.1665718 -1.617815,2.4006294 -3.4965686,4.5925085 -1.8787535,2.19187896 -3.4965689,4.383758 -1.6178155,2.1396914 -2.713755,4.383758 -1.0437519,2.2440666 -1.0437519,4.7490707 0,0.313126 0.052188,0.782814 0.052188,0.417501 0.1565628,0.835002 l 0.2087503,1.043752 -6.5234494,-0.104375 Q -4.4620438,11.455183 -5.088295,9.3676788 -5.6623585,7.2279874 -5.6623585,4.0967317 q 0,-2.0875039 0.6262511,-4.12282008 0.6262512,-2.08750382 1.5656279,-4.01844482 0.9393767,-1.9831287 2.0353162,-3.8096945 1.09593953,-1.8265658 2.03531625,-3.4443813 0.93937675,-1.670003 1.56562785,-3.131256 0.6262512,-1.461252 0.6262512,-2.713755 0,-2.765942 -1.82656588,-4.592508 -1.82656584,-1.826566 -5.11438432,-1.826566 -1.5656279,0 -2.713755,0.417501 -1.0959395,0.365313 -1.8787534,0.991564 -0.7306264,0.626251 -1.2003147,1.409065 -0.4696887,0.730627 -0.7306267,1.461253 h -3.861882 q -1.200314,-1.043752 -1.878753,-2.60938 -0.678439,-1.565628 -0.678439,-2.765942 0,-1.565628 0.887189,-3.340007 0.939377,-1.826565 2.870318,-3.340006 1.983129,-1.51344 5.0621967,-2.505004 3.0790681,-1.043752 7.41063858,-1.043752 4.33157042,0 7.67157652,1.409065 3.3921942,1.356877 5.6362602,3.653132 2.296254,2.296254 3.444381,5.270947 1.200315,2.922505 1.200315,6.001573 z M 7.5932907,26.641773 q 0,1.722191 -0.6262511,3.235631 -0.6262511,1.51344 -1.7221906,2.60938 -1.0959396,1.095939 -2.6093798,1.774378 -1.4612527,0.626251 -3.13125576,0.626251 -1.72219064,0 -3.23563094,-0.626251 -1.5134402,-0.678439 -2.6093798,-1.774378 -1.0959395,-1.09594 -1.7743782,-2.60938 -0.6262511,-1.51344 -0.6262511,-3.235631 0,-1.670003 0.6262511,-3.131256 0.6784387,-1.51344 1.7743782,-2.60938 1.0959396,-1.095939 2.6093798,-1.72219 1.5134403,-0.626251 3.23563094,-0.626251 1.67000306,0 3.13125576,0.626251 1.5134402,0.626251 2.6093798,1.72219 1.0959395,1.09594 1.7221906,2.60938 0.6262511,1.461253 0.6262511,3.131256 z" />
+        </g>
+      </g>
+    </g>
+    <g
+       class="item badge"
+       transform="matrix(0.25,0,0,0.25,76.647237,22.095174)"
+       id="badge-purgatorio">
+      <g
+         id="g934">
+        <image
+           clip-path="url(#clipPath879)"
+           width="100"
+           height="100"
+           preserveAspectRatio="none"
+           xlink:href="file:///home/daniele/hack/git/alice/alice-pwa/src/assets/pbf2021/badges/caronte.jpg"
+           id="image930"
+           x="-50"
+           y="-50" />
+        <circle
+           r="48"
+           cy="0"
+           cx="0"
+           id="circle932"
+           style="display:inline;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+      </g>
+      <g
+         class="shadow"
+         id="g942">
+        <circle
+           style="display:inline;opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:2.99984694;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+           id="circle936"
+           cx="0"
+           cy="0"
+           r="50" />
+        <g
+           id="g940"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:106.88019562px;line-height:1.25;font-family:'Abyssinica SIL';-inkscape-font-specification:'Abyssinica SIL, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.67200494"
+           aria-label="?">
+          <path
+             id="path938"
+             style="fill:#ffffff;stroke-width:2.67200494"
+             d="m 17.091433,-18.552685 q 0,3.340006 -1.095939,6.105949 -1.043752,2.7137549 -2.661568,5.1665718 -1.617815,2.4006294 -3.4965686,4.5925085 -1.8787535,2.19187896 -3.4965689,4.383758 -1.6178155,2.1396914 -2.713755,4.383758 -1.0437519,2.2440666 -1.0437519,4.7490707 0,0.313126 0.052188,0.782814 0.052188,0.417501 0.1565628,0.835002 l 0.2087503,1.043752 -6.5234494,-0.104375 Q -4.4620438,11.455183 -5.088295,9.3676788 -5.6623585,7.2279874 -5.6623585,4.0967317 q 0,-2.0875039 0.6262511,-4.12282008 0.6262512,-2.08750382 1.5656279,-4.01844482 0.9393767,-1.9831287 2.0353162,-3.8096945 1.09593953,-1.8265658 2.03531625,-3.4443813 0.93937675,-1.670003 1.56562785,-3.131256 0.6262512,-1.461252 0.6262512,-2.713755 0,-2.765942 -1.82656588,-4.592508 -1.82656584,-1.826566 -5.11438432,-1.826566 -1.5656279,0 -2.713755,0.417501 -1.0959395,0.365313 -1.8787534,0.991564 -0.7306264,0.626251 -1.2003147,1.409065 -0.4696887,0.730627 -0.7306267,1.461253 h -3.861882 q -1.200314,-1.043752 -1.878753,-2.60938 -0.678439,-1.565628 -0.678439,-2.765942 0,-1.565628 0.887189,-3.340007 0.939377,-1.826565 2.870318,-3.340006 1.983129,-1.51344 5.0621967,-2.505004 3.0790681,-1.043752 7.41063858,-1.043752 4.33157042,0 7.67157652,1.409065 3.3921942,1.356877 5.6362602,3.653132 2.296254,2.296254 3.444381,5.270947 1.200315,2.922505 1.200315,6.001573 z M 7.5932907,26.641773 q 0,1.722191 -0.6262511,3.235631 -0.6262511,1.51344 -1.7221906,2.60938 -1.0959396,1.095939 -2.6093798,1.774378 -1.4612527,0.626251 -3.13125576,0.626251 -1.72219064,0 -3.23563094,-0.626251 -1.5134402,-0.678439 -2.6093798,-1.774378 -1.0959395,-1.09594 -1.7743782,-2.60938 -0.6262511,-1.51344 -0.6262511,-3.235631 0,-1.670003 0.6262511,-3.131256 0.6784387,-1.51344 1.7743782,-2.60938 1.0959396,-1.095939 2.6093798,-1.72219 1.5134403,-0.626251 3.23563094,-0.626251 1.67000306,0 3.13125576,0.626251 1.5134402,0.626251 2.6093798,1.72219 1.0959395,1.09594 1.7221906,2.60938 0.6262511,1.461253 0.6262511,3.131256 z" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

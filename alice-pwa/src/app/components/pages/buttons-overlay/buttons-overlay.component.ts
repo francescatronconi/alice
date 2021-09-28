@@ -11,6 +11,7 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 export class ButtonsOverlayComponent implements OnInit {
 
   credits: string;
+  fullscreen: string;
 
   constructor(
     public menu: ButtonsMenuService,
@@ -20,6 +21,7 @@ export class ButtonsOverlayComponent implements OnInit {
 
   ngOnInit(): void {
     this.credits = this.shared.scenario.credits;
+    this.fullscreen = this.shared.scenario.fullscreen ? this.shared.getGameResourceUrl(this.shared.scenario.fullscreen) : null;
   }
 
   clickItem(button: MenuButton) {

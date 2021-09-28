@@ -4,12 +4,11 @@
 
 export const environment = {
   production: false,
-  //gameUrl: 'https://www.dantar.it/resources/alice',
-  gameUrl: './assets/sept25',
+  gameUrl: './assets/pbf2021',
   nearby: 0.5,
   gaMeasurementId: null, // alice = 'G-QK32TSKP6N'
   privacy: {
-    site: 'https://alice.vivavoce.it',
+    site: 'https://play.vivavoce.it',
     titolare: 'Associazione VivaVoce',
     mail: 'info@vivavoce.it'
   }

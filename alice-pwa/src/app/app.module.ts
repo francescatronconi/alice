@@ -39,6 +39,7 @@ import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privac
 import { DirectTriggerComponent } from './components/pages/direct-trigger/direct-trigger.component';
 
 import { FormsModule } from '@angular/forms';
+import { GameurlPipe } from './pipes/gameurl.pipe';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { FormsModule } from '@angular/forms';
     CreditsComponent,
     PrivacyPolicyComponent,
     DirectTriggerComponent,
+    GameurlPipe,
   ],
   imports: [
     BrowserModule,

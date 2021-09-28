@@ -243,7 +243,7 @@
         {"id": "credits", "icon": "./assets/sept25/credits.svg", "action": ["credits"]}
     ],
     "map": {
-        "user": {"icon": "/mappa/head.png", "anchor": [0.5, 1]},
+        "user": {"icon": "~/mappa/head.png", "anchor": [0.5, 1]},
         "lon": 10.506937856535545, 
         "lat": 43.84369534529272, 
         "zoom": 15

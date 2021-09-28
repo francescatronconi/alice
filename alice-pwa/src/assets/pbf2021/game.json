@@ -1,0 +1,34 @@
+{
+    "id": "dante-pbf2021",
+    "credits": "credits.html",
+    "fullscreen": "~/buttons/fullscreen.svg",
+    "rules": [
+        {"trigger": "start", "effect": {"route": ["badgemap", "dante"], "story": [{"read": "intro.html"}]}}
+    ],  
+    "options": [
+    ],
+    "badges": [
+        {"badge": "badge-inferno", "src": "badges/inferno.jpg"},
+        {"badge": "badge-purgatorio", "src": "badges/purgatorio.jpg"},
+        {"badge": "badge-paradiso", "src": "badges/paradiso.jpg"}
+    ],
+    "svgmaps": [
+        {"id": "dante", "svg": "dante.svg", "background": "layer2", "ids": [
+            "badge-inferno",
+            "badge-purgatorio",
+            "badge-paradiso"
+        ]}
+    ],
+    "locations": [
+    ],
+    "challenges": [],
+    "audio": [
+        {"id": "action", "src": "audio/action.ogg"}
+    ],
+    "buttons": [
+        {"id": "dante", "icon": "~/buttons/main.svg", "action": ["badgemap", "dante"]},
+        {"id": "credits", "icon": "~/buttons/credits.svg", "action": ["credits"]}
+    ],
+    "map": {
+    }
+}

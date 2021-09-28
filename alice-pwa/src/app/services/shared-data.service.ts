@@ -233,7 +233,7 @@ export class SharedDataService {
   }
 
   public getGameResourceUrl(path: string): string {
-    return path.startsWith('/') ? environment.gameUrl + path : path;
+    return path.startsWith('~/') ? path.replace('~/', `${environment.gameUrl}/`) : path;
   }
 
   public getSvgMap(id: string): SvgMap {
