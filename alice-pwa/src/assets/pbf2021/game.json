@@ -1,23 +1,25 @@
 {
     "id": "dante-pbf2021",
     "credits": "credits.html",
-    "fullscreen": "~/buttons/fullscreen.svg",
+    "fullscreen": null,
     "rules": [
-        {"trigger": "start", "effect": {"route": ["badgemap", "dante"], "story": [{"read": "intro.html"}]}}
-    ],  
+        {"trigger": "start", "effect": {"route": ["badgemap", "dante"], "story": [{"read": "intro.html"}]}},
+        {"trigger": "search:inferno", "effect": {"story": [{"read": "tappe/inferno.html"}], "location": "map-brucaliffo"}},
+        {"condition": {"badges": [
+            "inferno",
+            "purgatorio",
+            "paradiso"
+        ], "noTag": "victory-shown"}, "effect": {"story": [{"read": "victory.html"}], "tag": "victory-shown"}}
+    ],
     "options": [
     ],
     "badges": [
-        {"badge": "badge-inferno", "src": "badges/inferno.jpg"},
-        {"badge": "badge-purgatorio", "src": "badges/purgatorio.jpg"},
-        {"badge": "badge-paradiso", "src": "badges/paradiso.jpg"}
+        {"badge": "inferno", "src": "badges/inferno.jpg"},
+        {"badge": "purgatorio", "src": "badges/purgatorio.jpg"},
+        {"badge": "paradiso", "src": "badges/paradiso.jpg"}
     ],
     "svgmaps": [
-        {"id": "dante", "svg": "dante.svg", "background": "layer2", "ids": [
-            "badge-inferno",
-            "badge-purgatorio",
-            "badge-paradiso"
-        ]}
+        {"id": "dante", "svg": "dante.svg"}
     ],
     "locations": [
     ],
@@ -26,9 +28,10 @@
         {"id": "action", "src": "audio/action.ogg"}
     ],
     "buttons": [
-        {"id": "dante", "icon": "~/buttons/main.svg", "action": ["badgemap", "dante"]},
-        {"id": "credits", "icon": "~/buttons/credits.svg", "action": ["credits"]}
+        {"id": "dante", "icon": "~/buttons/main.svg", "action": ["badgemap", "dante"], "layout": "top-left"},
+        {"id": "credits", "icon": "~/buttons/credits.svg", "action": ["credits"], "layout": "top-left"},
+        {"id": "pbf", "icon": "~/buttons/pisa-book-festival.png", "href": "https://www.pisabookfestival.com/", "layout": "bottom-left"},
+        {"id": "wvoce", "icon": "~/buttons/vivavoce-logo-sqr.png", "href": "https://www.wvoce.it/", "layout": "bottom-left"}
     ],
-    "map": {
-    }
+    "map": {}
 }

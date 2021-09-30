@@ -27,11 +27,6 @@
     overflow: auto;
 }
 
-.main-button {
-    height: 50px;
-    width: 50px;
-}
-
 .background-shadow {
     background-color: rgb(0,0,0,0.5);
 }
@@ -119,6 +114,11 @@
 }
 
 @media screen and (orientation:portrait) {
+
+    .main-button {
+        height: 50px;
+    }
+
     .panel-menu-list.top-right-menu, .panel-menu-list.bottom-right-menu {
         flex-direction: row-reverse;
         .panel-menu-item {
@@ -156,6 +156,11 @@
 }
 
 @media screen and (orientation:landscape) {
+
+    .main-button {
+        width: 50px;
+    }
+
     .panel-menu-list.top-right-menu, .panel-menu-list.top-left-menu {
         flex-direction: column;
         .panel-menu-item {

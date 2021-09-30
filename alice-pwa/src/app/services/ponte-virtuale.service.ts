@@ -599,7 +599,9 @@ export class MapButton {
 
   id: string;
   icon: string;
-  action: string[];
+  action?: string[];
+  href?: string;
+  layout?: string;
 
 }
 

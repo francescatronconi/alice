@@ -9,8 +9,7 @@
     font-style: italic, oblique;
 }
 
-h2 {
-    text-transform: uppercase;
+h1 {
     text-align: center;
 }
 
@@ -32,8 +31,8 @@ h2 {
 
 .narrative {
     font-family: "IM FELL English";
-    font-size: 1.2em;
-    color: #0277c1;
+    font-size: 1.6em;
+    color: #60271a;
 }
 .narrative-image {
     width: 100%;
@@ -47,7 +46,7 @@ h2 {
 .welcome {
     font-family: "IM FELL English";
     font-size: 1.6em;
-    color: #0277c1;
+    color: #60271a;
 }
 
 .bg {
@@ -70,7 +69,7 @@ h2 {
     color: black;
 }
 .button:before {
-    content: url('~/button-act.png');
+    content: url('~/buttons/button-act.png');
     margin-right: 5px;
 }
 
