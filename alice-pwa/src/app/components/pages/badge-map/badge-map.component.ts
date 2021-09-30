@@ -133,13 +133,26 @@ export class BadgeMapComponent implements OnInit {
     this.shared.getHtmlResource(this.svgmap.svg).then(svg => {
       let parser = new DOMParser();
       this.svg = parser.parseFromString(svg, 'text/xml');
-      if (this.svgmap.background) {
-        this.background = new BadgeMapItem(this.svgmap.id, this.svg.getElementById(this.svgmap.background));
+      this.areas = [];
+      this.triggers = [];
+      this.background = null;
+      let elements = this.svg.getElementsByClassName('item');
+      for (let index=0; index < elements.length; index++) {
+        let element = elements.item(index) as HTMLElement;
+        console.log(element);
+        if (element.classList.contains('badge')) {
+          console.log('area', element);
+          this._addBadge(element);
+        }
+        if (element.classList.contains('trigger')) {
+          console.log('trigger', element);
+          this._addTrigger(element);
+        }
+        if (element.classList.contains('background')) {
+          console.log('bg', element);
+          this._setBackground(element);
+        }
       }
-      this.areas = this.svgmap.ids
-      .map(id => new BadgeMapItem(id, this.svg.getElementById(id)))
-      .map(item => item.initStyle(this.shared))
-      .filter(area => area.element ? true: false);
       if (this.openBadgeName()) {
         let move: BadgeMapItem[] = [];
         this.areas
@@ -153,13 +166,16 @@ export class BadgeMapComponent implements OnInit {
           this.moveForward(area);
         });
       };
-      this.triggers = [];
-      this.svg.querySelectorAll('.badge-trigger').forEach(native => {
-        if (native && native.getAttribute('id')) {
-          this.triggers.push(new TriggerMapItem(native.getAttribute('id'), native));
-        }
-      });
     });
+  }
+  private _addBadge(element: HTMLElement) {
+    this.areas.push(new BadgeMapItem(element.getAttribute('name'), element));
+  }
+  private _addTrigger(element: HTMLElement) {
+    this.triggers.push(new TriggerMapItem(element.getAttribute('name'), element));
+  }
+  private _setBackground(element: HTMLElement) {
+    this.background = new BadgeMapItem('background', element);
   }
 
   xml(area: BadgeMapItem): string {

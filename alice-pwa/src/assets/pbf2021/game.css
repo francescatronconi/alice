@@ -1,36 +1,12 @@
 @font-face {
-    font-family: 'Alice in Wonderland';
-    src: url('~/fonts/Alice_in_Wonderland_3.ttf') format("truetype");
+    font-family: 'IM FELL English';
+    src: url('~/fonts/IMFellEnglish-Regular.ttf') format("truetype");
 }
 
 @font-face {
-    font-family: 'MomsDiner';
-    src: url('~/fonts/MomsDiner.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: 'BodoniFLF Bold';
-    src: url('~/fonts/BodoniFLF.bold.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: 'Coming Soon';
-    src: url('~/fonts/ComingSoon-Regular.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: 'Belleza';
-    src: url('~/fonts/Belleza-Regular.ttf') format("truetype");
-}
-
-@font-face {
-    font-family: 'Sweet Dream';
-    src: url('~/fonts/Sweet-Dreamdemo.ttf') format("truetype");
-}
-
-.main-button {
-    height: 50px;
-    width: 50px;
+    font-family: 'IM FELL English';
+    src: url('~/fonts/IMFellEnglish-Italic.ttf') format("truetype");
+    font-style: italic, oblique;
 }
 
 h2 {
@@ -55,7 +31,7 @@ h2 {
 }
 
 .narrative {
-    font-family: "Belleza";
+    font-family: "IM FELL English";
     font-size: 1.2em;
     color: #0277c1;
 }
@@ -69,7 +45,7 @@ h2 {
 }
 
 .welcome {
-    font-family: "Belleza";
+    font-family: "IM FELL English";
     font-size: 1.6em;
     color: #0277c1;
 }
