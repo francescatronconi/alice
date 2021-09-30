@@ -352,19 +352,26 @@
     <g
        inkscape:groupmode="layer"
        id="layer9"
-       inkscape:label="button act">
+       inkscape:label="button act"
+       style="display:none">
       <circle
          r="45"
          cy="50"
          cx="50"
          id="path934-7"
-         style="display:inline;opacity:1;vector-effect:none;fill:#60271a;fill-opacity:1;stroke:none;stroke-width:5.33333349;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+         style="display:inline;opacity:1;vector-effect:none;fill:#60271a;fill-opacity:1;stroke:none;stroke-width:5.33333349;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
+         inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/pbf2021/buttons/button-act.png"
+         inkscape:export-xdpi="32"
+         inkscape:export-ydpi="32" />
       <path
          style="fill:#ece4d4;fill-opacity:1;stroke:none;stroke-width:1.25833333px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 22.919644,77.500001 c 14.747521,-18.74448 23.5411,-38.065147 9.011904,-59.642858 L 89.9375,49.833334 Z"
          id="path1285"
          inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc" />
+         sodipodi:nodetypes="cccc"
+         inkscape:export-filename="/home/daniele/hack/git/alice/alice-pwa/src/assets/pbf2021/buttons/button-act.png"
+         inkscape:export-xdpi="32"
+         inkscape:export-ydpi="32" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -401,7 +408,7 @@
        inkscape:groupmode="layer"
        id="layer7"
        inkscape:label="vivavoce"
-       style="display:none">
+       style="display:inline">
       <g
          id="g989"
          transform="matrix(0.08699086,0,0,0.08699086,62.600733,66.05417)"
