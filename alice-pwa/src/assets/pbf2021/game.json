@@ -4,7 +4,7 @@
     "fullscreen": null,
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "dante"], "story": [{"read": "intro.html"}]}},
-        {"trigger": "search:inferno", "effect": {"story": [{"read": "tappe/inferno.html"}], "location": "map-brucaliffo"}},
+        {"trigger": "search:inferno", "effect": {"story": [{"read": "tappe/inferno.html"}], "options": "inferno"}},
         {"condition": {"badges": [
             "inferno",
             "purgatorio",
@@ -12,6 +12,14 @@
         ], "noTag": "victory-shown"}, "effect": {"story": [{"read": "victory.html"}], "tag": "victory-shown"}}
     ],
     "options": [
+        {"id": "inferno", "read": "tappe/inferno-quiz.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "inferno-failure.html"}], "options": "inferno"}},
+            {"text": ""},
+            {"text": "ugolino", "effects": [
+                {"condition": {"noTag": "inferno-done"}, "tag": "inferno-done", "badge": "inferno"},
+                {"read": "tappe/inferno-success.html", "route": ["badgemap", "dante", "inferno"]}
+            ]}
+        ]}
     ],
     "badges": [
         {"badge": "inferno", "src": "badges/inferno.jpg"},

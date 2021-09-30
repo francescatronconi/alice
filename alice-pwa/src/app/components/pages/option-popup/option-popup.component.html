@@ -1,5 +1,11 @@
 <div class="blackdim"></div>
-<div class="fullpage narrative" >
+<div class="fullpage narrative"  >
     <div class="modal" *ngIf="read" [innerHTML]="read"></div>
-    <div class="button" *ngFor="let option of shared.options.options" (click)="clickOption(option)">{{option.text}}</div>
+    <div *ngIf="!free">
+        <div class="button" *ngFor="let option of shared.options.options" (click)="clickOption(option)">{{option.text}}</div>
+    </div>
+    <div *ngIf="free" class="modal freetext">
+        <input type="text" [(ngModel)]="freetext" />
+    </div>
+    <div *ngIf="free" class="button" (click)="clickDone()">ok</div>
 </div>

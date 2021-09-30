@@ -65,6 +65,41 @@ h1 {
     background-size: cover;
 }
 
+.versi {
+    margin-left: 15px;
+}
+
+.versi:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.5em;
+}
+.versi:after {
+    color: #ccc;
+    content: close-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.5em;
+}
+.versi p {
+    margin: 0px;
+    font-size: 0.8em;
+    color: black;
+}
+
+.award {
+    display: none;
+}
+
+.tag-inferno-done .award-inferno {
+    display: inline;
+}
+
+
 .button {
     color: black;
 }

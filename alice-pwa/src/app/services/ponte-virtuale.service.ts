@@ -109,7 +109,9 @@ export class PonteVirtualeService {
   }
 
   applyEffect(effect: GameEffect, scenario: GameScenario, play: GamePlay): void {
-    GameEffect.validateAndRun(effect, scenario, play);
+    if (!effect.condition || this.checkCondition(effect.condition, play, scenario)) {
+      GameEffect.validateAndRun(effect, scenario, play);
+    }
   }
 
   getOptions(scenario: GameScenario, play: GamePlay): GameOption {
@@ -124,7 +126,14 @@ export class PonteVirtualeService {
 
   setOption(play: GamePlay, scenario: GameScenario, option: Option) {
     play.options.shift();
-    this.applyEffect(option.effect, scenario, play)
+    if (option.effect) {
+      this.applyEffect(option.effect, scenario, play)
+    }
+    if (option.effects) {
+      option.effects.forEach(effect => {
+        this.applyEffect(effect, scenario, play)
+      });
+    }
   }
   
   constructor(
@@ -361,6 +370,7 @@ export class GameConditionNoTag extends GameCondition {
 // GameEffect
 
 export class GameEffect {
+  condition?: GameCondition;
   static _effects: typeof GameEffect[] = [];
   static register(effectClass: typeof GameEffect) {
     this._effects.push(effectClass);
@@ -523,11 +533,13 @@ export class GameOption {
   id: string;
   read: string;
   options: Option[];
+  free: boolean;
 }
 
 export class Option {
   text: string;
   effect: GameEffect;
+  effects: GameEffect[];
 }
 
 export class GameChallenge {

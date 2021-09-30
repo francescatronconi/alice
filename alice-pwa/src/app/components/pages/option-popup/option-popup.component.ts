@@ -13,6 +13,8 @@ export class OptionPopupComponent implements OnInit {
 
   opt: GameOption;
   read: string;
+  free: boolean;
+  freetext: string;
 
   constructor(
     public shared: SharedDataService,
@@ -23,6 +25,8 @@ export class OptionPopupComponent implements OnInit {
 
   ngOnInit(): void {
     this.opt = this.shared.getOptions();
+    this.free = this.opt.free;
+    this.freetext = this.free? '': null;
     if (this.opt.read) {
       this.shared.getHtmlResource(this.opt.read).then(html => {
         this.read = this.resolver.digest(html)
@@ -33,6 +37,16 @@ export class OptionPopupComponent implements OnInit {
   clickOption(option: Option) {
     this.audio.play('action');
     this.shared.setOption(option);
+  }
+
+  clickDone() {
+    this.audio.play('action');
+    let found = this.opt.options.filter(o => o.text === this.freetext.toLowerCase().trim());
+    if (found.length > 0) {
+      this.shared.setOption(found[0]);
+    } else {
+      this.shared.setOption(this.opt.options[0]);
+    }
   }
 
 }
