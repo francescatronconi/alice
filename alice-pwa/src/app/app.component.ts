@@ -20,6 +20,7 @@ export class AppComponent {
     public shared: SharedDataService,
     public cookies: AcceptCookieService,
   ) {
+    this.setupFavicon('assets/favicon-wvoce.ico');
     this.titleService.setTitle(this.title);
     this.shared.scenarioReadyObs.subscribe(scenario => {
       this.svgFrame = this.shared.getSvgMap('frame');
@@ -27,7 +28,17 @@ export class AppComponent {
         this.shared.startGame();
       }
     });
+  }
 
+  private setupFavicon(url: string) {
+    // https://stackoverflow.com/questions/260857/changing-website-favicon-dynamically
+    let link: HTMLLinkElement = document.querySelector("link[rel~='icon']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+    link.href = url;
   }
 
 }
