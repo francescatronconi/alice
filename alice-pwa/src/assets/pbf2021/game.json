@@ -4,20 +4,32 @@
     "fullscreen": null,
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "dante"], "story": [{"read": "intro.html"}]}},
-        {"trigger": "search:inferno", "effect": {"story": [{"read": "tappe/inferno.html"}], "options": "inferno"}},
+        {"trigger": "search:inferno", "rules": [
+            {"effect": {"story": [{"read": "tappe/inferno.html"}]}},
+            {"condition": {"noTag": "inferno1-done"}, "effect": {"options": "inferno1"}},
+            {"condition": {"tag": "inferno1-done"}, "effect": {"options": "inferno2"}}
+        ]},
         {"condition": {"badges": [
             "inferno",
             "purgatorio",
             "paradiso"
-        ], "noTag": "victory-shown"}, "effect": {"story": [{"read": "victory.html"}], "tag": "victory-shown"}}
+        ], "noTag": "victory-shown"}, "effect": {"story": [{"read": "tappe/victory.html"}], "tag": "victory-shown"}}
     ],
     "options": [
-        {"id": "inferno", "read": "tappe/inferno-quiz.html", "free": true, "options": [
-            {"text": "default", "effect": {"story": [{"read": "inferno-failure.html"}], "options": "inferno"}},
+        {"id": "inferno1", "read": "tappe/inferno1-quiz.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "tappe/inferno1-failure.html"}], "options": "inferno1"}},
             {"text": ""},
             {"text": "ugolino", "effects": [
-                {"condition": {"noTag": "inferno-done"}, "tag": "inferno-done", "badge": "inferno"},
-                {"read": "tappe/inferno-success.html", "route": ["badgemap", "dante", "inferno"]}
+                {"condition": {"noTag": "inferno1-done"}, "tag": "inferno1-done"},
+                {"story": [{"read": "tappe/inferno1-success.html"}], "options": "inferno2"}
+            ]}
+        ]},
+        {"id": "inferno2", "read": "tappe/inferno2-quiz.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "tappe/inferno2-failure.html"}], "options": "inferno2"}},
+            {"text": ""},
+            {"text": "fame", "effects": [
+                {"condition": {"noTag": "inferno2-done"}, "tag": "inferno2-done", "badge": "inferno"},
+                {"story": [{"read": "tappe/inferno2-success.html"}], "route": ["badgemap", "dante", "inferno"]}
             ]}
         ]}
     ],

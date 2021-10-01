@@ -94,11 +94,21 @@ h1 {
 .award {
     display: none;
 }
-
-.tag-inferno-done .award-inferno {
+.hasbadge-inferno .award-inferno {
     display: inline;
 }
-
+.hasbadge-purgatorio .award-purgatorio {
+    display: inline;
+}
+.hasbadge-paradiso .award-paradiso {
+    display: inline;
+}
+.hasbadge-inferno .lock-purgatorio {
+    display: none;
+}
+.hasbadge-purgatorio .lock-paradiso {
+    display: none;
+}
 
 .button {
     color: black;
