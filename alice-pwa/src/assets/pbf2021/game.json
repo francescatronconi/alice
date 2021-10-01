@@ -9,10 +9,12 @@
             {"condition": {"noTag": "inferno1-done"}, "effect": {"options": "inferno1"}},
             {"condition": {"tag": "inferno1-done"}, "effect": {"options": "inferno2"}}
         ]},
+        {"condition": {"nobadge": "inferno"}, "trigger": "search:purgatorio", "effect": {"story": [{"read": "tappe/cantica-locked.html"}]}},
         {"condition": {"badge": "inferno"}, "trigger": "search:purgatorio", "rules": [
             {"condition": {"noTag": "purgatorio1-done"}, "effect": {"options": "purgatorio1"}},
             {"condition": {"tag": "purgatorio1-done"}, "effect": {"options": "purgatorio2"}}
         ]},
+        {"condition": {"nobadge": "purgatorio"}, "trigger": "search:paradiso", "effect": {"story": [{"read": "tappe/cantica-locked.html"}]}},
         {"condition": {"badge": "purgatorio"}, "trigger": "search:paradiso", "rules": [
             {"condition": {"noTag": "paradiso1-done"}, "effect": {"options": "paradiso1"}},
             {"condition": {"tag": "paradiso1-done"}, "effect": {"options": "paradiso2"}}
