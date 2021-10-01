@@ -7,7 +7,7 @@ export const environment = {
   //gameUrl: 'https://www.dantar.it/resources/alice',
   gameUrl: './assets/papale',
   nearby: 1000,
-  gaMeasurementId: null, // alice = 'G-QK32TSKP6N'
+  gaMeasurementId: null,
   privacy: {
     site: 'https://alice.vivavoce.it',
     titolare: 'Associazione VivaVoce',

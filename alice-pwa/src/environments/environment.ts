@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   gameUrl: './assets/pbf2021',
   nearby: 0.5,
-  gaMeasurementId: null, // alice = 'G-QK32TSKP6N'
+  gaMeasurementId: null,
   privacy: {
     site: 'https://play.vivavoce.it',
     titolare: 'Associazione VivaVoce',

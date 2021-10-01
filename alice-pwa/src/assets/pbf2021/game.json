@@ -5,9 +5,17 @@
     "rules": [
         {"trigger": "start", "effect": {"route": ["badgemap", "dante"], "story": [{"read": "intro.html"}]}},
         {"trigger": "search:inferno", "rules": [
-            {"effect": {"story": [{"read": "tappe/inferno.html"}]}},
             {"condition": {"noTag": "inferno1-done"}, "effect": {"options": "inferno1"}},
             {"condition": {"tag": "inferno1-done"}, "effect": {"options": "inferno2"}}
+        ]},
+        {"condition": {"badge": "inferno"}, "trigger": "search:purgatorio", "rules": [
+            {"condition": {"noTag": "purgatorio1-done"}, "effect": {"options": "purgatorio1"}},
+            {"condition": {"tag": "purgatorio1-done"}, "effect": {"options": "purgatorio2"}}
+        ]},
+        {"condition": {"badge": "purgatorio"}, "trigger": "search:paradiso", "rules": [
+            {"effect": {"story": [{"read": "tappe/paradiso.html"}]}},
+            {"condition": {"noTag": "paradiso1-done"}, "effect": {"options": "paradiso1"}},
+            {"condition": {"tag": "paradiso1-done"}, "effect": {"options": "paradiso2"}}
         ]},
         {"condition": {"badges": [
             "inferno",
@@ -31,6 +39,39 @@
                 {"condition": {"noTag": "inferno2-done"}, "tag": "inferno2-done", "badge": "inferno"},
                 {"story": [{"read": "tappe/inferno2-success.html"}], "route": ["badgemap", "dante", "inferno"]}
             ]}
+        ]},
+        {"id": "purgatorio1", "read": "tappe/purgatorio1-quiz.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "tappe/purgatorio1-failure.html"}], "options": "purgatorio1"}},
+            {"text": ""},
+            {"text": "italia", "effects": [
+                {"condition": {"noTag": "purgatorio1-done"}, "tag": "purgatorio1-done"},
+                {"story": [{"read": "tappe/purgatorio1-success.html"}], "options": "purgatorio2"}
+            ]}
+        ]},
+        {"id": "purgatorio2", "read": "tappe/purgatorio2-quiz.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "tappe/purgatorio2-failure.html"}], "options": "purgatorio2"}},
+            {"text": ""},
+            {"text": "guerra", "effects": [
+                {"condition": {"noTag": "purgatorio2-done"}, "tag": "purgatorio2-done", "badge": "purgatorio"},
+                {"story": [{"read": "tappe/purgatorio2-success.html"}], "route": ["badgemap", "dante", "purgatorio"]}
+            ]}
+        ]},
+        {"id": "paradiso1", "read": "tappe/paradiso1-quiz.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "tappe/paradiso1-failure.html"}], "options": "paradiso1"}},
+            {"text": ""},
+            {"text": "fiore", "effects": [
+                {"condition": {"noTag": "paradiso1-done"}, "tag": "paradiso1-done"},
+                {"story": [{"read": "tappe/paradiso1-success.html"}], "options": "paradiso2"}
+            ]}
+        ]},
+        {"id": "paradiso2", "read": "tappe/paradiso2-quiz.html", "options": [
+            {"text": "Tristezza", "effect": {"story": [{"read": "tappe/paradiso2-failure.html"}], "options": "paradiso2"}},
+            {"text": "Speranza", "effects": [
+                {"condition": {"noTag": "paradiso2-done"}, "tag": "paradiso2-done", "badge": "paradiso"},
+                {"story": [{"read": "tappe/paradiso2-success.html"}], "route": ["badgemap", "dante", "paradiso"]}
+            ]},
+            {"text": "Denaro", "effect": {"story": [{"read": "tappe/paradiso2-failure.html"}], "options": "paradiso2"}},
+            {"text": "(esci)", "effect": {}}
         ]}
     ],
     "badges": [
