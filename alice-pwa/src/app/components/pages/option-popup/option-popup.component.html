@@ -5,7 +5,7 @@
         <div class="button" *ngFor="let option of shared.options.options" (click)="clickOption(option)">{{option.text}}</div>
     </div>
     <div *ngIf="free" class="modal freetext">
-        <input type="text" [(ngModel)]="freetext" />
+        <input type="text" [(ngModel)]="freetext" (keyup.enter)="clickDone()" />
     </div>
     <div *ngIf="free" class="button" (click)="clickDone()">ok</div>
 </div>

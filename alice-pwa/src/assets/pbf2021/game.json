@@ -1,9 +1,10 @@
 {
-    "id": "dante-pbf2021-v1",
+    "id": "dante-pbf2021-v2",
     "credits": "credits.html",
     "fullscreen": null,
     "rules": [
-        {"trigger": "start", "effect": {"route": ["badgemap", "dante"], "story": [{"read": "intro.html"}]}},
+        {"trigger": "start", "effect": {"route": [""]}},
+        {"trigger": "welcome", "effect": {"route": ["badgemap", "dante"], "story": [{"read": "intro.html"}]}},
         {"trigger": "search:inferno", "rules": [
             {"condition": {"noTag": "inferno1-done"}, "effect": {"options": "inferno1"}},
             {"condition": {"tag": "inferno1-done"}, "effect": {"options": "inferno2"}}

@@ -24,7 +24,7 @@ export class CheckInComponent implements OnInit {
 
   clickPlay() {
     this.audio.play('action');
-    this.router.navigate(this.shared.scenario.buttons[0].action);
+    this.shared.triggerAction('welcome');
   }
 
 }
