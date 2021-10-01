@@ -1,0 +1,41 @@
+{
+    "id": "papale-01",
+    "credits": "credits.html",
+    "rules": [
+        {"trigger": "start", "effect": {"route": [""], "story": [{"read": "intro.html"}]}},
+	{
+		"trigger": "visit:palazzo-penne",
+		"effect": {"story": [{"read": "palazzo-penne.html"}]}
+	}
+    ],
+    "options": [],
+    "badges": [],
+    "svgmaps": [],
+    "locations": [
+	    {
+		    "id": "palazzo-penne",
+		    "name": "Palazzo Penne",
+		    "icon": "./assets/papale/mappa/palazzo-penne.png",
+		    "anchor": [0.5, 1],
+		    "description": "Palazzo Penne",
+		    "lon": 14.25428, "lat": 40.84500,
+		    "near": false
+	    }
+    ],
+    "challenges": [
+    ],
+    "audio": [
+        {"id": "action", "src": "audio/action.ogg"}
+    ],
+    "buttons": [
+        {"id": "badges", "icon": "./assets/papale/badge.svg", "action": ["badgemap", "badges"]},
+        {"id": "mappa", "icon": "./assets/papale/mappa.svg", "action": ["mappa"]},
+        {"id": "credits", "icon": "./assets/svg/credits.svg", "action": ["credits"]}
+    ],
+    "map": {
+        "user": {"icon": "/mappa/head.png", "anchor": [0.5, 1]},
+        "lon": 14.25428, 
+        "lat": 40.84500, 
+        "zoom": 15
+    }
+}

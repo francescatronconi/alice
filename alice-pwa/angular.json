@@ -90,6 +90,14 @@
                   "with": "src/environments/environment.pbf2021.ts"
                 }
               ]
+            },
+            "papale": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.papale.ts"
+                }
+              ]
             }
           }
         },
@@ -111,6 +119,12 @@
             "pbf2021": {
               "browserTarget": "alice-pwa:build:pbf2021"
             }
+            "dezhi": {
+              "browserTarget": "alice-pwa:build:dezhi"
+            },
+	    "papale": {
+		    "browserTarget": "alice-pwa:build:papale"
+	    }
           }
         },
         "extract-i18n": {

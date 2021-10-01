@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  pontevirtuale:
+    container_name: pontevirtuale
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '127.0.0.1:3013:4200'
+    volumes:
+      - ./src:/app/src
+
+    restart: unless-stopped
