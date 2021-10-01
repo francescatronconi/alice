@@ -13,7 +13,6 @@
             {"condition": {"tag": "purgatorio1-done"}, "effect": {"options": "purgatorio2"}}
         ]},
         {"condition": {"badge": "purgatorio"}, "trigger": "search:paradiso", "rules": [
-            {"effect": {"story": [{"read": "tappe/paradiso.html"}]}},
             {"condition": {"noTag": "paradiso1-done"}, "effect": {"options": "paradiso1"}},
             {"condition": {"tag": "paradiso1-done"}, "effect": {"options": "paradiso2"}}
         ]},
@@ -53,7 +52,7 @@
             {"text": ""},
             {"text": "guerra", "effects": [
                 {"condition": {"noTag": "purgatorio2-done"}, "tag": "purgatorio2-done", "badge": "purgatorio"},
-                {"story": [{"read": "tappe/purgatorio2-success.html"}], "route": ["badgemap", "dante", "purgatorio"]}
+                {"story": [{"read": "tappe/purgatorio2-success.html"}, {"read": "tappe/paradiso.html"}], "route": ["badgemap", "dante", "purgatorio"]}
             ]}
         ]},
         {"id": "paradiso1", "read": "tappe/paradiso1-quiz.html", "free": true, "options": [
