@@ -1,5 +1,5 @@
 {
-    "id": "dante-pbf2021",
+    "id": "dante-pbf2021-v1",
     "credits": "credits.html",
     "fullscreen": null,
     "rules": [
@@ -15,12 +15,7 @@
         {"condition": {"badge": "purgatorio"}, "trigger": "search:paradiso", "rules": [
             {"condition": {"noTag": "paradiso1-done"}, "effect": {"options": "paradiso1"}},
             {"condition": {"tag": "paradiso1-done"}, "effect": {"options": "paradiso2"}}
-        ]},
-        {"condition": {"badges": [
-            "inferno",
-            "purgatorio",
-            "paradiso"
-        ], "noTag": "victory-shown"}, "effect": {"story": [{"read": "tappe/victory.html"}], "tag": "victory-shown"}}
+        ]}
     ],
     "options": [
         {"id": "inferno1", "read": "tappe/inferno1-quiz.html", "free": true, "options": [
@@ -67,7 +62,7 @@
             {"text": "Tristezza", "effect": {"story": [{"read": "tappe/paradiso2-failure.html"}], "options": "paradiso2"}},
             {"text": "Speranza", "effects": [
                 {"condition": {"noTag": "paradiso2-done"}, "tag": "paradiso2-done", "badge": "paradiso"},
-                {"story": [{"read": "tappe/paradiso2-success.html"}], "route": ["badgemap", "dante", "paradiso"]}
+                {"story": [{"read": "tappe/paradiso2-success.html"}, {"read": "tappe/victory.html"}], "route": ["badgemap", "dante", "paradiso"]}
             ]},
             {"text": "Denaro", "effect": {"story": [{"read": "tappe/paradiso2-failure.html"}], "options": "paradiso2"}},
             {"text": "(esci)", "effect": {}}
@@ -79,6 +74,7 @@
         {"badge": "paradiso", "src": "badges/paradiso.jpg"}
     ],
     "svgmaps": [
+        {"id": "welcome", "svg": "welcome.svg", "ids": []},
         {"id": "dante", "svg": "dante.svg"}
     ],
     "locations": [

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
+
+    <g
+       class="item"
+       id="welcome-dante"
+       style="display:inline"
+       transform="translate(0,-1022.5196)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.59566689px;line-height:1.25;font-family:'IM FELL English';-inkscape-font-specification:'IM FELL English, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#60271a;fill-opacity:1;stroke:#60271a;stroke-width:0.26489165;stroke-opacity:1"
+         x="37.010845"
+         y="1033.8475"
+         id="text917"><tspan
+           id="tspan915"
+           x="37.010845"
+           y="1033.8475"
+           style="fill:#60271a;fill-opacity:1;stroke:#60271a;stroke-width:0.26489165;stroke-opacity:1">Galeotto</tspan><tspan
+           x="37.010845"
+           y="1047.0922"
+           id="tspan919"
+           style="fill:#60271a;fill-opacity:1;stroke:#60271a;stroke-width:0.26489165;stroke-opacity:1">fu il libro</tspan></text>
+      <text
+         id="text925"
+         y="1061.3684"
+         x="36.778591"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.51156139px;line-height:1.25;font-family:'IM FELL English';-inkscape-font-specification:'IM FELL English, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#60271a;fill-opacity:1;stroke:#60271a;stroke-width:0.13778904;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="fill:#60271a;fill-opacity:1;stroke:#60271a;stroke-width:0.13778904;stroke-opacity:1"
+           y="1061.3684"
+           x="36.778591"
+           id="tspan935">Caccia al tesoro DANTESCA</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.11649227px;line-height:1.25;font-family:'IM FELL English';-inkscape-font-specification:'IM FELL English, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.10291232"
+         x="36.870819"
+         y="1074.5753"
+         id="text931"><tspan
+           x="36.870819"
+           y="1074.5753"
+           id="tspan929"
+           style="fill:#666666;stroke-width:0.10291232">TRA GLI STAND</tspan><tspan
+           x="36.870819"
+           y="1079.7209"
+           style="fill:#666666;stroke-width:0.10291232"
+           id="tspan937">DEL PISA BOOK FESTIVAL</tspan></text>
+      <image
+         style="display:inline"
+         y="1027.5197"
+         x="51.401104"
+         id="image857-1"
+         xlink:href="~/badges/dante-portrait.png"
+         preserveAspectRatio="none"
+         height="160"
+         width="100.11429" />
+      <path
+         style="fill:#60271a;fill-opacity:1;stroke-width:0.14261217"
+         d="m 37.654968,1122.1131 c -1.885479,-0.5076 -2.289779,-0.9411 -5.706341,-6.1192 -3.078098,-4.6651 -3.199443,-4.9213 -2.695079,-5.6911 0.361355,-0.5515 0.891193,-0.8426 1.533622,-0.8426 0.735634,0 1.000511,0.2523 2.228623,2.1225 0.533358,0.8122 1.047961,1.4778 1.143561,1.4792 0.133375,0 0.183149,-1.4071 0.213918,-6.0558 l 0.0401,-6.0584 0.441154,-0.4411 c 0.611296,-0.6111 1.381984,-0.7045 2.054559,-0.2489 0.760288,0.5149 0.838565,0.9297 0.847624,4.4911 l 0.008,3.1647 0.392183,-0.2046 c 0.215701,-0.1125 0.552623,-0.2047 0.748714,-0.2049 0.475431,0 1.234778,0.476 1.353203,0.8492 l 0.09516,0.2998 0.469201,-0.29 c 0.837303,-0.5175 1.863555,-0.258 2.297361,0.5809 0.20942,0.405 0.24548,0.4212 0.475262,0.2132 0.653134,-0.5911 1.949153,-0.3275 2.367516,0.4816 0.200949,0.3885 0.225558,0.9929 0.187737,4.6104 l -0.04353,4.1633 -0.415208,0.8468 c -0.743403,1.5161 -2.091003,2.5599 -3.763217,2.9147 -1.03098,0.2187 -3.358894,0.1856 -4.274176,-0.061 z m -5.174593,-15.157 c -2.288058,-1.4576 -3.3917,-4.5154 -2.57583,-7.1368 0.376404,-1.2094 0.877727,-2.003 1.794416,-2.8409 3.788873,-3.4627 9.729135,-1.414 10.637488,3.6688 0.329001,1.841 -0.297342,3.915 -1.617188,5.3552 -0.59271,0.6467 -0.611193,0.6548 -1.27881,0.5597 -0.876577,-0.125 -0.872419,-0.3414 0.02305,-1.1999 0.385256,-0.3694 0.882616,-1.0176 1.105245,-1.4405 0.370118,-0.703 0.404782,-0.897 0.404782,-2.2662 0,-1.3625 -0.03578,-1.5654 -0.397054,-2.251 -0.550057,-1.044 -1.388937,-1.8346 -2.496687,-2.353 -0.798005,-0.3734 -1.103427,-0.4389 -2.01814,-0.433 -2.066564,0.013 -3.69809,1.0301 -4.603122,2.8684 -0.418042,0.8492 -0.467849,1.0801 -0.467849,2.1686 0,1.0908 0.04938,1.3185 0.472242,2.1774 0.313268,0.6364 0.709315,1.1635 1.176481,1.5658 0.659914,0.5683 0.704242,0.6491 0.704307,1.2838 3.9e-5,0.3726 -0.05154,0.6775 -0.114621,0.6775 -0.06308,0 -0.400002,-0.1818 -0.748714,-0.4039 z m 0.402714,-2.886 c -1.23654,-1.6162 -1.074764,-3.75 0.395797,-5.2206 1.285487,-1.2855 3.090166,-1.5355 4.671633,-0.6473 1.360155,0.7639 2.235946,2.4244 2.039639,3.8671 -0.09622,0.7071 -0.67444,2.0147 -1.016473,2.2985 -0.183841,0.1526 -0.210642,-0.048 -0.210642,-1.5802 0,-1.4971 -0.04448,-1.847 -0.302502,-2.38 -0.868644,-1.7944 -3.552318,-1.955 -4.662681,-0.279 -0.356049,0.5374 -0.387752,0.7129 -0.45408,2.5141 l -0.07131,1.9363 z"
+         id="path1210" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.51156139px;line-height:1.25;font-family:'IM FELL English';-inkscape-font-specification:'IM FELL English, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#60271a;fill-opacity:1;stroke:#60271a;stroke-width:0.13778904;stroke-opacity:1"
+         x="36.778591"
+         y="1094.7814"
+         id="text1214"><tspan
+           id="tspan1212"
+           x="36.778591"
+           y="1094.7814"
+           style="fill:#60271a;fill-opacity:1;stroke:#60271a;stroke-width:0.13778904;stroke-opacity:1">DIRITTA VIA</tspan></text>
+    </g>
+
+</svg>
