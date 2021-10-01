@@ -118,13 +118,10 @@
             },
             "pbf2021": {
               "browserTarget": "alice-pwa:build:pbf2021"
-            }
-            "dezhi": {
-              "browserTarget": "alice-pwa:build:dezhi"
             },
-	    "papale": {
-		    "browserTarget": "alice-pwa:build:papale"
-	    }
+            "papale": {
+              "browserTarget": "alice-pwa:build:papale"
+            }
           }
         },
         "extract-i18n": {
