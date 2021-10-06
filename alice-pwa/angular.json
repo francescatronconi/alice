@@ -91,6 +91,14 @@
                 }
               ]
             },
+            "alice": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.alice.ts"
+                }
+              ]
+            },
             "papale": {
               "fileReplacements": [
                 {
@@ -112,6 +120,9 @@
             },
             "trailer": {
               "browserTarget": "alice-pwa:build:trailer"
+            },
+            "alice": {
+              "browserTarget": "alice-pwa:build:alice"
             },
             "sept25": {
               "browserTarget": "alice-pwa:build:sept25"

@@ -1,74 +1,62 @@
 {
-    "id": "devel",
+    "id": "alice-v01",
     "rules": [
-        {"trigger": "start", "effect": {"story": [
-            {"read": "intro-1.html"},
-            {"read": "intro-2.html"}
-        ]}},
-        {"trigger": "visit:cattedrale", "effect": {"story": [{"read": "intro-1.html"}, {"video": "telefonata.mp4"}], "challenge": "playme"}},
-        {"trigger": "visit:star", "effect": {"route": ["badgemap", "cappellaio-matto"], "story": [{"read": "intro-star.html"}]}},
-        {"trigger": "visit:circle", "effect": {"route": ["diario"]}},
-        {"trigger": "visit:challenge-features", "effect": {"challenge": "c-01"}},
-        {"trigger": "visit:challenge-identikit", "effect": {"challenge": "c-02"}},
-        {"trigger": "visit:conservatorio", "effect": {"story": [{"read": "intro-1.html"}]}},
-        {"trigger": "visit:conservatorio", "condition": {"badge": "badge-02"},
-            "rules": [
-                {"condition": {"badge": "badge-01"},"effect": {"badge": "badge-03"}},
-                {"effect": {"score": 3}}
-            ]},
-        {"trigger": "visit:biblioteca", "effect": {"options": "options-A", "location": "biblioteca"}},
-        {"trigger": "success:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"], "badge": "cappellaio-matto", "story": [{"read": "qr-code.html"}]}},
-        {"trigger": "failed:c-01", "effect": {"route": ["badgemap", "cappellaio-matto"]}},
-        {"trigger": "success:c-02", "effect": {"route": ["badgemap", "regina-cuori"], "badge": "regina-cuori", "story": [{"read": "qr-code.html"}]}},
-        {"trigger": "qrcode:https://www.youtube.com/watch?v=Y2N6J9Nk5Ug", "effect": {"story": [{"read": "qr-code.html"}]}}
+        {"trigger": "start", "effect": {"story": [{"read": "intro.html"}]}}
     ],  
     "options": [
-        {"id": "options-A", "options": [
-            {"text": "Busta numero 1", "effect": {"badge": "badge-03"}},
-            {"text": "Busta numero 2", "effect": {"badge": "cappellaio-matto", "tag":"tramutato-in-rospo", "route": ["badgemap", "cappellaio-matto"]}},
-            {"text": "Busta numero 3", "effect": {"options": "options-B"}}
-        ]},
-        {"id": "options-B", "options": [
-            {"text": "Busta numero 4", "effect": {"badge": "badge-02"}},
-            {"text": "Busta numero 5", "effect": {"story": [
-                {"read": "intro-1.html"},
-                {"read": "intro-2.html"}
-            ]}}
-        ]}
     ],
     "badges": [
-        {"badge": "badge-01", "src": "cat.svg"},
-        {"badge": "badge-02", "src": "cat.svg"},
-        {"badge": "badge-03", "src": "horse.svg"}
+        {"badge": "badge-brucaliffo", "src": "badges/brucaliffo.jpg"},
+        {"badge": "badge-dodo", "src": "badges/dodo.jpg"},
+        {"badge": "badge-cappellaio-matto", "src": "badges/cappellaio-matto.jpg"},
+        {"badge": "badge-re-cuori", "src": "badges/re-cuori.jpg"},
+        {"badge": "badge-regina-cuori", "src": "badges/regina-cuori.jpg"},
+        {"badge": "badge-pinco-panco", "src": "badges/pinco-panco.jpg"},
+        {"badge": "badge-fiori", "src": "badges/fiori.jpg"},
+        {"badge": "badge-tricheco-carpentiere", "src": "badges/tricheco-carpentiere.jpg"},
+        {"badge": "badge-humpty-dumpty", "src": "badges/humpty-dumpty.jpg"},
+        {"badge": "badge-stregatto", "src": "badges/stregatto.jpg"}
     ],
     "svgmaps": [
-        {"id": "agora", "svg": "agora.svg", "background": "library", "ids": ["star", "circle", "challenge-features", "challenge-identikit"]},
-        {"id": "challenge-features", "svg": "challenge-01.svg", "background": null, "ids": ["done", "feature-02", "feature-03", "feature-04"]},
-        {"id": "challenge-identikit", "svg": "challenge-identikit.svg", "background": null, "ids": ["done", "identikit-01", "identikit-02", "identikit-03"]}
+        {"id": "welcome", "svg": "svg/welcome.svg", "ids": []},
+        {"id": "frame", "svg": "svg/frame.svg", "ids": []},
+        {"id": "badges", "svg": "svg/badges.svg"}
     ],
     "locations": [
-        {"id":"cattedrale", "name": "./assets/svg/cattedrale.svg", "icon": "./assets/svg/cat.svg", "description": "cattedrale", 
-            "lon": 10.506664809575186, "lat": 43.84051516173453, "near": true,  "condition": {"badge":"badge-03"}},
-        {"id":"biblioteca", "name": "./assets/svg/libri.svg", "icon": "./assets/svg/horse.svg", "description": "biblioteca",
-            "lon": 10.505977822127294, "lat": 43.84181374706096, "near": true},
-        {"id":"conservatorio", "name": "./assets/svg/clarinetto.svg", "icon": "./assets/svg/cat.svg", "description": "conservatorio",
-            "lon": 10.50644001063504, "lat": 43.84288571680807, "near": false}    
+        {"id":"biblioteca-agora", "icon": "./assets/games/alice/mappa/read-me.png", "anchor": [0.5, 1], "lon": 10.506014768376597, "lat": 43.84181452864434},
+        {"id":"franklin-33", "icon": "./assets/games/alice/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502028472868352, "lat": 43.84485690257682, "near": true},
+        {"id":"the-little-folk", "icon": "./assets/games/alice/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502387073489482, "lat": 43.84038685106595, "near": true},
+        {"id":"map-brucaliffo", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506438300525973, "lat": 43.842945723669075},
+        {"id":"map-dodo", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.504808035420542, "lat": 43.842967313755665},
+        {"id":"map-cappellaio-matto", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.496645636980382, "lat": 43.840256949508664},
+        {"id":"map-re-cuori", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.497064188776076, "lat": 43.84072889304245},
+        {"id":"map-regina-cuori", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.50674329479071, "lat": 43.83947674502335},
+        {"id":"map-pinco-panco", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.512347526987744, "lat": 43.84647871870673},
+        {"id":"map-fiori", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.514214394688153, "lat": 43.84449340791067},
+        {"id":"map-tricheco-carpentiere", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506502858297749, "lat": 43.83945700482301},
+        {"id":"map-humpty-dumpty", "icon": "./assets/games/alice/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084},
+        {"id":"map-lucca-libri", "icon": "./assets/games/alice/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.505437469176439, "lat": 43.83828244849533},
+        {"id":"map-pensieri-belli", "icon": "./assets/games/alice/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.501874162560684, "lat": 43.84049729895711},
+        {"id":"map-il-collezionista", "icon": "./assets/games/alice/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.503966069570199, "lat": 43.84222160447871},
+        {"id":"map-san-martino", "icon": "./assets/games/alice/mappa/find-me.png", "anchor": [0.5, 1], "lon": 10.505578328991632, "lat": 43.84096045281929, "near": true},
+        {"id":"map-piazza-anfiteatro", "icon": "./assets/games/alice/mappa/find-me.png", "anchor": [0.5, 1], "lon": 10.506146769057995, "lat": 43.845315996891706, "near": true},
+        {"id":"map-torre-guinigi", "icon": "./assets/games/alice/mappa/find-me.png", "anchor": [0.5, 1], "lon": 10.506892849357582, "lat": 43.84368847478595, "near": true},
+        {"id":"map-piazza-napoleone", "icon": "./assets/games/alice/mappa/find-me.png", "anchor": [0.5, 1], "lon": 10.502524026745453, "lat": 43.84132104910688, "near": true}
     ],
     "challenges": [
-        {"id": "c-01", "code": "features", "svgmap": "challenge-features", "success": ["feature-03", "feature-04"]},
-        {"id": "c-02", "code": "identikit", "svgmap": "challenge-identikit", "options": [
-            {"id": "identikit-01", "options": 3, "success": 1},
-            {"id": "identikit-02", "options": 3, "success": 2},
-            {"id": "identikit-03", "options": 3, "success": 3}
-        ]}
     ],
-    "audio": [],
+    "audio": [
+        {"id": "action", "src": "audio/action.ogg"}
+    ],
     "buttons": [
-        {"id": "diario", "icon": "./assets/svg/diario.svg", "action": ["diario"]},
-        {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
-        {"id": "badge", "icon": "./assets/svg/biblioteca.svg", "action": ["svgmap", "agora"]},
-        {"id": "badgemap", "icon": "./assets/svg/badge.svg", "action": ["badgemap"]},
-        {"id": "biblioteca", "icon": "./assets/svg/cat.svg", "action": ["qrcode"]},
-        {"id": "partita", "icon": "./assets/svg/partita.svg", "action": ["partita"]}
-    ]
+        {"id": "badges", "icon": "./assets/games/alice/buttons/biblio.svg", "action": ["badgemap", "badges"]},
+        {"id": "mappa", "icon": "./assets/games/alice/buttons/mappa.svg", "action": ["mappa"]},
+        {"id": "credits", "icon": "./assets/games/alice/buttons/credits.svg", "action": ["credits"]}
+    ],
+    "map": {
+        "user": {"icon": "~/mappa/head.png", "anchor": [0.5, 1]},
+        "lon": 10.506937856535545, 
+        "lat": 43.84369534529272, 
+        "zoom": 15
+    }
 }
