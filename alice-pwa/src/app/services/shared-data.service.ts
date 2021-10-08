@@ -228,7 +228,7 @@ export class SharedDataService {
 
   public getHtmlResource(url: string): Promise<string> {
     return this.http
-    .get<string>(`${environment.gameUrl}/${url}`, {responseType: 'text' as 'json'})
+    .get<string>(this.getGameResourceUrl(url), {responseType: 'text' as 'json'})
     .toPromise();
   }
 

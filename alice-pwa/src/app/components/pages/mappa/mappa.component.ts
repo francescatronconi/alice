@@ -15,10 +15,10 @@ import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
 
 import { MapLocation, PlayChange, SharedDataService } from 'src/app/services/shared-data.service';
-import { GamePlay, GameScenario, PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
+import { PonteVirtualeService } from 'src/app/services/ponte-virtuale.service';
 import { LocationService } from 'src/app/services/location.service';
 import { Coordinate } from 'ol/coordinate';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AudioPlayService } from 'src/app/services/audio-play.service';
 
@@ -229,7 +229,7 @@ export class MappaComponent implements OnInit, OnDestroy {
     feature.setStyle(new Style({
       image: new Icon({
         anchor: location.anchor ? location.anchor : [0.5, 0.5],
-        src: location.icon,
+        src: this.shared.getGameResourceUrl(location.icon),
       })
     }));
     this.featuresLayer.getSource().addFeature(feature);
