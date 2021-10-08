@@ -1,5 +1,7 @@
 {
     "id": "alice-v01",
+    "favicon": "~/favicon.ico",
+    "credits": "~/credits.html",
     "rules": [
         {"trigger": "start", "effect": {"story": [{"read": "~/intro.html"}]}}
     ],  

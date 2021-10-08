@@ -161,6 +161,7 @@ export class GameScenario {
   credits: string;
   layout: string;
   fullscreen: string;
+  favicon: string;
 }
 
 export class MapInitData {

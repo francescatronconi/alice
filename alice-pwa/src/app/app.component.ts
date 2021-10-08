@@ -23,6 +23,9 @@ export class AppComponent {
     this.setupFavicon('assets/favicon-wvoce.ico');
     this.titleService.setTitle(this.title);
     this.shared.scenarioReadyObs.subscribe(scenario => {
+      if (scenario.favicon) {
+        this.setupFavicon(this.shared.getGameResourceUrl(scenario.favicon));
+      }
       this.svgFrame = this.shared.getSvgMap('frame');
       if (!this.shared.play) {
         this.shared.startGame();
