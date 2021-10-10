@@ -8,7 +8,7 @@ export const environment = {
   nearby: 0.5,
   gaMeasurementId: null,
   privacy: {
-    site: 'https://play.vivavoce.it',
+    site: 'https://alice.vivavoce.it',
     titolare: 'Associazione VivaVoce',
     mail: 'info@vivavoce.it'
   }

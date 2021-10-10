@@ -6,6 +6,10 @@
         {"trigger": "start", "effect": {"route": []}},
         {"trigger": "welcome", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "~/intro.html"}]}},
 
+        {"trigger": "visit:biblioteca-agora", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "~/biblioteca-agora.html"}]}},
+        {"trigger": "visit:franklin-33", "effect": {"story": [{"read": "~/franklin-33.html"}]}},
+        {"trigger": "visit:the-little-folk", "effect": {"story": [{"read": "~/the-little-folk.html"}]}},
+
         {"trigger": "search:badge-cappellaio-matto", "rules": [
             {"condition": {"noTag": "quiz-cappellaio-matto-done"}, "effect": {"options": "quiz-cappellaio-matto"}},
             {"condition": {"tag": "quiz-cappellaio-matto-done"}, "effect": {"location": "map-cappellaio-matto"}}
@@ -79,8 +83,8 @@
     ],
     "locations": [
         {"id":"biblioteca-agora", "icon": "~/mappa/read-me.png", "anchor": [0.5, 1], "lon": 10.506014768376597, "lat": 43.84181452864434},
-        {"id":"franklin-33", "icon": "~/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502028472868352, "lat": 43.84485690257682, "near": true},
-        {"id":"the-little-folk", "icon": "~/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502387073489482, "lat": 43.84038685106595, "near": true},
+        {"id":"franklin-33", "icon": "~/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502028472868352, "lat": 43.84485690257682},
+        {"id":"the-little-folk", "icon": "~/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502387073489482, "lat": 43.84038685106595},
         {"id":"map-brucaliffo", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506146769057995, "lat": 43.845315996891706},
         {"id":"map-cappellaio-matto", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506892849357582, "lat": 43.84368847478595}
     ],

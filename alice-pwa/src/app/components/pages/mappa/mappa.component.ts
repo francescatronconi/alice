@@ -74,10 +74,6 @@ export class MappaComponent implements OnInit, OnDestroy {
     this.startOlMap();
   }
 
-  isKids(location: MapLocation) {
-    return ['map-cappellaio-matto', 'map-pinco-panco', 'map-regina-cuori', 'map-pensieri-belli', 'map-fiori', 'map-brucaliffo'].includes(location.id)
-  }
-
   enableGps() {
     this.canusegps = true;
     this.watchsubscribed = false;
@@ -297,7 +293,7 @@ export class MappaComponent implements OnInit, OnDestroy {
   }
 
   private checkDistance(location: MapLocation): boolean {
-    let difQuadLat = Math.pow(location.lat - this.position.coords.latitude,2);
+    let difQuadLat = Math.pow(location.lat - this.position.coords.latitude, 2);
     let difQuadLon = Math.pow(location.lon - this.position.coords.longitude, 2);
     let distance = Math.sqrt(difQuadLon + difQuadLat) * 1000;
     console.log('distance', distance, environment.nearby, distance < environment.nearby);
