@@ -14,7 +14,10 @@
             {"condition": {"noTag": "quiz-cappellaio-matto-done"}, "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-locked.html"}], "route": ["badgemap", "badges", "badge-cappellaio-matto"]}},
             {"condition": {"tag": "quiz-cappellaio-matto-done"}, "effect": {"story": [{"read": "~/challenges/cappellaio-matto.html"}], "challenge": "cappellaio-matto"}}
         ]},
-        {"trigger": "success:cappellaio-matto", "effect": {"route": ["badgemap", "badges", "badge-cappellaio-matto"], "story": [{"read": "~/challenges/cappellaio-matto-success.html"}], "badge": "badge-cappellaio-matto"}},
+        {"trigger": "success:cappellaio-matto", "rules": [
+            {"condition": {"nobadge": "badge-cappellaio-matto"}, "effect": {"badge": "badge-cappellaio-matto", "score": 2}},
+            {"effect": {"route": ["badgemap", "badges", "badge-cappellaio-matto"], "story": [{"read": "~/challenges/cappellaio-matto-success.html"}]}}
+        ]},
         {"trigger": "failed:cappellaio-matto", "effect": {"route": ["mappa"], "story": [{"read": "~/challenges/cappellaio-matto-failed.html"}], "challenge": "cappellaio-matto"}},
 
         {"trigger": "search:badge-brucaliffo", "rules": [
@@ -25,7 +28,10 @@
             {"condition": {"noTag": "quiz-brucaliffo-done"}, "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-locked.html"}], "route": ["badgemap", "badges", "badge-brucaliffo"]}},
             {"condition": {"tag": "quiz-brucaliffo-done"}, "effect": {"story": [{"read": "~/challenges/brucaliffo.html"}], "challenge": "brucaliffo"}}
         ]},
-        {"trigger": "success:brucaliffo", "effect": {"route": ["badgemap", "badges", "badge-brucaliffo"], "story": [{"read": "~/challenges/brucaliffo-success.html"}], "badge": "badge-brucaliffo"}},
+        {"trigger": "success:brucaliffo", "rules": [
+            {"condition": {"nobadge": "badge-brucaliffo"}, "effect": {"badge": "badge-brucaliffo", "score": 2}},
+            {"effect": {"route": ["badgemap", "badges", "badge-brucaliffo"], "story": [{"read": "~/challenges/brucaliffo-success.html"}]}}
+        ]},
         {"trigger": "failed:brucaliffo", "effect": {"route": ["mappa"], "story": [{"read": "~/challenges/brucaliffo-failed.html"}], "challenge": "brucaliffo"}},
 
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
@@ -34,14 +40,20 @@
     ],  
     "options": [
         {"id": "quiz-brucaliffo", "read": "~/challenges/quiz-brucaliffo.html", "options": [
-            {"text": "... mangia un pasticcino", "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-success.html"}], "tag": "quiz-brucaliffo-done", "location": "map-brucaliffo"}},
+            {"text": "... mangia un pasticcino", "effects": [
+                {"story": [{"read": "~/challenges/quiz-brucaliffo-success.html"}], "location": "map-brucaliffo"},
+                {"condition": {"noTag": "quiz-brucaliffo-done"}, "tag": "quiz-brucaliffo-done", "score": 1}
+            ]},
             {"text": "... beve un tè", "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-failed.html"}], "options": "quiz-brucaliffo"}},
             {"text": "... annusa un giglio", "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-failed.html"}], "options": "quiz-brucaliffo"}},
             {"text": "Non lo so", "effect": {}}
         ]},
         {"id": "quiz-cappellaio-matto", "read": "~/challenges/quiz-cappellaio-matto.html", "options": [
             {"text": "I dadi", "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-failed.html"}], "options": "quiz-cappellaio-matto"}},
-            {"text": "I guanti", "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-success.html"}], "tag": "quiz-cappellaio-matto-done", "location": "map-cappellaio-matto"}},
+            {"text": "I guanti", "effects": [
+                {"story": [{"read": "~/challenges/quiz-cappellaio-matto-success.html"}], "location": "map-cappellaio-matto"},
+                {"condition": {"noTag": "quiz-cappellaio-matto-done"}, "tag": "quiz-cappellaio-matto-done", "score": 1}
+            ]},
             {"text": "I gemelli d'oro", "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-failed.html"}], "options": "quiz-cappellaio-matto"}},
             {"text": "Non lo so", "effect": {}}
         ]}
