@@ -603,8 +603,10 @@ export class GameChallengeIdentikitData extends GameChallengeData {
   constructor(challenge: GameChallengeIdentikit) {
     super(challenge);
     this.options = {}
-    challenge.options
-    .forEach(option => this.options[option.id] = 1);
+    if (challenge.options) {
+      challenge.options
+      .forEach(option => this.options[option.id] = 1);
+    }
   }
 }
 

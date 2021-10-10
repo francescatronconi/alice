@@ -169,7 +169,7 @@ export class BadgeMapComponent implements OnInit {
     });
   }
   private _addBadge(element: HTMLElement) {
-    this.areas.push(new BadgeMapItem(element.getAttribute('name'), element));
+    this.areas.push(new BadgeMapItem(element.getAttribute('name'), element).initStyle(this.shared));
   }
   private _addTrigger(element: HTMLElement) {
     this.triggers.push(new TriggerMapItem(element.getAttribute('name'), element));

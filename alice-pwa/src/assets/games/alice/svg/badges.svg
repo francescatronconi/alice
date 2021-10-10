@@ -93,7 +93,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:19.260252px;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#512603;fill-opacity:1;stroke:#512603;stroke-width:0.48150426;stroke-opacity:1">{score}</tspan></text>
         </g>
         <g
-           class="item badge"
+           class="item not-ready"
            name="badge-pinco-panco"
            transform="matrix(0.1,0,0,0.1,8.6224736,57.483652)">
           <image
@@ -144,7 +144,7 @@
           </g>
         </g>
         <g
-           class="item badge"
+           class="item not-ready"
            name="badge-re-cuori"
            transform="matrix(0.1,0,0,0.1,92.036188,31.295894)">
           <image
@@ -169,7 +169,7 @@
           </g>
         </g>
         <g
-           class="item badge"
+           class="item not-ready"
            name="badge-dodo"
            transform="matrix(0.1,0,0,0.1,94.668679,42.384976)">
           <image
@@ -194,7 +194,7 @@
           </g>
         </g>
         <g
-           class="item badge"
+           class="item not-ready"
            name="badge-fiori"
            transform="matrix(0.1,0,0,0.1,94.256586,54.790875)">
           <image
@@ -219,7 +219,7 @@
           </g>
         </g>
         <g
-           class="item badge"
+           class="item not-ready"
            name="badge-tricheco-carpentiere"
            transform="matrix(0.1,0,0,0.1,66.133893,49.390505)">
           <image
@@ -244,7 +244,7 @@
           </g>
         </g>
         <g
-           class="item badge"
+           class="item not-ready"
            name="badge-regina-cuori"
            transform="matrix(0.1,0,0,0.1,43.34618,67.278465)">
           <image
@@ -269,7 +269,7 @@
           </g>
         </g>
         <g
-           class="item badge"
+           class="item not-ready"
            name="badge-humpty-dumpty"
            transform="matrix(0.1,0,0,0.1,70.672118,88.475626)">
           <image
@@ -319,7 +319,7 @@
           </g>
         </g>
         <g
-           class="item badge"
+           class="item not-ready"
            name="badge-stregatto"
            transform="matrix(0.1,0,0,0.1,48.403735,37.590817)">
           <image

@@ -50,6 +50,10 @@ h2 {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+.not-ready {
+    opacity: 0.4;
+}
+
 .panel {
     margin-left: 50px;
     margin-right: 50px;

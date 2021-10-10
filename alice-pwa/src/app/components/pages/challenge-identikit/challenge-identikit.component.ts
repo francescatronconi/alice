@@ -27,8 +27,10 @@ export class ChallengeIdentikitComponent implements OnInit {
   ngOnInit(): void {
     this.svgmap = this.shared.getSvgMap(this.challenge.svgmap);
     this.max = {};
-    this.challenge.options
-    .forEach(option => this.max[option.id] = option.options);
+    if (this.challenge.options) {
+      this.challenge.options
+      .forEach(option => this.max[option.id] = option.options);
+    }
   }
 
   init(challenge: GameChallenge, data: GameChallengeData) {

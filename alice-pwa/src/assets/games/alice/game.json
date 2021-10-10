@@ -1,11 +1,50 @@
 {
-    "id": "alice-v01",
+    "id": "alice-v02",
     "favicon": "~/favicon.ico",
     "credits": "~/credits.html",
     "rules": [
-        {"trigger": "start", "effect": {"story": [{"read": "~/intro.html"}]}}
+        {"trigger": "start", "effect": {"route": []}},
+        {"trigger": "welcome", "effect": {"route": ["badgemap", "badges"], "story": [{"read": "~/intro.html"}]}},
+
+        {"trigger": "search:badge-cappellaio-matto", "rules": [
+            {"condition": {"noTag": "quiz-cappellaio-matto-done"}, "effect": {"options": "quiz-cappellaio-matto"}},
+            {"condition": {"tag": "quiz-cappellaio-matto-done"}, "effect": {"location": "map-cappellaio-matto"}}
+        ]},
+        {"trigger": "visit:map-cappellaio-matto", "rules": [
+            {"condition": {"noTag": "quiz-cappellaio-matto-done"}, "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-locked.html"}], "route": ["badgemap", "badges", "badge-cappellaio-matto"]}},
+            {"condition": {"tag": "quiz-cappellaio-matto-done"}, "effect": {"story": [{"read": "~/challenges/cappellaio-matto.html"}], "challenge": "cappellaio-matto"}}
+        ]},
+        {"trigger": "success:cappellaio-matto", "effect": {"route": ["badgemap", "badges", "badge-cappellaio-matto"], "story": [{"read": "~/challenges/cappellaio-matto-success.html"}], "badge": "badge-cappellaio-matto"}},
+        {"trigger": "failed:cappellaio-matto", "effect": {"route": ["mappa"], "story": [{"read": "~/challenges/cappellaio-matto-failed.html"}], "challenge": "cappellaio-matto"}},
+
+        {"trigger": "search:badge-brucaliffo", "rules": [
+            {"condition": {"noTag": "quiz-brucaliffo-done"}, "effect": {"options": "quiz-brucaliffo"}},
+            {"condition": {"tag": "quiz-brucaliffo-done"}, "effect": {"location": "brucaliffo"}}
+        ]},
+        {"trigger": "visit:map-brucaliffo", "rules": [
+            {"condition": {"noTag": "quiz-brucaliffo-done"}, "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-locked.html"}], "route": ["badgemap", "badges", "badge-brucaliffo"]}},
+            {"condition": {"tag": "quiz-brucaliffo-done"}, "effect": {"story": [{"read": "~/challenges/brucaliffo.html"}], "challenge": "brucaliffo"}}
+        ]},
+        {"trigger": "success:brucaliffo", "effect": {"route": ["badgemap", "badges", "badge-brucaliffo"], "story": [{"read": "~/challenges/brucaliffo-success.html"}], "badge": "badge-brucaliffo"}},
+        {"trigger": "failed:brucaliffo", "effect": {"route": ["mappa"], "story": [{"read": "~/challenges/brucaliffo-failed.html"}], "challenge": "brucaliffo"}},
+
+        {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
+            "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
+        }}
     ],  
     "options": [
+        {"id": "quiz-brucaliffo", "read": "~/challenges/quiz-brucaliffo.html", "options": [
+            {"text": "... mangia un pasticcino", "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-success.html"}], "tag": "quiz-brucaliffo-done", "location": "map-brucaliffo"}},
+            {"text": "... beve un tè", "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-failed.html"}], "options": "quiz-brucaliffo"}},
+            {"text": "... annusa un giglio", "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-failed.html"}], "options": "quiz-brucaliffo"}},
+            {"text": "Non lo so", "effect": {}}
+        ]},
+        {"id": "quiz-cappellaio-matto", "read": "~/challenges/quiz-cappellaio-matto.html", "options": [
+            {"text": "I dadi", "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-failed.html"}], "options": "quiz-cappellaio-matto"}},
+            {"text": "I guanti", "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-success.html"}], "tag": "quiz-cappellaio-matto-done", "location": "map-cappellaio-matto"}},
+            {"text": "I gemelli d'oro", "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-failed.html"}], "options": "quiz-cappellaio-matto"}},
+            {"text": "Non lo so", "effect": {}}
+        ]}
     ],
     "badges": [
         {"badge": "badge-brucaliffo", "src": "~/badges/brucaliffo.jpg"},
@@ -20,32 +59,22 @@
         {"badge": "badge-stregatto", "src": "~/badges/stregatto.jpg"}
     ],
     "svgmaps": [
-        {"id": "welcome", "svg": "~/svg/welcome.svg", "ids": []},
-        {"id": "frame", "svg": "~/svg/frame.svg", "ids": []},
-        {"id": "badges", "svg": "~/svg/badges.svg"}
+        {"id": "welcome", "svg": "~/svg/welcome.svg"},
+        {"id": "frame", "svg": "~/svg/frame.svg"},
+        {"id": "badges", "svg": "~/svg/badges.svg"},
+        {"id": "cappellaio-matto", "svg": "~/challenges/cappellaio-matto.svg"},
+        {"id": "brucaliffo", "svg": "~/challenges/brucaliffo.svg"}
     ],
     "locations": [
         {"id":"biblioteca-agora", "icon": "~/mappa/read-me.png", "anchor": [0.5, 1], "lon": 10.506014768376597, "lat": 43.84181452864434},
         {"id":"franklin-33", "icon": "~/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502028472868352, "lat": 43.84485690257682, "near": true},
         {"id":"the-little-folk", "icon": "~/mappa/drink-me.png", "anchor": [0.5, 1], "lon": 10.502387073489482, "lat": 43.84038685106595, "near": true},
-        {"id":"map-brucaliffo", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506438300525973, "lat": 43.842945723669075},
-        {"id":"map-dodo", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.504808035420542, "lat": 43.842967313755665},
-        {"id":"map-cappellaio-matto", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.496645636980382, "lat": 43.840256949508664},
-        {"id":"map-re-cuori", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.497064188776076, "lat": 43.84072889304245},
-        {"id":"map-regina-cuori", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.50674329479071, "lat": 43.83947674502335},
-        {"id":"map-pinco-panco", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.512347526987744, "lat": 43.84647871870673},
-        {"id":"map-fiori", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.514214394688153, "lat": 43.84449340791067},
-        {"id":"map-tricheco-carpentiere", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506502858297749, "lat": 43.83945700482301},
-        {"id":"map-humpty-dumpty", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084},
-        {"id":"map-lucca-libri", "icon": "~/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.505437469176439, "lat": 43.83828244849533},
-        {"id":"map-pensieri-belli", "icon": "~/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.501874162560684, "lat": 43.84049729895711},
-        {"id":"map-il-collezionista", "icon": "~/mappa/spade-lib.png", "anchor": [0.5, 1], "lon": 10.503966069570199, "lat": 43.84222160447871},
-        {"id":"map-san-martino", "icon": "~/mappa/find-me.png", "anchor": [0.5, 1], "lon": 10.505578328991632, "lat": 43.84096045281929, "near": true},
-        {"id":"map-piazza-anfiteatro", "icon": "~/mappa/find-me.png", "anchor": [0.5, 1], "lon": 10.506146769057995, "lat": 43.845315996891706, "near": true},
-        {"id":"map-torre-guinigi", "icon": "~/mappa/find-me.png", "anchor": [0.5, 1], "lon": 10.506892849357582, "lat": 43.84368847478595, "near": true},
-        {"id":"map-piazza-napoleone", "icon": "~/mappa/find-me.png", "anchor": [0.5, 1], "lon": 10.502524026745453, "lat": 43.84132104910688, "near": true}
+        {"id":"map-brucaliffo", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506146769057995, "lat": 43.845315996891706},
+        {"id":"map-cappellaio-matto", "icon": "~/mappa/spade.png", "anchor": [0.5, 1], "lon": 10.506892849357582, "lat": 43.84368847478595}
     ],
     "challenges": [
+        {"id": "cappellaio-matto", "code": "identikit", "svgmap": "cappellaio-matto"},
+        {"id": "brucaliffo", "code": "identikit", "svgmap": "brucaliffo"}
     ],
     "audio": [
         {"id": "action", "src": "audio/action.ogg"}
