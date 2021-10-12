@@ -113,6 +113,20 @@ export class SharedDataService {
     })
   }
 
+  firstValidLocationIcon(location: MapLocation): string {
+    if (location.icon) {
+      return this.getGameResourceUrl(location.icon);
+    }
+    if (location.icons) {
+      for (let index = 0; index < location.icons.length; index++) {
+        if (this.pv.checkCondition(location.icons[index].condition, this.play, this.scenario)) {
+          return this.getGameResourceUrl(location.icons[index].icon);
+        };
+      }
+    }
+    return null;
+  }
+
   loadPlay() {
     let saved = localStorage.getItem("ponte-virtuale-play");
     if (saved) {
@@ -274,6 +288,7 @@ export class MapLocation {
   id: string;
   name: string;
   icon: string;
+  icons: [{condition: GameCondition, icon: string}];
   lat: number;
   lon: number;
   near: boolean;

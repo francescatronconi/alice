@@ -28,9 +28,9 @@
      inkscape:window-width="1853"
      units="px"
      showgrid="false"
-     inkscape:current-layer="popup-go"
+     inkscape:current-layer="layer37"
      inkscape:document-units="px"
-     inkscape:cy="83.180343"
+     inkscape:cy="56.274972"
      inkscape:cx="144.38444"
      inkscape:zoom="2.973384"
      inkscape:pageshadow="2"
@@ -315,7 +315,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2182,15 +2182,15 @@
        y="12.5"
        sodipodi:absref="/home/daniele/Downloads/f5beb4fd-0c54-49d9-9cfb-b30938ee3532.jpeg" />
     <image
-       sodipodi:absref="/home/daniele/hack/git/alice/resources/../alice-pwa/src/assets/trailer/logo/../alice.png"
-       xlink:href="../alice-pwa/src/assets/trailer/logo/../alice.png"
-       transform="scale(-1,1)"
-       width="29.650429"
-       height="29.650429"
-       preserveAspectRatio="none"
-       id="image428"
+       sodipodi:absref="/home/daniele/hack/git/alice/resources/../../../../Documents/alice.png"
+       xlink:href="../../../../Documents/alice.png"
+       y="59.992428"
        x="-28.579"
-       y="59.992428" />
+       id="image428"
+       preserveAspectRatio="none"
+       height="29.650429"
+       width="29.650429"
+       transform="scale(-1,1)" />
     <image
        width="19.841692"
        height="19.841692"
@@ -2422,7 +2422,7 @@
      inkscape:groupmode="layer"
      id="layer33"
      inkscape:label="mappa popup gatto"
-     style="display:inline">
+     style="display:none">
     <image
        sodipodi:absref="/home/daniele/Pictures/Alice/materiale app/BALLOON.png"
        y="-390.71146"
@@ -2477,9 +2477,9 @@
              id="text3024"
              y="43.101814"
              x="78.274124"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.21384621px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.65534616;"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.21384621px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.65534616"
              xml:space="preserve"><tspan
-               style="stroke-width:0.65534616;stroke:#000000;"
+               style="stroke:#000000;stroke-width:0.65534616"
                y="43.101814"
                x="78.274124"
                id="tspan3022"
@@ -2780,7 +2780,7 @@
      inkscape:groupmode="layer"
      id="layer37"
      inkscape:label="mappa icone"
-     style="display:none">
+     style="display:inline">
     <path
        style="opacity:1;vector-effect:none;fill:#ff196c;fill-opacity:1;stroke:none;stroke-width:7.78466177;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
        d="m 42.322647,23.301181 -25,25 -24.9999992,-25 c 10e-8,-13.8071183 11.1928816,-24.9999998 24.9999992,-25.0000001 13.807119,0 25,11.1928808 25,25.0000001 z"

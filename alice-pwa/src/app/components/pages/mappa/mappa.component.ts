@@ -225,7 +225,7 @@ export class MappaComponent implements OnInit, OnDestroy {
     feature.setStyle(new Style({
       image: new Icon({
         anchor: location.anchor ? location.anchor : [0.5, 0.5],
-        src: this.shared.getGameResourceUrl(location.icon),
+        src: this.shared.firstValidLocationIcon(location),
       })
     }));
     this.featuresLayer.getSource().addFeature(feature);
