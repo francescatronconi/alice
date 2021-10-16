@@ -35,18 +35,6 @@ import { TickersService } from 'src/app/services/tickers.service';
       transition('mini => full', animate('1000ms ease-in-out')),
       transition('full => mini', animate('1000ms ease-in-out')),
     ]),
-    trigger('nasopopup', [
-      // states
-      state('hidden', style({
-        transform: 'translate({{x}}px,{{y}}px) scale(0) rotate(0deg)',
-      }), { params: { x: 0, y: 0, s: 0.1 } }),
-      state('shown', style({
-        transform: 'translate({{x}}px,{{y}}px) scale(0.15) rotate(25deg) ',
-      }), { params: { x: 0, y: 0, s: 1 } }),
-      // transitions
-      transition('hidden => shown', animate('3500ms ease-in-out')),
-      transition('shown => hidden', animate('300ms ease-in-out')),
-    ]),
     trigger('fadeinout', [
       transition(':enter', [style({opacity: 0}), animate('1s', style({opacity: 1}))]),
       transition(':leave', [style({opacity: 1}), animate('1s', style({opacity: 0}))]),
@@ -126,7 +114,7 @@ export class BadgeMapComponent implements OnInit {
   }
 
   badgeStatePin(badge: BadgeMapItem) {
-    return { value: badge.state, params: { x: -badge.dx, y: -badge.dy, t: badge.transform, s: 1.0 / badge.ds} };
+    return { value: badge.state, params: { x: -badge.dx, y: -badge.dy, t: badge.transform, s: 0.9 / badge.ds} };
   }
 
   initSvgMap() {
