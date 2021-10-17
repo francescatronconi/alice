@@ -1,5 +1,5 @@
 {
-    "id": "alice-v02",
+    "id": "alice-v03",
     "favicon": "~/favicon.ico",
     "credits": "~/credits.html",
     "rules": [
@@ -26,7 +26,7 @@
 
         {"trigger": "search:badge-brucaliffo", "rules": [
             {"condition": {"noTag": "quiz-brucaliffo-done"}, "effect": {"options": "quiz-brucaliffo"}},
-            {"condition": {"tag": "quiz-brucaliffo-done"}, "effect": {"location": "brucaliffo"}}
+            {"condition": {"tag": "quiz-brucaliffo-done"}, "effect": {"location": "map-brucaliffo"}}
         ]},
         {"trigger": "visit:map-brucaliffo", "rules": [
             {"condition": {"noTag": "quiz-brucaliffo-done"}, "effect": {"story": [{"read": "~/challenges/quiz-brucaliffo-locked.html"}], "route": ["badgemap", "badges", "badge-brucaliffo"]}},
