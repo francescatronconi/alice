@@ -1,0 +1,73 @@
+{
+    "id": "dory-ghibellina2021-v1",
+    "credits": "credits.html",
+    "fullscreen": null,
+    "rules": [
+        {"trigger": "start", "effect": {"route": [""]}},
+        {"trigger": "welcome", "effect": {"route": ["badgemap", "dory"], "story": [{"read": "~/intro.html"}]}},
+        {"trigger": "search:badge-01", "rules": [
+            {"condition": {"nobadge": "badge-01"}, "effect": {"options": "badge-01"}}
+        ]},
+        {"trigger": "search:badge-02", "rules": [
+            {"condition": {"nobadge": "badge-02"}, "effect": {"options": "badge-02"}}
+        ]},
+        {"trigger": "search:badge-03", "rules": [
+            {"condition": {"nobadge": "badge-03"}, "effect": {"options": "badge-03"}}
+        ]}
+    ],
+    "options": [
+        {"id": "badge-01", "read": "~/dory/badge-01-quiz.html", "free": false, "options": [
+            {"text": "Azzannarane", "effect": {"story": [{"read": "~/dory/badge-01-failure.html"}], "options": "badge-01"}},
+            {"text": "Arraffagracchi", "effects": [
+                {"condition": {"nobadge": "badge-01"}, "badge": "badge-01", "route": ["badgemap", "dory", "badge-01"]},
+                {"story": [{"read": "~/dory/badge-01-success.html"}]}
+            ]},
+            {"text": "Arpionagatti", "effect": {"story": [{"read": "~/dory/badge-01-failure.html"}], "options": "badge-01"}},
+            {"text": "... non lo so", "effect": {}}
+        ]},
+        {"id": "badge-02", "read": "~/dory/badge-02-quiz.html", "free": false, "options": [
+            {"text": "Rosaspina", "effect": {"story": [{"read": "~/dory/badge-02-failure.html"}], "options": "badge-02"}},
+            {"text": "Rosalinda", "effect": {"story": [{"read": "~/dory/badge-02-failure.html"}], "options": "badge-02"}},
+            {"text": "Rosabella", "effects": [
+                {"condition": {"nobadge": "badge-02"}, "badge": "badge-02", "route": ["badgemap", "dory", "badge-02"]},
+                {"story": [{"read": "~/dory/badge-02-success.html"}]}
+            ]},
+            {"text": "... non lo so", "effect": {}}
+        ]},
+        {"id": "badge-03", "read": "~/dory/badge-03-quiz.html", "free": false, "options": [
+            {"text": "Batwoman", "effect": {"story": [{"read": "~/dory/badge-03-failure.html"}], "options": "badge-03"}},
+            {"text": "Capitano Puff", "effects": [
+                {"condition": {"nobadge": "badge-03"}, "badge": "badge-03", "route": ["badgemap", "dory", "badge-03"]},
+                {"story": [{"read": "~/dory/badge-03-success.html"}]}
+            ]},
+            {"text": "Super Pipistrello", "effect": {"story": [{"read": "~/dory/badge-03-failure.html"}], "options": "badge-03"}},
+            {"text": "... non lo so", "effect": {}}
+        ]},
+        {"condition": {"badges": ["badge-01", "badge-02", "badge-03"]}, "effect": {
+            "condition": {"noTag": "victory-shown"}, "story": [{"read": "~/dory/victory.html"}], "tag": "victory-shown"
+        }}
+
+    ],
+    "badges": [
+        {"badge": "badge-01", "src": "badges/badge-01.jpg"},
+        {"badge": "badge-02", "src": "badges/badge-02.jpg"},
+        {"badge": "badge-03", "src": "badges/badge-03.jpg"}
+    ],
+    "svgmaps": [
+        {"id": "welcome", "svg": "~/welcome.svg", "ids": []},
+        {"id": "dory", "svg": "~/dory.svg"}
+    ],
+    "locations": [
+    ],
+    "challenges": [],
+    "audio": [
+        {"id": "action", "src": "audio/action.ogg"}
+    ],
+    "buttons": [
+        {"id": "dory", "icon": "~/buttons/home.png", "action": [""], "layout": "top-left"},
+        {"id": "wvoce", "icon": "~/buttons/vivavoce-logo-sqr.jpg", "href": "https://www.wvoce.it/", "layout": "bottom-right"},
+        {"id": "ghibellina", "icon": "~/buttons/ghibellina.jpg", "href": "https://m.facebook.com/libreriaghibellinapisa/", "layout": "bottom-right"},
+        {"id": "terre", "icon": "~/buttons/tdm.jpg", "href": "https://www.terre.it/", "layout": "bottom-right"}
+    ],
+    "map": {}
+}

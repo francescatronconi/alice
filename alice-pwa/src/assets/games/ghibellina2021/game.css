@@ -1,0 +1,176 @@
+@font-face {
+    font-family: 'Ribeye';
+    src: url('~/fonts/Ribeye-Regular.ttf') format("truetype");
+}
+
+.main-button {
+    padding: 5px;
+}
+.bottom-right-menu img.main-button {
+    width: 40px;
+    height: 40px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.modal {
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.button {
+    margin: 0;
+    text-align: left;
+    padding-left: 3em;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.panel {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.narrative {
+    font-family: "Ribeye";
+    font-size: 1.6em;
+    color: #60271a;
+}
+.narrative-image {
+    width: 100%;
+    text-align: center;
+}
+
+.narrative-image img {
+    max-width: 50%;
+}
+
+.welcome {
+    font-family: "Ribeye";
+    font-size: 1.6em;
+    color: #60271a;
+}
+
+.bg {
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* The image used */
+    background-image: url('~/sfondo-sml.jpg');
+    /* Full height */
+    /* Center and scale the image nicely */
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.versi {
+    margin-left: 15px;
+}
+
+.versi:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.5em;
+}
+.versi:after {
+    color: #ccc;
+    content: close-quote;
+    font-size: 2em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.5em;
+}
+.versi p {
+    margin: 0px;
+    font-size: 0.8em;
+    color: black;
+}
+
+.award {
+    display: none;
+}
+.hasbadge-inferno .award-inferno {
+    display: inline;
+}
+.hasbadge-purgatorio .award-purgatorio {
+    display: inline;
+}
+.hasbadge-paradiso .award-paradiso {
+    display: inline;
+}
+.hasbadge-inferno .lock-purgatorio {
+    display: none;
+}
+.hasbadge-purgatorio .lock-paradiso {
+    display: none;
+}
+
+.button {
+    color: black;
+}
+.button:before {
+    content: url('~/buttons/button-act.png');
+    margin-right: 5px;
+}
+
+.credits {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.privacy-policy {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.privacy-policy .button {
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid black;
+}
+
+.quiz-letterario .citazione {
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    border-left: 10px solid #ccc;
+}
+.quiz-letterario .citazione:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.3em;
+}
+.quiz-letterario .citazione:after {
+    color: #ccc;
+    content: close-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.6em;
+}
+
+.stregatto-parte {
+    display: none;
+}
+.tag-stregatto-corpo .stregatto-corpo {
+    display: inline;
+}
+.tag-stregatto-testa .stregatto-testa {
+    display: inline;
+}
+.tag-stregatto-coda .stregatto-coda {
+    display: inline;
+}
+
+.panel-menu-list svg {
+    height: 50px;
+    width: 50px;
+}

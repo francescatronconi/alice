@@ -11,7 +11,7 @@ import { SharedDataService, SvgMap } from './services/shared-data.service';
 })
 export class AppComponent {
 
-  title = 'Alice il gioco';
+  title = '';
   environment = environment;
   svgFrame: SvgMap;
 

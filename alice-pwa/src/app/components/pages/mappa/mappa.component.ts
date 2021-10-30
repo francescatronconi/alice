@@ -183,7 +183,6 @@ export class MappaComponent implements OnInit, OnDestroy {
     sorted.sort((a, b) => b.lat < a.lat ? -1 : 1)
     sorted
       .map(location => {
-        console.log('location', location.id, location.condition, !location.condition, this.canusegps, !location.near, this.canusegps || !location.near);
         return location;
       })
       .filter(location => !location.condition || this.pv.checkCondition(location.condition, this.shared.play, this.shared.scenario))
@@ -216,8 +215,6 @@ export class MappaComponent implements OnInit, OnDestroy {
   }
 
   private addFeatureLocation(location: MapLocation) {
-    console.log('Feature for', location.id);
-
     let feature = new Feature({
       geometry: new Point(olProj.fromLonLat([location.lon, location.lat])),
       location: location,

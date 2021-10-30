@@ -10,11 +10,16 @@ echo $TODAY
 HACKGIT=~/hack/git
 NGDIR=$HACKGIT/alice/alice-pwa
 
+cp $HACKGIT/alice/scripts/seo/$1.sh 
 cd $NGDIR
 #ng build --configuration=daniele --base-href=./
 ng build --configuration=$1 --base-href=./
 
-REMOTE="ssh dantar "
+if test -f "$HACKGIT/alice/scripts/seo/$1.sh"; then
+    $HACKGIT/alice/scripts/subst.sh $HACKGIT/alice/scripts/seo/$1.sh $NGDIR/dist/alice-pwa/index.html
+else
+    $HACKGIT/alice/scripts/subst.sh $HACKGIT/alice/scripts/seo/seo.sh $NGDIR/dist/alice-pwa/index.html
+fi
 
 rsync --delete -varzh $NGDIR/dist/alice-pwa/* dantar:/home/daniele/html/$1/
 #rsync --delete -varzh $NGDIR/dist/alice-pwa/* dantar:/home/daniele/html/ripartire/

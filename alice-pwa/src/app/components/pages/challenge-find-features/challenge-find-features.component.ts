@@ -22,9 +22,6 @@ export class ChallengeFindFeaturesComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    console.log('ngOnInit');
-    console.log(this.data);
-    console.log(this.challenge);
     this.svgmap = this.shared.getSvgMap(this.challenge.svgmap);
   }
 
@@ -35,7 +32,6 @@ export class ChallengeFindFeaturesComponent implements OnInit {
 
   clickArea(area: SvgMapArea) {
     this.audio.play('action');
-    console.log(area);
     this.data.guess[area.id] = !this.data.guess[area.id];
     if (this.isDoneButton(area)) {
       let allFound = this.challenge.success.filter(present => !this.data.guess[present]).length === 0;

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
+
+   <g id="layer3" class="item">
+      <circle r="105" cy="50" cx="50" id="path898" style="display:inline;opacity:1;vector-effect:none;fill:#ffe6ad;fill-opacity:1;stroke:none;stroke-width:4.17021275;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke" />
+      <image width="100" height="56.847546" preserveAspectRatio="none" xlink:href="~/title.png" id="image924" x="0" y="0" />
+      <image y="44.144203" x="1.2758887" id="image901" xlink:href="~/dory.png" preserveAspectRatio="none" height="103.34991" width="91.386581" style="display:inline" />
+      <image width="24.734694" height="36.07143" preserveAspectRatio="none" xlink:href="~/bats.png" id="image935" x="-31.851664" y="38.429916" />
+      <image width="51.5" height="26.35446" preserveAspectRatio="none" xlink:href="~/airplane.png" id="image946" x="48.878807" y="-32.541645" />
+      <image y="12.08382" x="100" id="image949" xlink:href="~/airplane.png" preserveAspectRatio="none" height="26.35446" width="51.5" />
+   </g>
+
+</svg>

@@ -2,25 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ALICE il game letterario in città</title>
+  <title>$TITLE</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="$FAVICON">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1976d2">
 
   <meta property="og:locale" content="it_IT" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="ALICE il game letterario in città" />
-  <meta property="og:description" content="Alice's Lucca Interactive Creative Experience, il game letterario che giochi passeggiando in città" />
-  <meta property="og:url" content="https://alice.wvoce.it" />
-  <meta property="og:site_name" content="ALICE" />
-  <meta property="og:image" content="https://alice.wvoce.it/assets/trailer/play-me.jpg" />
-  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:title" content="$TITLE" />
+  <meta property="og:description" content="$DESCRIPTION" />
+  <meta property="og:url" content="$URL" />
+  <meta property="og:site_name" content="$SITENAME" />
+  <meta property="og:image" content="$IMAGE" />
+  <meta property="og:image:type" content="$IMAGETYPE" />
 
   <!-- cfr https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
-  <link rel="apple-touch-startup-image" href="assets/alice.png">
-  <link rel="apple-touch-icon" href="assets/button-alice.png">
+  <link rel="apple-touch-startup-image" href="$APPLE_TOUCH_STARTUP_IMAGE">
+  <link rel="apple-touch-icon" href="$APPLE_TOUCH_ICON">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
@@ -29,7 +29,8 @@
   <!-- Alice -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK32TSKP6N"></script> -->
   <!-- Play -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMCHCDC2HF"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-YMCHCDC2HF"></script> -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=$GTAG_ID"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}

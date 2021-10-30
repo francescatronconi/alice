@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  gameUrl: './assets/games/alice',
+  gameUrl: './assets/games/ghibellina2021',
   nearby: 0.5,
   gaMeasurementId: null,
   privacy: {

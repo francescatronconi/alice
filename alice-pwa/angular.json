@@ -91,6 +91,14 @@
                 }
               ]
             },
+            "ghibellina2021": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ghibellina2021.ts"
+                }
+              ]
+            },
             "alice": {
               "fileReplacements": [
                 {
