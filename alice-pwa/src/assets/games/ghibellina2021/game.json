@@ -1,5 +1,5 @@
 {
-    "id": "dory-ghibellina2021-v1",
+    "id": "dory-ghibellina2021-v2",
     "credits": "credits.html",
     "fullscreen": null,
     "rules": [
@@ -13,7 +13,10 @@
         ]},
         {"trigger": "search:badge-03", "rules": [
             {"condition": {"nobadge": "badge-03"}, "effect": {"options": "badge-03"}}
-        ]}
+        ]},
+        {"condition": {"badges": ["badge-01", "badge-02", "badge-03"], "noTag": "victory-shown"}, "effect": {
+            "story": [{"read": "~/dory/victory.html"}], "tag": "victory-shown"
+        }}
     ],
     "options": [
         {"id": "badge-01", "read": "~/dory/badge-01-quiz.html", "free": false, "options": [
@@ -42,11 +45,7 @@
             ]},
             {"text": "Super Pipistrello", "effect": {"story": [{"read": "~/dory/badge-03-failure.html"}], "options": "badge-03"}},
             {"text": "... non lo so", "effect": {}}
-        ]},
-        {"condition": {"badges": ["badge-01", "badge-02", "badge-03"]}, "effect": {
-            "condition": {"noTag": "victory-shown"}, "story": [{"read": "~/dory/victory.html"}], "tag": "victory-shown"
-        }}
-
+        ]}
     ],
     "badges": [
         {"badge": "badge-01", "src": "badges/badge-01.jpg"},

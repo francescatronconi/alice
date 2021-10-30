@@ -10,7 +10,6 @@ echo $TODAY
 HACKGIT=~/hack/git
 NGDIR=$HACKGIT/alice/alice-pwa
 
-cp $HACKGIT/alice/scripts/seo/$1.sh 
 cd $NGDIR
 #ng build --configuration=daniele --base-href=./
 ng build --configuration=$1 --base-href=./
