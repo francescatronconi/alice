@@ -38,6 +38,19 @@
         ]},
         {"trigger": "failed:brucaliffo", "effect": {"route": ["mappa"], "story": [{"read": "~/challenges/brucaliffo-failed.html"}], "challenge": "brucaliffo"}},
 
+        {"trigger": "search:badge-dodo", "rules": [
+            {"effect": {"location": "map-dodo"}}
+        ]},
+        {"trigger": "visit:map-dodo", "rules": [
+            {"condition": {"badge": "badge-dodo"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "dodo"}}
+        ]},
+        {"trigger": "success:dodo", "rules": [
+            {"condition": {"nobadge": "badge-dodo"}, "effect": {"badge": "badge-dodo", "score": 2}},
+            {"effect": {"route": ["badgemap", "badges", "badge-dodo"], "story": [{"read": "~/challenges/dodo-success.html"}]}}
+        ]},
+        {"trigger": "failed:dodo", "effect": {"route": ["mappa"], "story": [{"read": "~/challenges/dodo-failed.html"}], "challenge": "dodo"}},
+    
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
         }}
@@ -60,6 +73,14 @@
             ]},
             {"text": "I gemelli d'oro", "effect": {"story": [{"read": "~/challenges/quiz-cappellaio-matto-failed.html"}], "options": "quiz-cappellaio-matto"}},
             {"text": "Non lo so", "effect": {}}
+        ]},
+        {"id": "dodo", "read": "~/challenges/dodo.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/dodo-failed.html"}], "options": "dodo"}},
+            {"text": ""},
+            {"text": "colonne", "effects": [
+                {"condition": {"nobadge": "badge-dodo"}, "badge": "badge-dodo", "score": 2},
+                {"route": ["badgemap", "badges", "badge-dodo"], "story": [{"read": "~/challenges/dodo-success.html"}]}
+            ]}
         ]}
     ],
     "badges": [
@@ -88,6 +109,10 @@
         {"id":"map-brucaliffo", "anchor": [0.5, 1], "lon": 10.506146769057995, "lat": 43.845315996891706, "icons": [
             {"condition": {"nobadge": "badge-brucaliffo"}, "icon": "~/mappa/spade.png"},
             {"condition": {"badge": "badge-brucaliffo"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-dodo", "anchor": [0.5, 1], "lon": 10.504808035420542, "lat": 43.842967313755665, "icons": [
+            {"condition": {"nobadge": "badge-dodo"}, "icon": "~/mappa/spade.png"},
+            {"condition": {"badge": "badge-dodo"}, "icon": "~/mappa/spade-visited.png"}
         ]},
         {"id":"map-cappellaio-matto", "anchor": [0.5, 1], "lon": 10.506892849357582, "lat": 43.84368847478595, "icons": [
             {"condition": {"nobadge": "badge-cappellaio-matto"}, "icon": "~/mappa/spade.png"},

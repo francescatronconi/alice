@@ -169,7 +169,7 @@
           </g>
         </g>
         <g
-           class="item not-ready"
+           class="item badge"
            name="badge-dodo"
            transform="matrix(0.1,0,0,0.1,94.668679,42.384976)">
           <image

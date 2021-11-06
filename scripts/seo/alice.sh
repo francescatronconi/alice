@@ -1,4 +1,4 @@
-export TITLE="Il giocone"
+export TITLE="A.L.I.C.E."
 export DESCRIPTION="Alice's Lucca Interactive Creative Experience, il game letterario che giochi passeggiando in città"
 export URL="https://alice.wvoce.it"
 export SITENAME="ALICE"
