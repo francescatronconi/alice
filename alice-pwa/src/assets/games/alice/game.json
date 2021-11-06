@@ -45,12 +45,15 @@
             {"condition": {"badge": "badge-dodo"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
             {"effect": {"options": "dodo"}}
         ]},
-        {"trigger": "success:dodo", "rules": [
-            {"condition": {"nobadge": "badge-dodo"}, "effect": {"badge": "badge-dodo", "score": 2}},
-            {"effect": {"route": ["badgemap", "badges", "badge-dodo"], "story": [{"read": "~/challenges/dodo-success.html"}]}}
+
+        {"trigger": "search:badge-re-cuori", "rules": [
+            {"effect": {"location": "map-re-cuori"}}
         ]},
-        {"trigger": "failed:dodo", "effect": {"route": ["mappa"], "story": [{"read": "~/challenges/dodo-failed.html"}], "challenge": "dodo"}},
-    
+        {"trigger": "visit:map-re-cuori", "rules": [
+            {"condition": {"badge": "badge-re-cuori"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "re-cuori"}}
+        ]},
+        
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
         }}
@@ -80,6 +83,14 @@
             {"text": "colonne", "effects": [
                 {"condition": {"nobadge": "badge-dodo"}, "badge": "badge-dodo", "score": 2},
                 {"route": ["badgemap", "badges", "badge-dodo"], "story": [{"read": "~/challenges/dodo-success.html"}]}
+            ]}
+        ]},
+        {"id": "re-cuori", "read": "~/challenges/re-cuori.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/re-cuori-failed.html"}], "options": "re-cuori"}},
+            {"text": ""},
+            {"text": "51", "effects": [
+                {"condition": {"nobadge": "badge-re-cuori"}, "badge": "badge-re-cuori", "score": 2},
+                {"route": ["badgemap", "badges", "badge-re-cuori"], "story": [{"read": "~/challenges/re-cuori-success.html"}]}
             ]}
         ]}
     ],
@@ -117,7 +128,12 @@
         {"id":"map-cappellaio-matto", "anchor": [0.5, 1], "lon": 10.506892849357582, "lat": 43.84368847478595, "icons": [
             {"condition": {"nobadge": "badge-cappellaio-matto"}, "icon": "~/mappa/spade.png"},
             {"condition": {"badge": "badge-cappellaio-matto"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-re-cuori", "anchor": [0.5, 1], "lon": 10.497064188776076, "lat": 43.84072889304245, "icons": [
+            {"condition": {"nobadge": "badge-re-cuori"}, "icon": "~/mappa/spade.png"},
+            {"condition": {"badge": "badge-re-cuori"}, "icon": "~/mappa/spade-visited.png"}
         ]}
+    
     ],
     "challenges": [
         {"id": "cappellaio-matto", "code": "identikit", "svgmap": "cappellaio-matto"},
