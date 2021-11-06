@@ -53,6 +53,14 @@
             {"condition": {"badge": "badge-re-cuori"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
             {"effect": {"options": "re-cuori"}}
         ]},
+
+        {"trigger": "search:badge-regina-cuori", "rules": [
+            {"effect": {"location": "map-regina-cuori"}}
+        ]},
+        {"trigger": "visit:map-regina-cuori", "rules": [
+            {"condition": {"badge": "badge-regina-cuori"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "regina-cuori"}}
+        ]},
         
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
@@ -91,6 +99,14 @@
             {"text": "51", "effects": [
                 {"condition": {"nobadge": "badge-re-cuori"}, "badge": "badge-re-cuori", "score": 2},
                 {"route": ["badgemap", "badges", "badge-re-cuori"], "story": [{"read": "~/challenges/re-cuori-success.html"}]}
+            ]}
+        ]},
+        {"id": "regina-cuori", "read": "~/challenges/regina-cuori.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/regina-cuori-failed.html"}], "options": "regina-cuori"}},
+            {"text": ""},
+            {"text": "leone", "effects": [
+                {"condition": {"nobadge": "badge-regina-cuori"}, "badge": "badge-regina-cuori", "score": 2},
+                {"route": ["badgemap", "badges", "badge-regina-cuori"], "story": [{"read": "~/challenges/regina-cuori-success.html"}]}
             ]}
         ]}
     ],
@@ -132,6 +148,10 @@
         {"id":"map-re-cuori", "anchor": [0.5, 1], "lon": 10.497064188776076, "lat": 43.84072889304245, "icons": [
             {"condition": {"nobadge": "badge-re-cuori"}, "icon": "~/mappa/spade.png"},
             {"condition": {"badge": "badge-re-cuori"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-regina-cuori", "anchor": [0.5, 1], "lon": 10.50674329479071, "lat": 43.83947674502335, "icons": [
+            {"condition": {"nobadge": "badge-regina-cuori"}, "icon": "~/mappa/spade.png"},
+            {"condition": {"badge": "badge-regina-cuori"}, "icon": "~/mappa/spade-visited.png"}
         ]}
     
     ],
