@@ -62,6 +62,14 @@
             {"effect": {"options": "regina-cuori"}}
         ]},
         
+        {"trigger": "search:badge-pinco-panco", "rules": [
+            {"effect": {"location": "map-pinco-panco"}}
+        ]},
+        {"trigger": "visit:map-pinco-panco", "rules": [
+            {"condition": {"badge": "badge-pinco-panco"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "pinco-panco"}}
+        ]},
+
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
         }}
@@ -108,6 +116,14 @@
                 {"condition": {"nobadge": "badge-regina-cuori"}, "badge": "badge-regina-cuori", "score": 2},
                 {"route": ["badgemap", "badges", "badge-regina-cuori"], "story": [{"read": "~/challenges/regina-cuori-success.html"}]}
             ]}
+        ]},
+        {"id": "pinco-panco", "read": "~/challenges/pinco-panco.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/pinco-panco-failed.html"}], "options": "pinco-panco"}},
+            {"text": ""},
+            {"text": "4", "effects": [
+                {"condition": {"nobadge": "badge-pinco-panco"}, "badge": "badge-pinco-panco", "score": 2},
+                {"route": ["badgemap", "badges", "badge-pinco-panco"], "story": [{"read": "~/challenges/pinco-panco-success.html"}]}
+            ]}
         ]}
     ],
     "badges": [
@@ -152,6 +168,10 @@
         {"id":"map-regina-cuori", "anchor": [0.5, 1], "lon": 10.50674329479071, "lat": 43.83947674502335, "icons": [
             {"condition": {"nobadge": "badge-regina-cuori"}, "icon": "~/mappa/spade.png"},
             {"condition": {"badge": "badge-regina-cuori"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-pinco-panco", "anchor": [0.5, 1], "lon": 10.512347526987744, "lat": 43.84647871870673, "icons": [
+            {"condition": {"nobadge": "badge-pinco-panco"}, "icon": "~/mappa/spade.png"},
+            {"condition": {"badge": "badge-pinco-panco"}, "icon": "~/mappa/spade-visited.png"}
         ]}
     
     ],
