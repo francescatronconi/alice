@@ -1,0 +1,16 @@
+{
+    "id": "osw2021-v01",
+    "favicon": "~/favicon-150x150.png",
+    "rules": [],  
+    "options": [],
+    "badges": [],
+    "svgmaps": [],
+    "challenges": [],
+    "audio": [
+        {"id": "action", "src": "~/audio/action.ogg"}
+    ],
+    "buttons": [
+    ],
+    "map": null,
+    "locations": []
+}

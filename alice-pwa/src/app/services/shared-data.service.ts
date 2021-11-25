@@ -148,7 +148,7 @@ export class SharedDataService {
     this.scenario.audio
     .filter(a => a.id === id)
     .forEach(a => {
-      this.audio.register(id, `${environment.gameUrl}/${a.src}`);
+      this.audio.register(id, this.getGameResourceUrl(a.src));
     })
   }
 

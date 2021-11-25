@@ -25,7 +25,7 @@
     "challenges": [
     ],
     "audio": [
-        {"id": "action", "src": "audio/action.ogg"}
+        {"id": "action", "src": "~/audio/action.ogg"}
     ],
     "buttons": [
         {"id": "badges", "icon": "./assets/papale/badge.svg", "action": ["badgemap", "badges"]},

@@ -107,6 +107,14 @@
                 }
               ]
             },
+            "osw2021": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.osw2021.ts"
+                }
+              ]
+            },
             "papale": {
               "fileReplacements": [
                 {
@@ -131,6 +139,9 @@
             },
             "alice": {
               "browserTarget": "alice-pwa:build:alice"
+            },
+            "osw2021": {
+              "browserTarget": "alice-pwa:build:osw2021"
             },
             "sept25": {
               "browserTarget": "alice-pwa:build:sept25"

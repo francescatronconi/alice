@@ -60,7 +60,7 @@
     ],
     "challenges": [],
     "audio": [
-        {"id": "action", "src": "audio/action.ogg"}
+        {"id": "action", "src": "~/audio/action.ogg"}
     ],
     "buttons": [
         {"id": "dory", "icon": "~/buttons/home.png", "action": [""], "layout": "top-left"},

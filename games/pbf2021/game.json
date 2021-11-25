@@ -84,7 +84,7 @@
     ],
     "challenges": [],
     "audio": [
-        {"id": "action", "src": "audio/action.ogg"}
+        {"id": "action", "src": "~/audio/action.ogg"}
     ],
     "buttons": [
         {"id": "dante", "icon": "~/buttons/main.svg", "action": ["badgemap", "dante"], "layout": "top-left"},

@@ -9,7 +9,7 @@ import { SvgMapComponent } from './components/pages/svg-map/svg-map.component';
 import { PartitaComponent } from './components/pages/partita/partita.component';
 import { QrCodePopupComponent } from './components/pages/qr-code-popup/qr-code-popup.component';
 import { BadgeMapComponent } from './components/pages/badge-map/badge-map.component';
-import { CameraComponent } from './camponents/pages/camera/camera.component';
+import { CameraComponent } from './components/pages/camera/camera.component';
 import { CreditsComponent } from './components/pages/credits/credits.component';
 import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privacy-policy.component';
 
@@ -21,7 +21,6 @@ const routes: Routes = [
   {path: 'gui/:id', component: SvgMapComponent},
   {path: 'gui/:id/:item', component: SvgMapComponent},
   {path: 'svgmap/:id', component: SvgMapComponent},
-  //{path: 'biblioteca', component: SvgMapComponent},
   {path: 'badge', component: BadgeComponent},
   {path: 'badgemap/:id/:badge', component: BadgeMapComponent},
   {path: 'badgemap/:id', component: BadgeMapComponent},

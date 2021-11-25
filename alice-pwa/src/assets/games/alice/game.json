@@ -180,7 +180,7 @@
         {"id": "brucaliffo", "code": "identikit", "svgmap": "brucaliffo"}
     ],
     "audio": [
-        {"id": "action", "src": "audio/action.ogg"}
+        {"id": "action", "src": "~/audio/action.ogg"}
     ],
     "buttons": [
         {"id": "badges", "icon": "~/buttons/biblio.svg", "action": ["badgemap", "badges"]},

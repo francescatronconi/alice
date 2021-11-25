@@ -41,7 +41,7 @@
         ]}
     ],
     "audio": [
-        {"id": "action", "src": "audio/action.ogg"}
+        {"id": "action", "src": "~/audio/action.ogg"}
     ],
     "buttons": [
         {"id": "mappa", "icon": "./assets/svg/mappa.svg", "action": ["mappa"]},
