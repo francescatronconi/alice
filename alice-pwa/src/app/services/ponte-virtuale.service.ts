@@ -492,11 +492,9 @@ GameEffect.register(GameEffectOptions);
 export class GamePlay {
   
   id: string;
-  situation: string[];
   story: GamePlayStory[];
   badges: string[];
   options: string[];
-  locationScore: [];
   score: number;
   zoomTo: string;
   tags: string[];
@@ -506,11 +504,9 @@ export class GamePlay {
   settings: {[setting:string]: string};
 
   constructor() {
-    this.situation = [];
     this.story = [];
     this.badges = [];
     this.options = [];
-    this.locationScore = [];
     this.score = 0;
     this.tags= [];
     this.challenge = null;

@@ -11,7 +11,6 @@ HACKGIT=~/hack/git
 NGDIR=$HACKGIT/alice/alice-pwa
 
 cd $NGDIR
-#ng build --configuration=daniele --base-href=./
 ng build --configuration=$1 --base-href=./
 
 if test -f "$HACKGIT/alice/scripts/seo/$1.sh"; then
@@ -21,5 +20,4 @@ else
 fi
 
 rsync --delete -varzh $NGDIR/dist/alice-pwa/* dantar:/home/daniele/html/$1/
-#rsync --delete -varzh $NGDIR/dist/alice-pwa/* dantar:/home/daniele/html/ripartire/
 
