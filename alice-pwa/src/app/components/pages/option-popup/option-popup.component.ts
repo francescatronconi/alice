@@ -41,7 +41,10 @@ export class OptionPopupComponent implements OnInit {
 
   clickDone() {
     this.audio.play('action');
-    let found = this.opt.options.filter(o => o.text === this.freetext.toLowerCase().trim());
+    let found = this.opt.options.filter(o => 
+      (o.text && o.text === this.freetext.toLowerCase().trim()) 
+      || (o.texts && o.texts.includes(this.freetext.toLowerCase().trim()))
+      );
     if (found.length > 0) {
       this.shared.setOption(found[0]);
     } else {

@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  gameUrl: './assets/pbf2021',
+  gameUrl: './assets/games/pbf2021',
   nearby: 1000,
   gaMeasurementId: 'G-YMCHCDC2HF',
   privacy: {

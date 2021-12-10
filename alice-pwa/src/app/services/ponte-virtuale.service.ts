@@ -535,6 +535,7 @@ export class GameOption {
 
 export class Option {
   text: string;
+  texts: string[];
   effect: GameEffect;
   effects: GameEffect[];
 }

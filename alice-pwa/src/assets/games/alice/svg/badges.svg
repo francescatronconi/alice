@@ -194,7 +194,7 @@
           </g>
         </g>
         <g
-           class="item not-ready"
+           class="item badge"
            name="badge-fiori"
            transform="matrix(0.1,0,0,0.1,94.256586,54.790875)">
           <image

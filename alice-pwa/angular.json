@@ -140,6 +140,9 @@
             "alice": {
               "browserTarget": "alice-pwa:build:alice"
             },
+            "ghibellina2021": {
+              "browserTarget": "alice-pwa:build:ghibellina2021"
+            },
             "osw2021": {
               "browserTarget": "alice-pwa:build:osw2021"
             },

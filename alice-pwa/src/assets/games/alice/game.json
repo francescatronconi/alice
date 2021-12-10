@@ -70,6 +70,14 @@
             {"effect": {"options": "pinco-panco"}}
         ]},
 
+        {"trigger": "search:badge-fiori", "rules": [
+            {"effect": {"location": "map-fiori"}}
+        ]},
+        {"trigger": "visit:map-fiori", "rules": [
+            {"condition": {"badge": "badge-fiori"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "fiori"}}
+        ]},
+
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
         }}
@@ -124,7 +132,16 @@
                 {"condition": {"nobadge": "badge-pinco-panco"}, "badge": "badge-pinco-panco", "score": 2},
                 {"route": ["badgemap", "badges", "badge-pinco-panco"], "story": [{"read": "~/challenges/pinco-panco-success.html"}]}
             ]}
+        ]},
+        {"id": "fiori", "read": "~/challenges/fiori.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/fiori-failed.html"}], "options": "fiori"}},
+            {"text": ""},
+            {"texts": ["le altalene", "altalene", "altalena"], "effects": [
+                {"condition": {"nobadge": "badge-fiori"}, "badge": "badge-fiori", "score": 2},
+                {"route": ["badgemap", "badges", "badge-fiori"], "story": [{"read": "~/challenges/fiori-success.html"}]}
+            ]}
         ]}
+
     ],
     "badges": [
         {"badge": "badge-brucaliffo", "src": "~/badges/brucaliffo.jpg"},
@@ -172,6 +189,10 @@
         {"id":"map-pinco-panco", "anchor": [0.5, 1], "lon": 10.512347526987744, "lat": 43.84647871870673, "icons": [
             {"condition": {"nobadge": "badge-pinco-panco"}, "icon": "~/mappa/spade.png"},
             {"condition": {"badge": "badge-pinco-panco"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-fiori", "anchor": [0.5, 1], "lon": 10.514214394688153, "lat": 43.84449340791067, "icons": [
+            {"condition": {"nobadge": "badge-fiori"}, "icon": "~/mappa/spade.png"},
+            {"condition": {"badge": "badge-fiori"}, "icon": "~/mappa/spade-visited.png"}
         ]}
     
     ],

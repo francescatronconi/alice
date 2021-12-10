@@ -127,7 +127,7 @@ export class BadgeMapComponent implements OnInit {
       let elements = this.svg.getElementsByClassName('item');
       for (let index=0; index < elements.length; index++) {
         let element = elements.item(index) as HTMLElement;
-        if (element.classList.contains('badge')) {
+        if (element.classList.contains('item')) {
           this._addBadge(element);
         }
         if (element.classList.contains('trigger')) {

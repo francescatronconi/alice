@@ -1,15 +1,20 @@
 {
     "id": "osw2021-v01",
     "favicon": "~/favicon-150x150.png",
-    "rules": [],  
+    "rules": [
+        {"trigger": "start", "effect": {
+            "score": 1, "story": [{"read": "~/story/game-start.html"}]
+        }}
+    ],  
     "options": [],
     "badges": [],
     "svgmaps": [],
     "challenges": [],
-    "audio": [
-        {"id": "action", "src": "~/audio/action.ogg"}
-    ],
+    "audio": [],
     "buttons": [
+        {"id": "dory", "icon": "~/buttons/home.png", "action": [""], "layout": "top-left"},
+        {"id": "dory1", "icon": "~/buttons/home.png", "action": [""], "layout": "top-left"},
+        {"id": "dory2", "icon": "~/buttons/home.png", "action": [""], "layout": "bottom-right"}
     ],
     "map": null,
     "locations": []

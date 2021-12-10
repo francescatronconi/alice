@@ -3,6 +3,9 @@
     "credits": "credits.html",
     "fullscreen": null,
     "rules": [
+        {"trigger": "qrcode:1234", "effect": {"story": [
+            {"read": "~/dory/qrcode.html"}
+        ]}},
         {"trigger": "start", "effect": {"route": [""]}},
         {"trigger": "welcome", "effect": {"route": ["badgemap", "dory"], "story": [{"read": "~/intro.html"}]}},
         {"trigger": "search:badge-01", "rules": [
@@ -64,6 +67,7 @@
     ],
     "buttons": [
         {"id": "dory", "icon": "~/buttons/home.png", "action": [""], "layout": "top-left"},
+        {"id": "qrcode", "icon": "~/buttons/home.png", "action": ["qrcode"], "layout": "top-left"},
         {"id": "wvoce", "icon": "~/buttons/vivavoce-logo-sqr.jpg", "href": "https://www.wvoce.it/", "layout": "bottom-right"},
         {"id": "ghibellina", "icon": "~/buttons/ghibellina.jpg", "href": "https://m.facebook.com/libreriaghibellinapisa/", "layout": "bottom-right"},
         {"id": "terre", "icon": "~/buttons/tdm.jpg", "href": "https://www.terre.it/", "layout": "bottom-right"}
