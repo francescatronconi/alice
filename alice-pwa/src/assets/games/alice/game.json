@@ -78,6 +78,14 @@
             {"effect": {"options": "fiori"}}
         ]},
 
+        {"trigger": "search:badge-tricheco-carpentiere", "rules": [
+            {"effect": {"location": "map-tricheco-carpentiere"}}
+        ]},
+        {"trigger": "visit:map-tricheco-carpentiere", "rules": [
+            {"condition": {"badge": "badge-tricheco-carpentiere"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "tricheco-carpentiere"}}
+        ]},
+
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
         }}
@@ -128,7 +136,7 @@
         {"id": "pinco-panco", "read": "~/challenges/pinco-panco.html", "free": true, "options": [
             {"text": "default", "effect": {"story": [{"read": "~/challenges/pinco-panco-failed.html"}], "options": "pinco-panco"}},
             {"text": ""},
-            {"text": "4", "effects": [
+            {"texts": ["4", "quattro"], "effects": [
                 {"condition": {"nobadge": "badge-pinco-panco"}, "badge": "badge-pinco-panco", "score": 2},
                 {"route": ["badgemap", "badges", "badge-pinco-panco"], "story": [{"read": "~/challenges/pinco-panco-success.html"}]}
             ]}
@@ -139,6 +147,14 @@
             {"texts": ["le altalene", "altalene", "altalena"], "effects": [
                 {"condition": {"nobadge": "badge-fiori"}, "badge": "badge-fiori", "score": 2},
                 {"route": ["badgemap", "badges", "badge-fiori"], "story": [{"read": "~/challenges/fiori-success.html"}]}
+            ]}
+        ]},
+        {"id": "tricheco-carpentiere", "read": "~/challenges/tricheco-carpentiere.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/tricheco-carpentiere-failed.html"}], "options": "tricheco-carpentiere"}},
+            {"text": ""},
+            {"texts": ["5", "cinque"], "effects": [
+                {"condition": {"nobadge": "badge-tricheco-carpentiere"}, "badge": "badge-tricheco-carpentiere", "score": 2},
+                {"route": ["badgemap", "badges", "badge-tricheco-carpentiere"], "story": [{"read": "~/challenges/tricheco-carpentiere-success.html"}]}
             ]}
         ]}
 
@@ -193,6 +209,10 @@
         {"id":"map-fiori", "anchor": [0.5, 1], "lon": 10.514214394688153, "lat": 43.84449340791067, "icons": [
             {"condition": {"nobadge": "badge-fiori"}, "icon": "~/mappa/spade.png"},
             {"condition": {"badge": "badge-fiori"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-tricheco-carpentiere", "anchor": [0.5, 1], "lon": 10.502975142485223, "lat": 43.83898477247424, "icons": [
+            {"condition": {"nobadge": "badge-tricheco-carpentiere"}, "icon": "~/mappa/spade.png"},
+            {"condition": {"badge": "badge-tricheco-carpentiere"}, "icon": "~/mappa/spade-visited.png"}
         ]}
     
     ],
