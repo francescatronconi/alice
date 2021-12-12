@@ -94,6 +94,12 @@
             {"effect": {"options": "humpty-dumpty"}}
         ]},
 
+        {"trigger": "search:badge-stregatto", "effect": {"route": ["mappa"], "story": [{"read": "~/challenges/stregatto.html"}]}},
+        {"trigger": "visit:map-stregatto-testa", "rules": [
+            {"condition": {"tag": "stregatto-testa"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "stregatto-testa"}}
+        ]},
+
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
         }}
@@ -172,6 +178,14 @@
                 {"condition": {"nobadge": "badge-humpty-dumpty"}, "badge": "badge-humpty-dumpty", "score": 2},
                 {"route": ["badgemap", "badges", "badge-humpty-dumpty"], "story": [{"read": "~/challenges/humpty-dumpty-success.html"}]}
             ]}
+        ]},
+        {"id": "stregatto-testa", "read": "~/challenges/stregatto-testa.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/stregatto-testa-failed.html"}], "options": "stregatto-testa"}},
+            {"text": ""},
+            {"texts": ["luccalibri", "lucca libri", "caffè letterario", "caffèletterario"], "effects": [
+                {"condition": {"nobadge": "badge-stregatto-testa"}, "badge": "badge-stregatto", "tag": "stregatto-testa", "score": 2},
+                {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "~/challenges/stregatto-testa-success.html"}]}
+            ]}
         ]}
 
     ],
@@ -233,6 +247,18 @@
         {"id":"map-humpty-dumpty", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084, "icons": [
             {"condition": {"nobadge": "badge-humpty-dumpty"}, "icon": "~/mappa/spade.png"},
             {"condition": {"badge": "badge-humpty-dumpty"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-stregatto-testa", "anchor": [0.5, 1], "lon": 10.505437469176439, "lat": 43.83828244849533, "icons": [
+            {"condition": {"nobadge": "badge-stregatto-testa"}, "icon": "~/mappa/spade-lib.png"},
+            {"condition": {"badge": "badge-stregatto-testa"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-stregatto-coda", "anchor": [0.5, 1], "lon": 10.501874162560684, "lat": 43.84049729895711, "icons": [
+            {"condition": {"nobadge": "badge-stregatto-coda"}, "icon": "~/mappa/spade-lib.png"},
+            {"condition": {"badge": "badge-stregatto-coda"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-stregatto-corpo", "anchor": [0.5, 1], "lon": 10.503966069570199, "lat": 43.84222160447871, "icons": [
+            {"condition": {"nobadge": "badge-stregatto-corpo"}, "icon": "~/mappa/spade-lib.png"},
+            {"condition": {"badge": "badge-stregatto-corpo"}, "icon": "~/mappa/spade-visited.png"}
         ]}
     
     ],

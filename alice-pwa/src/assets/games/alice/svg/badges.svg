@@ -319,7 +319,7 @@
           </g>
         </g>
         <g
-           class="item not-ready"
+           class="item badge"
            name="badge-stregatto"
            transform="matrix(0.1,0,0,0.1,48.403735,37.590817)">
           <image
