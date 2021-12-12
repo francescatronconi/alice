@@ -86,6 +86,14 @@
             {"effect": {"options": "tricheco-carpentiere"}}
         ]},
 
+        {"trigger": "search:badge-humpty-dumpty", "rules": [
+            {"effect": {"location": "map-humpty-dumpty"}}
+        ]},
+        {"trigger": "visit:map-humpty-dumpty", "rules": [
+            {"condition": {"badge": "badge-humpty-dumpty"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "humpty-dumpty"}}
+        ]},
+
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
         }}
@@ -112,7 +120,7 @@
         {"id": "dodo", "read": "~/challenges/dodo.html", "free": true, "options": [
             {"text": "default", "effect": {"story": [{"read": "~/challenges/dodo-failed.html"}], "options": "dodo"}},
             {"text": ""},
-            {"text": "colonne", "effects": [
+            {"texts": ["colonne", "le colonne"], "effects": [
                 {"condition": {"nobadge": "badge-dodo"}, "badge": "badge-dodo", "score": 2},
                 {"route": ["badgemap", "badges", "badge-dodo"], "story": [{"read": "~/challenges/dodo-success.html"}]}
             ]}
@@ -120,7 +128,7 @@
         {"id": "re-cuori", "read": "~/challenges/re-cuori.html", "free": true, "options": [
             {"text": "default", "effect": {"story": [{"read": "~/challenges/re-cuori-failed.html"}], "options": "re-cuori"}},
             {"text": ""},
-            {"text": "51", "effects": [
+            {"texts": ["51", "cinquantuno"], "effects": [
                 {"condition": {"nobadge": "badge-re-cuori"}, "badge": "badge-re-cuori", "score": 2},
                 {"route": ["badgemap", "badges", "badge-re-cuori"], "story": [{"read": "~/challenges/re-cuori-success.html"}]}
             ]}
@@ -155,6 +163,14 @@
             {"texts": ["5", "cinque"], "effects": [
                 {"condition": {"nobadge": "badge-tricheco-carpentiere"}, "badge": "badge-tricheco-carpentiere", "score": 2},
                 {"route": ["badgemap", "badges", "badge-tricheco-carpentiere"], "story": [{"read": "~/challenges/tricheco-carpentiere-success.html"}]}
+            ]}
+        ]},
+        {"id": "humpty-dumpty", "read": "~/challenges/humpty-dumpty.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/humpty-dumpty-failed.html"}], "options": "humpty-dumpty"}},
+            {"text": ""},
+            {"texts": ["7", "sette"], "effects": [
+                {"condition": {"nobadge": "badge-humpty-dumpty"}, "badge": "badge-humpty-dumpty", "score": 2},
+                {"route": ["badgemap", "badges", "badge-humpty-dumpty"], "story": [{"read": "~/challenges/humpty-dumpty-success.html"}]}
             ]}
         ]}
 
@@ -213,6 +229,10 @@
         {"id":"map-tricheco-carpentiere", "anchor": [0.5, 1], "lon": 10.502975142485223, "lat": 43.83898477247424, "icons": [
             {"condition": {"nobadge": "badge-tricheco-carpentiere"}, "icon": "~/mappa/spade.png"},
             {"condition": {"badge": "badge-tricheco-carpentiere"}, "icon": "~/mappa/spade-visited.png"}
+        ]},
+        {"id":"map-humpty-dumpty", "anchor": [0.5, 1], "lon": 10.503999979922128, "lat": 43.841165129980084, "icons": [
+            {"condition": {"nobadge": "badge-humpty-dumpty"}, "icon": "~/mappa/spade.png"},
+            {"condition": {"badge": "badge-humpty-dumpty"}, "icon": "~/mappa/spade-visited.png"}
         ]}
     
     ],

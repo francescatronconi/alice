@@ -269,7 +269,7 @@
           </g>
         </g>
         <g
-           class="item not-ready"
+           class="item badge"
            name="badge-humpty-dumpty"
            transform="matrix(0.1,0,0,0.1,70.672118,88.475626)">
           <image
