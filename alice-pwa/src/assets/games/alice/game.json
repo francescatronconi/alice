@@ -99,6 +99,14 @@
             {"condition": {"tag": "stregatto-testa"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
             {"effect": {"options": "stregatto-testa"}}
         ]},
+        {"trigger": "visit:map-stregatto-coda", "rules": [
+            {"condition": {"tag": "stregatto-coda"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "stregatto-coda"}}
+        ]},
+        {"trigger": "visit:map-stregatto-corpo", "rules": [
+            {"condition": {"tag": "stregatto-corpo"}, "effect": {"story": [{"read": "~/challenges/already-done.html"}]}},
+            {"effect": {"options": "stregatto-corpo"}}
+        ]},
 
         {"condition": {"badges": ["badge-brucaliffo", "badge-cappellaio-matto"], "noTag": "victory-shown"}, "effect": {
             "story": [{"read": "~/challenges/victory.html"}], "tag": "victory-shown"
@@ -186,6 +194,22 @@
                 {"condition": {"nobadge": "badge-stregatto-testa"}, "badge": "badge-stregatto", "tag": "stregatto-testa", "score": 2},
                 {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "~/challenges/stregatto-testa-success.html"}]}
             ]}
+        ]},
+        {"id": "stregatto-coda", "read": "~/challenges/stregatto-coda.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/stregatto-coda-failed.html"}], "options": "stregatto-coda"}},
+            {"text": ""},
+            {"texts": ["pensieri belli", "pensieribelli"], "effects": [
+                {"condition": {"nobadge": "badge-stregatto-coda"}, "badge": "badge-stregatto", "tag": "stregatto-coda", "score": 2},
+                {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "~/challenges/stregatto-coda-success.html"}]}
+            ]}
+        ]},
+        {"id": "stregatto-corpo", "read": "~/challenges/stregatto-corpo.html", "free": true, "options": [
+            {"text": "default", "effect": {"story": [{"read": "~/challenges/stregatto-corpo-failed.html"}], "options": "stregatto-corpo"}},
+            {"text": ""},
+            {"texts": ["collezionista", "il collezionista"], "effects": [
+                {"condition": {"nobadge": "badge-stregatto-corpo"}, "badge": "badge-stregatto", "tag": "stregatto-corpo", "score": 2},
+                {"route": ["badgemap", "badges", "badge-stregatto"], "story": [{"read": "~/challenges/stregatto-corpo-success.html"}]}
+            ]}
         ]}
 
     ],
@@ -249,16 +273,16 @@
             {"condition": {"badge": "badge-humpty-dumpty"}, "icon": "~/mappa/spade-visited.png"}
         ]},
         {"id":"map-stregatto-testa", "anchor": [0.5, 1], "lon": 10.505437469176439, "lat": 43.83828244849533, "icons": [
-            {"condition": {"nobadge": "badge-stregatto-testa"}, "icon": "~/mappa/spade-lib.png"},
-            {"condition": {"badge": "badge-stregatto-testa"}, "icon": "~/mappa/spade-visited.png"}
+            {"condition": {"noTag": "stregatto-testa"}, "icon": "~/mappa/spade-lib.png"},
+            {"condition": {"tag": "stregatto-testa"}, "icon": "~/mappa/spade-visited.png"}
         ]},
         {"id":"map-stregatto-coda", "anchor": [0.5, 1], "lon": 10.501874162560684, "lat": 43.84049729895711, "icons": [
-            {"condition": {"nobadge": "badge-stregatto-coda"}, "icon": "~/mappa/spade-lib.png"},
-            {"condition": {"badge": "badge-stregatto-coda"}, "icon": "~/mappa/spade-visited.png"}
+            {"condition": {"noTag": "stregatto-coda"}, "icon": "~/mappa/spade-lib.png"},
+            {"condition": {"tag": "stregatto-coda"}, "icon": "~/mappa/spade-visited.png"}
         ]},
-        {"id":"map-stregatto-corpo", "anchor": [0.5, 1], "lon": 10.503966069570199, "lat": 43.84222160447871, "icons": [
-            {"condition": {"nobadge": "badge-stregatto-corpo"}, "icon": "~/mappa/spade-lib.png"},
-            {"condition": {"badge": "badge-stregatto-corpo"}, "icon": "~/mappa/spade-visited.png"}
+        {"id":"map-stregatto-corpo", "anchor": [0.5, 1], "lon": 10.503838609072504, "lat": 43.84201761956855, "icons": [
+            {"condition": {"noTag": "stregatto-corpo"}, "icon": "~/mappa/spade-lib.png"},
+            {"condition": {"tag": "stregatto-corpo"}, "icon": "~/mappa/spade-visited.png"}
         ]}
     
     ],
