@@ -12,6 +12,7 @@ import { BadgeMapComponent } from './components/pages/badge-map/badge-map.compon
 import { CameraComponent } from './components/pages/camera/camera.component';
 import { CreditsComponent } from './components/pages/credits/credits.component';
 import { PrivacyPolicyComponent } from './components/pages/privacy-policy/privacy-policy.component';
+import { PanelComponent } from './components/pages/panel/panel.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'badgemap/:id/:badge', component: BadgeMapComponent},
   {path: 'badgemap/:id', component: BadgeMapComponent},
   {path: 'badgemap', component: BadgeMapComponent},
+  {path: 'panel/:id', component: PanelComponent},
   {path: 'qrcode', component: QrCodePopupComponent},
   {path: 'qrcode/:id', component: QrCodePopupComponent},
   {path: 'camera', component: CameraComponent},

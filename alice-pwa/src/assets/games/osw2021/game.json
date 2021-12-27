@@ -8,12 +8,14 @@
     ],  
     "options": [],
     "badges": [],
-    "svgmaps": [],
+    "svgmaps": [
+        {"id": "newsvg", "svg": "~/svg/panels.svg"}
+    ],
     "challenges": [],
     "audio": [],
     "buttons": [
         {"id": "dory", "icon": "~/buttons/home.png", "action": [""], "layout": "top-left"},
-        {"id": "dory1", "icon": "~/buttons/home.png", "action": [""], "layout": "top-left"},
+        {"id": "dory1", "icon": "~/buttons/home.png", "action": ["panel", "newsvg"], "layout": "top-left"},
         {"id": "dory2", "icon": "~/buttons/home.png", "action": [""], "layout": "bottom-right"}
     ],
     "map": null,

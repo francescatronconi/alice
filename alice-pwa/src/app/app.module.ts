@@ -40,6 +40,7 @@ import { DirectTriggerComponent } from './components/pages/direct-trigger/direct
 
 import { FormsModule } from '@angular/forms';
 import { GameurlPipe } from './pipes/gameurl.pipe';
+import { PanelComponent } from './components/pages/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { GameurlPipe } from './pipes/gameurl.pipe';
     PrivacyPolicyComponent,
     DirectTriggerComponent,
     GameurlPipe,
+    PanelComponent,
   ],
   imports: [
     BrowserModule,
