@@ -122,6 +122,14 @@
                   "with": "src/environments/environment.papale.ts"
                 }
               ]
+            },
+            "elabor": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.elabor.ts"
+                }
+              ]
             }
           }
         },
@@ -154,6 +162,9 @@
             },
             "papale": {
               "browserTarget": "alice-pwa:build:papale"
+            },
+            "elabor": {
+              "browserTarget": "alice-pwa:build:elabor"
             }
           }
         },

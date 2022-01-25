@@ -1,0 +1,49 @@
+{
+    "id": "elabor-game",
+    "credits": "~/credits.html",
+    "fullscreen": null,
+    "rules": [
+        {"trigger": "start", "effect": {"route": [""]}},
+        {"trigger": "welcome", "effect": {"route": ["badgemap", "giochi"], "story": [{"read": "~/intro.html"}]}},
+        {"trigger": "search:badge-01", 
+            "rules": [{
+                "effect": {
+                    "route": ["credits"]}
+        }]},
+        {"trigger": "search:badge-02", "rules": [
+            {"condition": {"nobadge": "badge-02"}, "effect": {"options": "badge-02"}}
+        ]},
+        {"trigger": "search:badge-03", "rules": [
+            {"condition": {"nobadge": "badge-03"}, "effect": {"options": "badge-03"}}
+        ]}
+    ],
+    "options": [
+        {"id": "badge-02", "read": "~/Allhtml/tappaADR.html", "free": false, "options": [
+            {"text": "ok", "effect": {}}
+        ]
+    },
+        {"id": "badge-03", "read": "~/Allhtml/tappaPV.html", "free": false, "options": [
+            {"text": "ok", "effect": {}}
+        ]}
+    ],
+    "badges": [
+        {"badge": "badge-01", "src": "badges/badge-01.jpg"},
+        {"badge": "badge-02", "src": "badges/badge-02.jpg"},
+        {"badge": "badge-03", "src": "badges/badge-03.jpg"}
+    ],
+    "svgmaps": [
+        {"id": "welcome", "svg": "~/welcome.svg", "ids": []},
+        {"id": "giochi", "svg": "~/giochi2.svg"}
+    ],
+    "locations": [
+    ],
+    "challenges": [],
+    "audio": [
+        {"id": "action", "src": "~/audio/action.ogg"}
+    ],
+    "buttons": [
+        {"id": "home", "icon": "~/buttons/cattedrale.svg", "action": [""], "layout": "top-left"},
+        {"id": "home", "icon": "~/credits.svg", "action": ["credits"], "layout": "top-left"}
+    ],
+    "map": {}
+}

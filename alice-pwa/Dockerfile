@@ -6,4 +6,4 @@ RUN npm install
 COPY . ./
 # RUN ng build --configuration production
 RUN ng build
-CMD ["ng", "serve", "--host", "0.0.0.0", "--configuration", "papale"]
+CMD ["ng", "serve", "--host", "0.0.0.0", "--configuration", "elabor"]
