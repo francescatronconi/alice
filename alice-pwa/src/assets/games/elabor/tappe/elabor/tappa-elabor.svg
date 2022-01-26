@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
+
+      <g id="badges">
+         <g id="g1001" class="item badge" name="badge-10">
+            <image x="0" y="20" xlink:href="~/beapple.png" height="12" width="15" preserveAspectRatio="none" >
+               <animate attributeName="x"
+                    values="30;0"
+                    dur="3s"
+                    repeatCount="1" fill="remove" />
+                <animate attributeName="y"
+                    values="35;20"
+                    dur="3s"
+                    repeatCount="1"  fill="remove" />
+               <animate id="op" attributeType="CSS" attributeName="opacity"
+                     from="0" to="1" dur="3s"/>
+            </image>
+         </g>
+          <g id="g1002" class="item badge" name="badge-20">
+            <image x="80" y="20" xlink:href="https://www.enostra.it/wp-content/uploads/2019/01/enostra-bicolor195.png" 
+            height="10" width="18" preserveAspectRatio="none" >
+               <animate attributeName="x"
+                    values="60;80"
+                    dur="3s"
+                    repeatCount="1" fill="remove" />
+                <animate attributeName="y"
+                    values="35;20"
+                    dur="3s"
+                    repeatCount="1"  fill="remove" />
+               <animate id="op" attributeType="CSS" attributeName="opacity"
+                     from="0" to="1" dur="3s"/>
+            </image>
+         </g>
+         <g id="g1003" class="item badge" name="badge-30">
+            <image x="40" y="40" xlink:href="~/elabor.png" height="15" width="20" preserveAspectRatio="none" >
+            </image>
+         </g>
+         <g id="g1004" class="item badge" name="badge-40">
+            <image x="0" y="67" xlink:href="~/Logo_Utilia.png" height="6" width="20" preserveAspectRatio="none" >
+              <animate attributeName="x"
+                    values="25;0"
+                    dur="3s"
+                    repeatCount="1" fill="remove" />
+                <animate attributeName="y"
+                    values="50;67"
+                    dur="3s"
+                    repeatCount="1"  fill="remove" />
+               <animate id="op" attributeType="CSS" attributeName="opacity"
+                     from="0" to="1" dur="3s"/>
+            </image>
+         </g>
+         <g id="g1005" class="item badge" name="badge-50">
+            <image x="80" y="60" xlink:href="https://cdn-0.motorcycle-logos.com/wp-content/uploads/2016/11/Piaggio-Logo-500x412.png" 
+            height="15" width="20" preserveAspectRatio="none" >
+                <animate attributeName="x"
+                    values="60;80"
+                    dur="3s"
+                    repeatCount="1" fill="remove" />
+                <animate attributeName="y"
+                    values="45;60"
+                    dur="3s"
+                    repeatCount="1"  fill="remove" />
+               <animate id="op" attributeType="CSS" attributeName="opacity"
+                     from="0" to="1" dur="3s"/>
+            </image>
+         </g>
+         <g id="g1006" class="item badge" name="badge-100">
+            <image x="110" y="90" xlink:href="https://w7.pngwing.com/pngs/617/943/png-transparent-youtube-play-button-play-button-blue-angle-text.png" 
+            height="5" width="5" preserveAspectRatio="none" >
+            </image>
+         </g>
+      </g>
+</svg>

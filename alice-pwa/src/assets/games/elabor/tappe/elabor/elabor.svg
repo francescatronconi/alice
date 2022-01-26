@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
+
+   <g id="badges">
+         <g id="g1030" class="item badge" width="100%" height="80%" >
+            <text  x="50%" y="17%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               eLabor è una cooperativa di produzione e lavoro con una forte vocazione all'innovazione e alla 
+            </text>
+            <text  x="50%" y="20%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               tecnologia in particolare nel campo dell’informatica. La cooperativa è stata fondata a Pisa nel 
+             </text>
+            <text  x="50%" y="23%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               2001, raccogliendo diverse esperienze fatte dagli anni '90. Sin dagli esordi ha attuato la       
+             </text>
+            <text  x="50%" y="26%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               scelta strategica del software libero, che l'ha portata tra l'altro ad aderire all'Associazione  
+             </text>
+            <text  x="50%" y="29%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               Italiana Software Libero e poi alla Rete Italiana Open Source (RIOS), dell'uso di metodologie    
+             </text>
+            <text  x="50%" y="32%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               agili e di un approccio caratterizzato dall'apprendimento e miglioramento continuo. Nel corso    
+             </text>
+            <text  x="50%" y="35%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               del tempo ha accumulato esperienze molto diversificate in progetti di cooperazione internazionale
+             </text>
+            <text  x="50%" y="38%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               e di filologia digitale (edizioni critiche di testi antichi), per poi passare allo sviluppo di   
+            </text>
+            <text  x="50%" y="41%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               applicazioni realizzate specificamente sulle esigenze dei committenti, in particolare nel campo  
+             </text>
+            <text  x="50%" y="44%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               delle “public utilities” e del commercio di smartphone. Negli ultimi anni ha sviluppato un forte  
+             </text>
+            <text  x="50%" y="47%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               interesse per il Machine Learning,l'Intelligenza Artificiale in ambito industriale e le varie     
+            </text>
+            <text  x="50%" y="50%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               tecnologie ed ambiti collegati, come IoT, Big Data, analisi di serie temporali, modellazione     
+             </text>
+            <text  x="50%" y="53%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               matematica, simulazione, ottimizzazione, Industria 4.0. In tutti questi ambiti, eLabor fornisce   
+             </text>
+            <text  x="50%" y="56%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               anche assistenza tecnica e percorsi di formazione. Nella realizzazione dei suoi prodotti e        
+             </text>
+            <text  x="50%" y="59%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               servizi ha sviluppato competenze significative nell'uso di tecnologie come Linux, DBMS           
+             </text>
+            <text  x="50%" y="62%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               relazionali e NoSql, application server, linguaggi come Java, Python, JavaScript, HTML/CSS, XML  
+             </text>
+            <text  x="50%" y="65%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               e TeX, e strumenti di sviluppo come Eclipse, Spring, Subversion, Git, Jenkins, SonarQube,        
+             </text>
+            <text  x="50%" y="68%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               Selenium e molti altri. Ultimamente, ha investito nell’apprendimento di piattaforme per il       
+             </text>
+            <text  x="50%" y="71%" font-size="2px" textLength="100" text-anchor="middle" lengthAdjust="spacing">
+               Machine Learning, come Keras/Tensor Flow, MxNet, Gluon e strumenti come LifeRay ed Elastic Stack.
+            </text>
+         </g>
+         <g id="g1101" class="item badge" name="badge-99" width="100%" height="20%">
+               <rect x="50%" y="90%" width="6" height="1" 
+                  style="fill:red;stroke:black;stroke-width:5;opacity:0.5" >
+                  <text >ciao</text>
+               </rect>
+               <text x="49%" y="91%" font-size="2px">indietro</text>
+         </g>
+   </g>
+</svg>

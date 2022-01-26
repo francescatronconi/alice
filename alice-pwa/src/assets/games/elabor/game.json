@@ -5,27 +5,66 @@
     "rules": [
         {"trigger": "start", "effect": {"route": [""]}},
         {"trigger": "welcome", "effect": {"route": ["badgemap", "giochi"], "story": [{"read": "~/intro.html"}]}},
-        {"trigger": "search:badge-01", 
-            "rules": [{
-                "effect": {
-                    "route": ["credits"]}
-        }]},
+        {"trigger": "search:badge-01", "effect": {"route": [""],"options": "testo-01"}},
         {"trigger": "search:badge-02", "rules": [
             {"condition": {"nobadge": "badge-02"}, "effect": {"options": "badge-02"}}
         ]},
         {"trigger": "search:badge-03", "rules": [
             {"condition": {"nobadge": "badge-03"}, "effect": {"options": "badge-03"}}
-        ]}
+        ]},
+
+        {"trigger": "search:badge-10", "rules": [
+            {"condition": {"nobadge": "badge-10"}, "effect": {"route": ["badgemap", "beapple"]}}
+        ]},
+        {"trigger": "search:badge-30", "rules": [
+            {"condition": {"nobadge": "badge-30"}, "effect": {"route": ["badgemap", "elabor"]}}
+        ]},
+        {"trigger": "search:badge-99", "effect": {"route": ["badgemap", "tappa-elabor"]}}
     ],
     "options": [
+        {"id": "testo-01", "read": "~/tappe/elabor/benvenuto.html", "free": false, "options": [
+            {"text": "si",  "effects": [
+                {"route": ["badgemap", "tappa-elabor"],  "options": "spiegare-gioco", "story": [{"read": "~/tappe/elabor/giocaresi.html"}]}]
+            },
+            {"text": "no", "effects": [
+                {"route": ["badgemap", "tappa-elabor"]}
+            ]}
+        ]},
+        {"id": "spiegare-gioco", "read": "~/tappe/elabor/introgame.html", "free": false, "options": [
+            {"text": "ho già giocato in precedenza",  "effects": [
+                {"story": [{"read": "~/tappe/elabor/sagiocare.html"}], "options": "domanda-01"}
+            ]},
+            {"text": "no, ho bisogno della spiegazione", "effects": [
+                {"story": [{"read": "~/tappe/elabor/nonsagiocare.html"}], "options": "domanda-01"}
+            ]}
+        ]},
+        {"id": "domanda-01", "read": "~/tappe/elabor/domanda1.html", "free": false, "options": [
+            {"text": "1995",  "effects": [
+                {"story": [{"read": "~/tappe/elabor/domanda1-failed.html"}], "options": "domanda-01"}
+            ]},
+            {"text": "1998", "effects": [
+                {"story": [{"read": "~/tappe/elabor/domanda1-success.html"}], "options": "domanda-01"},
+                {"score": 4}
+            ]},
+            {"text": "2001", "effects": [
+                {"story": [{"read": "~/tappe/elabor/domanda1-failed.html"}], "options": "spiegare-gioco"}
+            ]},
+            {"text": "2004", "effects": [
+                {"story": [{"read": "~/tappe/elabor/domanda1-failed.html"}], "options": "domanda-01"}
+            ]},
+            {"text": "...non lo so, vado a cercare la risposta!"}
+        ]},
         {"id": "badge-02", "read": "~/Allhtml/tappaADR.html", "free": false, "options": [
             {"text": "ok", "effect": {}}
-        ]
-    },
+        ] },
         {"id": "badge-03", "read": "~/Allhtml/tappaPV.html", "free": false, "options": [
+            {"text": "ok", "effect": {}}
+        ]},
+        {"id": "badge-10", "read": "~/Allhtml/tappaADR.html", "free": false, "options": [
             {"text": "ok", "effect": {}}
         ]}
     ],
+    
     "badges": [
         {"badge": "badge-01", "src": "badges/badge-01.jpg"},
         {"badge": "badge-02", "src": "badges/badge-02.jpg"},
@@ -33,7 +72,10 @@
     ],
     "svgmaps": [
         {"id": "welcome", "svg": "~/welcome.svg", "ids": []},
-        {"id": "giochi", "svg": "~/giochi2.svg"}
+        {"id": "giochi", "svg": "~/index.svg"},
+        {"id": "tappa-elabor", "svg": "~/tappe/elabor/tappa-elabor.svg"},
+        {"id": "elabor", "svg": "~/tappe/elabor/elabor.svg"},
+        {"id": "beapple", "svg": "~/tappe/elabor/beapple.svg"}
     ],
     "locations": [
     ],
@@ -42,8 +84,9 @@
         {"id": "action", "src": "~/audio/action.ogg"}
     ],
     "buttons": [
-        {"id": "home", "icon": "~/buttons/cattedrale.svg", "action": [""], "layout": "top-left"},
-        {"id": "home", "icon": "~/credits.svg", "action": ["credits"], "layout": "top-left"}
+        {"id": "home", "icon": "~/buttons/house.svg", "action": [""], "layout": "top-left"},
+        {"id": "credits", "icon": "~/credits.svg", "action": ["credits"], "layout": "top-left"},
+        {"id": "esc", "icon": "~/buttons/exit.svg", "action": ["partita"], "layout": "top-left"}
     ],
     "map": {}
 }

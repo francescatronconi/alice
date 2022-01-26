@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10 10" height="25" width="25">
+
+   <g id="badges">
+        <g transform="matrix(0.4,0,0,0.4,32.370803,23.546048)" name="badge-02" class="item badge" id="g1302">
+            <image x="0" y="0" xlink:href="~/adrflow.png" height="50" width="50" preserveAspectRatio="none" >
+                <animate
+                    id="adrflow_1"
+                    begin="0s;adrflow_2.end"
+                    attributeName="x"
+                    attributeType="XML"
+                    from="-100"
+                    to="100"
+                    dur="2s"
+                    fill="remove"
+                    repeatCount="1"/>
+                <animate
+                    begin="0s;adrflow_2.end"
+                    attributeName="y"
+                    attributeType="XML"
+                    from ="-40"
+                    to="100"
+                    dur="2"
+                    fill="remove"
+                    repeatCount="1"/>
+                <animate
+                    id="adrflow_2"
+                    begin="adrflow_1.end"
+                    attributeName="x"
+                    attributeType="XML"
+                    from="100"
+                    to="-100"
+                    dur="2s"
+                    fill="remove"
+                    repeatCount="1"/>
+                    
+                <animate
+                    begin="adrflow_1.end"
+                    attributeName="y"
+                    attributeType="XML"
+                    from ="100"
+                    to="-40"
+                    dur="2s"
+                    fill="remove"
+                    repeatCount="1"/>
+                    
+            </image>
+        </g>
+        <g transform="matrix(0.24183483,0,0,0.13021875,78.474684,50.33974)" id="g1339" class="item badge" name="badge-01"
+            style="fill:#939dac;stroke-width:2.18200827">
+
+            <image x="-100" y="0" xlink:href="~/elabor.png" height="100" width="70" preserveAspectRatio="none" >
+                <animate attributeName="x"
+                    values="-500;150;-200;0;-100;100;-400;0;-500"
+                    dur="8s"
+                    repeatDur="indefinite"
+                    calcMode="paced" />
+            </image>
+        </g>
+        <g transform="matrix(0.24183483,0,0,0.13021875,78.474684,50.33974)" id="g1339" class="item badge" name="badge-03"
+            style="fill:#939dac;stroke-width:2.18200827">
+
+            <image x="-100" y="0" xlink:href="~/beapple.png" height="100" width="70" preserveAspectRatio="none" >
+                <animate attributeName="x"
+                    values="-500;150;-200;0;-100;100;-400;0;-500"
+                    dur="12s"
+                    repeatDur="indefinite"
+                    calcMode="paced" />
+                <animate attributeName="y"
+                    values="-300;150;-200;0;-100;100;-250;0;-300"
+                    dur="12s"
+                    repeatDur="indefinite"
+                    calcMode="paced" />
+            </image>
+        </g>
+   </g>
+
+</svg>
+
+            
