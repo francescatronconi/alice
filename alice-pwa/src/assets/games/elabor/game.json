@@ -1,7 +1,6 @@
 {
     "id": "elabor-game",
     "credits": "~/credits.html",
-    "fullscreen": null,
     "rules": [
         {"trigger": "start", "effect": {"route": [""]}},
         {"trigger": "welcome", "effect": {"route": ["badgemap", "giochi"], "story": [{"read": "~/intro.html"}]}},
@@ -13,47 +12,154 @@
             {"condition": {"nobadge": "badge-03"}, "effect": {"options": "badge-03"}}
         ]},
 
-        {"trigger": "search:badge-10", "rules": [
-            {"condition": {"nobadge": "badge-10"}, "effect": {"route": ["badgemap", "beapple"]}}
+        {"trigger": "search:time-line-elabor", "effect": {"story": [{"read": "~/tappe/elabor/info/elabor-01.html"}]}},
+        {"trigger": "search:time-line-utilia", "effect": {"story": [{"read": "~/tappe/elabor/info/utilia-01.html"}]}},
+        {"trigger": "search:time-line-enostra", "effect": {"story": [{"read": "~/tappe/elabor/info/enostra-01.html"}]}},
+        {"trigger": "search:time-line-beapple", "effect": {"story": [{"read": "~/tappe/elabor/info/beapple-01.html"}]}},
+        {"trigger": "search:time-line-piaggio", "effect": {"story": [{"read": "~/tappe/elabor/info/piaggio-01.html"}]}},
+        
+        {"trigger": "search:badge-beapple", "rules": [
+            {"condition": {"nobadge": "badge-quiz-beapple"}, "effect": {"options": "quiz-beapple"}}
         ]},
-        {"trigger": "search:badge-30", "rules": [
-            {"condition": {"nobadge": "badge-30"}, "effect": {"route": ["badgemap", "elabor"]}}
+        {"trigger": "search:badge-elabor", "rules": [
+            {"condition": {"nobadge": "badge-quiz-elabor"}, "effect": {"options": "quiz-elabor"}}
         ]},
+        {"trigger": "search:badge-enostra", "rules": [
+            {"condition": {"nobadge": "badge-quiz-enostra"}, "effect": {"options": "quiz-enostra"}}
+        ]},
+        {"trigger": "search:badge-utilia", "rules": [
+            {"condition": {"nobadge": "badge-quiz-utilia"}, "effect": {"options": "quiz-utilia"}}
+        ]},
+        {"trigger": "search:badge-piaggio", "rules": [
+            {"condition": {"nobadge": "badge-quiz-piaggio"}, "effect": {"options": "quiz-piaggio"}}
+        ]},
+        {"trigger": "search:goto-livello-2", "rules": [
+            {"condition": {"badges": ["badge-quiz-elabor", "badge-quiz-beapple", "badge-quiz-enostra", "badge-quiz-utilia", "badge-quiz-piaggio"]},
+            "effect": {"route": ["badgemap", "livello-2"], "story": [{"read": "~/tappe/elabor/livello-02.html"}]}}
+        ]},
+
+        {"trigger": "search:badge-elabor1", "rules": [
+            {"condition": {"nobadge": "badge-game-elabor-1"}, "effect": {"options": "game-elabor-1"}}
+        ]},
+        {"trigger": "search:basketball", "rules": [
+            {"condition": {"nobadge": "badge-game-elabor-1"}, "effect": {
+                "route": ["badgemap", "livello-2"], "story": [{"read": "~/tappe/elabor/basketball.html"}], "score":4,
+                    "badge":"badge-game-elabor-1"
+                }}
+        ]},
+        {"trigger": "search:football", "rules": [
+            {"condition": {"nobadge": "badge-game-elabor-1"}, "effect": {
+                "route": ["badgemap", "livello-2"],
+                "options": "football-badge"}}
+        ]},
+
         {"trigger": "search:badge-99", "effect": {"route": ["badgemap", "tappa-elabor"]}}
     ],
     "options": [
         {"id": "testo-01", "read": "~/tappe/elabor/benvenuto.html", "free": false, "options": [
-            {"text": "si",  "effects": [
-                {"route": ["badgemap", "tappa-elabor"],  "options": "spiegare-gioco", "story": [{"read": "~/tappe/elabor/giocaresi.html"}]}]
+            {"text": "si, dimmi qualcosa",  "effects": [
+                {"options":"testo-01-option", "story": [{"read": "~/tappe/elabor/nonsagiocare.html"}]}]
             },
             {"text": "no", "effects": [
-                {"route": ["badgemap", "tappa-elabor"]}
-            ]}
+                {"route": ["badgemap", "livello-1"], "story": [{"read": "~/tappe/elabor/livello-01.html"}]}]
+            }
         ]},
-        {"id": "spiegare-gioco", "read": "~/tappe/elabor/introgame.html", "free": false, "options": [
-            {"text": "ho già giocato in precedenza",  "effects": [
-                {"story": [{"read": "~/tappe/elabor/sagiocare.html"}], "options": "domanda-01"}
-            ]},
-            {"text": "no, ho bisogno della spiegazione", "effects": [
-                {"story": [{"read": "~/tappe/elabor/nonsagiocare.html"}], "options": "domanda-01"}
-            ]}
+        {"id": "testo-01-option", "read": "", "free": false, "options": [
+            {"text": "andiamo",  "effects": [
+                {"route": ["badgemap", "livello-1"], "story": [{"read": "~/tappe/elabor/livello-01.html"}]}]
+            }
         ]},
-        {"id": "domanda-01", "read": "~/tappe/elabor/domanda1.html", "free": false, "options": [
+        {"id": "quiz-elabor", "read": "~/tappe/elabor/quiz/elabor/01/domanda.html", "free": false, "options": [
             {"text": "1995",  "effects": [
-                {"story": [{"read": "~/tappe/elabor/domanda1-failed.html"}], "options": "domanda-01"}
+                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "domanda-01"}
             ]},
             {"text": "1998", "effects": [
-                {"story": [{"read": "~/tappe/elabor/domanda1-success.html"}], "options": "domanda-01"},
-                {"score": 4}
+                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "domanda-01"}
             ]},
             {"text": "2001", "effects": [
-                {"story": [{"read": "~/tappe/elabor/domanda1-failed.html"}], "options": "spiegare-gioco"}
+                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/success.html"}]},
+                {"condition": {"nobadge": "quiz-elabor-done"},"score": 1, "badge":"badge-quiz-elabor"}
             ]},
             {"text": "2004", "effects": [
-                {"story": [{"read": "~/tappe/elabor/domanda1-failed.html"}], "options": "domanda-01"}
+                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "domanda-01"}
             ]},
             {"text": "...non lo so, vado a cercare la risposta!"}
         ]},
+        {"id": "quiz-beapple", "read": "~/tappe/elabor/quiz/beapple/01/domanda.html", "free": false, "options": [
+            {"text": "sito web",  "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/beapple/01/failed.html"}], "options": "quiz-beapple"}
+            ]},
+            {"text": "gestionale magazzino", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/beapple/01/success.html"}]},
+                {"condition": {"nobadge": "quiz-beapple-done"}, "score": 1, "badge":"badge-quiz-beapple"}
+            ]},
+            {"text": "gestione turni", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/beapple/01/failed.html"}], "options": "quiz-beapple"}
+            ]},
+            {"text": "anti furto", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/beapple/01/failed.html"}], "options": "quiz-beapple"}
+            ]},
+            {"text": "...non lo so, vado a cercare la risposta!"}
+        ]},
+        {"id": "quiz-enostra", "read": "~/tappe/elabor/quiz/enostra/01/domanda.html", "free": false, "options": [
+            {"text": "èLoro",  "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/enostra/01/failed.html"}], "options": "quiz-enostra"}
+            ]},
+            {"text": "enum", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/enostra/01/failed.html"}], "options": "quiz-enostra"}
+            ]},
+            {"text": "casa energetica", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/enostra/01/failed.html"}], "options": "quiz-enostra"}
+            ]},
+            {"text": "rete energia", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/enostra/01/success.html"}]},
+                {"condition": {"nobadge": "badge-quiz-enostra"}, "badge": "badge-quiz-enostra", "score": 1}
+            ]},
+            {"text": "...non lo so, vado a cercare la risposta!"}
+        ]},
+        {"id": "quiz-utilia", "read": "~/tappe/elabor/quiz/utilia/01/domanda.html", "free": false, "options": [
+            {"text": "...",  "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/utilia/01/failed.html"}], "options": "quiz-utilia"}
+            ]},
+            {"text": "...", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/utilia/01/failed.html"}], "options": "quiz-utilia"}
+            ]},
+            {"text": "ooo", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/utilia/01/success.html"}]},
+                {"condition": {"nobadge": "badge-quiz-utilia"}, "badge": "badge-quiz-utilia", "score": 1}
+            ]},
+            {"text": "...", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/utilia/01/failed.html"}], "options": "quiz-utilia"}
+            ]},
+            {"text": "...non lo so, vado a cercare la risposta!"}
+        ]},
+        {"id": "quiz-piaggio", "read": "~/tappe/elabor/quiz/piaggio/01/domanda.html", "free": false, "options": [
+            {"text": "...",  "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/piaggio/01/failed.html"}], "options": "quiz-piaggio"}
+            ]},
+            {"text": "...", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/piaggio/01/failed.html"}], "options": "quiz-piaggio"}
+            ]},
+            {"text": "ooo", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/piaggio/01/success.html"}]},
+                {"condition": {"nobadge": "badge-quiz-piaggio"}, "badge": "badge-quiz-piaggio", "score": 1}
+            ]},
+            {"text": "...", "effects": [
+                {"story": [{"read": "~/tappe/elabor/quiz/piaggio/01/failed.html"}], "options": "quiz-piaggio"}
+            ]},
+            {"text": "...non lo so, vado a cercare la risposta!"}
+        ]},
+
+        {"id": "game-elabor-1", "read": "~/tappe/elabor/game-elabor-1.html", "free": false, "options": [
+            {"text": "andiamo", "effects": [{"route":["badgemap", "game-elabor-1"]}]},
+            {"text": "ancora no"}
+        ]},
+        {"id": "football-badge", "read": "~/tappe/elabor/football.html", "free": false, "options": [
+            {"text": "riprova", "effects": [{"route":["badgemap", "game-elabor-1"]}]
+            },
+            {"text": "va bene, mi arrendo"}
+        ]},
+
         {"id": "badge-02", "read": "~/Allhtml/tappaADR.html", "free": false, "options": [
             {"text": "ok", "effect": {}}
         ] },
@@ -71,14 +177,15 @@
         {"badge": "badge-03", "src": "badges/badge-03.jpg"}
     ],
     "svgmaps": [
-        {"id": "welcome", "svg": "~/welcome.svg", "ids": []},
+        {"id": "welcome", "svg": "~/welcome.svg"},
         {"id": "giochi", "svg": "~/index.svg"},
-        {"id": "tappa-elabor", "svg": "~/tappe/elabor/tappa-elabor.svg"},
+        {"id": "livello-1", "svg": "~/tappe/elabor/livello-1.svg"},
+        {"id": "livello-2", "svg": "~/tappe/elabor/livello-2.svg"},
+        {"id": "game-elabor-1", "svg": "~/tappe/elabor/game-elabor-1.svg"},
         {"id": "elabor", "svg": "~/tappe/elabor/elabor.svg"},
         {"id": "beapple", "svg": "~/tappe/elabor/beapple.svg"}
     ],
-    "locations": [
-    ],
+    "locations": [],
     "challenges": [],
     "audio": [
         {"id": "action", "src": "~/audio/action.ogg"}
@@ -88,5 +195,6 @@
         {"id": "credits", "icon": "~/credits.svg", "action": ["credits"], "layout": "top-left"},
         {"id": "esc", "icon": "~/buttons/exit.svg", "action": ["partita"], "layout": "top-left"}
     ],
-    "map": {}
+    "map": {
+    }
 }

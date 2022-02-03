@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
+
+      <g id="badges">
+         <g id="g1001" class="item badge" name="badge-beapple1">
+            <text
+             id="textbeapple1"
+             x="0" y="20"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+             xml:space="preserve">
+            <tspan
+               style="fill:#512603;fill-opacity:1;stroke-width:0.23350567"
+                x="0" y="20"
+               id="tspan4918">be-game1</tspan>
+            </text>
+         </g>
+          <g id="g1002" class="item badge" name="badge-enostra1">
+            <text
+             id="textenostra1"
+             x="80" y="20"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+             xml:space="preserve">
+            <tspan
+               style="fill:#512603;fill-opacity:1;stroke-width:0.23350567"
+                x="80" y="20"
+               id="tspan4918">enostra-game1</tspan>
+            </text>
+         </g>
+         <g id="g1003" class="item badge" name="badge-elabor1">
+            <text
+             id="textelabor1"
+             x="40" y="40"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+             xml:space="preserve">
+            <tspan
+               style="fill:#512603;fill-opacity:1;stroke-width:0.23350567"
+                x="40" y="40"
+               id="tspan4918">elabor-game1</tspan>
+            </text>
+         </g>
+         <g id="g1004" class="item badge" name="badge-utilia1">
+            <text
+             id="textutilia1"
+             x="0" y="60"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+             xml:space="preserve">
+            <tspan
+               style="fill:#512603;fill-opacity:1;stroke-width:0.23350567"
+                x="0" y="60"
+               id="tspan4918">utilia-game1</tspan>
+            </text>
+         </g>
+         <g id="g1005" class="item badge" name="badge-piaggio1">
+            <text
+             id="textpiaggio1"
+             x="80" y="60"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+             xml:space="preserve">
+            <tspan
+               style="fill:#512603;fill-opacity:1;stroke-width:0.23350567"
+                x="80" y="60"
+               id="tspan4918">piaggio-game1</tspan>
+            </text>
+         </g>
+         <g class="item background" id="g2776">
+           <text
+             id="text4920"
+             x="110" y="70"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+             xml:space="preserve">
+            <tspan
+               style="fill:#512603;fill-opacity:1;stroke-width:0.23350567"
+                x="-42" y="88"
+               id="tspan4918">Punteggio</tspan>
+            </text>
+          <text id="text4924">
+             <tspan
+               id="tspan4922"
+               x="-38" y="92"
+                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2px;line-height:1.25;font-family:'Sweet Dream';-inkscape-font-specification:'Sweet Dream, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#512603;fill-opacity:1;stroke:none;stroke-width:0.23350567"
+               >
+               {score}</tspan>
+            </text>
+         </g>
+         <g id="g1006" class="item badge" name="livello-3">
+            <image x="114" y="88" xlink:href="https://w7.pngwing.com/pngs/617/943/png-transparent-youtube-play-button-play-button-blue-angle-text.png" 
+            height="5" width="5" preserveAspectRatio="none" >
+            </image>
+         </g>
+      </g>
+</svg>

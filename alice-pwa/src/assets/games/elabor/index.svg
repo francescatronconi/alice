@@ -3,7 +3,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 10 10" height="25" width="25">
 
    <g id="badges">
-        <g transform="matrix(0.4,0,0,0.4,32.370803,23.546048)" name="badge-02" class="item badge" id="g1302">
+        <g transform="matrix(0.4,0,0,0.4,32.370803,23.546048)" name="badge-02" class="item" id="g1302">
             <image x="0" y="0" xlink:href="~/adrflow.png" height="50" width="50" preserveAspectRatio="none" >
                 <animate
                     id="adrflow_1"
@@ -47,7 +47,7 @@
                     
             </image>
         </g>
-        <g transform="matrix(0.24183483,0,0,0.13021875,78.474684,50.33974)" id="g1339" class="item badge" name="badge-01"
+        <g transform="matrix(0.24183483,0,0,0.13021875,78.474684,50.33974)" id="g1339" class="item" name="badge-01"
             style="fill:#939dac;stroke-width:2.18200827">
 
             <image x="-100" y="0" xlink:href="~/elabor.png" height="100" width="70" preserveAspectRatio="none" >
@@ -58,7 +58,7 @@
                     calcMode="paced" />
             </image>
         </g>
-        <g transform="matrix(0.24183483,0,0,0.13021875,78.474684,50.33974)" id="g1339" class="item badge" name="badge-03"
+        <g transform="matrix(0.24183483,0,0,0.13021875,78.474684,50.33974)" id="g1339" class="item" name="badge-03"
             style="fill:#939dac;stroke-width:2.18200827">
 
             <image x="-100" y="0" xlink:href="~/beapple.png" height="100" width="70" preserveAspectRatio="none" >
