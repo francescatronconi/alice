@@ -3,7 +3,7 @@
     "credits": "~/credits.html",
     "rules": [
         {"trigger": "start", "effect": {"route": [""]}},
-        {"trigger": "welcome", "effect": {"route": ["badgemap", "giochi"], "story": [{"read": "~/intro.html"}]}},
+        {"trigger": "welcome", "effect": {"route": ["badgemap", "index"], "story": [{"read": "~/intro.html"}]}},
         {"trigger": "search:badge-01", "effect": {"route": [""],"options": "testo-01"}},
         {"trigger": "search:badge-02", "rules": [
             {"condition": {"nobadge": "badge-02"}, "effect": {"options": "badge-02"}}
@@ -38,8 +38,8 @@
             "effect": {"route": ["badgemap", "livello-2"], "story": [{"read": "~/tappe/elabor/livello-02.html"}]}}
         ]},
 
-        {"trigger": "search:badge-elabor1", "rules": [
-            {"condition": {"nobadge": "badge-game-elabor-1"}, "effect": {"options": "game-elabor-1"}}
+        {"trigger": "search:game-elabor1", "rules": [
+            {"condition": {"nobadge": "badge-game-elabor-1"}, "effect": {"options": "game-options-elabor-1"}}
         ]},
         {"trigger": "search:basketball", "rules": [
             {"condition": {"nobadge": "badge-game-elabor-1"}, "effect": {
@@ -71,17 +71,17 @@
         ]},
         {"id": "quiz-elabor", "read": "~/tappe/elabor/quiz/elabor/01/domanda.html", "free": false, "options": [
             {"text": "1995",  "effects": [
-                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "domanda-01"}
+                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "quiz-elabor"}
             ]},
             {"text": "1998", "effects": [
-                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "domanda-01"}
+                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "quiz-elabor"}
             ]},
             {"text": "2001", "effects": [
                 {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/success.html"}]},
-                {"condition": {"nobadge": "quiz-elabor-done"},"score": 1, "badge":"badge-quiz-elabor"}
+                {"condition": {"nobadge": "badge-quiz-elabor"},"score": 1, "badge":"badge-quiz-elabor"}
             ]},
             {"text": "2004", "effects": [
-                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "domanda-01"}
+                {"story": [{"read": "~/tappe/elabor/quiz/elabor/01/failed.html"}], "options": "quiz-elabor"}
             ]},
             {"text": "...non lo so, vado a cercare la risposta!"}
         ]},
@@ -91,7 +91,7 @@
             ]},
             {"text": "gestionale magazzino", "effects": [
                 {"story": [{"read": "~/tappe/elabor/quiz/beapple/01/success.html"}]},
-                {"condition": {"nobadge": "quiz-beapple-done"}, "score": 1, "badge":"badge-quiz-beapple"}
+                {"condition": {"nobadge": "badge-quiz-beapple"}, "score": 1, "badge":"badge-quiz-beapple"}
             ]},
             {"text": "gestione turni", "effects": [
                 {"story": [{"read": "~/tappe/elabor/quiz/beapple/01/failed.html"}], "options": "quiz-beapple"}
@@ -150,7 +150,7 @@
             {"text": "...non lo so, vado a cercare la risposta!"}
         ]},
 
-        {"id": "game-elabor-1", "read": "~/tappe/elabor/game-elabor-1.html", "free": false, "options": [
+        {"id": "game-options-elabor-1", "read": "~/tappe/elabor/game-elabor-1.html", "free": false, "options": [
             {"text": "andiamo", "effects": [{"route":["badgemap", "game-elabor-1"]}]},
             {"text": "ancora no"}
         ]},
@@ -178,7 +178,7 @@
     ],
     "svgmaps": [
         {"id": "welcome", "svg": "~/welcome.svg"},
-        {"id": "giochi", "svg": "~/index.svg"},
+        {"id": "index", "svg": "~/index.svg"},
         {"id": "livello-1", "svg": "~/tappe/elabor/livello-1.svg"},
         {"id": "livello-2", "svg": "~/tappe/elabor/livello-2.svg"},
         {"id": "game-elabor-1", "svg": "~/tappe/elabor/game-elabor-1.svg"},

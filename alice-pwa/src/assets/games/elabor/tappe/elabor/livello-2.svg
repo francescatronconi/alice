@@ -3,7 +3,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
 
       <g id="badges">
-         <g id="g1001" class="item badge" name="badge-beapple1">
+         <g id="g1001" class="item badge" name="game-beapple1">
             <text
              id="textbeapple1"
              x="0" y="20"
@@ -27,7 +27,7 @@
                id="tspan4918">enostra-game1</tspan>
             </text>
          </g>
-         <g id="g1003" class="item badge" name="badge-elabor1">
+         <g id="g1003" class="item badge" name="game-elabor1">
             <text
              id="textelabor1"
              x="40" y="40"
