@@ -104,6 +104,16 @@ export class PonteVirtualeService {
       if (GameConditionNoTag.valid(condition as GameConditionNoTag)) {
         check = check && GameConditionNoTag.check(condition as GameConditionNoTag, play);
       }
+      // logical operators require scenario and service for recursive checkCondition
+      if (GameConditionNot.valid(condition as GameConditionNot)) {
+        check = check && GameConditionNot.check(condition as GameConditionNot, play, scenario, this);
+      }
+      if (GameConditionAnd.valid(condition as GameConditionAnd)) {
+        check = check && GameConditionAnd.check(condition as GameConditionAnd, play, scenario, this);
+      }
+      if (GameConditionOr.valid(condition as GameConditionOr)) {
+        check = check && GameConditionOr.check(condition as GameConditionOr, play, scenario, this);
+      }
     }
     return check;
   }
@@ -367,6 +377,56 @@ export class GameConditionNoTag extends GameCondition {
   }
   
 }
+
+export class GameConditionNot extends GameCondition {
+  not: GameCondition;
+
+  static valid(condition: GameConditionNot) {
+    return condition.not ? true : false;
+  }
+
+  static check(condition: GameConditionNot, play: GamePlay, scenario: GameScenario = null, service: PonteVirtualeService = null) : boolean {
+    return !(service.checkCondition(condition.not, play, scenario));
+  }
+
+}
+
+export class GameConditionAnd extends GameCondition {
+  and: GameCondition[];
+
+  static valid(condition: GameConditionAnd) {
+    return condition.and && condition.and.length > 0 ? true : false;
+  }
+
+  static check(condition: GameConditionAnd, play: GamePlay, scenario: GameScenario = null, service: PonteVirtualeService = null) : boolean {
+    let result = true;
+    for (let index = 0; index < condition.and.length; index++) {
+      result = result && service.checkCondition(condition.and[index], play, scenario);
+      
+    }
+    return result;
+  }
+
+}
+
+export class GameConditionOr extends GameCondition {
+  or: GameCondition[];
+
+  static valid(condition: GameConditionOr) {
+    return condition.or && condition.or.length > 0 ? true : false;
+  }
+
+  static check(condition: GameConditionOr, play: GamePlay, scenario: GameScenario = null, service: PonteVirtualeService = null) : boolean {
+    let result = false;
+    for (let index = 0; index < condition.or.length; index++) {
+      result = result || service.checkCondition(condition.or[index], play, scenario);
+      
+    }
+    return result;
+  }
+
+}
+
 
 // GameEffect
 
