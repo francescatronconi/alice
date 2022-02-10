@@ -1,0 +1,232 @@
+
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <script xlink:href="script.js"></script>
+            
+            <line x1="100" y1="38" x2="10" y2="38" style="stroke: #aaa;" />
+            
+            <image x="-1000" y="-1000" href="bici.png" height="10" width="10" onclick="biciAction();" >
+            
+            <animate
+                id="linea1"
+                begin="0s;linea7.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="0s;linea7.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            
+            <image x="-1000" y="-1000" href="bici.png" height="10" width="10" onclick="biciAction();" >
+            
+            <animate
+                id="linea2"
+                begin="linea1.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea1.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            
+            <image x="-1000" y="-1000" href="bici.png" height="10" width="10" onclick="biciAction();" >
+            
+            <animate
+                id="linea3"
+                begin="linea2.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea2.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            
+            <image x="-1000" y="-1000" href="bici.png" height="10" width="10" onclick="biciAction();" >
+            
+            <animate
+                id="linea4"
+                begin="linea1.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea1.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            
+            <image x="-1000" y="-1000" href="bici.png" height="10" width="10" onclick="biciAction();" >
+            
+            <animate
+                id="linea5"
+                begin="linea4.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea4.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            
+            <image x="-1000" y="-1000" href="bici.png" height="10" width="10" onclick="biciAction();" >
+            
+            <animate
+                id="linea6"
+                begin="linea5.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea5.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            
+            <image x="-1000" y="-1000" href="bici-difetto.png" height="10" width="10" onclick="bici-difettoAction();" >
+            
+            <animate
+                id="linea7"
+                begin="linea2.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea2.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            
+            <image x="-1000" y="-1000" href="bici-difetto.png" height="10" width="10" onclick="bici-difettoAction();" >
+            
+            <animate
+                id="linea8"
+                begin="linea7.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea7.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            
+            <image x="-1000" y="-1000" href="bici-difetto.png" height="10" width="10" onclick="bici-difettoAction();" >
+            
+            <animate
+                id="linea9"
+                begin="linea8.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea8.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+            </svg>
+            

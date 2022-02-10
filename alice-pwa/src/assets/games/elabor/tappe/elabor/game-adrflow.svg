@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" height="25" width="25">
+            <!-- <script xlink:href="script.js"></script> -->
+    <g id="badges">
+
+        <line x1="5" y1="40" x2="100" y2="40" style="stroke: #aaa;" class="item"/>
+        <g name="bici" class="item" id="g1401"> 
+
+            <image x="-30" y="50" xlink:href="~/dirigente.png" height="40" width="40">
+            </image>
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea1"
+                begin="0s;linea7.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="0s;linea7.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1402">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea2"
+                begin="linea1.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea1.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1403">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea3"
+                begin="linea2.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea2.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1404">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea4"
+                begin="linea1.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea1.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1405">    
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea5"
+                begin="linea4.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea4.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1406">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea6"
+                begin="linea5.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea5.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici-difetto" class="item" id="g1407">   
+            <image x="-100" y="-100" xlink:href="~/bici-difetto.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea7"
+                begin="linea2.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea2.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici-difetto" class="item" id="g1408">   
+            <image x="-100" y="-100" xlink:href="~/bici-difetto.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea8"
+                begin="linea7.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea7.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici-difetto" class="item" id="g1409">   
+            <image x="-100" y="-100" xlink:href="~/bici-difetto.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea9"
+                begin="linea8.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea8.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="29"
+                to="29"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <line x1="5" y1="60" x2="100" y2="60" style="stroke: #aaa;" class="item"/>
+        <g name="bici" class="item" id="g1401"> 
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea1"
+                begin="0s;linea7.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="0s;linea7.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1402">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea2"
+                begin="linea1.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea1.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1403">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea3"
+                begin="linea2.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea2.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1404">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea4"
+                begin="linea1.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea1.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1405">    
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea5"
+                begin="linea4.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea4.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1406">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea6"
+                begin="linea5.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea5.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1407">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea7"
+                begin="linea2.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea2.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1408">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea8"
+                begin="linea7.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea7.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1409">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea9"
+                begin="linea8.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea8.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="49"
+                to="49"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <line x1="5" y1="80" x2="100" y2="80" style="stroke: #aaa;" class="item"/>
+        <g name="bici" class="item" id="g1401"> 
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea1"
+                begin="0s;linea7.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="0s;linea7.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1402">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea2"
+                begin="linea1.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea1.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1403">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea3"
+                begin="linea2.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea2.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1404">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea4"
+                begin="linea1.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea1.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1405">    
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea5"
+                begin="linea4.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea4.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1406">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea6"
+                begin="linea5.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea5.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1407">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea7"
+                begin="linea2.end"
+                attributeName="x"
+                attributeType="XML"
+                from="95"
+                to="65"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea2.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1408">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea8"
+                begin="linea7.end"
+                attributeName="x"
+                attributeType="XML"
+                from="65"
+                to="35"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea7.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+        <g name="bici" class="item" id="g1409">   
+            <image x="-100" y="-100" xlink:href="~/bici.png" height="10" width="10" preserveAspectRatio="none">
+            
+            <animate
+                id="linea9"
+                begin="linea8.end"
+                attributeName="x"
+                attributeType="XML"
+                from="35"
+                to="5"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            <animate
+                begin="linea8.end"
+                attributeName="y"
+                attributeType="XML"
+                from ="69"
+                to="69"
+                dur="3.000000s"
+                fill="remove"
+                repeatCount="1"/>
+                
+            </image>
+        </g>
+    </g>
+</svg>
+            

@@ -38,6 +38,22 @@
             "effect": {"route": ["badgemap", "livello-2"], "story": [{"read": "~/tappe/elabor/livello-02.html"}]}}
         ]},
 
+        {"trigger": "search:game-adrflow", "rules": [
+            {"condition": {"nobadge": "badge-game-adrflow"}, "effect": {"options": "game-options-adrflow"}}
+        ]},
+
+        {"trigger": "search:bici-difetto", "rules": [
+            {"condition": {"nobadge": "badge-game-adrflow"}, "effect": {
+                "route": ["badgemap", "livello-2"], "story": [{"read": "~/tappe/elabor/get-bici-difetto.html"}], "score":4,
+                    "badge":"badge-game-adrflow"
+                }}
+        ]},
+        {"trigger": "search:bici", "rules": [
+            {"condition": {"nobadge": "badge-game-adrflow"}, "effect": {
+                "options": "no-bici-difetto"}}
+        ]},
+
+
         {"trigger": "search:game-elabor1", "rules": [
             {"condition": {"nobadge": "badge-game-elabor-1"}, "effect": {"options": "game-options-elabor-1"}}
         ]},
@@ -150,6 +166,16 @@
             {"text": "...non lo so, vado a cercare la risposta!"}
         ]},
 
+        {"id": "no-bici-difetto", "read": "~/tappe/elabor/non-bici-difetto.html", "free": false, "options": [
+            {"text": "va bene, mi arrendo", "effects": [{"route":["badgemap", "livello-2"], "score":1}]
+            },
+            {"text": "riprova"}
+        ]},
+
+        {"id": "game-options-adrflow", "read": "~/tappe/elabor/game-adrflow-1.html", "free": false, "options": [
+            {"text": "andiamo", "effects": [{"route":["badgemap", "game-adrflow"]}]},
+            {"text": "ancora no"}
+        ]},
         {"id": "game-options-elabor-1", "read": "~/tappe/elabor/game-elabor-1.html", "free": false, "options": [
             {"text": "andiamo", "effects": [{"route":["badgemap", "game-elabor-1"]}]},
             {"text": "ancora no"}
@@ -181,6 +207,7 @@
         {"id": "index", "svg": "~/index.svg"},
         {"id": "livello-1", "svg": "~/tappe/elabor/livello-1.svg"},
         {"id": "livello-2", "svg": "~/tappe/elabor/livello-2.svg"},
+        {"id": "game-adrflow", "svg": "~/tappe/elabor/game-adrflow.svg"},
         {"id": "game-elabor-1", "svg": "~/tappe/elabor/game-elabor-1.svg"},
         {"id": "elabor", "svg": "~/tappe/elabor/elabor.svg"},
         {"id": "beapple", "svg": "~/tappe/elabor/beapple.svg"}
